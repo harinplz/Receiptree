@@ -9,7 +9,6 @@ class M_Board(models.Model):
     M_body = models.TextField()
     M_good_cnt = models.IntegerField(default=0)
     M_bad_cnt = models.IntegerField(default=0)
-    M_name = models.ForeignKey('User', on_delete=models.CASCADE, db_column='name')
     M_user_no = models.ForeignKey('account.User', on_delete=models.CASCADE, db_column='user_no')
 
 

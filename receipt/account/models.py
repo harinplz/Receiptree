@@ -1,3 +1,4 @@
+from django.conf import settings
 from django.db import models
 from django.contrib.auth.models import AbstractUser
 
@@ -10,12 +11,12 @@ class User(AbstractUser):
     #email 기본 제공
     notify_cnt = models.IntegerField(default=0)
     grade = models.CharField(max_length=40)
-    team_no = models.ForeignKey('Team', on_delete=models.CASCADE, db_column='team_no')
+    team_no = models.ForeignKey('home.Team', on_delete=models.CASCADE, db_column='team_no', null=True)
 
 
 # User_info class 
 class User_info(models.Model):
-    user_no = models.ForeignKey('User', on_delete=models.CASCADE, db_column='user_no', primary_key=True)
+    user_no = models.OneToOneField(User, on_delete=models.CASCADE, db_column='user_no')
     job = models.CharField(max_length=40)
     age = models.IntegerField()
     income = models.IntegerField()

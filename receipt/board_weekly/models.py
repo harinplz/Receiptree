@@ -10,7 +10,6 @@ class W_Board(models.Model):
     W_body = models.TextField()
     W_good_cnt = models.IntegerField(default=0)
     W_bad_cnt = models.IntegerField(default=0)
-    W_name = models.ForeignKey('User', on_delete=models.CASCADE, db_column='name')
     W_user_no = models.ForeignKey('account.User', on_delete=models.CASCADE, db_column='user_no')
 
 
