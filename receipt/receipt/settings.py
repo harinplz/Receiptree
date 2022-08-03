@@ -30,7 +30,8 @@ INSTALLED_APPS = [
     'board_daily',
     'board_weekly',
     'board_monthly',
-]
+    'party',
+    ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
