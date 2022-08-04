@@ -27,9 +27,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'account',
     'home',
-    'board_daily',
-    'board_weekly',
-    'board_monthly',
+    'board',
     'party',
     ]
 
