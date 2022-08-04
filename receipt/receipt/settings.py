@@ -30,6 +30,7 @@ INSTALLED_APPS = [
     'board_daily',
     'board_weekly',
     'board_monthly',
+    'board',
     'party',
     ]
 
