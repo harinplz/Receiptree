@@ -6,14 +6,14 @@ from django.utils import timezone
 # Team class
 class Team(models.Model):
     team_no = models.AutoField(primary_key=True)
-    category = models.IntegerField() #0:절약 1:저축
+    category = models.IntegerField(blank=True) #0:절약 1:저축
     team_name = models.CharField(max_length=100)
-    teammate_cnt = models.IntegerField() #팀원 수
-    team1_no = models.IntegerField(null=True)
-    team2_no = models.IntegerField(null=True)
-    team3_no = models.IntegerField(null=True)
-    team4_no = models.IntegerField(null=True)
-    leader_no = models.IntegerField(null=True)
+    teammate_cnt = models.IntegerField(default=1) #팀원 수
+    team1_no = models.IntegerField(null=True, blank=True)
+    team2_no = models.IntegerField(null=True, blank=True)
+    team3_no = models.IntegerField(null=True, blank=True)
+    team4_no = models.IntegerField(null=True, blank=True)
+    leader_no = models.IntegerField(null=True, blank=True)
     p_user_no = models.ForeignKey('account.User', on_delete=models.CASCADE, db_column='user_no')
     content = models.TextField()
 
@@ -25,7 +25,7 @@ class Team_Board(models.Model):
     Team_board_no = models.AutoField(primary_key=True)
     Team_date = models.DateTimeField(default=timezone.now)
     Team_body = models.TextField()
-    Team_good_cnt = models.IntegerField(default = 0)
+    Team_good_cnt = models.IntegerField(default=0)
     Team_bad_cnt = models.IntegerField(default=0)
     team_no = models.ForeignKey('Team', on_delete=models.CASCADE, db_column='team_no')
 
