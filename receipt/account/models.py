@@ -11,8 +11,8 @@ class User(AbstractUser):
     #email 기본 제공
     notify_cnt = models.IntegerField(default=0)
     grade = models.CharField(max_length=40)
-    image = models.ImageField(null=True)
-    team_no = models.ForeignKey('party.Team', on_delete=models.CASCADE, db_column='team_no', null=True)
+    image = models.ImageField(null=True, blank=True)
+    team_no = models.ForeignKey('party.Team', on_delete=models.CASCADE, db_column='team_no', null=True, blank=True)
 
 
 # User_info class 
