@@ -27,44 +27,61 @@
     <!-- 인기 영수증 -->
     <div class="content2">
         <div class="content2_text">인기영수증</div>
+
         <div class="content2_receipt1">
-            <div class="content2_receipt1_text1">오늘 장 봤는데 영수증 평가해주세요!</div>
-            <div class="content2_receipt1_text2">#하루영수증 #장보기</div>
-            <div class="content2_receipt1_text3">2022.08.02</div>
+            <div class="content2_receipt1_text1">{{hot.0.title}}</div>
+            <div class="content2_receipt1_text2">
+                {% for t in hot.0.tags.all %}
+                #{{t.tagname}}
+                {% endfor %}
+            </div>
+            <div class="content2_receipt1_text3">{{hot.0.date|date:'Y.m.d'}}</div>
             <hr class="content2_receipt1_line">
             <div class="content2_receipt1_profile">
-                <img src="{% static 'img/img1.jpg' %}">
-                <p class="content2_receipt1_profile_name">김멋사</p>
+                <img src="{{ hot.0.user_no.my_image }}" width="30px" height="30px">
+                <p class="content2_receipt1_profile_name">{{hot.0.user_no.nickname}}</p>
             </div>
         </div>
         <div class="content2_receipt2">
-            <div class="content2_receipt1_text1">오늘 장 봤는데 영수증 평가해주세요!</div>
-            <div class="content2_receipt1_text2">#하루영수증 #장보기</div>
-            <div class="content2_receipt1_text3">2022.08.02</div>
+            <div class="content2_receipt1_text1">{{hot.1.title}}</div>
+            <div class="content2_receipt1_text2">
+                {% for t in hot.1.tags.all %}
+                #{{t.tagname}}
+                {% endfor %}
+            </div>
+            <div class="content2_receipt1_text3">{{hot.1.date|date:'Y.m.d'}}</div>
             <hr class="content2_receipt1_line">
             <div class="content2_receipt1_profile">
-                <img src="{% static 'img/img1.jpg' %}">
-                <p class="content2_receipt1_profile_name">김멋사</p>
+                <img src="{{ hot.1.user_no.my_image }}" width="30px" height="30px">
+                <p class="content2_receipt1_profile_name">{{hot.1.user_no.nickname}}</p>
             </div>
         </div>
         <div class="content2_receipt3">
-            <div class="content2_receipt1_text1">오늘 장 봤는데 영수증 평가해주세요!</div>
-            <div class="content2_receipt1_text2">#하루영수증 #장보기</div>
-            <div class="content2_receipt1_text3">2022.08.02</div>
+            <div class="content2_receipt1_text1">{{hot.2.title}}</div>
+            <div class="content2_receipt1_text2">
+                {% for t in hot.2.tags.all %}
+                #{{t.tagname}}
+                {% endfor %}
+            </div>
+            <div class="content2_receipt1_text3">{{hot.2.date|date:'Y.m.d'}}</div>
             <hr class="content2_receipt1_line">
             <div class="content2_receipt1_profile">
-                <img src="{% static 'img/img1.jpg' %}">
-                <p class="content2_receipt1_profile_name">김멋사</p>
+                <img src="{{ hot.2.user_no.my_image }}" width="30px" height="30px">
+                <p class="content2_receipt1_profile_name">{{hot.2.user_no.nickname}}</p>
             </div>
         </div>
         <div class="content2_receipt4">
-            <div class="content2_receipt1_text1">오늘 장 봤는데 영수증 평가해주세요!</div>
-            <div class="content2_receipt1_text2">#하루영수증 #장보기</div>
-            <div class="content2_receipt1_text3">2022.08.02</div>
+            <div class="content2_receipt1_text1">{{hot.3.title}}</div>
+            <div class="content2_receipt1_text2">
+                {% for t in hot.3.tags.all %}
+                #{{t.tagname}}
+                {% endfor %}
+            </div>
+            <div class="content2_receipt1_text3">{{hot.3.date|date:'Y.m.d'}}</div>
             <hr class="content2_receipt1_line">
             <div class="content2_receipt1_profile">
-                <img src="{% static 'img/img1.jpg' %}">
-                <p class="content2_receipt1_profile_name">김멋사</p>
+                <img src="{{ hot.3.user_no.my_image }}" width="30px" height="30px">
+                <p class="content2_receipt1_profile_name">{{hot.3.user_no.nickname}}</p>
             </div>
         </div>
     </div>
