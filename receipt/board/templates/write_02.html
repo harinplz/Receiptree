@@ -1,7 +1,9 @@
+{% load static %}
+
 <html>
 <head>
     <meta charset="UTF-8">
-    <link href="write_02.css" rel="stylesheet"></a>
+    <link rel="stylesheet" href="{% static 'css/write_02.css' %}">
     <title>영수증 글 작성</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -41,7 +43,7 @@
                 <td><input type="text"  class="input-receipt2"placeholder="금액 입력" onkeyup='addPrice()'></td>
                 <td><textarea  class="input-receipt3" placeholder="사용처 입력"></textarea></td>
                 <td><textarea  class="input-receipt4" placeholder="내용입력"></textarea>
-                    <button class="delete" onclick='javascript:deleteRow()'><img src="./image/delete.png"></button>
+                    <button class="delete" onclick='javascript:deleteRow()'><img src="{% static 'img/delete.png' %}"></button>
                 </td>
             </tr>
                 </tbody>
@@ -76,7 +78,7 @@
 <footer>푸터</footer>
     
 
-<script src="write_02.js"> </script>
+<script src="{% static 'js/write_02.js' %}"> </script>
 
 <script type="text/javascript">
     
