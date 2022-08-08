@@ -1,7 +1,9 @@
+{% load static %}
+
 <html>
 <head>
     <meta charset="UTF-8">
-    <link href="write_02.css" rel="stylesheet"></a>
+    <link rel="stylesheet" href="{% static 'css/write_02.css' %}">
     <title>영수증 글 작성</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -76,7 +78,7 @@
 <footer>푸터</footer>
     
 
-<script src="write_02.js"> </script>
+<script src="{% static 'js/write_02.js' %}"> </script>
 
 <script type="text/javascript">
     
