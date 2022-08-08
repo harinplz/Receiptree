@@ -5,7 +5,9 @@ from .models import Board
 
 #영수증 메인 화면
 def board(request):
-    return render(request, 'receipt_01.html')
+
+    board_list = Board.objects.all()
+    return render(request, 'receipt_01.html', {'board':board_list})
 
 
 def write(request):
