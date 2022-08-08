@@ -13,7 +13,7 @@ class Board(models.Model):
     good_cnt = models.IntegerField(default=0)
     bad_cnt = models.IntegerField(default=0)
     user_no = models.ForeignKey('account.User', on_delete=models.CASCADE, db_column='user_no')
-    tags = models.ManyToManyField('Tag', blank=True)
+    tags = models.ManyToManyField('Tag', related_name='tags', blank=True)
 
     class Meta:
         ordering = ['-date']
