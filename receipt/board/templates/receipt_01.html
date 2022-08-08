@@ -92,32 +92,36 @@
         <div class="content3_receipt">
             <div class="content3_receipt1">
             <div class="content3_receipt1_text1">{{board.0.title}}</div>
-            <div class="content3_receipt1_text2">#하루영수증 #장보기</div>
-            <div class="content3_receipt1_text3">2022.08.02</div>
+            <div class="content3_receipt1_text2">
+                </div>
+                <!-- {% for list in board %}
+                {{list.0.title}}
+                {% endfor %}</div> -->
+            <div class="content3_receipt1_text3">{{board.0.date|date:'Y.m.d'}}</div>
             <hr class="content3_receipt1_line">
             <div class="content3_receipt1_profile">
-                <img src="{% static 'img/img1.jpg' %}">
-                <p class="content3_receipt1_profile_name">김멋사</p>
+                <img src="{% static 'img/img1.jpg' %}" width="30px" height="30px">
+                <p class="content3_receipt1_profile_name">{{board.0.user_no.nickname}}</p>
             </div>
             </div>
             <div class="content3_receipt2">
             <div class="content3_receipt1_text1">{{board.1.title}}</div>
             <div class="content3_receipt1_text2">#하루영수증 #장보기</div>
-            <div class="content3_receipt1_text3">2022.08.02</div>
+            <div class="content3_receipt1_text3">{{board.1.date|date:'Y.m.d'}}</div>
             <hr class="content3_receipt1_line">
             <div class="content3_receipt1_profile">
                 <img src="{% static 'img/img1.jpg' %}">
-                <p class="content3_receipt1_profile_name">김멋사</p>
+                <p class="content3_receipt1_profile_name">{{board.1.user_no.nickname}}</p>
             </div>
             </div>
             <div class="content3_receipt3">
             <div class="content3_receipt1_text1">{{board.2.title}}</div>
             <div class="content3_receipt1_text2">#하루영수증 #장보기</div>
-            <div class="content3_receipt1_text3">2022.08.02</div>
+            <div class="content3_receipt1_text3">{{board.2.date|date:'Y.m.d'}}</div>
             <hr class="content3_receipt1_line">
             <div class="content3_receipt1_profile">
                 <img src="{% static 'img/img1.jpg' %}">
-                <p class="content3_receipt1_profile_name">김멋사</p>
+                <p class="content3_receipt1_profile_name">{{board.2.user_no.nickname}}</p>
             </div>
             </div>
 
@@ -125,11 +129,11 @@
             <div class="content3_receipt4">
                 <div class="content3_receipt1_text1">{{board.3.title}}</div>
             <div class="content3_receipt1_text2">#하루영수증 #장보기</div>
-            <div class="content3_receipt1_text3">2022.08.02</div>
+            <div class="content3_receipt1_text3">{{board.3.date|date:'Y.m.d'}}</div>
             <hr class="content3_receipt1_line">
             <div class="content3_receipt1_profile">
                 <img src="{% static 'img/img1.jpg' %}">
-                <p class="content3_receipt1_profile_name">김멋사</p>
+                <p class="content3_receipt1_profile_name">{{board.3.user_no.nickname}}</p>
             </div>
             </div>
 
@@ -137,22 +141,22 @@
             <div class="content3_receipt5">
                 <div class="content3_receipt1_text1">{{board.4.title}}</div>
             <div class="content3_receipt1_text2">#하루영수증 #장보기</div>
-            <div class="content3_receipt1_text3">2022.08.02</div>
+            <div class="content3_receipt1_text3">{{board.4.date|date:'Y.m.d'}}</div>
             <hr class="content3_receipt1_line">
             <div class="content3_receipt1_profile">
                 <img src="{% static 'img/img1.jpg' %}">
-                <p class="content3_receipt1_profile_name">김멋사</p>
+                <p class="content3_receipt1_profile_name">{{board.4.user_no.nickname}}</p>
             </div>
             </div>
 
             <div class="content3_receipt6">
                 <div class="content3_receipt1_text1">{{board.5.title}}</div>
             <div class="content3_receipt1_text2">#하루영수증 #장보기</div>
-            <div class="content3_receipt1_text3">2022.08.02</div>
+            <div class="content3_receipt1_text3">{{board.5.date|date:'Y.m.d'}}</div>
             <hr class="content3_receipt1_line">
             <div class="content3_receipt1_profile">
             <img src="{% static 'img/img1.jpg' %}">
-            <p class="content3_receipt1_profile_name">김멋사</p>
+            <p class="content3_receipt1_profile_name">{{board.5.user_no.nickname}}</p>
             </div>
             </div>
 
@@ -161,22 +165,22 @@
             <div class="content3_receipt7">
             <div class="content3_receipt1_text1">{{board.6.title}}</div>
             <div class="content3_receipt1_text2">#하루영수증 #장보기</div>
-            <div class="content3_receipt1_text3">2022.08.02</div>
+            <div class="content3_receipt1_text3">{{board.6.date|date:'Y.m.d'}}</div>
             <hr class="content3_receipt1_line">
             <div class="content3_receipt1_profile">
             <img src="{% static 'img/img1.jpg' %}">
-            <p class="content3_receipt1_profile_name">김멋사</p>
+            <p class="content3_receipt1_profile_name">{{board.6.user_no.nickname}}</p>
             </div>
             </div>
 
             <div class="content3_receipt8">
                 <div class="content3_receipt1_text1">{{board.7.title}}</div>
             <div class="content3_receipt1_text2">#하루영수증 #장보기</div>
-            <div class="content3_receipt1_text3">2022.08.02</div>
+            <div class="content3_receipt1_text3">{{board.7.date|date:'Y.m.d'}}</div>
             <hr class="content3_receipt1_line">
             <div class="content3_receipt1_profile">
             <img src="{% static 'img/img1.jpg' %}">
-            <p class="content3_receipt1_profile_name">김멋사</p>
+            <p class="content3_receipt1_profile_name">{{board.7.user_no.nickname}}</p>
             </div>
             </div>
 
@@ -184,11 +188,11 @@
             <div class="content3_receipt9">
             <div class="content3_receipt1_text1">{{board.8.title}}</div>
             <div class="content3_receipt1_text2">#하루영수증 #장보기</div>
-            <div class="content3_receipt1_text3">2022.08.02</div>
+            <div class="content3_receipt1_text3">{{board.8.date|date:'Y.m.d'}}</div>
             <hr class="content3_receipt1_line">
             <div class="content3_receipt1_profile">
             <img src="{% static 'img/img1.jpg' %}">
-            <p class="content3_receipt1_profile_name">김멋사</p>
+            <p class="content3_receipt1_profile_name">{{board.8.user_no.nickname}}</p>
             </div>
             </div>
         </div>
