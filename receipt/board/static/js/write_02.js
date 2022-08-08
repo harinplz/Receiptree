@@ -17,7 +17,7 @@ function addRow() {
     newCell1.innerHTML = "<input type='text' class='input-receipt1' placeholder='지출일시 입력'>";
     newCell2.innerHTML = "<input type='text' class='input-receipt2' placeholder='금액 입력'>";
     newCell3.innerHTML = "<textarea  class='input-receipt3' placeholder='사용처 입력'></textarea>";
-    newCell4.innerHTML = "<textarea  class='input-receipt4' placeholder='내용 입력'></textarea><button class='delete'><img src='./image/delete.png'></button>";
+    newCell4.innerHTML = "<textarea  class='input-receipt4' placeholder='내용 입력'></textarea><button class='delete'><img src='/static/img/delete.png'></button>";
   
     //금액합산
     $('.input-receipt2').blur(function () {
