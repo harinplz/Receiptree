@@ -15,6 +15,9 @@ class Board(models.Model):
     user_no = models.ForeignKey('account.User', on_delete=models.CASCADE, db_column='user_no')
     tags = models.ManyToManyField('Tag', blank=True)
 
+    class Meta:
+        ordering = ['-date']
+
     def __str__(self):
         return self.title
 
