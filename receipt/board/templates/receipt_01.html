@@ -93,10 +93,10 @@
             <div class="content3_receipt1">
             <div class="content3_receipt1_text1">{{board.0.title}}</div>
             <div class="content3_receipt1_text2">
-                </div>
-                <!-- {% for list in board %}
-                {{list.0.title}}
-                {% endfor %}</div> -->
+                {% for t in board.0.tags.all %}
+                #{{t.tagname}}
+                {% endfor %}
+            </div>
             <div class="content3_receipt1_text3">{{board.0.date|date:'Y.m.d'}}</div>
             <hr class="content3_receipt1_line">
             <div class="content3_receipt1_profile">
@@ -106,7 +106,11 @@
             </div>
             <div class="content3_receipt2">
             <div class="content3_receipt1_text1">{{board.1.title}}</div>
-            <div class="content3_receipt1_text2">#하루영수증 #장보기</div>
+            <div class="content3_receipt1_text2">
+                {% for t in board.1.tags.all %}
+                #{{t.tagname}}
+                {% endfor %}
+            </div>
             <div class="content3_receipt1_text3">{{board.1.date|date:'Y.m.d'}}</div>
             <hr class="content3_receipt1_line">
             <div class="content3_receipt1_profile">
@@ -116,7 +120,11 @@
             </div>
             <div class="content3_receipt3">
             <div class="content3_receipt1_text1">{{board.2.title}}</div>
-            <div class="content3_receipt1_text2">#하루영수증 #장보기</div>
+            <div class="content3_receipt1_text2">
+                {% for t in board.2.tags.all %}
+                #{{t.tagname}}
+                {% endfor %}
+            </div>
             <div class="content3_receipt1_text3">{{board.2.date|date:'Y.m.d'}}</div>
             <hr class="content3_receipt1_line">
             <div class="content3_receipt1_profile">
@@ -128,7 +136,11 @@
             <!-- 영수증 2줄 -->
             <div class="content3_receipt4">
                 <div class="content3_receipt1_text1">{{board.3.title}}</div>
-            <div class="content3_receipt1_text2">#하루영수증 #장보기</div>
+            <div class="content3_receipt1_text2">
+                {% for t in board.3.tags.all %}
+                #{{t.tagname}}
+                {% endfor %}
+            </div>
             <div class="content3_receipt1_text3">{{board.3.date|date:'Y.m.d'}}</div>
             <hr class="content3_receipt1_line">
             <div class="content3_receipt1_profile">
@@ -140,7 +152,11 @@
             
             <div class="content3_receipt5">
                 <div class="content3_receipt1_text1">{{board.4.title}}</div>
-            <div class="content3_receipt1_text2">#하루영수증 #장보기</div>
+            <div class="content3_receipt1_text2">
+                {% for t in board.4.tags.all %}
+                #{{t.tagname}}
+                {% endfor %}
+            </div>
             <div class="content3_receipt1_text3">{{board.4.date|date:'Y.m.d'}}</div>
             <hr class="content3_receipt1_line">
             <div class="content3_receipt1_profile">
@@ -151,7 +167,11 @@
 
             <div class="content3_receipt6">
                 <div class="content3_receipt1_text1">{{board.5.title}}</div>
-            <div class="content3_receipt1_text2">#하루영수증 #장보기</div>
+            <div class="content3_receipt1_text2">
+                {% for t in board.5.tags.all %}
+                #{{t.tagname}}
+                {% endfor %}
+            </div>
             <div class="content3_receipt1_text3">{{board.5.date|date:'Y.m.d'}}</div>
             <hr class="content3_receipt1_line">
             <div class="content3_receipt1_profile">
@@ -164,7 +184,11 @@
             <div class="content3_hide">
             <div class="content3_receipt7">
             <div class="content3_receipt1_text1">{{board.6.title}}</div>
-            <div class="content3_receipt1_text2">#하루영수증 #장보기</div>
+            <div class="content3_receipt1_text2">
+                {% for t in board.6.tags.all %}
+                #{{t.tagname}}
+                {% endfor %}
+            </div>
             <div class="content3_receipt1_text3">{{board.6.date|date:'Y.m.d'}}</div>
             <hr class="content3_receipt1_line">
             <div class="content3_receipt1_profile">
@@ -175,7 +199,11 @@
 
             <div class="content3_receipt8">
                 <div class="content3_receipt1_text1">{{board.7.title}}</div>
-            <div class="content3_receipt1_text2">#하루영수증 #장보기</div>
+            <div class="content3_receipt1_text2">
+                {% for t in board.7.tags.all %}
+                #{{t.tagname}}
+                {% endfor %}
+            </div>
             <div class="content3_receipt1_text3">{{board.7.date|date:'Y.m.d'}}</div>
             <hr class="content3_receipt1_line">
             <div class="content3_receipt1_profile">
@@ -187,7 +215,11 @@
             
             <div class="content3_receipt9">
             <div class="content3_receipt1_text1">{{board.8.title}}</div>
-            <div class="content3_receipt1_text2">#하루영수증 #장보기</div>
+            <div class="content3_receipt1_text2">
+                {% for t in board.8.tags.all %}
+                #{{t.tagname}}
+                {% endfor %}
+            </div>
             <div class="content3_receipt1_text3">{{board.8.date|date:'Y.m.d'}}</div>
             <hr class="content3_receipt1_line">
             <div class="content3_receipt1_profile">

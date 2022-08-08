@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Board
+from .models import Board, Tag
 
 # Create your views here.
 
@@ -7,7 +7,7 @@ from .models import Board
 def board(request):
 
     board_list = Board.objects.all()
-    return render(request, 'receipt_01.html', {'board':board_list})
+    return render(request, 'receipt_01.html', {'board':board_list,})
 
 
 def write(request):
