@@ -1,4 +1,5 @@
 from distutils.command.upload import upload
+from email.mime import image
 from django.conf import settings
 from django.db import models
 from django.contrib.auth.models import AbstractUser
@@ -17,6 +18,13 @@ class User(AbstractUser):
 
     def __str__(self):
         return self.nickname
+    
+    @property
+    def my_image(self):
+        if self.image:
+            return self.image.url
+        return ''
+
 
 
 # User_info class 
