@@ -97,10 +97,17 @@
         <br>
         <hr style="background-color:F2F2F2; height:2px;border:none;">
 
-        <form method='post' style="text-align: center;">
+        <!-- 검색 기능
+        <div class="search">
+            <input type="search" value="검색" class="search_icon">
+        </div> -->
+
+        <!-- 검색 기능 -->
+        <form method='post' class="search">
             {% csrf_token %}
-            <input type="" name="search_button" value="검색" style="width: 300px;height: 50px;font-size: 20px;">
+            <input type="" name="search_button" value="검색" class="search_icon">
             </form>
+
         
         <div class="content3_icon">
             <div input type="button" class="content3_icon1">#하루영수증</div>
