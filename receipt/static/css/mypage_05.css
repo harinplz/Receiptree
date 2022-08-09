@@ -1,0 +1,472 @@
+#topMenu{
+    width:1120px;
+    height:95px;
+    margin:auto;
+}
+
+#topMenu ul li {                     
+    list-style: none;                  
+    float: left;               
+    line-height: 89px;          
+    vertical-align: middle;     
+}
+
+#topMenu .menuLink {                          
+    text-decoration:none;     
+    color:black;
+    display: block;                            
+    font-size: 20px; 
+    width: 170px;
+    text-align: center;   
+    font-family: 'Noto Sans KR', sans-serif;                     
+}
+
+.menuButton{
+    width:105px;
+    height:28px;
+    background-color: 1824BF;
+    color:white;
+    border: none;
+    border-radius: 27px;
+    margin-left:20px;
+}
+
+.full{
+    background-color: #F8F9FD;
+}
+
+.content1{
+    width:1440px;
+    height:321px;
+    margin:auto;
+    background-color: white;
+}
+
+.mypage_logo{
+    width:200px;
+    height:49px;
+    font-size:35px;
+    font-weight:bold;
+    font-family: 'Montserrat', sans-serif;
+    margin-left: 200px;
+    padding-top:30px;
+}
+
+.mypage_content{
+    width:120px;
+    height:120px;
+    margin-left: 200px;
+    margin-top:30px;
+}
+
+.mypage_name{
+    width:105px;
+    height:55px;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size:30px;
+    font-weight:bold;
+    margin-left: 390px;
+    margin-top:-100px;
+}
+
+.mypage_email{
+    width:317px;
+    height:35px;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size:20px;
+    margin-left:390px;
+    margin-top:10px;
+}
+
+.mypage_icon{
+    width:103px;
+    height:41px;
+    border-radius: 27px;
+    text-align: center;   
+    font-family: 'Noto Sans KR', sans-serif;     
+    color:white;
+    border-color:1824BF;
+    background-color: 1824BF;
+    font-size:15px;
+    margin-left:510px;
+    margin-top:-50px;
+}
+
+.mypage_text1{
+    width:100px;
+    height:35px;
+    text-align: center;   
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size:20px;
+    margin-left:780px;
+    margin-top:-90px;
+}
+
+.mypage_text2{
+    width:110px;
+    height:35px;
+    text-align: center;   
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size:20px;
+    margin-left:930px;
+    margin-top:-95px;
+}
+
+.mypage_text3{
+    width:110px;
+    height:35px;
+    text-align: center;   
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size:20px;
+    margin-left:1060px;
+    margin-top:-101px;
+}
+
+.mypage_text1-2{
+    width:100px;
+    height:49px;
+    margin-left:795px;
+    margin-top:10px;
+    font-family: 'Montserrat', sans-serif;
+    font-size:40px;
+    font-weight: bold;
+}
+
+.mypage_text2-2{
+    width:140px;
+    height:49px;
+    margin-left:910px;
+    margin-top:13px;
+    font-family: 'Montserrat', sans-serif;
+    font-size:40px;
+    font-weight: bold;
+}
+
+.mypage_text3-2{
+    width:100px;
+    height:49px;
+    margin-left:1080px;
+    margin-top:15px;
+    font-family: 'Montserrat', sans-serif;
+    font-size:40px;
+    font-weight: bold;
+}
+
+.content2{
+    width:1116px;
+    height:550px;
+    margin:auto;
+    margin-top:30px;
+    background-color: white;
+}
+
+.info_logo{
+    font-size:22px;
+    width:164px;
+    height:42px;  
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: bold;
+    padding-top:20px;
+    margin-left:55px;
+}
+
+.content2_name{
+    width:900px;
+    height:107px;
+    margin-left:55px;  
+    margin-top:10px;
+}
+
+.content2_email{
+    width:900px;
+    height:107px;
+    margin-left:55px;  
+    margin-top:10px;
+}
+
+.content2_number{
+    width:900px;
+    height:107px;
+    margin-left:55px;  
+    margin-top:10px;
+}
+
+.content2_password{
+    width:900px;
+    height:107px;
+    margin-left:55px;  
+    margin-top:10px;
+}
+
+.info_name{
+    width:41px;
+    height:32px;
+    font-size:18px;
+    font-family: 'Noto Sans KR', sans-serif;
+    margin-top:40px;
+}
+
+.info_name_text{
+    width:311px;
+    height:35px;
+    margin-left:170px;
+    margin-top:-33px;
+    border:none;
+}
+
+.name_line{
+    border: solid 1px gainsboro;
+    width:1005px;
+    margin-top:-40px;
+}
+
+
+.info_email{
+    width:120px;
+    height:32px;
+    font-size:18px;
+    font-family: 'Noto Sans KR', sans-serif;
+    margin-top:40px;
+}
+
+.info_email_text{
+    width:311px;
+    height:35px;
+    margin-left:170px;
+    margin-top:-25px;
+    border:none;
+}
+
+.email_line{
+    border: solid 1px gainsboro;
+    width:1005px;
+    margin-top:-40px;
+}
+
+.info_number{
+    width:120px;
+    height:32px;
+    font-size:18px;
+    font-family: 'Noto Sans KR', sans-serif;
+    margin-top:40px;
+}
+
+.info_number_text{
+    width:311px;
+    height:35px;
+    margin-left:170px;
+    margin-top:-25px;
+    border:none;
+}
+
+.number_line{
+    border: solid 1px gainsboro;
+    width:1005px;
+    margin-top:-40px;
+}
+
+.info_password{
+    width:120px;
+    height:32px;
+    font-size:18px;
+    font-family: 'Noto Sans KR', sans-serif;
+    margin-top:40px;
+}
+
+.info_password_text{
+    width:311px;
+    height:35px;
+    margin-left:170px;
+    margin-top:-25px;
+    border:none;
+}
+
+.password_line{
+    border: solid 1px gainsboro;
+    width:1005px;
+    margin-top:-40px;
+}
+
+.content3{
+    width:1116px;
+    height:550px;
+    margin:auto;
+    margin-top:40px;
+    background-color: white;
+}
+
+.detail_logo{
+    font-size:22px;
+    width:164px;
+    height:42px;  
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: bold;
+    padding-top:20px;
+    margin-left:55px;
+}
+.content3_age{
+    width:900px;
+    height:107px;
+    margin-left:55px;  
+    margin-top:40px;
+}
+
+.content3_job{
+    width:900px;
+    height:107px;
+    margin-left:55px;  
+    margin-top:40px;
+}
+.content3_expense{
+    width:900px;
+    height:107px;
+    margin-left:55px;  
+    margin-top:40px;
+}
+
+.content3_salary{
+    width:900px;
+    height:107px;
+    margin-left:55px; 
+    margin-top:40px;
+}
+
+.detail_age{
+    width:41px;
+    height:32px;
+    font-size:18px;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+.detail_age_text{
+    width:311px;
+    height:35px;
+    margin-left:170px;
+    margin-top:-25px;
+    border:none;
+}
+
+.detail_job{
+    width:120px;
+    height:32px;
+    font-size:18px;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+.detail_job_text{
+    width:311px;
+    height:35px;
+    margin-left:170px;
+    margin-top:-25px;
+    border:none;
+}
+
+
+.detail_expense{
+    width:120px;
+    height:32px;
+    font-size:18px;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+.detail_expense_text{
+    width:311px;
+    height:35px;
+    margin-left:170px;
+    margin-top:-25px;
+    border:none;
+}
+
+
+.detail_salary{
+    width:120px;
+    height:32px;
+    font-size:18px;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+.detail_salary_text{
+    width:311px;
+    height:35px;
+    margin-left:170px;
+    margin-top:-25px;
+    border:none;
+}
+
+.content4{
+    width:1116px;
+    height:320px;
+    margin:auto;
+    padding-top:70px;
+    background-color: white;
+    margin-top:30px;
+}
+
+.content4_text1{
+    width:995px;
+    height:107px;
+    font-size:18px;
+    margin-left:58px;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+.content4_text2{
+    width:995px;
+    height:107px;
+    font-size:18px;
+    margin-left:58px;
+    margin-top:40px;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+.content4_text3{
+    width:995px;
+    height:107px;
+    font-size:18px;
+    margin-left:58px;
+    margin-top:40px;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+.text1_line{
+    border: solid 1px gainsboro;
+    width:1005px;
+    margin-top:-40px;
+}
+
+.text2_line{
+    border: solid 1px gainsboro;
+    width:1005px;
+    margin-top:-40px;
+}
+
+.text3_line{
+    border: solid 1px gainsboro;
+    width:1005px;
+    margin-top:-40px;
+}
+
+.age_line{
+    border: solid 1px gainsboro;
+    width:1005px;
+    margin-top:-40px;
+}
+
+.job_line{
+    border: solid 1px gainsboro;
+    width:1005px;
+    margin-top:-40px;
+}
+
+.expense_line{
+    border: solid 1px gainsboro;
+    width:1005px;
+    margin-top:-40px;
+}
+
+.salary_line{
+    border: solid 1px gainsboro;
+    width:1005px;
+    margin-top:-40px;
+}
+
