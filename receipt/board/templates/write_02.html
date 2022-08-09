@@ -26,9 +26,11 @@
 
     
 
+    <form action="">
+        {% csrf_token %}
     <div class="content">
         <div class="content_text">영수증 글 작성</div>
-        <input type="text" id="title" class="content-title" placeholder="글 제목을 입력하세요">
+        <input type="text" name="title" id="title" class="content-title" placeholder="글 제목을 입력하세요">
         <div class="receipt_name">지출영수증</div>
         <table id='receipt-table'>
             <tr>
@@ -60,18 +62,16 @@
             <div id="use_price_text">원</div>
             <input type="text" id="use_sum" readonly>
           </div>
-        <textarea class="textfield" cols="6" placeholder="글 상세 내용을 입력하세요."></textarea>
-        <input type="text" class="hashtag"placeholder="해쉬태그 입력">
+        <textarea class="textfield" name="body" cols="6" placeholder="글 상세 내용을 입력하세요."></textarea>
+        <input type="text" name="tags" class="hashtag"placeholder="해쉬태그 입력">
         
         <div class="final_btn">
-        <button id="cancel">취소</button>
-       <input type="submit" id="submit" value="작성 완료" onclick="location.href='writeDetail.html'">
+        <button id="cancel">취소</button> <input type="submit" id="submit" value="작성 완료">
         </div>
 
-
-   
+    
     </div>
-
+</form>
     
 </div>
 
