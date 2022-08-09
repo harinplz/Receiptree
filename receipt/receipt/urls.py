@@ -2,6 +2,7 @@ from django.contrib import admin
 from django.urls import path
 from home import views
 from board import views as board_views
+from account import views as account_views
 from django.conf import settings #settings.py import
 from django.conf.urls.static import static # 'static' import
 
@@ -10,6 +11,7 @@ urlpatterns = [
     path('', views.home, name='home'),
     path('board/', board_views.board, name='board'),
     path('board/write', board_views.write, name='board_write'),
+    path('mypage', account_views.mypage, name='mypage'),
 ]
 
 if settings.DEBUG:

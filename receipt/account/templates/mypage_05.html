@@ -1,0 +1,101 @@
+{% load static %}
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link href="{% static 'css/mypage_05.css' %}" rel="stylesheet"></a>
+    <title></title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;500&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Noto+Sans+KR:wght@300;500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <nav id="topMenu">
+        <ul>
+            <li><a class="menuLink" href="#">LOGO</a></li>
+            <li><a class="menuLink" href="#">홈</a></li>
+            <li><a class="menuLink" href="#">영수증글</a></li>
+            <li><a class="menuLink" href="#">영수증파티</a></li>
+            <li><a class="menuLink" href="#">MY영수증</a></li>
+            <li><input type="button" value="로그인" class="menuButton">
+        </ul>
+    </nav>
+    <hr style="background-color:F2F2F2; height:3px;border:none;">
+
+    <div class="full">
+    <div class="content1">
+        <div class="mypage_logo">My Page</div>
+        <div class="mypage_content">
+            <img src="{% static 'css/img1-mypage_03.jpg' %}">
+        </div>
+        <div class="mypage_name">김슈니</div>
+        <input type="button" value="수정하기" class="mypage_icon">
+        <div class="mypage_email">dudtnwmd123@reciept.com</div>
+        <div class="mypage_text1">글내역 ></div>
+        <div class="mypage_text1-2">7개</div>
+        <div class="mypage_text2">가입파티 ></div>
+        <div class="mypage_text2-2">2 team</div>
+        <div class="mypage_text3">등급</div>
+        <div class="mypage_text3-2">새싹</div>
+    </div>
+
+    <div class="content2">
+        <div class="info_logo">회원정보</div>
+
+        <div class="content2_name">
+        <div class="info_name">이름</div>
+        <input type="text" class="info_name_text"></div>
+        <hr class="name_line">
+        <div class="content2_email">
+        <div class="info_email">이메일 주소</div>
+        <input type="text" class="info_email_text"></div>
+        <hr class="email_line">
+
+        <div class="content2_number">
+        <div class="info_number">전화번호</div>
+        <input type="text" class="info_number_text"></div>
+        <hr class="number_line">
+
+        <div class="content2_password">
+        <div class="info_password">비밀번호</div>
+        <input type="text" class="info_password_text"></div>
+        <hr class="password_line">
+    </div>
+
+    <div class="content3">
+        <div class="detail_logo">상세정보</div>
+
+        <div class="content3_age">
+            <div class="detail_age">나이</div>
+            <input type="text" class="detail_age_text"></div>
+            <hr class="age_line">
+    
+            <div class="content3_job">
+            <div class="detail_job">직업</div>
+            <input type="text" class="detail_job_text"></div>
+            <hr class="job_line">
+    
+            <div class="content3_expense">
+            <div class="detail_expense">고정지출</div>
+            <input type="text" class="detail_expense_text"></div>
+            <hr class="expense_line">
+    
+            <div class="content3_salary">
+            <div class="detail_salary">월급</div>
+            <input type="text" class="detail_salary_text"></div>
+            <hr class="salary_line">
+    </div>
+
+    <div class="content4">
+        <div class="content4_text1">문의</div>
+        <hr class="text1_line">
+        <div class="content4_text2">공지사항</div>
+        <hr class="text2_line">
+        <div class="content4_text3">탈퇴</div>
+        <hr class="text3_line">
+    </div>
+</div>
