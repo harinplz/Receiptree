@@ -36,7 +36,7 @@ class Comment(models.Model):
 class Receipt(models.Model):
     board_no = models.ForeignKey('Board', on_delete=models.CASCADE, db_column='board_no')
     user_no = models.ForeignKey('account.User', on_delete=models.CASCADE, db_column='user_no')
-    use_date = models.DateTimeField()
+    use_date = models.DateField()
     cost = models.IntegerField()
     place = models.CharField(max_length=100)
     body = models.TextField()
