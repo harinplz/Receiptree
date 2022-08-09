@@ -1,10 +1,12 @@
 from django.shortcuts import redirect, render
-from .models import Board, Tag
+
+from .models import *
+from django.utils import timezone
 
 # Create your views here.
 
 #영수증 메인 화면
-def board(request):
+def board_main(request):
 
     board_list = Board.objects.all()
     keyword = request.POST.get('search_button')
@@ -16,7 +18,17 @@ def board(request):
 
 
 
+def board_write(request):
+    if request.method == 'GET':
+        return render(request, 'write_02.html')
+    elif request.method == 'POST':
 
-
-def write(request):
+        board = Board()
+        board.title = request.POST['title']
+        board.date = timezone.datetime.now()
+        board.body = request.POST['body']
+        board.user_no = request.user
+        board.save()
+        
+        return redirect('board_write')
     return render(request, 'write_02.html')
