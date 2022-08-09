@@ -19,9 +19,11 @@ def board_main(request):
 
 
 def board_write(request):
+
     if request.method == 'GET':
         return render(request, 'write_02.html')
     elif request.method == 'POST':
+        tags = request.POST['tags'].split(',')
 
         board = Board()
         board.title = request.POST['title']
@@ -29,6 +31,13 @@ def board_write(request):
         board.body = request.POST['body']
         board.user_no = request.user
         board.save()
-        
+
+        for tag in tags:
+            tag = tag.strip()
+            if not tag:
+                continue
+            _tag, _ = Tag.objects.get_or_create(tagname=tag)
+            board.tags.add(_tag)
+
         return redirect('board_write')
     return render(request, 'write_02.html')
