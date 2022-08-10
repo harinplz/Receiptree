@@ -17,7 +17,7 @@ class User(AbstractUser):
     team_no = models.ForeignKey('party.Team', on_delete=models.CASCADE, db_column='team_no', null=True, blank=True)
 
     def __str__(self):
-        return self.nickname
+        return f"{self.username} - {self.nickname}"
     
     @property
     def my_image(self):

@@ -1,4 +1,3 @@
-
 //지출 추가
 function addRow() {
     // table element 찾기
@@ -14,10 +13,10 @@ function addRow() {
     const newCell4 = newRow.insertCell(3);
     
     // Cell에 텍스트 추가
-    newCell1.innerHTML = "<input type='text' class='input-receipt1' placeholder='지출일시 입력'>";
-    newCell2.innerHTML = "<input type='text' class='input-receipt2' placeholder='금액 입력'>";
-    newCell3.innerHTML = "<textarea  class='input-receipt3' placeholder='사용처 입력'></textarea>";
-    newCell4.innerHTML = "<textarea  class='input-receipt4' placeholder='내용 입력'></textarea><button class='delete'><img src='./image/delete.png'></button>";
+    newCell1.innerHTML = "<input type='text' name='date' class='input-receipt1' placeholder='지출일시 입력'>";
+    newCell2.innerHTML = "<input type='text' name='cost' class='input-receipt2' placeholder='금액 입력'>";
+    newCell3.innerHTML = "<textarea name='place' class='input-receipt3' placeholder='사용처 입력'></textarea>";
+    newCell4.innerHTML = "<textarea name='content' class='input-receipt4' placeholder='내용입력'></textarea><button class='delete'><img src='/static/img/delete.png'></button>";
   
     //금액합산
     $('.input-receipt2').blur(function () {
@@ -49,13 +48,33 @@ function addRow() {
 
 
 
+function getlist() {
+    var list = new Array();
+    var list2 = new Array();
+    var list3 = new Array();
+    var list4 = new Array();
 
-
-
-
-
-
-
+    //date
+    $("input[name=date]").each(function(index, item){
+        list.push($(item).val());
+    });
+    $("#date_list").val(list);
+    //cost
+    $("input[name=cost]").each(function(index, item){
+        list2.push($(item).val());
+    });
+    $("#cost_list").val(list2);
+    //place
+    $("textarea[name=place]").each(function(index, item){
+        list3.push($(item).val());
+    });
+    $("#place_list").val(list3);
+    //content
+    $("textarea[name=content]").each(function(index, item){
+        list4.push($(item).val());
+    });
+    $("#content_list").val(list4);
+}
 //합계
 // function calcSum() {
 //     // table element 찾기
@@ -71,9 +90,3 @@ function addRow() {
 //     document.getElementById('use_sum').innerText = sum;
     
 //   }
-
-
-
-
-
-
