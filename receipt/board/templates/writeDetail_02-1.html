@@ -1,7 +1,9 @@
+{% load static %}
+
 <html>
 <head>
     <meta charset="UTF-8">
-    <link href="writeDetail_02-1.css" rel="stylesheet"></a>
+    <link href="{% static 'css/writeDetail_02-1.css'%}" rel="stylesheet"></a>
     <title>영수증 글 상세</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,7 +17,7 @@
         <ul>
             <li><a class="menuLink" href="#">LOGO</a></li>
             <li><a class="menuLink" href="#">홈</a></li>
-            <li><a class="menuLink" href="#">영수증글</a></li>
+            <li><a class="menuLink" href="{% url 'board_main' %}">영수증글</a></li>
             <li><a class="menuLink" href="#">영수증파티</a></li>
             <li><a class="menuLink" href="#">MY영수증</a></li>
             <li><input type="button" value="로그인" class="menuButton">
@@ -30,7 +32,7 @@
             <div class="writer">
                 <div id = "writer_profile"></div>
                 <div id="writer_name">김멋사</div>
-                <div id="grade">새싹 <img src="./images/grade.png"></div>
+                <div id="grade">새싹 <img src="{% static 'img/grade.png'%}"></div>
                 
             </div>
             <div class="hashtag_area">
@@ -118,8 +120,8 @@
        
         
         <div class="good_bad">
-            <button id="good"><img src="./images/good.png">좋은 소비예요 <span id="good_num">12</span></button>
-            <button id="bad"><img src="./images/bad.png">나쁜 소비예요 <span id="bad_num">15</span></button>
+            <button id="good"><img src="{% static 'img/good.png'%}">좋은 소비예요 <span id="good_num">12</span></button>
+            <button id="bad"><img src="{% static 'img/bad.png'%}">나쁜 소비예요 <span id="bad_num">15</span></button>
 
         </div>
 
@@ -195,7 +197,7 @@
 <footer>푸터</footer>
     
 
-<script src="writeDetail_02-1.js"> </script>
+<script src="{% static 'js/writeDetail_02-1.js' %}"> </script>
 
 <script type="text/javascript">
     
