@@ -15,7 +15,7 @@
         <ul>
             <li><a class="menuLink" href="#">LOGO</a></li>
             <li><a class="menuLink" href="#">홈</a></li>
-            <li><a class="menuLink" href="#">영수증글</a></li>
+            <li><a class="menuLink" href="{% url 'board_main' %}">영수증글</a></li>
             <li><a class="menuLink" href="#">영수증파티</a></li>
             <li><a class="menuLink" href="#">MY영수증</a></li>
             <li><input type="button" value="로그인" class="menuButton">
@@ -91,9 +91,7 @@
     <div class="content3">
         <div class="content3_top">
             <p class="content3_text">영수증 글</p>
-            <a href="{% url 'board_write' %}">
-            <input type="button" value="영수증 작성+" class="content3_btn">
-            </a>
+            <a href="{% url 'board_write' %}"><input type="button" value="영수증 작성+" class="content3_btn"></a>
         </div>
 
         <br>
