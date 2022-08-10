@@ -9,8 +9,8 @@ from django.conf.urls.static import static # 'static' import
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home, name='home'),
-    path('board/', board_views.board, name='board'),
-    path('board/write', board_views.write, name='board_write'),
+    path('board/', board_views.board_main, name='board_main'),
+    path('board/write', board_views.board_write, name='board_write'),
     path('mypage', account_views.mypage, name='mypage'),
 ]
 
