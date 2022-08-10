@@ -18,6 +18,7 @@ def board_main(request):
 
 
 
+#영수증 작성 화면
 def board_write(request):
 
     if request.method == 'GET':
@@ -74,3 +75,8 @@ def board_write(request):
 
         return redirect('board_write')
     return render(request, 'write_02.html')
+
+
+#영수증 상세화면
+def board_detail(request):
+    return render(request, 'writeDetail_02-1.html')
