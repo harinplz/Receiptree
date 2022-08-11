@@ -30,6 +30,9 @@ class Comment(models.Model):
     body = models.TextField()
     date = models.DateTimeField(default=timezone.now)
 
+    def __str__(self):
+        return f"글 제목 - {self.board_no.title}, 내용 - {self.body}"
+
 
 
 # Receipt Class

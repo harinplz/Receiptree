@@ -33,24 +33,24 @@
         
         <div class="content_text">영수증글</div>
         <div class="title_area">
-            <div class="title_name">{{board.title}}</div>
+            <div class="title_name">{{board_detail.title}}</div>
             <div class="writer">
-                <div id = "writer_profile"><img src="{{board.user_no.my_image}}" width="55px" height="55px"></div> <!-- 이미지 자리인가..? -->
-                <div id="writer_name">{{board.user_no.nickname}}</div>
-                <div id="grade">{{board.user_no.grade}}
+                <div id = "writer_profile"><img src="{{board_detail.user_no.my_image}}" width="55px" height="55px"></div> <!-- 이미지 자리인가..? -->
+                <div id="writer_name">{{board_detail.user_no.nickname}}</div>
+                <div id="grade">{{board_detail.user_no.grade}}
                     <!-- <img src="{% static 'img/grade.png'%}"> -->
                 </div>
                 
             </div>
             <div class="hashtag_area">
-                {% for t in board.tags.all %}
+                {% for t in board_detail.tags.all %}
                 <span id="hashtag">#{{t.tagname}}</span>
                 {% endfor %}
         </div>
             <div class="dateAndcomments">
-            <span id="write_date">{{board.date|date:'Y.m.d'}}</span>
+            <span id="write_date">{{board_detail.date|date:'Y.m.d'}}</span>
             <span id="title_comments">댓글</span>
-            <span id="title_comments_num">12</span>
+            <span id="title_comments_num">{{comment_list.all.count}}</span>
         </div>
         </div>
 
@@ -88,17 +88,17 @@
             
           </div>
         <div class="textfield">
-            {{board.body}}
+            {{board_detail.body}}
         </div>
        
         
         <div class="good_bad">
-            <button id="good" class="good" name="{{board.id}}">
+            <button id="good" class="good" name="{{board_detail.id}}">
                 <img src="{% static 'img/good.png'%}">좋은 소비예요 
-                <span id="good-count-{{board.id}}">{{board.good_user.all.count}}</span></button>
+                <span id="good-count-{{board_detail.id}}">{{board.good_user.all.count}}</span></button>
             <button id="bad">
                 <img src="{% static 'img/bad.png'%}">나쁜 소비예요 
-                <span id="bad-count-{{board.board_no}}">{{board.bad_user.all.count}}</span></button>
+                <span id="bad-count-{{board_detail.board_no}}">{{board_detail.bad_user.all.count}}</span></button>
 
         </div>
 
@@ -108,18 +108,29 @@
 
 <!-- Bootstrap 댓글기능 -->
 
-<div class="comment_title_text">댓글 <span id="commnets_num">{{comments.all.count}}</span></div>
+<div class="comment_title_text">댓글 <span id="commnets_num">{{comment_list.all.count}}</span></div>
     <section class="comment_section">
         
             <div class="card-body">
                 <!-- Comment form-->
                 <section class="textarea_and_btn">
-                    
-                    <textarea id="comment_textarea" type="text" placeholder="영수증에 대한 의견을 자유롭게 댓글로 남겨주세요."></textarea>
-                    <button class="comment_btn">입력</button>
+                    <form method="post" action="{% url 'new_comment' board_detail.board_no%}"> <!-- 오류나면 확인 -->
+                        {% csrf_token %}
+                        <table>
+                            <tr>
+                                <td>
+                                    <textarea id="comment_textarea" name="newcomment_body" type="text" placeholder="영수증에 대한 의견을 자유롭게 댓글로 남겨주세요."></textarea>
+                                </td>
+                                <td>
+                                    <input class="comment_btn" value="입력" type="submit">
+                                </td>
+                            </tr>
+                        </table>
+                    </form>
+                    <!--<button class="comment_btn">입력</button> -->
                 </section>
                 <ul class="comment_list">
-                    {% for comment in comments%}
+                    {% for comment in comment_list%}
                     <li>
                         <div class="d-flex">
                             <div class="comment_profile"><img class="rounded-circle" src="{{comment.user_no.my_image}}" alt="..."
@@ -157,7 +168,7 @@
     </div> -->
 
     <div class="final_btn">
-        <button id="goList_btn" onclick="location.href='receipt_01.html' ">목록</button>
+        <a href="{% url 'board_main'%}"><button id="goList_btn">목록</button></a>
        
         </div>
 </div>
@@ -167,12 +178,10 @@
 <footer>푸터</footer>
     
 
-<script src="{% static 'js/writeDetail_02-1.js' %}"> </script>
+<script src="{% static 'js/writeDetail_02-1_01.js' %}"> </script>
 
 <script type="text/javascript">
-    
 
-   
 
 
     

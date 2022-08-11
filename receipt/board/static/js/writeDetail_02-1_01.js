@@ -1,6 +1,27 @@
 
 'use strict';
 
+// 좋은 소비예요 버튼 구현
+// $(".good").click(function() {
+//   var pk = $(this).attr('name')
+//   $.ajax(
+//     {
+//       type:"POST",
+//       url: "{% url 'board_good' %}",
+//       data: {'pk':pk},
+//       dataType: "json",
+//       success: function(response){
+//         alert(response.message);
+//         $('#good-count-'+pk).html(response.good_count);
+//       },
+//       error: function(request, status, error){
+//         alert("로그인이 필요합니다.")
+//       }
+//     }
+//   );
+// })
+
+
 const postCommentInFeed = () => {
   const commentInput = document.getElementById('comment_textarea');
   const commentPostBtn = document.getElementsByClassName('comment_btn')[0];
@@ -33,7 +54,7 @@ const postCommentInFeed = () => {
   // 댓글 게시
   commentPostBtn.addEventListener('click', () => {
     if (commentInput.value) {
-      addNewComment();
+      //addNewComment();
     } else {
       alert('댓글이 입력되지 않았습니다 😳');
     }

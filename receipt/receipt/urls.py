@@ -11,7 +11,9 @@ urlpatterns = [
     path('', views.home, name='home'),
     path('board/', board_views.board_main, name='board_main'),
     path('board/write', board_views.board_write, name='board_write'),
-    path('board/detail/<str:board_id>', board_views.board_detail, name='board_detail'), #임시
+    path('board/detail/<int:board_id>', board_views.board_detail, name='board_detail'),
+    path('newcomment/<int:board_id>', board_views.new_comment, name='new_comment'),
+    #path('good/<str:board_no>', board_views.board_good, name='board_good'),
     path('mypage', account_views.mypage, name='mypage'),
 ]
 
