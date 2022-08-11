@@ -97,7 +97,7 @@
             <button id="good" class="good" name="{{board_detail.board_no}}">
                 <img src="{% static 'img/good.png'%}">좋은 소비예요 
                 <span id="good-count-{{board_detail.board_no}}">{{board_detail.good_user.all.count}}</span></button>
-            <button id="bad">
+            <button id="bad" class="bad" name="{{board_detail.board_no}}">
                 <img src="{% static 'img/bad.png'%}">나쁜 소비예요 
                 <span id="bad-count-{{board_detail.board_no}}">{{board_detail.bad_user.all.count}}</span></button>
 
@@ -197,6 +197,25 @@ $(".good").click(function() {
       },
       error: function(request, status, error){
         alert("좋은 소비예요 버튼 오류")
+      }
+    }
+  );
+})
+
+//나쁜 소비예요 버튼 구현
+$(".bad").click(function() {
+  var pk = $(this).attr('name')
+  $.ajax(
+    {
+      type:"POST",
+      url: "{% url 'board_bad' %}",
+      data: {'pk':pk},
+      dataType: "json",
+      success: function(response){
+        $('#bad-count-'+pk).html(response.bad_count);
+      },
+      error: function(request, status, error){
+        alert("나쁜 소비예요 버튼 오류")
       }
     }
   );

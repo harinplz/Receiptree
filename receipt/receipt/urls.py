@@ -14,6 +14,7 @@ urlpatterns = [
     path('board/detail/<int:board_id>', board_views.board_detail, name='board_detail'),
     path('newcomment/<int:board_id>', board_views.new_comment, name='new_comment'),
     path('good/', board_views.board_good, name='board_good'),
+    path('bad/', board_views.board_bad, name='board_bad'),
     path('mypage', account_views.mypage, name='mypage'),
 ]
 

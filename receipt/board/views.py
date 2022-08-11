@@ -121,7 +121,6 @@ def new_comment(request, board_id):
 def board_good(request):
     pk = request.POST.get('pk', None)
     board = get_object_or_404(Board, pk=pk)
-    
     user = request.user
 
 
@@ -132,5 +131,23 @@ def board_good(request):
 
     context = {'good_count':board.count_good_user()}
     return HttpResponse(json.dumps(context), content_type="application/json")
+
+
+# '나쁜 소비예요' 버튼 기능 구현
+@login_required
+@require_POST
+def board_bad(request):
+    pk = request.POST.get('pk', None)
+    board = get_object_or_404(Board, pk=pk)
+    user = request.user
+
+    if board.bad_user.filter(user_no=user.user_no):
+        board.bad_user.remove(user)
+    else:
+        board.bad_user.add(user)
+    
+    context={'bad_count': board.count_bad_user()}
+    return HttpResponse(json.dumps(context), content_type="application/json")
+
 
 
