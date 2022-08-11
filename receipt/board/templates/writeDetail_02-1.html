@@ -31,7 +31,7 @@
             <div class="title_name">{{board.title}}</div>
             <div class="writer">
                 <div id = "writer_profile"></div> <!-- 이미지 자리인가..? -->
-                <div id="writer_name">김멋사</div>
+                <div id="writer_name">{{board.user_no.nickname}}</div>
                 <div id="grade">새싹 <img src="{% static 'img/grade.png'%}"></div>
                 
             </div>
@@ -41,7 +41,7 @@
                 {% endfor %}
         </div>
             <div class="dateAndcomments">
-            <span id="write_date">2021.08.02</span>
+            <span id="write_date">{{board.date|date:'Y.m.d'}}</span>
             <span id="title_comments">댓글</span>
             <span id="title_comments_num">12</span>
         </div>
