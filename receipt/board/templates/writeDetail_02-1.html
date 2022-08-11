@@ -122,8 +122,8 @@
        
         
         <div class="good_bad">
-            <button id="good"><img src="{% static 'img/good.png'%}">좋은 소비예요 <span id="good_num">12</span></button>
-            <button id="bad"><img src="{% static 'img/bad.png'%}">나쁜 소비예요 <span id="bad_num">15</span></button>
+            <button id="good"><img src="{% static 'img/good.png'%}">좋은 소비예요 <span id="good_num">{{board.good_cnt}}</span></button>
+            <button id="bad"><img src="{% static 'img/bad.png'%}">나쁜 소비예요 <span id="bad_num">{{board.bad_cnt}}</span></button>
 
         </div>
 
