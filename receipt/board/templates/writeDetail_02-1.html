@@ -1,0 +1,218 @@
+{% load static %}
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link href="{% static 'css/writeDetail_02-1.css'%}" rel="stylesheet"></a>
+    <title>영수증 글 상세</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;500&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="wrap">
+    <nav id="topMenu">
+        <ul>
+            <li><a class="menuLink" href="#">LOGO</a></li>
+            <li><a class="menuLink" href="#">홈</a></li>
+            <li><a class="menuLink" href="{% url 'board_main' %}">영수증글</a></li>
+            <li><a class="menuLink" href="#">영수증파티</a></li>
+            <li><a class="menuLink" href="#">MY영수증</a></li>
+            <li><input type="button" value="로그인" class="menuButton">
+        </ul>
+    </nav>
+
+    <div class="content">
+        
+        <div class="content_text">영수증 글</div>
+        <div class="title_area">
+            <div class="title_name">일주일치 장본 거 평가해주세요!</div>
+            <div class="writer">
+                <div id = "writer_profile"></div>
+                <div id="writer_name">김멋사</div>
+                <div id="grade">새싹 <img src="{% static 'img/grade.png'%}"></div>
+                
+            </div>
+            <div class="hashtag_area">
+            <span id="hashtag">#하루영수증</span>
+            <span id="hashtag">#장보기</span>
+        </div>
+            <div class="dateAndcomments">
+            <span id="write_date">2021.08.02</span>
+            <span id="title_comments">댓글</span>
+            <span id="title_comments_num">12</span>
+        </div>
+        </div>
+
+    <div class="receipt">
+        
+        <div class="receipt_name">지출영수증</div>
+        <table id='receipt-table'>
+            <tr>
+                <th>일시</th>
+                <th>지출</th>
+                <th>사용처</th>
+                <th>내용</th>
+            </tr>
+            <tbody>
+                <tr id="no">
+                <td width="135px">6/6(금)<br>12:23 </td>
+                <td width="134px">13,500원</td>
+                <td width="134px">돈까스집</td>
+                <td width="348px" class="buy_reason">회사 근처에서 <br>점심으로 돈까스 정식 </td>
+                </td>
+            </tr>
+            <tr id="no">
+                <td width="135px">6/6(금)<br>12:23 </td>
+                <td width="134px">13,500원</td>
+                <td width="134px">돈까스집</td>
+                <td width="348px" class="buy_reason">회사 근처에서 <br>점심으로 돈까스 정식 </td>
+                </td>
+            </tr>
+            <tr id="no">
+                <td width="135px">6/6(금)<br>12:23 </td>
+                <td width="134px">13,500원</td>
+                <td width="134px">돈까스집</td>
+                <td width="348px" class="buy_reason">회사 근처에서 <br>점심으로 돈까스 정식 </td>
+                </td>
+            </tr>
+            <tr id="no">
+                <td width="135px">6/6(금)<br>12:23 </td>
+                <td width="134px">13,500원</td>
+                <td width="134px">돈까스집</td>
+                <td width="348px" class="buy_reason">회사 근처에서 <br>점심으로 돈까스 정식 </td>
+                </td>
+            </tr>
+            <tr id="no">
+                <td width="135px">6/6(금)<br>12:23 </td>
+                <td width="134px">13,500원</td>
+                <td width="134px">돈까스집</td>
+                <td width="348px" class="buy_reason">회사 근처에서 <br>점심으로 돈까스 정식 </td>
+                </td>
+            </tr>
+            <tr id="no">
+                <td width="135px">6/6(금)<br>12:23 </td>
+                <td width="134px">13,500원</td>
+                <td width="134px">돈까스집</td>
+                <td width="348px" class="buy_reason">회사 근처에서 <br>점심으로 돈까스 정식 </td>
+                </td>
+            </tr>
+                </tbody>
+            
+          </table>
+          
+          <div class="use_period">
+            <div id="use_period_title">사용기간</div>
+            <div id="use_date_text">7일</div>
+            <input type="text" id="use_date">
+          </div>
+          <div class="use_price">
+            <div id="use_price_title">총 금액</div>
+            <div id="use_price_text">3,000,000원</div>
+            
+          </div>
+        <div class="textfield">
+            안녕하세요, 웹디자이너로 일하고 있는 27살 여자입니다. 최근 일주일 동안 쓴 내역인데 어떤가요? 
+            올해 안에 2000만원까지 모으는게 목표입니다. 여기서 좀 더 줄일 만한 부분 있나요?
+        </div>
+       
+        
+        <div class="good_bad">
+            <button id="good"><img src="{% static 'img/good.png'%}">좋은 소비예요 <span id="good_num">12</span></button>
+            <button id="bad"><img src="{% static 'img/bad.png'%}">나쁜 소비예요 <span id="bad_num">15</span></button>
+
+        </div>
+
+
+   
+    </div>
+
+<!-- Bootstrap 댓글기능 -->
+
+<div class="comment_title_text">댓글 <span id="commnets_num">9</span></div>
+    <section class="comment_section">
+        
+            <div class="card-body">
+                <!-- Comment form-->
+                <section class="textarea_and_btn">
+                    
+                    <textarea id="comment_textarea" type="text" placeholder="영수증에 대한 의견을 자유롭게 댓글로 남겨주세요."></textarea>
+                    <button class="comment_btn">입력</button>
+                </section>
+                <ul class="comment_list">
+                    <li>
+                        <div class="d-flex">
+                            <div class="comment_profile"><img class="rounded-circle" src="https://dummyimage.com/50x50/ced4da/6c757d.jpg" alt="..." /></div>
+                            <div class="comment_area">
+                                <div class="commentsName">USER NAME</div>
+                                <div class="commentsContent">배달 시켜먹지 말고 최대한 집에서 해드세요 </div>                      
+                            </div>
+                        </div>
+                        
+                    </li>
+
+                    <li>
+                        <div class="d-flex">
+                            <div class="comment_profile"><img class="rounded-circle" src="https://dummyimage.com/50x50/ced4da/6c757d.jpg" alt="..." /></div>
+                            <div class="comment_area">
+                                <div class="commentsName">USER NAME</div>
+                                <div class="commentsContent">배달 시켜먹지 말고 최대한 집에서 해드세요 </div>                      
+                            </div>
+                        </div>
+                    </li>
+                
+                </ul>
+                
+
+
+<!-- -------- -->
+
+                
+        
+    </section>
+
+
+<!-- Bootstrap 댓글 코드 문제 생길 시 아래 코드로 대체 -->
+    <!-- <div class="comments">댓글 <span id="commnets_num">12</span></div>
+
+    <textarea class="comments_textarea" placeholder="영수증에 대한 의견을 자유롭게 댓글로 남겨주세요."></textarea>
+    <div class="comments_user_container">
+        <div id="comments_user_profile">
+            <img src="./images/comment_user_profile.png">
+        </div>
+        <div id="comments_user_name">USER NAME</div>
+        <div id="comments_user_text">배달 시켜먹지 말고 최대한 집에서 해드세요</div>
+    </div> -->
+
+    <div class="final_btn">
+        <button id="goList_btn" onclick="location.href='receipt_01.html' ">목록</button>
+       
+        </div>
+</div>
+
+</div>
+
+<footer>푸터</footer>
+    
+
+<script src="{% static 'js/writeDetail_02-1.js' %}"> </script>
+
+<script type="text/javascript">
+    
+
+   
+
+
+    
+
+</script>
+
+
+
+
+
+
+</body>
+</html>

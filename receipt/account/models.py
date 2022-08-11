@@ -1,3 +1,5 @@
+from distutils.command.upload import upload
+from email.mime import image
 from django.conf import settings
 from django.db import models
 from django.contrib.auth.models import AbstractUser
@@ -11,8 +13,18 @@ class User(AbstractUser):
     #email 기본 제공
     notify_cnt = models.IntegerField(default=0)
     grade = models.CharField(max_length=40)
-    image = models.ImageField(null=True, blank=True)
+    image = models.ImageField(null=True, blank=True, upload_to = "account")
     team_no = models.ForeignKey('party.Team', on_delete=models.CASCADE, db_column='team_no', null=True, blank=True)
+
+    def __str__(self):
+        return f"{self.username} - {self.nickname}"
+    
+    @property
+    def my_image(self):
+        if self.image:
+            return self.image.url
+        return ''
+
 
 
 # User_info class 

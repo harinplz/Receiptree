@@ -17,18 +17,21 @@
         <ul>
             <li><a class="menuLink" href="#">LOGO</a></li>
             <li><a class="menuLink" href="#">홈</a></li>
-            <li><a class="menuLink" href="#">영수증글</a></li>
+            <li><a class="menuLink" href="{% url 'board_main'%}">영수증글</a></li>
             <li><a class="menuLink" href="#">영수증파티</a></li>
             <li><a class="menuLink" href="#">MY영수증</a></li>
             <li><input type="button" value="로그인" class="menuButton">
         </ul>
     </nav>
 
+
     
 
+    <form action="" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
     <div class="content">
         <div class="content_text">영수증 글 작성</div>
-        <input type="text" id="title" class="content-title" placeholder="글 제목을 입력하세요">
+        <input type="text" name="title" id="title" class="content-title" placeholder="글 제목을 입력하세요">
         <div class="receipt_name">지출영수증</div>
         <table id='receipt-table'>
             <tr>
@@ -39,10 +42,10 @@
             </tr>
             <tbody>
                 <tr id="no">
-                <td><input type="text" class="input-receipt1"placeholder="지출일시 입력"></td>
-                <td><input type="text"  class="input-receipt2"placeholder="금액 입력" onkeyup='addPrice()'></td>
-                <td><textarea  class="input-receipt3" placeholder="사용처 입력"></textarea></td>
-                <td><textarea  class="input-receipt4" placeholder="내용입력"></textarea>
+                <td><input type="text" name='date' class="input-receipt1"placeholder="지출일시 입력"></td>
+                <td><input type="text" name='cost' class="input-receipt2"placeholder="금액 입력" onkeyup='addPrice()'></td>
+                <td><textarea name="place" class="input-receipt3" placeholder="사용처 입력"></textarea></td>
+                <td><textarea name="content" class="input-receipt4" placeholder="내용입력"></textarea>
                     <button class="delete" onclick='javascript:deleteRow()'><img src="{% static 'img/delete.png' %}"></button>
                 </td>
             </tr>
@@ -50,50 +53,43 @@
             
           </table>
           <input type='button' id="addSpend_btn"value='지출추가'  onclick='addRow()' />
-          <div class="use_period">
+          <!-- <div class="use_period">
             <div id="use_period_title">사용기간</div>
             <div id="use_date_text">일</div>
             <input type="text" id="use_date">
-          </div>
+          </div> -->
           <div class="use_price">
             <div id="use_price_title">총 금액</div>
             <div id="use_price_text">원</div>
             <input type="text" id="use_sum" readonly>
           </div>
-        <textarea class="textfield" cols="6" placeholder="글 상세 내용을 입력하세요."></textarea>
-        <input type="text" class="hashtag"placeholder="해쉬태그 입력">
+        <textarea class="textfield" name="body" cols="6" placeholder="글 상세 내용을 입력하세요."></textarea>
+        <input type="text" name="tags" class="hashtag"placeholder="해쉬태그 입력">
         
         <div class="final_btn">
-        <button id="cancel">취소</button>
-       <input type="submit" id="submit" value="작성 완료" onclick="location.href='writeDetail.html'">
+        <a href="{% url 'board_write' %}"><button id="cancel">취소</button></a>
+        <input type="hidden" name="date[]" id="date_list" value="">
+        <input type="hidden" name="cost[]" id="cost_list" value="">
+        <input type="hidden" name="place[]" id="place_list" value="">
+        <input type="hidden" name="content[]" id="content_list" value="">
+        <input type="submit" id="submit" onclick="getlist()" value="작성 완료">
         </div>
 
-
-   
+    
     </div>
-
+</form>
     
 </div>
 
 <footer>푸터</footer>
     
 
-<script src="{% static 'js/write_02.js' %}"> </script>
+<script src="{% static 'js/write_02_01.js' %}"> </script>
 
 <script type="text/javascript">
     
 
-   
-
-
-    
-
 </script>
-
-
-
-
-
 
 </body>
 </html>

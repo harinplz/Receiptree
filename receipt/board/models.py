@@ -13,7 +13,10 @@ class Board(models.Model):
     good_cnt = models.IntegerField(default=0)
     bad_cnt = models.IntegerField(default=0)
     user_no = models.ForeignKey('account.User', on_delete=models.CASCADE, db_column='user_no')
-    tags = models.ManyToManyField('Tag', blank=True)
+    tags = models.ManyToManyField('Tag', related_name='tags', blank=True)
+
+    class Meta:
+        ordering = ['-date']
 
     def __str__(self):
         return self.title
@@ -33,10 +36,13 @@ class Comment(models.Model):
 class Receipt(models.Model):
     board_no = models.ForeignKey('Board', on_delete=models.CASCADE, db_column='board_no')
     user_no = models.ForeignKey('account.User', on_delete=models.CASCADE, db_column='user_no')
-    use_date = models.DateTimeField()
+    use_date = models.CharField(max_length=50)
     cost = models.IntegerField()
     place = models.CharField(max_length=100)
     body = models.TextField()
+
+    def __str__(self):
+        return f"날짜: {self.use_date} , 비용: {self.cost}원, 장소: {self.place}"
 
 
 # Tag Class

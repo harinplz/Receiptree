@@ -1,0 +1,399 @@
+body{
+    background-color: #fff;
+    font-family: 'Noto Sans KR', sans-serif;                     
+
+}
+.wrap{
+    width: 1440px;
+    margin :auto;
+    
+}
+
+#topMenu{
+    width:1120px;
+    height:95px;
+    margin:auto;
+    background-color: white;
+}
+
+#topMenu ul li {                     
+    list-style: none;                  
+    float: left;               
+    line-height: 89px;          
+    vertical-align: middle;     
+}
+
+#topMenu .menuLink {                          
+    text-decoration:none;     
+    color:black;
+    display: block;                            
+    font-size: 20px; 
+    width: 170px;
+    text-align: center;   
+    font-family: 'Noto Sans KR', sans-serif;                     
+}
+
+.menuButton{
+    width:105px;
+    height:28px;
+    background-color: 1824BF;
+    color:white;
+    border: none;
+    border-radius: 27px;
+    margin-left:20px;
+}
+
+.content{
+    width: 1120px;
+    margin: auto;
+}
+
+.receipt{
+    width:754px;
+    margin:auto;
+    margin-top: 107px;
+    padding-bottom: 130px;
+    
+}
+
+.content_text{
+    
+    height:43px;
+    font-size:26px;
+    font-weight: bold;
+    font-family: 'Noto Sans KR', sans-serif;
+    margin: 125px 0px 34px 0px;
+    
+    
+}
+.title_area{
+    width: auto;
+    height: 192px;
+    
+    border-top: 1px solid #C4C4C4;
+    border-bottom: 1px solid #C4C4C4;
+}
+
+.title_name{
+    width: 830px;
+    font-size: 24px;
+    margin-top: 34px;
+    margin-bottom: 10px;
+    float: left;
+}
+
+.writer{
+    margin-top: 34px;
+    width: 238px;
+    float: right;
+}
+.writer #writer_name{
+    width: 130px;
+    font-weight: 500;
+    font-size: 22px;
+    float: right;
+    margin-right: 32px;
+    text-align: right;
+}
+#grade{
+    
+    font-size: 18px;
+    float: right;
+    margin-right: 30px;
+}
+
+.writer #writer_profile{
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background-image: url(./images/writer_profile.png);
+    float:right ;
+}
+
+.hashtag_area{
+    width: 830px;
+}
+
+#hashtag{
+    color: #8B8B8B;
+    font-size: 22px;
+    font-weight: 350;
+    
+}
+.dateAndcomments{
+    margin-top: 15px;
+}
+#write_date{
+    width: 110px;
+    font-weight: 350;
+    font-size: 22px;
+    line-height: 32px;
+    margin-top: 15px;
+    margin-right: 55px;
+}
+
+#title_comments, #title_comments_num{
+    font-weight: 350;
+    font-size: 22px;
+    margin-right: 10px;
+    
+}
+
+
+.receipt_name{
+    margin-top: 48px;
+    height: 100px;
+    background-color: white;
+    text-align: center;
+    font-size: 20px;
+    line-height : 100px;
+    border: 1px solid #cccccc;
+    border-bottom: 0px;
+    
+}
+#receipt-table{
+    width: 754px;
+    background-color: white;
+    border: 1px solid #cccccc;
+    border-top: 0px;
+}
+th{
+    font-size: 20px;
+    text-align: center;
+    font-weight:400;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: #fff;
+    border-bottom: solid 1px;
+}
+td {
+
+    text-align: center;
+    
+    font-weight: 350px;
+    font-size: 16px;
+}
+
+
+.buy_reason{
+    padding: 25px 0px 25px 0px ;
+}
+
+
+
+
+
+
+
+
+.use_period, .use_price{
+    margin-top: 30px ;
+    height:91px ;
+    border-bottom: 1px solid #C4C4C4;
+}
+#use_period_title ,#use_price_title{
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 32px;
+    margin: 30px  0px 30px 0px;
+    float: left;
+}
+#use_date_text, #use_date, #use_price_text, #use_sum  {
+    font-size: 18px;
+    float:right;
+    margin: 30px  0px 30px 0px;
+}
+
+#use_date, #use_sum{
+    border:none;
+    text-align: right;
+    background:none;
+    margin: 28px  0px 30px 0px;
+}
+
+
+.textfield{
+    border:#ECECEC;
+    border-radius: 16px;
+   
+    margin-top: 40px;
+    width: 754px;
+    height: 200px;
+    resize: none;
+    font-weight: 350;
+    line-height: 29px;
+    
+}
+
+.good_bad{
+    width: 532px;
+    margin: auto;
+    
+}
+#good{
+    width: 234px;
+    height: 60px;
+    font-size: 20px;
+    background-color: #DDE0FB;
+    border: 0px;
+    border-radius: 28px;
+    margin-right: 19px;
+
+    
+}
+#bad{
+    width: 234px;
+    height: 60px;
+    font-size: 20px;
+    background-color: #D2D2D2;
+    border: 0px;
+    border-radius: 28px;;
+    margin-left: 19px;
+}
+
+
+.comment_title_text{
+    height: 43px;
+    font-size: 20px;
+    font-weight: normal;
+    font-family: 'Noto Sans KR', sans-serif;
+    margin: 100px 0px 34px 0px;
+}
+#commnets_num{
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 29px;
+}
+
+.comment_list{
+    list-style: none;
+    padding-left: 20px;
+}
+.comments #commnets_num{
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 29px;
+}
+
+.comments_textarea{
+    resize: none;
+    width: 1118px;;
+    height: 174px;
+    background: #FAFAFA;
+    border: 1px solid #C4C4C4;
+    border-radius: 13px;
+    margin-top: 25px;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 29px;
+    padding:36px 27px 0px 27px;
+
+}
+
+
+/* Bootstrap 댓글 기능*/
+.comment_btn{
+    width: 112px;
+    height: 57px;
+    font-size: 16px;
+    float: left;
+    vertical-align: middle;
+    margin: auto;
+    margin-left: 30px;
+    background-color: #1824BF;
+    color: #fff;
+    border-radius: 7px;
+    border: 0px;
+}
+
+.textarea_and_btn{
+    margin-bottom: 50px !important;
+    width: 1120px;
+    display: flex;
+  }
+  
+  .comment_section {
+    margin-bottom: 3rem !important;
+  }
+
+  .comment_profile {
+    flex-shrink: 0 !important;
+  }
+
+  .rounded-circle {
+    border-radius: 50% !important;
+  }
+
+  .comment_area {
+    margin-left: 1rem !important;
+  }
+  .commentsName {
+    font-weight: 400 !important;
+  }
+.commentsContent{
+   font-weight: 300 !important;
+}
+  .d-flex {
+    display: flex !important;
+    margin-bottom: 50px;
+  }
+
+ 
+
+
+/* 댓글 입력칸(textarea) */
+  #comment_textarea {
+    font-family: 'Noto Sans KR';
+    resize: none;
+    display: block;
+    width: 950px;
+    padding: 1rem 1rem;
+    font-weight: 350;
+    font-size: 20px;
+    line-height: 1.5;
+    color: #212529;
+    background-color: #FAFAFA;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+    border-radius: 13px;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  }
+
+
+.final_btn{
+     width: 195px;
+    margin:auto;
+    margin-top: 200px;
+    margin-bottom: 150px;
+    
+}
+
+#goList_btn{
+    width: 195px;
+    height: 57px;
+    font-size: 20px;
+    background: #C4C4C4;
+    border-radius: 7px;
+    border :0px;
+    margin-right: 11px;
+    
+}
+
+
+
+footer{
+    width: 100%;
+    height: 230px;
+   
+    background-color: #D9D9D9;
+    
+
+}
+
+
+
+
+
