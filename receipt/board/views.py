@@ -1,4 +1,4 @@
-from django.shortcuts import redirect, render
+from django.shortcuts import redirect, render, get_object_or_404
 
 from .models import *
 from django.utils import timezone
@@ -83,5 +83,6 @@ def board_write(request):
 
 
 #영수증 상세화면
-def board_detail(request):
-    return render(request, 'writeDetail_02-1.html')
+def board_detail(request, board_no):
+    board = get_object_or_404(Board, pk=board_no)
+    return render(request, 'writeDetail_02-1.html', {'board': board})
