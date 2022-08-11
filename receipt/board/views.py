@@ -1,5 +1,3 @@
-from email import message
-from time import time
 from django.shortcuts import redirect, render, get_object_or_404
 
 from .models import *
@@ -11,6 +9,8 @@ from django.http import JsonResponse
 from django.contrib.auth.decorators import login_required
 from django.views.decorators.http import require_POST
 
+from django.db.models import Count
+
 # Create your views here.
 
 #영수증 메인 화면
@@ -20,9 +20,7 @@ def board_main(request):
     keyword = request.POST.get('search_button')
     tag = Tag.objects.filter(tagname = keyword)
     post = Board.objects.filter(tags__in = tag).order_by('-date')
-    hot_list = Board.objects.all()[0:4]
-    #hot_list = Board.objects.all().order_by('-good_cnt')[0:4]
-
+    hot_list = Board.objects.annotate(num_good=Count('good_user')).order_by('-num_good')[:4]
     return render(request, 'receipt_01.html', {'board':board_list, 'post':post, 'keyword':keyword, 'hot':hot_list})
 
 
