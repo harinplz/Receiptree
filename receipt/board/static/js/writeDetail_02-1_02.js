@@ -1,25 +1,6 @@
 
 'use strict';
 
-// 좋은 소비예요 버튼 구현
-// $(".good").click(function() {
-//   var pk = $(this).attr('name')
-//   $.ajax(
-//     {
-//       type:"POST",
-//       url: "{% url 'board_good' %}",
-//       data: {'pk':pk},
-//       dataType: "json",
-//       success: function(response){
-//         alert(response.message);
-//         $('#good-count-'+pk).html(response.good_count);
-//       },
-//       error: function(request, status, error){
-//         alert("로그인이 필요합니다.")
-//       }
-//     }
-//   );
-// })
 
 
 const postCommentInFeed = () => {

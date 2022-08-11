@@ -92,10 +92,11 @@
         </div>
        
         
+        <!-- 좋은 소비예요 / 나쁜 소비예요 버튼 구현-->
         <div class="good_bad">
-            <button id="good" class="good" name="{{board_detail.id}}">
+            <button id="good" class="good" name="{{board_detail.board_no}}">
                 <img src="{% static 'img/good.png'%}">좋은 소비예요 
-                <span id="good-count-{{board_detail.id}}">{{board.good_user.all.count}}</span></button>
+                <span id="good-count-{{board_detail.board_no}}">{{board_detail.good_user.all.count}}</span></button>
             <button id="bad">
                 <img src="{% static 'img/bad.png'%}">나쁜 소비예요 
                 <span id="bad-count-{{board_detail.board_no}}">{{board_detail.bad_user.all.count}}</span></button>
@@ -178,13 +179,28 @@
 <footer>푸터</footer>
     
 
-<script src="{% static 'js/writeDetail_02-1_01.js' %}"> </script>
+<script src="{% static 'js/writeDetail_02-1_02.js' %}"> </script>
 
 <script type="text/javascript">
 
-
-
-    
+//좋은 소비예요 버튼 구현
+$(".good").click(function() {
+  var pk = $(this).attr('name')
+  $.ajax(
+    {
+      type:"POST",
+      url: "{% url 'board_good' %}",
+      data: {'pk':pk},
+      dataType: "json",
+      success: function(response){
+        $('#good-count-'+pk).html(response.good_count);
+      },
+      error: function(request, status, error){
+        alert("좋은 소비예요 버튼 오류")
+      }
+    }
+  );
+})
 
 </script>
 
