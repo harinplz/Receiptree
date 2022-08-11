@@ -83,6 +83,16 @@ def board_write(request):
 
 
 #영수증 상세화면
-def board_detail(request, board_no):
-    board = get_object_or_404(Board, pk=board_no)
-    return render(request, 'writeDetail_02-1.html', {'board': board})
+def board_detail(request, board_id):
+    board = get_object_or_404(Board, pk=board_id)
+    #board_list = Board.objects.all()
+    receipt_list = Receipt.objects.filter(board_no = board_id)
+    
+    # 총 합 계산
+    sum = 0
+    for receipt in receipt_list:
+        sum += receipt.cost
+
+    #print(sum)
+    #print(receipt_list)
+    return render(request, 'writeDetail_02-1.html', {'board': board, 'receipt':receipt_list, 'sum':sum, })

@@ -1,5 +1,5 @@
 {% load static %}
-
+{% load humanize %}
 <html>
 <head>
     <meta charset="UTF-8">
@@ -60,48 +60,14 @@
                 <th>내용</th>
             </tr>
             <tbody>
+                {% for receipt in receipt.all %}
                 <tr id="no">
-                <td width="135px">6/6(금)<br>12:23 </td>
-                <td width="134px">13,500원</td>
-                <td width="134px">돈까스집</td>
-                <td width="348px" class="buy_reason">회사 근처에서 <br>점심으로 돈까스 정식 </td>
-                </td>
-            </tr>
-            <tr id="no">
-                <td width="135px">6/6(금)<br>12:23 </td>
-                <td width="134px">13,500원</td>
-                <td width="134px">돈까스집</td>
-                <td width="348px" class="buy_reason">회사 근처에서 <br>점심으로 돈까스 정식 </td>
-                </td>
-            </tr>
-            <tr id="no">
-                <td width="135px">6/6(금)<br>12:23 </td>
-                <td width="134px">13,500원</td>
-                <td width="134px">돈까스집</td>
-                <td width="348px" class="buy_reason">회사 근처에서 <br>점심으로 돈까스 정식 </td>
-                </td>
-            </tr>
-            <tr id="no">
-                <td width="135px">6/6(금)<br>12:23 </td>
-                <td width="134px">13,500원</td>
-                <td width="134px">돈까스집</td>
-                <td width="348px" class="buy_reason">회사 근처에서 <br>점심으로 돈까스 정식 </td>
-                </td>
-            </tr>
-            <tr id="no">
-                <td width="135px">6/6(금)<br>12:23 </td>
-                <td width="134px">13,500원</td>
-                <td width="134px">돈까스집</td>
-                <td width="348px" class="buy_reason">회사 근처에서 <br>점심으로 돈까스 정식 </td>
-                </td>
-            </tr>
-            <tr id="no">
-                <td width="135px">6/6(금)<br>12:23 </td>
-                <td width="134px">13,500원</td>
-                <td width="134px">돈까스집</td>
-                <td width="348px" class="buy_reason">회사 근처에서 <br>점심으로 돈까스 정식 </td>
-                </td>
-            </tr>
+                    <td width = "135px">{{receipt.use_date}}</td>
+                    <td width = "134px">{{receipt.cost|intcomma}}원</td>
+                    <td width = "134px">{{receipt.place}}</td>
+                    <td width="348px" class="buy_reason">{{receipt.body}}</td>
+                </tr>
+                {% endfor %}
                 </tbody>
             
           </table>
@@ -113,7 +79,7 @@
           </div> -->
           <div class="use_price">
             <div id="use_price_title">총 금액</div>
-            <div id="use_price_text">3,000,000원</div>
+            <div id="use_price_text">{{sum|intcomma}}원</div>
             
           </div>
         <div class="textfield">
