@@ -9,6 +9,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;500&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $.ajaxSetup({
+          headers: { "X-CSRFToken": '{{csrf_token}}' }
+        });
+      </script>
 </head>
 
 <body>
@@ -88,8 +93,12 @@
        
         
         <div class="good_bad">
-            <button id="good"><img src="{% static 'img/good.png'%}">좋은 소비예요 <span id="good_num">{{board.good_cnt}}</span></button>
-            <button id="bad"><img src="{% static 'img/bad.png'%}">나쁜 소비예요 <span id="bad_num">{{board.bad_cnt}}</span></button>
+            <button id="good" class="good" name="{{board.id}}">
+                <img src="{% static 'img/good.png'%}">좋은 소비예요 
+                <span id="good-count-{{board.id}}">{{board.good_user.all.count}}</span></button>
+            <button id="bad">
+                <img src="{% static 'img/bad.png'%}">나쁜 소비예요 
+                <span id="bad-count-{{board.board_no}}">{{board.bad_user.all.count}}</span></button>
 
         </div>
 
@@ -99,7 +108,7 @@
 
 <!-- Bootstrap 댓글기능 -->
 
-<div class="comment_title_text">댓글 <span id="commnets_num">9</span></div>
+<div class="comment_title_text">댓글 <span id="commnets_num">{{comments.all.count}}</span></div>
     <section class="comment_section">
         
             <div class="card-body">
@@ -110,27 +119,20 @@
                     <button class="comment_btn">입력</button>
                 </section>
                 <ul class="comment_list">
+                    {% for comment in comments%}
                     <li>
                         <div class="d-flex">
-                            <div class="comment_profile"><img class="rounded-circle" src="https://dummyimage.com/50x50/ced4da/6c757d.jpg" alt="..." /></div>
+                            <div class="comment_profile"><img class="rounded-circle" src="{{comment.user_no.my_image}}" alt="..."
+                                width="50px" height="50px" /></div>
                             <div class="comment_area">
-                                <div class="commentsName">USER NAME</div>
-                                <div class="commentsContent">배달 시켜먹지 말고 최대한 집에서 해드세요 </div>                      
-                            </div>
-                        </div>
-                        
-                    </li>
-
-                    <li>
-                        <div class="d-flex">
-                            <div class="comment_profile"><img class="rounded-circle" src="https://dummyimage.com/50x50/ced4da/6c757d.jpg" alt="..." /></div>
-                            <div class="comment_area">
-                                <div class="commentsName">USER NAME</div>
-                                <div class="commentsContent">배달 시켜먹지 말고 최대한 집에서 해드세요 </div>                      
+                                <span class="commentsName">{{comment.user_no.nickname}} &nbsp;</span>
+                                <span style="font-size:smaller; font-weight: 300 !important;">
+                                    {{comment.date |date:'Y.m.d H:i:s'}}</span>
+                                <div class="commentsContent">{{comment.body}} </div>                      
                             </div>
                         </div>
                     </li>
-                
+                    {% endfor %}
                 </ul>
                 
 
