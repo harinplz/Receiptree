@@ -10,4 +10,5 @@ urlpatterns = [
     path('board/', board_views.board, name='board'),
     path('board/write', board_views.write, name='board_write'),
     path('mypage', account_views.mypage, name='mypage'),
+    path('signup', account_views.signup, name='signup'),
 ]
