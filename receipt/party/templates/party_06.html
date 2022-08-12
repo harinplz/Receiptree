@@ -1,0 +1,148 @@
+{% load static %}
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link href="{% static 'css/party_06_01.css' %}" rel="stylesheet"></a>
+    <title></title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <nav id="topMenu">
+        <ul>
+            <li><a class="menuLink" href="#">LOGO</a></li>
+            <li><a class="menuLink" href="#">홈</a></li>
+            <li><a class="menuLink" href="{% url 'board_main' %}">영수증글</a></li>
+            <li><a class="menuLink" href="{% url 'party_main' %}">영수증파티</a></li>
+            <li><a class="menuLink" href="#">MY영수증</a></li>
+            <li><input type="button" value="로그인" class="menuButton">
+        </ul>
+    </nav>
+     <hr style="background-color:F2F2F2; height:3px;border:none;">
+
+    <div class="content1"></div>
+
+    <div class="content2">
+        <p class="content2_title">영수증 파티</p>
+        <input type="button" value="파티 만들기+" class="content2_btn">
+     </div>
+
+     <hr class="content2_line">
+
+     <div class="content3">
+        <input type="button" value="전체" class="content3_btn" autofocus>
+        <input type="button" value="절약" class="content3_btn">
+        <input type="button" value="저축" class="content3_btn">
+     </div>
+
+     <div class="content4">
+        <div class="content4_party1">
+            <p class="party1_text1">절약</p>
+            <p class="party1_text2">일주일 식비 3만원으로 해결하기</p>
+            <img src="{% static 'img/img1-party_06.jpg' %}" class="party1_img1">
+            <img src="{% static 'img/img2-party_06.jpg' %}" class="party1_img2">
+            <img src="{% static 'img/img3-party_06.jpg' %}" class="party1_img3">
+            <img src="{% static 'img/img4-party_06.jpeg' %}" class="party1_img4">
+            <p class="party1_text3">파티원</p>
+            <p class="party1_text4">3/4명</p>
+        </div>
+
+        <div class="content4_party2">
+            <p class="party1_text1">절약</p>
+            <p class="party1_text2">일주일 식비 3만원으로 해결하기</p>
+            <img src="{% static 'img/img1-party_06.jpg' %}" class="party1_img1">
+            <img src="{% static 'img/img2-party_06.jpg' %}" class="party1_img2">
+            <img src="{% static 'img/img3-party_06.jpg' %}" class="party1_img3">
+            <p class="party1_text3">파티원</p>
+            <p class="party1_text4">3/4명</p>
+        </div>
+
+        <div class="content4_party3">
+            <p class="party1_text1">절약</p>
+            <p class="party1_text2">일주일 식비 3만원으로 해결하기</p>
+            <img src="{% static 'img/img1-party_06.jpg' %}" class="party1_img1">
+            <img src="{% static 'img/img2-party_06.jpg' %}" class="party1_img2">
+            <img src="{% static 'img/img3-party_06.jpg' %}" class="party1_img3">
+            <p class="party1_text3">파티원</p>
+            <p class="party1_text4">3/4명</p>
+        </div>
+
+        <div class="content4_party4">
+            <p class="party1_text1">절약</p>
+            <p class="party1_text2">일주일 식비 3만원으로 해결하기</p>
+            <img src="{% static 'img/img1-party_06.jpg' %}" class="party1_img1">
+            <img src="{% static 'img/img2-party_06.jpg' %}" class="party1_img2">
+            <img src="{% static 'img/img3-party_06.jpg' %}" class="party1_img3">
+            <p class="party1_text3">파티원</p>
+            <p class="party1_text4">3/4명</p>
+        </div>
+
+        <div class="content4_party5">
+            <p class="party1_text1">절약</p>
+            <p class="party1_text2">일주일 식비 3만원으로 해결하기</p>
+            <img src="{% static 'img/img1-party_06.jpg' %}" class="party1_img1">
+            <img src="{% static 'img/img2-party_06.jpg' %}" class="party1_img2">
+            <img src="{% static 'img/img3-party_06.jpg' %}" class="party1_img3">
+            <p class="party1_text3">파티원</p>
+            <p class="party1_text4">3/4명</p>
+        </div>
+
+        <div class="content4_party6">
+            <p class="party1_text1">절약</p>
+            <p class="party1_text2">일주일 식비 3만원으로 해결하기</p>
+            <img src="{% static 'img/img1-party_06.jpg' %}" class="party1_img1">
+            <img src="{% static 'img/img2-party_06.jpg' %}" class="party1_img2">
+            <img src="{% static 'img/img3-party_06.jpg' %}" class="party1_img3">
+            <p class="party1_text3">파티원</p>
+            <p class="party1_text4">3/4명</p>
+        </div>
+
+        <div class="content4_hide">
+
+        <div class="content4_party7">
+            <p class="party1_text1">절약</p>
+            <p class="party1_text2">일주일 식비 3만원으로 해결하기</p>
+            <img src="{% static 'img/img1-party_06.jpg' %}" class="party1_img1">
+            <img src="{% static 'img/img2-party_06.jpg' %}" class="party1_img2">
+            <img src="{% static 'img/img3-party_06.jpg' %}" class="party1_img3">
+            <p class="party1_text3">파티원</p>
+            <p class="party1_text4">3/4명</p>
+        </div>
+
+        <div class="content4_party8">
+            <p class="party1_text1">절약</p>
+            <p class="party1_text2">일주일 식비 3만원으로 해결하기</p>
+            <img src="{% static 'img/img1-party_06.jpg' %}" class="party1_img1">
+            <img src="{% static 'img/img2-party_06.jpg' %}" class="party1_img2">
+            <img src="{% static 'img/img3-party_06.jpg' %}" class="party1_img3">
+            <p class="party1_text3">파티원</p>
+            <p class="party1_text4">3/4명</p>
+        </div>
+
+        <div class="content4_party9">
+            <p class="party1_text1">절약</p>
+            <p class="party1_text2">일주일 식비 3만원으로 해결하기</p>
+            <img src="{% static 'img/img1-party_06.jpg' %}" class="party1_img1">
+            <img src="{% static 'img/img2-party_06.jpg' %}" class="party1_img2">
+            <img src="{% static 'img/img3-party_06.jpg' %}" class="party1_img3">
+            <p class="party1_text3">파티원</p>
+            <p class="party1_text4">3/4명</p>
+        </div>
+    </div>
+
+    <div class="content5">
+        <input type="button" value="더보기" class="content5_btn">
+    </div>
+</div>
+
+<script>
+    document.getElementsByClassName('content5_btn')[0].addEventListener('click', function(){
+    document.getElementsByClassName('content4_hide')[0].classList.toggle('show');
+  });
+</script>
+
+</body>
+</html>

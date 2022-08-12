@@ -1,0 +1,373 @@
+#topMenu{
+    width:1120px;
+    height:95px;
+    margin:auto;
+}
+
+#topMenu ul li {                     
+    list-style: none;                  
+    float: left;               
+    line-height: 89px;          
+    vertical-align: middle;     
+}
+
+#topMenu .menuLink {                          
+    text-decoration:none;     
+    color:black;
+    display: block;                            
+    font-size: 20px; 
+    width: 170px;
+    text-align: center;   
+    font-family: 'Noto Sans KR', sans-serif;                     
+}
+
+.menuButton{
+    width:105px;
+    height:28px;
+    background-color: 1824BF;
+    color:white;
+    border: none;
+    border-radius: 27px;
+    margin-left:20px;
+}
+
+.full{
+    background-color: #F8F9FD;
+}
+
+
+.content1{
+    width:1120px;
+    height:177px;
+    background-color: DDE0FB;
+    margin:auto;
+}
+
+.content2{
+    width:1120px;
+    height:957px;
+    background-color: white;
+    margin:auto;
+    margin-top:60px;
+}
+
+.main_title{
+    width:200px;
+    height:43px;
+    font-family: 'Noto Sans KR', sans-serif; 
+    font-size:25px;
+    font-weight: bold;   
+    padding-top:70px;
+    margin-left:200px;
+}
+
+.email_title{
+    width:61px;
+    height:32px;
+    font-family: 'Noto Sans KR', sans-serif; 
+    font-size:20px;
+    margin-left:200px;
+    margin-top:50px;
+
+}
+
+.email_box{
+    width:700px;
+    height:50px;
+    font-family: 'Noto Sans KR', sans-serif; 
+    font-size:16px;
+    color:A3A3A3;
+    border-color: ECECEC;
+    border-radius: 16px;
+    margin-left:200px;
+    margin-top:20px;
+}
+
+.password_title{
+    width:100px;
+    height:32px;
+    font-family: 'Noto Sans KR', sans-serif; 
+    font-size:20px;
+    margin-left:200px;
+    margin-top:50px;
+
+}
+
+.password_box{
+    width:700px;
+    height:50px;
+    font-family: 'Noto Sans KR', sans-serif; 
+    font-size:16px;
+    color:A3A3A3;
+    border-color: ECECEC;
+    border-radius: 16px;
+    margin-left:200px;
+    margin-top:20px;
+}
+
+.password_title2{
+    width:100px;
+    height:32px;
+    font-family: 'Noto Sans KR', sans-serif; 
+    font-size:20px;
+    margin-left:200px;
+    margin-top:50px;
+
+}
+
+.password_box2{
+    width:700px;
+    height:50px;
+    font-family: 'Noto Sans KR', sans-serif; 
+    font-size:16px;
+    color:A3A3A3;
+    border-color: ECECEC;
+    border-radius: 16px;
+    margin-left:200px;
+    margin-top:20px;
+}
+
+.name_title{
+    width:100px;
+    height:32px;
+    font-family: 'Noto Sans KR', sans-serif; 
+    font-size:20px;
+    margin-left:200px;
+    margin-top:50px;
+
+}
+
+.name_box{
+    width:700px;
+    height:50px;
+    font-family: 'Noto Sans KR', sans-serif; 
+    font-size:16px;
+    color:A3A3A3;
+    border-color: ECECEC;
+    border-radius: 16px;
+    margin-left:200px;
+    margin-top:20px;
+}
+
+.phonenumber_title{
+    width:100px;
+    height:32px;
+    font-family: 'Noto Sans KR', sans-serif; 
+    font-size:20px;
+    margin-left:200px;
+    margin-top:50px;
+
+}
+
+.phonenumber_box{
+    width:700px;
+    height:50px;
+    font-family: 'Noto Sans KR', sans-serif; 
+    font-size:16px;
+    color:A3A3A3;
+    border-color: ECECEC;
+    border-radius: 16px;
+    margin-left:200px;
+    margin-top:20px;
+}
+
+.content3{
+    width:1120px;
+    height:972px;
+    background-color: white;
+    margin:auto;
+    margin-top:60px;
+
+}
+
+.sub_title{
+    width:600px;
+    height:35px;
+    font-family: 'Noto Sans KR', sans-serif; 
+    font-size:20px;
+    margin-top:10px;
+    margin-left:200px;
+
+}
+
+.age{
+    width:400px;
+    height:121px;
+    margin-top:40px;
+    margin-left:200px;
+}
+
+.income{
+    width:300px;
+    height:121px;
+    margin-top:-120px;
+    margin-left:650px;
+}
+
+.age_title{
+    width:41px;
+    height:32px;
+    font-family: 'Noto Sans KR', sans-serif; 
+    font-size:20px;
+}
+
+.age_box{
+    width:298px;
+    height:50px;
+    font-family: 'Noto Sans KR', sans-serif; 
+    font-size:16px;
+    color:A3A3A3;
+    border-color: ECECEC;
+    border-radius: 16px;
+    margin-top:20px;
+
+}
+
+.age_detail{
+    width:100px;
+    height:32px;
+    font-family: 'Noto Sans KR', sans-serif; 
+    font-size:20px;
+    margin-top:-40px;
+    margin-left:330px;
+}
+
+.income_title{
+    width:41px;
+    height:32px;
+    font-family: 'Noto Sans KR', sans-serif; 
+    font-size:20px;
+}
+
+.income_box{
+    width:298px;
+    height:50px;
+    font-family: 'Noto Sans KR', sans-serif; 
+    font-size:16px;
+    color:A3A3A3;
+    border-color: ECECEC;
+    border-radius: 16px;
+    margin-top:20px;
+
+}
+
+.income_detail{
+    width:100px;
+    height:32px;
+    font-family: 'Noto Sans KR', sans-serif; 
+    font-size:20px;
+    margin-top:-40px;
+    margin-left:330px;
+}
+
+.phonenumber_title{
+    width:100px;
+    height:32px;
+    font-family: 'Noto Sans KR', sans-serif; 
+    font-size:20px;
+    margin-left:200px;
+    margin-top:50px;
+
+}
+
+.phonenumber_box{
+    width:700px;
+    height:50px;
+    font-family: 'Noto Sans KR', sans-serif; 
+    font-size:16px;
+    color:A3A3A3;
+    border-color: ECECEC;
+    border-radius: 16px;
+    margin-left:200px;
+    margin-top:20px;
+}
+
+.job_title{
+    width:100px;
+    height:32px;
+    font-family: 'Noto Sans KR', sans-serif; 
+    font-size:20px;
+    margin-left:200px;
+    margin-top:50px;
+
+}
+
+.job_box{
+    width:700px;
+    height:50px;
+    font-family: 'Noto Sans KR', sans-serif; 
+    font-size:16px;
+    color:A3A3A3;
+    border-color: ECECEC;
+    border-radius: 16px;
+    margin-left:200px;
+    margin-top:20px;
+}
+
+.expenditure_title{
+    width:100px;
+    height:32px;
+    font-family: 'Noto Sans KR', sans-serif; 
+    font-size:20px;
+    margin-left:200px;
+    margin-top:50px;
+}
+
+.expenditure_box1{
+    width:700px;
+    height:50px;
+    font-family: 'Noto Sans KR', sans-serif; 
+    font-size:16px;
+    color:A3A3A3;
+    border-color: ECECEC;
+    border-radius: 16px;
+    margin-left:200px;
+    margin-top:20px;
+}
+
+.expenditure_box2{
+    width:600px;
+    height:50px;
+    font-family: 'Noto Sans KR', sans-serif; 
+    font-size:16px;
+    color:A3A3A3;
+    border-color: ECECEC;
+    border-radius: 16px;
+    margin-left:200px;
+    margin-top:20px;
+}
+
+.expenditure_detail{
+    width:21px;
+    height:32px;
+    font-family: 'Noto Sans KR', sans-serif; 
+    font-size:20px;
+    margin-left:850px;
+    margin-top:-40px;
+}
+
+.expenditure_btn{
+    width:350px;
+    height:63px;
+    border-radius:27px;
+    color:1824BF;
+    border-color:1824BF;
+    background-color: white;
+    font-size:20px;
+    font-family: 'Noto Sans KR', sans-serif;
+    margin-left:385px;
+    margin-top:150px;
+}
+
+.submit_btn{
+    width:198px;
+    height:59px;
+    border-radius: 7px;
+    font-size:20px;
+    font-family: 'Noto Sans KR', sans-serif;
+    color:white;
+    border:none;
+    background-color: 1824BF;
+    margin-left:750px;
+    margin-top:40px;
+}
