@@ -1,5 +1,5 @@
 {% load static %}
-
+{% load humanize %}
 <html>
 <head>
     <meta charset="UTF-8">
@@ -9,6 +9,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;500&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $.ajaxSetup({
+          headers: { "X-CSRFToken": '{{csrf_token}}' }
+        });
+      </script>
 </head>
 
 <body>
@@ -26,23 +31,26 @@
 
     <div class="content">
         
-        <div class="content_text">영수증 글</div>
+        <div class="content_text">영수증글</div>
         <div class="title_area">
-            <div class="title_name">일주일치 장본 거 평가해주세요!</div>
+            <div class="title_name">{{board_detail.title}}</div>
             <div class="writer">
-                <div id = "writer_profile"></div>
-                <div id="writer_name">김멋사</div>
-                <div id="grade">새싹 <img src="{% static 'img/grade.png'%}"></div>
+                <div id = "writer_profile"><img class="rounded-circle" src="{{board_detail.user_no.my_image}}" width="55px" height="55px"></div> <!-- 이미지 자리인가..? -->
+                <div id="writer_name">{{board_detail.user_no.nickname}}</div>
+                <div id="grade">{{board_detail.user_no.grade}}
+                    <!-- <img src="{% static 'img/grade.png'%}"> -->
+                </div>
                 
             </div>
             <div class="hashtag_area">
-            <span id="hashtag">#하루영수증</span>
-            <span id="hashtag">#장보기</span>
+                {% for t in board_detail.tags.all %}
+                <span id="hashtag">#{{t.tagname}}</span>
+                {% endfor %}
         </div>
             <div class="dateAndcomments">
-            <span id="write_date">2021.08.02</span>
+            <span id="write_date">{{board_detail.date|date:'Y.m.d'}}</span>
             <span id="title_comments">댓글</span>
-            <span id="title_comments_num">12</span>
+            <span id="title_comments_num">{{comment_list.all.count}}</span>
         </div>
         </div>
 
@@ -57,71 +65,41 @@
                 <th>내용</th>
             </tr>
             <tbody>
+                {% for receipt in receipt.all %}
                 <tr id="no">
-                <td width="135px">6/6(금)<br>12:23 </td>
-                <td width="134px">13,500원</td>
-                <td width="134px">돈까스집</td>
-                <td width="348px" class="buy_reason">회사 근처에서 <br>점심으로 돈까스 정식 </td>
-                </td>
-            </tr>
-            <tr id="no">
-                <td width="135px">6/6(금)<br>12:23 </td>
-                <td width="134px">13,500원</td>
-                <td width="134px">돈까스집</td>
-                <td width="348px" class="buy_reason">회사 근처에서 <br>점심으로 돈까스 정식 </td>
-                </td>
-            </tr>
-            <tr id="no">
-                <td width="135px">6/6(금)<br>12:23 </td>
-                <td width="134px">13,500원</td>
-                <td width="134px">돈까스집</td>
-                <td width="348px" class="buy_reason">회사 근처에서 <br>점심으로 돈까스 정식 </td>
-                </td>
-            </tr>
-            <tr id="no">
-                <td width="135px">6/6(금)<br>12:23 </td>
-                <td width="134px">13,500원</td>
-                <td width="134px">돈까스집</td>
-                <td width="348px" class="buy_reason">회사 근처에서 <br>점심으로 돈까스 정식 </td>
-                </td>
-            </tr>
-            <tr id="no">
-                <td width="135px">6/6(금)<br>12:23 </td>
-                <td width="134px">13,500원</td>
-                <td width="134px">돈까스집</td>
-                <td width="348px" class="buy_reason">회사 근처에서 <br>점심으로 돈까스 정식 </td>
-                </td>
-            </tr>
-            <tr id="no">
-                <td width="135px">6/6(금)<br>12:23 </td>
-                <td width="134px">13,500원</td>
-                <td width="134px">돈까스집</td>
-                <td width="348px" class="buy_reason">회사 근처에서 <br>점심으로 돈까스 정식 </td>
-                </td>
-            </tr>
+                    <td width = "135px">{{receipt.use_date}}</td>
+                    <td width = "134px">{{receipt.cost|intcomma}}원</td>
+                    <td width = "134px">{{receipt.place}}</td>
+                    <td width="348px" class="buy_reason">{{receipt.body}}</td>
+                </tr>
+                {% endfor %}
                 </tbody>
             
           </table>
           
-          <div class="use_period">
+          <!-- <div class="use_period">
             <div id="use_period_title">사용기간</div>
             <div id="use_date_text">7일</div>
             <input type="text" id="use_date">
-          </div>
+          </div> -->
           <div class="use_price">
             <div id="use_price_title">총 금액</div>
-            <div id="use_price_text">3,000,000원</div>
+            <div id="use_price_text">{{sum|intcomma}}원</div>
             
           </div>
         <div class="textfield">
-            안녕하세요, 웹디자이너로 일하고 있는 27살 여자입니다. 최근 일주일 동안 쓴 내역인데 어떤가요? 
-            올해 안에 2000만원까지 모으는게 목표입니다. 여기서 좀 더 줄일 만한 부분 있나요?
+            {{board_detail.body}}
         </div>
        
         
+        <!-- 좋은 소비예요 / 나쁜 소비예요 버튼 구현-->
         <div class="good_bad">
-            <button id="good"><img src="{% static 'img/good.png'%}">좋은 소비예요 <span id="good_num">12</span></button>
-            <button id="bad"><img src="{% static 'img/bad.png'%}">나쁜 소비예요 <span id="bad_num">15</span></button>
+            <button id="good" class="good" name="{{board_detail.board_no}}">
+                <img src="{% static 'img/good.png'%}">좋은 소비예요 
+                <span id="good-count-{{board_detail.board_no}}">{{board_detail.good_user.all.count}}</span></button>
+            <button id="bad" class="bad" name="{{board_detail.board_no}}">
+                <img src="{% static 'img/bad.png'%}">나쁜 소비예요 
+                <span id="bad-count-{{board_detail.board_no}}">{{board_detail.bad_user.all.count}}</span></button>
 
         </div>
 
@@ -131,38 +109,42 @@
 
 <!-- Bootstrap 댓글기능 -->
 
-<div class="comment_title_text">댓글 <span id="commnets_num">9</span></div>
+<div class="comment_title_text">댓글 <span id="commnets_num">{{comment_list.all.count}}</span></div>
     <section class="comment_section">
         
             <div class="card-body">
                 <!-- Comment form-->
                 <section class="textarea_and_btn">
-                    
-                    <textarea id="comment_textarea" type="text" placeholder="영수증에 대한 의견을 자유롭게 댓글로 남겨주세요."></textarea>
-                    <button class="comment_btn">입력</button>
+                    <form method="post" action="{% url 'new_comment' board_detail.board_no%}"> <!-- 오류나면 확인 -->
+                        {% csrf_token %}
+                        <table>
+                            <tr>
+                                <td>
+                                    <textarea id="comment_textarea" name="newcomment_body" type="text" placeholder="영수증에 대한 의견을 자유롭게 댓글로 남겨주세요."></textarea>
+                                </td>
+                                <td>
+                                    <input class="comment_btn" value="입력" type="submit">
+                                </td>
+                            </tr>
+                        </table>
+                    </form>
+                    <!--<button class="comment_btn">입력</button> -->
                 </section>
                 <ul class="comment_list">
+                    {% for comment in comment_list%}
                     <li>
                         <div class="d-flex">
-                            <div class="comment_profile"><img class="rounded-circle" src="https://dummyimage.com/50x50/ced4da/6c757d.jpg" alt="..." /></div>
+                            <div class="comment_profile"><img class="rounded-circle" src="{{comment.user_no.my_image}}" alt="..."
+                                width="50px" height="50px" /></div>
                             <div class="comment_area">
-                                <div class="commentsName">USER NAME</div>
-                                <div class="commentsContent">배달 시켜먹지 말고 최대한 집에서 해드세요 </div>                      
-                            </div>
-                        </div>
-                        
-                    </li>
-
-                    <li>
-                        <div class="d-flex">
-                            <div class="comment_profile"><img class="rounded-circle" src="https://dummyimage.com/50x50/ced4da/6c757d.jpg" alt="..." /></div>
-                            <div class="comment_area">
-                                <div class="commentsName">USER NAME</div>
-                                <div class="commentsContent">배달 시켜먹지 말고 최대한 집에서 해드세요 </div>                      
+                                <span class="commentsName">{{comment.user_no.nickname}} &nbsp;</span>
+                                <span style="font-size:smaller; font-weight: 300 !important;">
+                                    {{comment.date |date:'Y.m.d H:i:s'}}</span>
+                                <div class="commentsContent">{{comment.body}} </div>                      
                             </div>
                         </div>
                     </li>
-                
+                    {% endfor %}
                 </ul>
                 
 
@@ -187,7 +169,7 @@
     </div> -->
 
     <div class="final_btn">
-        <button id="goList_btn" onclick="location.href='receipt_01.html' ">목록</button>
+        <a href="{% url 'board_main'%}"><button id="goList_btn">목록</button></a>
        
         </div>
 </div>
@@ -197,15 +179,47 @@
 <footer>푸터</footer>
     
 
-<script src="{% static 'js/writeDetail_02-1.js' %}"> </script>
+<script src="{% static 'js/writeDetail_02-1_02.js' %}"> </script>
 
 <script type="text/javascript">
-    
 
-   
+//좋은 소비예요 버튼 구현
+$(".good").click(function() {
+  var pk = $(this).attr('name')
+  $.ajax(
+    {
+      type:"POST",
+      url: "{% url 'board_good' %}",
+      data: {'pk':pk},
+      dataType: "json",
+      success: function(response){
+        $('#good-count-'+pk).html(response.good_count);
+      },
+      error: function(request, status, error){
+        alert("좋은 소비예요 버튼 오류")
+      }
+    }
+  );
+})
 
-
-    
+//나쁜 소비예요 버튼 구현
+$(".bad").click(function() {
+  var pk = $(this).attr('name')
+  $.ajax(
+    {
+      type:"POST",
+      url: "{% url 'board_bad' %}",
+      data: {'pk':pk},
+      dataType: "json",
+      success: function(response){
+        $('#bad-count-'+pk).html(response.bad_count);
+      },
+      error: function(request, status, error){
+        alert("나쁜 소비예요 버튼 오류")
+      }
+    }
+  );
+})
 
 </script>
 

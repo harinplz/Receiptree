@@ -1,4 +1,4 @@
-from pyexpat import model
+from django.conf import settings
 from django.db import models
 from django.utils import timezone
 
@@ -10,16 +10,30 @@ class Board(models.Model):
     title = models.CharField(max_length=40)
     date = models.DateTimeField(default=timezone.now)
     body = models.TextField()
-    good_cnt = models.IntegerField(default=0)
-    bad_cnt = models.IntegerField(default=0)
     user_no = models.ForeignKey('account.User', on_delete=models.CASCADE, db_column='user_no')
     tags = models.ManyToManyField('Tag', related_name='tags', blank=True)
+    good_user = models.ManyToManyField(
+        settings.AUTH_USER_MODEL,
+        blank =True,
+        related_name='good_user'
+    )
+    bad_user = models.ManyToManyField(
+        settings.AUTH_USER_MODEL,
+        blank=True,
+        related_name='bad_user'
+    )
 
     class Meta:
         ordering = ['-date']
 
     def __str__(self):
         return self.title
+
+    def count_good_user(self):
+        return self.good_user.count()
+
+    def count_bad_user(self):
+        return self.bad_user.count()
 
 
 
@@ -29,6 +43,9 @@ class Comment(models.Model):
     user_no = models.ForeignKey('account.User', on_delete=models.CASCADE, db_column='user_no')
     body = models.TextField()
     date = models.DateTimeField(default=timezone.now)
+
+    def __str__(self):
+        return f"글 제목 - {self.board_no.title}, 내용 - {self.body}"
 
 
 
