@@ -9,6 +9,7 @@ from django.conf import settings
 # Team class
 class Team(models.Model):
     team_no = models.AutoField(primary_key=True)
+    team_date = models.DateTimeField(default=timezone.now)
     category = models.CharField(null=True, blank=True, max_length=30) # '절약' '저축' 중 하나
     team_name = models.CharField(max_length=100)
     content = models.TextField()
@@ -17,6 +18,7 @@ class Team(models.Model):
     team_users = models.ManyToManyField(
         settings.AUTH_USER_MODEL,
         related_name='team_users',
+        blank=True,
     )
     # teammate_cnt = models.IntegerField(default=1) #팀원 수
     # team1_no = models.IntegerField(null=True, blank=True)
@@ -28,12 +30,16 @@ class Team(models.Model):
     leader_no = models.ForeignKey('account.User', on_delete=models.CASCADE, db_column='leader_no', null=True)
     #leader_no = models.IntegerField(null=True, blank=True)
 
+    # 팀 생성된 최신 순으로 정렬
+    class Meta:
+        ordering=['-team_date']
+
     def __str__(self):
         return self.team_name
 
     # 팀원 수 세는 함수
     def count_team_users(self):
-        return self.team_users.count()
+        return self.team_users.count() + 1
 
 
 # 팀 게시판 클래스
