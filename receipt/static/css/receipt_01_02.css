@@ -407,8 +407,25 @@
 }
 
 
+.a_title:link{
+    text-decoration: none;
+    color: black;
+}
 
+.a_title:visited{
+    text-decoration: none;
+    color: black;
+}
 
+.a_title:hover{
+    text-decoration: none;
+    color: #1824BF;
+    font-weight: bold;
+}
+
+.rounded-circle {
+    border-radius: 50% !important;
+  }
 
 
 

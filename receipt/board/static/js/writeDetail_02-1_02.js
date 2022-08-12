@@ -1,6 +1,8 @@
 
 'use strict';
 
+
+
 const postCommentInFeed = () => {
   const commentInput = document.getElementById('comment_textarea');
   const commentPostBtn = document.getElementsByClassName('comment_btn')[0];
@@ -33,7 +35,7 @@ const postCommentInFeed = () => {
   // 댓글 게시
   commentPostBtn.addEventListener('click', () => {
     if (commentInput.value) {
-      addNewComment();
+      //addNewComment();
     } else {
       alert('댓글이 입력되지 않았습니다 😳');
     }
