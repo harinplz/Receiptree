@@ -3,7 +3,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="{% static 'css/receipt_01_01.css' %}">
+    <link rel="stylesheet" href="{% static 'css/receipt_01_02.css' %}">
     <title></title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -40,7 +40,7 @@
             <div class="content2_receipt1_text3">{{hot.0.date|date:'Y.m.d'}}</div>
             <hr class="content2_receipt1_line">
             <div class="content2_receipt1_profile">
-                <img src="{{ hot.0.user_no.my_image }}" width="30px" height="30px">
+                <img class="rounded-circle" src="{{ hot.0.user_no.my_image }}" width="30px" height="30px">
                 <p class="content2_receipt1_profile_name">{{hot.0.user_no.nickname}}</p>
             </div>
         </div>
@@ -55,7 +55,7 @@
             <div class="content2_receipt1_text3">{{hot.1.date|date:'Y.m.d'}}</div>
             <hr class="content2_receipt1_line">
             <div class="content2_receipt1_profile">
-                <img src="{{ hot.1.user_no.my_image }}" width="30px" height="30px">
+                <img class="rounded-circle" src="{{ hot.1.user_no.my_image }}" width="30px" height="30px">
                 <p class="content2_receipt1_profile_name">{{hot.1.user_no.nickname}}</p>
             </div>
         </div>
@@ -70,7 +70,7 @@
             <div class="content2_receipt1_text3">{{hot.2.date|date:'Y.m.d'}}</div>
             <hr class="content2_receipt1_line">
             <div class="content2_receipt1_profile">
-                <img src="{{ hot.2.user_no.my_image }}" width="30px" height="30px">
+                <img class="rounded-circle" src="{{ hot.2.user_no.my_image }}" width="30px" height="30px">
                 <p class="content2_receipt1_profile_name">{{hot.2.user_no.nickname}}</p>
             </div>
         </div>
@@ -85,7 +85,7 @@
             <div class="content2_receipt1_text3">{{hot.3.date|date:'Y.m.d'}}</div>
             <hr class="content2_receipt1_line">
             <div class="content2_receipt1_profile">
-                <img src="{{ hot.3.user_no.my_image }}" width="30px" height="30px">
+                <img class="rounded-circle" src="{{ hot.3.user_no.my_image }}" width="30px" height="30px">
                 <p class="content2_receipt1_profile_name">{{hot.3.user_no.nickname}}</p>
             </div>
         </div>
@@ -139,7 +139,7 @@
             <div class="content3_receipt1_text3">{{board.0.date|date:'Y.m.d'}}</div>
             <hr class="content3_receipt1_line">
             <div class="content3_receipt1_profile">
-                <img src="{{ board.0.user_no.my_image }}" width="30px" height="30px">
+                <img class="rounded-circle" src="{{ board.0.user_no.my_image }}" width="30px" height="30px">
                 <p class="content3_receipt1_profile_name">{{board.0.user_no.nickname}}</p>
             </div>
             </div>
@@ -155,7 +155,7 @@
             <div class="content3_receipt1_text3">{{board.1.date|date:'Y.m.d'}}</div>
             <hr class="content3_receipt1_line">
             <div class="content3_receipt1_profile">
-                <img src="{{ board.1.user_no.my_image }}" width="30px" height="30px">
+                <img class="rounded-circle" src="{{ board.1.user_no.my_image }}" width="30px" height="30px">
                 <p class="content3_receipt1_profile_name">{{board.1.user_no.nickname}}</p>
             </div>
             </div>
@@ -171,7 +171,7 @@
             <div class="content3_receipt1_text3">{{board.2.date|date:'Y.m.d'}}</div>
             <hr class="content3_receipt1_line">
             <div class="content3_receipt1_profile">
-                <img src="{{ board.2.user_no.my_image }}" width="30px" height="30px">
+                <img class="rounded-circle" src="{{ board.2.user_no.my_image }}" width="30px" height="30px">
                 <p class="content3_receipt1_profile_name">{{board.2.user_no.nickname}}</p>
             </div>
             </div>
@@ -189,7 +189,7 @@
             <div class="content3_receipt1_text3">{{board.3.date|date:'Y.m.d'}}</div>
             <hr class="content3_receipt1_line">
             <div class="content3_receipt1_profile">
-                <img src="{{ board.3.user_no.my_image }}" width="30px" height="30px">
+                <img class="rounded-circle" src="{{ board.3.user_no.my_image }}" width="30px" height="30px">
                 <p class="content3_receipt1_profile_name">{{board.3.user_no.nickname}}</p>
             </div>
             </div>
@@ -205,7 +205,7 @@
             <div class="content3_receipt1_text3">{{board.4.date|date:'Y.m.d'}}</div>
             <hr class="content3_receipt1_line">
             <div class="content3_receipt1_profile">
-                <img src="{{ board.4.user_no.my_image }}" width="30px" height="30px">
+                <img class="rounded-circle" src="{{ board.4.user_no.my_image }}" width="30px" height="30px">
                 <p class="content3_receipt1_profile_name">{{board.4.user_no.nickname}}</p>
             </div>
             </div>
@@ -221,7 +221,7 @@
             <div class="content3_receipt1_text3">{{board.5.date|date:'Y.m.d'}}</div>
             <hr class="content3_receipt1_line">
             <div class="content3_receipt1_profile">
-            <img src="{{ board.5.user_no.my_image }}" width="30px" height="30px">
+            <img class="rounded-circle" src="{{ board.5.user_no.my_image }}" width="30px" height="30px">
             <p class="content3_receipt1_profile_name">{{board.5.user_no.nickname}}</p>
             </div>
             </div>
@@ -241,7 +241,7 @@
                     <div class="content3_receipt1_text3">{{board.6.date|date:'Y.m.d'}}</div>
                     <hr class="content3_receipt1_line">
                     <div class="content3_receipt1_profile">
-                        <img src="{{ board.6.user_no.my_image }}" width="30px" height="30px">
+                        <img class="rounded-circle" src="{{ board.6.user_no.my_image }}" width="30px" height="30px">
                         <p class="content3_receipt1_profile_name">{{board.6.user_no.nickname}}</p>
                     </div>
                 </div>
@@ -257,7 +257,7 @@
                     <div class="content3_receipt1_text3">{{board.7.date|date:'Y.m.d'}}</div>
                     <hr class="content3_receipt1_line">
                     <div class="content3_receipt1_profile">
-                        <img src="{{ board.7.user_no.my_image }}" width="30px" height="30px">
+                        <img class="rounded-circle" src="{{ board.7.user_no.my_image }}" width="30px" height="30px">
                         <p class="content3_receipt1_profile_name">{{board.7.user_no.nickname}}</p>
                     </div>
                 </div>
@@ -273,7 +273,7 @@
                     <div class="content3_receipt1_text3">{{board.8.date|date:'Y.m.d'}}</div>
                     <hr class="content3_receipt1_line">
                     <div class="content3_receipt1_profile">
-                        <img src="{{ board.8.user_no.my_image }}" width="30px" height="30px">
+                        <img class="rounded-circle" src="{{ board.8.user_no.my_image }}" width="30px" height="30px">
                         <p class="content3_receipt1_profile_name">{{board.8.user_no.nickname}}</p>
                     </div>
                 </div>
@@ -305,7 +305,7 @@
                 <div class="content3_receipt1_text3">{{post.0.date|date:'Y.m.d'}}</div>
                 <hr class="content3_receipt1_line">
                 <div class="content3_receipt1_profile">
-                    <img src="{{ post.0.user_no.my_image }}" width="30px" height="30px">
+                    <img class="rounded-circle" src="{{ post.0.user_no.my_image }}" width="30px" height="30px">
                     <p class="content3_receipt1_profile_name">{{post.0.user_no.nickname}}</p>
                 </div>
                 <!-- 존재하지 않을 때 -->
@@ -332,7 +332,7 @@
                 <div class="content3_receipt1_text3">{{post.1.date|date:'Y.m.d'}}</div>
                 <hr class="content3_receipt1_line">
                 <div class="content3_receipt1_profile">
-                    <img src="{{ post.1.user_no.my_image }}" width="30px" height="30px">
+                    <img class="rounded-circle" src="{{ post.1.user_no.my_image }}" width="30px" height="30px">
                     <p class="content3_receipt1_profile_name">{{post.1.user_no.nickname}}</p>
                 </div>
                 <!-- 존재하지 않을 때 -->
@@ -358,7 +358,7 @@
                 <div class="content3_receipt1_text3">{{post.2.date|date:'Y.m.d'}}</div>
                 <hr class="content3_receipt1_line">
                 <div class="content3_receipt1_profile">
-                    <img src="{{ post.2.user_no.my_image }}" width="30px" height="30px">
+                    <img class="rounded-circle" src="{{ post.2.user_no.my_image }}" width="30px" height="30px">
                     <p class="content3_receipt1_profile_name">{{post.2.user_no.nickname}}</p>
                 </div>
                 <!-- 존재하지 않을 때 -->
@@ -387,7 +387,7 @@
                 <div class="content3_receipt1_text3">{{post.3.date|date:'Y.m.d'}}</div>
                 <hr class="content3_receipt1_line">
                 <div class="content3_receipt1_profile">
-                    <img src="{{ post.3.user_no.my_image }}" width="30px" height="30px">
+                    <img class="rounded-circle" src="{{ post.3.user_no.my_image }}" width="30px" height="30px">
                     <p class="content3_receipt1_profile_name">{{post.3.user_no.nickname}}</p>
                 </div>
                 <!-- 존재하지 않을 때 -->
@@ -413,7 +413,7 @@
                 <div class="content3_receipt1_text3">{{post.4.date|date:'Y.m.d'}}</div>
                 <hr class="content3_receipt1_line">
                 <div class="content3_receipt1_profile">
-                    <img src="{{ post.4.user_no.my_image }}" width="30px" height="30px">
+                    <img class="rounded-circle" src="{{ post.4.user_no.my_image }}" width="30px" height="30px">
                     <p class="content3_receipt1_profile_name">{{post.4.user_no.nickname}}</p>
                 </div>
                 <!-- 존재하지 않을 때 -->
@@ -439,7 +439,7 @@
                 <div class="content3_receipt1_text3">{{post.5.date|date:'Y.m.d'}}</div>
                 <hr class="content3_receipt1_line">
                 <div class="content3_receipt1_profile">
-                    <img src="{{ post.5.user_no.my_image }}" width="30px" height="30px">
+                    <img class="rounded-circle" src="{{ post.5.user_no.my_image }}" width="30px" height="30px">
                     <p class="content3_receipt1_profile_name">{{post.5.user_no.nickname}}</p>
                 </div>
                 <!-- 존재하지 않을 때 -->
@@ -470,7 +470,7 @@
                     <div class="content3_receipt1_text3">{{post.6.date|date:'Y.m.d'}}</div>
                     <hr class="content3_receipt1_line">
                     <div class="content3_receipt1_profile">
-                        <img src="{{ post.6.user_no.my_image }}" width="30px" height="30px">
+                        <img class="rounded-circle" src="{{ post.6.user_no.my_image }}" width="30px" height="30px">
                         <p class="content3_receipt1_profile_name">{{post.6.user_no.nickname}}</p>
                     </div>
                     {% else%}
@@ -495,7 +495,7 @@
                     <div class="content3_receipt1_text3">{{post.7.date|date:'Y.m.d'}}</div>
                     <hr class="content3_receipt1_line">
                     <div class="content3_receipt1_profile">
-                        <img src="{{ post.7.user_no.my_image }}" width="30px" height="30px">
+                        <img class="rounded-circle" src="{{ post.7.user_no.my_image }}" width="30px" height="30px">
                         <p class="content3_receipt1_profile_name">{{post.7.user_no.nickname}}</p>
                     </div>
                     <!-- 존재하지 않을 때 -->
@@ -521,7 +521,7 @@
                     <div class="content3_receipt1_text3">{{post.8.date|date:'Y.m.d'}}</div>
                     <hr class="content3_receipt1_line">
                     <div class="content3_receipt1_profile">
-                        <img src="{{ post.8.user_no.my_image }}" width="30px" height="30px">
+                        <img class="rounded-circle" src="{{ post.8.user_no.my_image }}" width="30px" height="30px">
                         <p class="content3_receipt1_profile_name">{{post.8.user_no.nickname}}</p>
                     </div>
                     {% else%}
