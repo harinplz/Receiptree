@@ -74,6 +74,9 @@ function getlist() {
         list4.push($(item).val());
     });
     $("#content_list").val(list4);
+
+    link = 'receipt_01.html';
+    location.href = link;
 }
 //합계
 // function calcSum() {

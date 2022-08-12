@@ -67,12 +67,12 @@
         <input type="text" name="tags" class="hashtag"placeholder="해쉬태그 입력">
         
         <div class="final_btn">
-        <a href="{% url 'board_write' %}"><button id="cancel">취소</button></a>
+        <!-- <button id="cancel" onClick="window.location.reload()">취소</button> -->
         <input type="hidden" name="date[]" id="date_list" value="">
         <input type="hidden" name="cost[]" id="cost_list" value="">
         <input type="hidden" name="place[]" id="place_list" value="">
         <input type="hidden" name="content[]" id="content_list" value="">
-        <input type="submit" id="submit" onclick="getlist()" value="작성 완료">
+        <a href="{% url 'board_main' %}"><input type="submit" id="submit" onclick="getlist()" value="작성 완료"></a>
         </div>
 
     
