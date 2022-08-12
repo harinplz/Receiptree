@@ -15,7 +15,8 @@ class User(AbstractUser):
     grade = models.CharField(max_length=40)
     image = models.ImageField(null=True, blank=True, upload_to = "account")
     team_no = models.ForeignKey('party.Team', on_delete=models.CASCADE, db_column='team_no', null=True, blank=True)
-
+    phone_number = models.CharField(max_length=15, null=True)
+    
     def __str__(self):
         return f"{self.username} - {self.nickname}"
     
