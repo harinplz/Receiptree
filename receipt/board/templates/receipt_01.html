@@ -31,7 +31,7 @@
         <div class="content2_text">인기영수증</div>
 
         <div class="content2_receipt1">
-            <div class="content2_receipt1_text1">{{hot.0.title}}</div>
+            <a class="a_title" href="{% url 'board_detail' hot.0.board_no %}"><div class="content2_receipt1_text1">{{hot.0.title}}</div></a>
             <div class="content2_receipt1_text2">
                 {% for t in hot.0.tags.all %}
                 #{{t.tagname}}
@@ -45,7 +45,8 @@
             </div>
         </div>
         <div class="content2_receipt2">
-            <div class="content2_receipt1_text1">{{hot.1.title}}</div>
+            <a class="a_title" href="{% url 'board_detail' hot.1.board_no %}">
+                <div class="content2_receipt1_text1">{{hot.1.title}}</div></a>
             <div class="content2_receipt1_text2">
                 {% for t in hot.1.tags.all %}
                 #{{t.tagname}}
@@ -59,7 +60,8 @@
             </div>
         </div>
         <div class="content2_receipt3">
-            <div class="content2_receipt1_text1">{{hot.2.title}}</div>
+            <a class="a_title" href="{% url 'board_detail' hot.2.board_no %}">
+                <div class="content2_receipt1_text1">{{hot.2.title}}</div></a>
             <div class="content2_receipt1_text2">
                 {% for t in hot.2.tags.all %}
                 #{{t.tagname}}
@@ -73,7 +75,8 @@
             </div>
         </div>
         <div class="content2_receipt4">
-            <div class="content2_receipt1_text1">{{hot.3.title}}</div>
+            <a class="a_title" href="{% url 'board_detail' hot.3.board_no %}">
+                <div class="content2_receipt1_text1">{{hot.3.title}}</div></a>
             <div class="content2_receipt1_text2">
                 {% for t in hot.3.tags.all %}
                 #{{t.tagname}}
