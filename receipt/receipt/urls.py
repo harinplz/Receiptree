@@ -17,6 +17,8 @@ urlpatterns = [
     path('bad/', board_views.board_bad, name='board_bad'),
     path('mypage', account_views.mypage, name='mypage'),
     path('signup', account_views.signup, name='signup'),
+    path('login', account_views.login, name='login'),
+    path('logout', account_views.logout, name='logout'),
 ]
 
 if settings.DEBUG:

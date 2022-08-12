@@ -18,6 +18,8 @@
             <li><a class="menuLink" href="#">영수증파티</a></li>
             <li><a class="menuLink" href="#">MY영수증</a></li>
             <li><input type="button" value="로그인" class="menuButton">
+                {% if user.is_authenticated %}
+                <a href="{% url 'logout' %}">LOGOUT<a>
         </ul>
     </nav>
     <hr style="background-color:F2F2F2; height:3px;border:none;">
@@ -27,7 +29,9 @@
         <div class="content1_title">회원가입 완료</div>
         <div class="content1_img"><img src=""></div>
         <div class="content1_detail">회원가입이 완료되었습니다!</div>
-        <input type="button" value="로그인하러 가기" class="content1_btn">
+        <form  method="GET">
+        <input type="submit" value="로그인하러 가기" class="content1_btn">
+        </form>
     </div>
 </div>
 

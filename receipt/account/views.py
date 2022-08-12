@@ -3,17 +3,18 @@ from django.contrib import auth
 from django.contrib.auth import authenticate
 from django.contrib.auth.models import User
 from django.contrib.auth.hashers import check_password
+from django.contrib.auth.decorators import login_required
 from .models import User
 from .models import User_info
 
 def mypage(request):
+
     return render(request, 'mypage_05.html')
 
-def signup(request):
-    return render(request, 'signup_09.html')
 
-def login(request):
-    return render(request, 'login_14.html')
+def signup_done(request):
+    return render(request, 'signup_11.html')
+
 
 # 회원가입 (유효성 검사x)
 def signup(request):
@@ -30,7 +31,7 @@ def signup(request):
             user.grade = "BLUE"
             user.save()
             user_info = User_info()
-            user_info.user_no = user.user_no
+            # user_info.user_no = user.user_no
                 # image = request.FILES.get['image'],
             if request.POST['age']!="나이 입력(숫자만)":
                 user_info.age = request.POST['age']
@@ -40,10 +41,12 @@ def signup(request):
                 user_info.expense_body = request.POST['expense_body']
                 user_info.save()
             # auth.login(request, user)
-            return render(request, 'signup_11.html') #회원가입, 로그인 후 이동할 곳
+            # render(request, 'signup_11.html')
+            # if request.method == 'POST':
+            #     return render(request, 'login_14.html')
+            return redirect('login') #회원가입, 로그인 후 이동할 곳
         return render(request, 'signup_09.html')
     return render(request, 'signup_09.html')
-
 
 
 # 로그인
@@ -62,6 +65,7 @@ def login(request):
         
 
 # 로그아웃
+@login_required
 def logout(request):
     auth.logout(request)
     return redirect('home')
@@ -99,3 +103,4 @@ def pwd_change(request):
         context.update({'error':"현재 비밀번호가 일치하지 않습니다."})
 
     return render(request, "pwd_change.html",context)
+
