@@ -75,8 +75,8 @@ def board_write(request):
 
                 receipt.save()
 
-        return HttpResponse('board_write')
-    return HttpResponse('board_write')
+        return redirect('board_main')
+    return redirect('board_main')
 
 
 #영수증 상세화면

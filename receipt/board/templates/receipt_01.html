@@ -3,7 +3,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="{% static 'css/receipt_01.css' %}">
+    <link rel="stylesheet" href="{% static 'css/receipt_01_01.css' %}">
     <title></title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -117,11 +117,17 @@
             <div input type="button" class="content3_icon5">#생활비</div>
         </div>
 
+        <!-- 키워드 검색이 되지 않았을 때 메인 화면 -->
+
         {% if keyword is None %}
-<!-- 영수증 1줄 -->
+        <!-- 영수증 모아놓은 div -->
         <div class="content3_receipt">
+        
+            <!-- 영수증 1줄 -->
+
+            <!-- 1번째 영수증 -->
             <div class="content3_receipt1">
-            <div class="content3_receipt1_text1">{{board.0.title}}</div>
+            <a class="a_title" href="{% url 'board_detail' board.0.board_no%}"><div class="content3_receipt1_text1">{{board.0.title}}</div></a>
             <div class="content3_receipt1_text2">
                 {% for t in board.0.tags.all %}
                 #{{t.tagname}}
@@ -134,8 +140,10 @@
                 <p class="content3_receipt1_profile_name">{{board.0.user_no.nickname}}</p>
             </div>
             </div>
+
+            <!-- 2번째 영수증 -->
             <div class="content3_receipt2">
-            <div class="content3_receipt1_text1">{{board.1.title}}</div>
+            <a class="a_title" href="{% url 'board_detail' board.1.board_no %}"><div class="content3_receipt1_text1">{{board.1.title}}</div></a>
             <div class="content3_receipt1_text2">
                 {% for t in board.1.tags.all %}
                 #{{t.tagname}}
@@ -148,8 +156,10 @@
                 <p class="content3_receipt1_profile_name">{{board.1.user_no.nickname}}</p>
             </div>
             </div>
+
+            <!-- 3번째 영수증 -->
             <div class="content3_receipt3">
-            <div class="content3_receipt1_text1">{{board.2.title}}</div>
+            <a class="a_title" href="{% url 'board_detail' board.2.board_no%}"><div class="content3_receipt1_text1">{{board.2.title}}</div></a>
             <div class="content3_receipt1_text2">
                 {% for t in board.2.tags.all %}
                 #{{t.tagname}}
@@ -164,8 +174,10 @@
             </div>
 
             <!-- 영수증 2줄 -->
+
+            <!-- 4번째 영수증 -->
             <div class="content3_receipt4">
-                <div class="content3_receipt1_text1">{{board.3.title}}</div>
+                <a class="a_title" href="{% url 'board_detail' board.3.board_no%}"><div class="content3_receipt1_text1">{{board.3.title}}</div></a>
             <div class="content3_receipt1_text2">
                 {% for t in board.3.tags.all %}
                 #{{t.tagname}}
@@ -179,9 +191,9 @@
             </div>
             </div>
 
-            
+            <!-- 5번째 영수증 -->
             <div class="content3_receipt5">
-                <div class="content3_receipt1_text1">{{board.4.title}}</div>
+                <a class="a_title" href="{% url 'board_detail' board.4.board_no%}"><div class="content3_receipt1_text1">{{board.4.title}}</div></a>
             <div class="content3_receipt1_text2">
                 {% for t in board.4.tags.all %}
                 #{{t.tagname}}
@@ -195,8 +207,9 @@
             </div>
             </div>
 
+            <!-- 6번째 영수증 -->
             <div class="content3_receipt6">
-                <div class="content3_receipt1_text1">{{board.5.title}}</div>
+                <a class="a_title" href="{% url 'board_detail' board.5.board_no%}"><div class="content3_receipt1_text1">{{board.5.title}}</div></a>
             <div class="content3_receipt1_text2">
                 {% for t in board.5.tags.all %}
                 #{{t.tagname}}
@@ -210,243 +223,327 @@
             </div>
             </div>
 
-            <!-- 인기 영수증 3줄 -->
+            <!--  영수증 3줄 -->
+            <!-- '더보기' 를 누르면 숨겨졌었던 영수증이 다시 뜬다. -->
             <div class="content3_hide">
-            <div class="content3_receipt7">
-            <div class="content3_receipt1_text1">{{board.6.title}}</div>
-            <div class="content3_receipt1_text2">
-                {% for t in board.6.tags.all %}
-                #{{t.tagname}}
-                {% endfor %}
-            </div>
-            <div class="content3_receipt1_text3">{{board.6.date|date:'Y.m.d'}}</div>
-            <hr class="content3_receipt1_line">
-            <div class="content3_receipt1_profile">
-            <img src="{{ board.6.user_no.my_image }}" width="30px" height="30px">
-            <p class="content3_receipt1_profile_name">{{board.6.user_no.nickname}}</p>
-            </div>
+
+                <!-- 7번째 영수증-->
+                <div class="content3_receipt7">
+                    <a class="a_title" href="{% url 'board_detail' board.6.board_no%}"><div class="content3_receipt1_text1">{{board.6.title}}</div></a>
+                    <div class="content3_receipt1_text2">
+                    {% for t in board.6.tags.all %}
+                    #{{t.tagname}}
+                    {% endfor %}
+                    </div>
+                    <div class="content3_receipt1_text3">{{board.6.date|date:'Y.m.d'}}</div>
+                    <hr class="content3_receipt1_line">
+                    <div class="content3_receipt1_profile">
+                        <img src="{{ board.6.user_no.my_image }}" width="30px" height="30px">
+                        <p class="content3_receipt1_profile_name">{{board.6.user_no.nickname}}</p>
+                    </div>
+                </div>
+
+                <!-- 8번째 영수증 -->
+                <div class="content3_receipt8">
+                    <a class="a_title" href="{% url 'board_detail' board.7.board_no%}"><div class="content3_receipt1_text1">{{board.7.title}}</div></a>
+                    <div class="content3_receipt1_text2">
+                        {% for t in board.7.tags.all %}
+                        #{{t.tagname}}
+                        {% endfor %}
+                    </div>
+                    <div class="content3_receipt1_text3">{{board.7.date|date:'Y.m.d'}}</div>
+                    <hr class="content3_receipt1_line">
+                    <div class="content3_receipt1_profile">
+                        <img src="{{ board.7.user_no.my_image }}" width="30px" height="30px">
+                        <p class="content3_receipt1_profile_name">{{board.7.user_no.nickname}}</p>
+                    </div>
+                </div>
+
+                <!--9번째 영수증-->
+                <div class="content3_receipt9">
+                    <a class="a_title" href="{% url 'board_detail' board.8.board_no%}"><div class="content3_receipt1_text1">{{board.8.title}}</div></a>
+                    <div class="content3_receipt1_text2">
+                        {% for t in board.8.tags.all %}
+                        #{{t.tagname}}
+                        {% endfor %}
+                    </div>
+                    <div class="content3_receipt1_text3">{{board.8.date|date:'Y.m.d'}}</div>
+                    <hr class="content3_receipt1_line">
+                    <div class="content3_receipt1_profile">
+                        <img src="{{ board.8.user_no.my_image }}" width="30px" height="30px">
+                        <p class="content3_receipt1_profile_name">{{board.8.user_no.nickname}}</p>
+                    </div>
+                </div>
             </div>
 
-            <div class="content3_receipt8">
-                <div class="content3_receipt1_text1">{{board.7.title}}</div>
-            <div class="content3_receipt1_text2">
-                {% for t in board.7.tags.all %}
-                #{{t.tagname}}
-                {% endfor %}
-            </div>
-            <div class="content3_receipt1_text3">{{board.7.date|date:'Y.m.d'}}</div>
-            <hr class="content3_receipt1_line">
-            <div class="content3_receipt1_profile">
-            <img src="{{ board.7.user_no.my_image }}" width="30px" height="30px">
-            <p class="content3_receipt1_profile_name">{{board.7.user_no.nickname}}</p>
-            </div>
-            </div>
+            <!-- 더보기 버튼 -->
+            <input type="button" class="content3_receipt_btn" value="더보기">
 
-            
-            <div class="content3_receipt9">
-            <div class="content3_receipt1_text1">{{board.8.title}}</div>
-            <div class="content3_receipt1_text2">
-                {% for t in board.8.tags.all %}
-                #{{t.tagname}}
-                {% endfor %}
-            </div>
-            <div class="content3_receipt1_text3">{{board.8.date|date:'Y.m.d'}}</div>
-            <hr class="content3_receipt1_line">
-            <div class="content3_receipt1_profile">
-            <img src="{{ board.8.user_no.my_image }}" width="30px" height="30px">
-            <p class="content3_receipt1_profile_name">{{board.8.user_no.nickname}}</p>
-            </div>
-            </div>
+        <!-- 영수증 모아놓은 div 닫힘 -->
         </div>
+
+        <!-- 키워드 검색이 들어왔을 때 메인 화면 -->
+        {% elif keyword is not None%}
+
+        <div class="content3_receipt">
+
+            <!-- 영수증 1줄 -->
+
+            <!-- 1번째 영수증 -->
+            <div class="content3_receipt1">
+                <!-- 검색 결과 1번째 영수증이 존재할 때 -->
+                {% if post.0 != None%}
+                <a class="a_title" href="{% url 'board_detail' post.0.board_no%}"><div class="content3_receipt1_text1">{{post.0.title}}</div></a>
+                <div class="content3_receipt1_text2">
+                    {% for t in post.0.tags.all %}
+                    #{{t.tagname}}
+                    {% endfor %}
+                </div>
+                <div class="content3_receipt1_text3">{{post.0.date|date:'Y.m.d'}}</div>
+                <hr class="content3_receipt1_line">
+                <div class="content3_receipt1_profile">
+                    <img src="{{ post.0.user_no.my_image }}" width="30px" height="30px">
+                    <p class="content3_receipt1_profile_name">{{post.0.user_no.nickname}}</p>
+                </div>
+                <!-- 존재하지 않을 때 -->
+                {%else%}
+                <div class="content3_receipt1_text1"></div>
+                <div class="content3_receipt1_text2"></div>
+                <div class="content3_receipt1_text3"></div>
+                <hr class="content3_receipt1_line">
+                <div class="content3_receipt1_profile"></div>
+                <!-- if문 종료-->
+                {%endif%}
+            </div>
+
+            <!-- 2번째 영수증 -->
+            <div class="content3_receipt2">
+                <!-- 검색 결과 2번째 영수증이 존재할 때 -->
+                {% if post.1 != None%}
+                <a class="a_title" href="{% url 'board_detail' post.1.board_no%}"><div class="content3_receipt1_text1">{{post.1.title}}</div></a>
+                <div class="content3_receipt1_text2">
+                    {% for t in post.1.tags.all %}
+                    #{{t.tagname}}
+                    {% endfor %}
+                </div>
+                <div class="content3_receipt1_text3">{{post.1.date|date:'Y.m.d'}}</div>
+                <hr class="content3_receipt1_line">
+                <div class="content3_receipt1_profile">
+                    <img src="{{ post.1.user_no.my_image }}" width="30px" height="30px">
+                    <p class="content3_receipt1_profile_name">{{post.1.user_no.nickname}}</p>
+                </div>
+                <!-- 존재하지 않을 때 -->
+                {%else%}
+                <div class="content3_receipt1_text1"></div>
+                <div class="content3_receipt1_text2"></div>
+                <div class="content3_receipt1_text3"></div>
+                <hr class="content3_receipt1_line">
+                <div class="content3_receipt1_profile"></div>
+                {%endif%}
+            </div>
+
+            <!-- 3번째 영수증 -->
+            <div class="content3_receipt3">
+                <!-- 검색 결과 3번째 영수증이 존재할 때 -->
+                {% if post.2 != None%}
+                <a class="a_title" href="{% url 'board_detail' post.2.board_no%}"><div class="content3_receipt1_text1">{{post.2.title}}</div></a>
+                <div class="content3_receipt1_text2">
+                    {% for t in post.2.tags.all %}
+                    #{{t.tagname}}
+                    {% endfor %}
+                </div>
+                <div class="content3_receipt1_text3">{{post.2.date|date:'Y.m.d'}}</div>
+                <hr class="content3_receipt1_line">
+                <div class="content3_receipt1_profile">
+                    <img src="{{ post.2.user_no.my_image }}" width="30px" height="30px">
+                    <p class="content3_receipt1_profile_name">{{post.2.user_no.nickname}}</p>
+                </div>
+                <!-- 존재하지 않을 때 -->
+                {% else%}
+                <div class="content3_receipt1_text1"></div>
+                <div class="content3_receipt1_text2"></div>
+                <div class="content3_receipt1_text3"></div>
+                <hr class="content3_receipt1_line">
+                <div class="content3_receipt1_profile"></div>
+                {%endif%}
+            </div>
+
+
+            <!-- 영수증 2줄 -->
+
+            <!-- 4번째 영수증 -->
+            <div class="content3_receipt4">
+                <!-- 검색 결과 4번째 영수증이 존재할 때 -->
+                {% if post.3 != None%}
+                <a class="a_title" href="{% url 'board_detail' post.3.board_no%}"><div class="content3_receipt1_text1">{{post.3.title}}</div></a>
+                <div class="content3_receipt1_text2">
+                    {% for t in post.3.tags.all %}
+                    #{{t.tagname}}
+                    {% endfor %}
+                </div>
+                <div class="content3_receipt1_text3">{{post.3.date|date:'Y.m.d'}}</div>
+                <hr class="content3_receipt1_line">
+                <div class="content3_receipt1_profile">
+                    <img src="{{ post.3.user_no.my_image }}" width="30px" height="30px">
+                    <p class="content3_receipt1_profile_name">{{post.3.user_no.nickname}}</p>
+                </div>
+                <!-- 존재하지 않을 때 -->
+                {% else %}
+                <div class="content3_receipt1_text1"></div>
+                <div class="content3_receipt1_text2"></div>
+                <div class="content3_receipt1_text3"></div>
+                <hr class="content3_receipt1_line">
+                <div class="content3_receipt1_profile"></div>
+                {%endif%}
+            </div>
+
+            <!-- 5번째 영수증 -->
+            <div class="content3_receipt5">
+                <!-- 검색 결과 5번째 영수증이 존재할 때 -->
+                {% if post.4 != None%}
+                <a class="a_title" href="{% url 'board_detail' post.4.board_no%}"><div class="content3_receipt1_text1">{{post.4.title}}</div></a>
+                <div class="content3_receipt1_text2">
+                    {% for t in post.4.tags.all %}
+                    #{{t.tagname}}
+                    {% endfor %}
+                </div>
+                <div class="content3_receipt1_text3">{{post.4.date|date:'Y.m.d'}}</div>
+                <hr class="content3_receipt1_line">
+                <div class="content3_receipt1_profile">
+                    <img src="{{ post.4.user_no.my_image }}" width="30px" height="30px">
+                    <p class="content3_receipt1_profile_name">{{post.4.user_no.nickname}}</p>
+                </div>
+                <!-- 존재하지 않을 때 -->
+                {% else%}
+                <div class="content3_receipt1_text1"></div>
+                <div class="content3_receipt1_text2"></div>
+                <div class="content3_receipt1_text3"></div>
+                <hr class="content3_receipt1_line">
+                <div class="content3_receipt1_profile"></div>
+                {%endif%}
+            </div>
+
+            <!-- 6번째 영수증-->
+            <div class="content3_receipt6">
+                <!-- 검색 결과 6번째 영수증이 존재할 때 -->
+                {% if post.5 != None%}
+                <a class="a_title" href="{% url 'board_detail' post.5.board_no%}"><div class="content3_receipt1_text1">{{post.5.title}}</div></a>
+                <div class="content3_receipt1_text2">
+                    {% for t in post.5.tags.all %}
+                    #{{t.tagname}}
+                    {% endfor %}
+                </div>
+                <div class="content3_receipt1_text3">{{post.5.date|date:'Y.m.d'}}</div>
+                <hr class="content3_receipt1_line">
+                <div class="content3_receipt1_profile">
+                    <img src="{{ post.5.user_no.my_image }}" width="30px" height="30px">
+                    <p class="content3_receipt1_profile_name">{{post.5.user_no.nickname}}</p>
+                </div>
+                <!-- 존재하지 않을 때 -->
+                {% else%}
+                <div class="content3_receipt1_text1"></div>
+                <div class="content3_receipt1_text2"></div>
+                <div class="content3_receipt1_text3"></div>
+                <hr class="content3_receipt1_line">
+                <div class="content3_receipt1_profile"></div>
+                {%endif%}
+            </div>
+
+            <!-- 영수증 3줄 -->
+
+            <!-- '더보기' 버튼을 누르면 숨겨졌던 영수증 3개가 보이는 div -->
+            <div class="content3_hide">
+
+                <!-- 7번째 영수증 -->
+                <div class="content3_receipt7">
+                    <!-- 검색 결과 7번째 영수증이 존재할 때 -->
+                    {% if post.6 != None %}
+                    <a class="a_title" href="{% url 'board_detail' post.6.board_no%}"><div class="content3_receipt1_text1">{{post.6.title}}</div></a>
+                    <div class="content3_receipt1_text2">
+                        {% for t in post.6.tags.all %}
+                        #{{t.tagname}}
+                        {% endfor %}
+                    </div>
+                    <div class="content3_receipt1_text3">{{post.6.date|date:'Y.m.d'}}</div>
+                    <hr class="content3_receipt1_line">
+                    <div class="content3_receipt1_profile">
+                        <img src="{{ post.6.user_no.my_image }}" width="30px" height="30px">
+                        <p class="content3_receipt1_profile_name">{{post.6.user_no.nickname}}</p>
+                    </div>
+                    {% else%}
+                    <div class="content3_receipt1_text1"></div>
+                    <div class="content3_receipt1_text2"></div>
+                    <div class="content3_receipt1_text3"></div>
+                    <hr class="content3_receipt1_line">
+                    <div class="content3_receipt1_profile"></div>
+                    {%endif%}
+                </div>
+
+                <!-- 8번째 영수증 -->
+                <div class="content3_receipt8">
+                    <!-- 검색 결과 8번째 영수증이 존재할 때 -->
+                    {% if post.7 != None %}
+                    <a class="a_title" href="{% url 'board_detail' post.7.board_no%}"><div class="content3_receipt1_text1">{{post.7.title}}</div></a>
+                    <div class="content3_receipt1_text2">
+                        {% for t in post.7.tags.all %}
+                        #{{t.tagname}}
+                        {% endfor %}
+                    </div>
+                    <div class="content3_receipt1_text3">{{post.7.date|date:'Y.m.d'}}</div>
+                    <hr class="content3_receipt1_line">
+                    <div class="content3_receipt1_profile">
+                        <img src="{{ post.7.user_no.my_image }}" width="30px" height="30px">
+                        <p class="content3_receipt1_profile_name">{{post.7.user_no.nickname}}</p>
+                    </div>
+                    <!-- 존재하지 않을 때 -->
+                    {% else%}
+                    <div class="content3_receipt1_text1"></div>
+                    <div class="content3_receipt1_text2"></div>
+                    <div class="content3_receipt1_text3"></div>
+                    <hr class="content3_receipt1_line">
+                    <div class="content3_receipt1_profile"></div>
+                    {%endif%}
+                </div>
+
+                <!-- 9번째 영수증 -->
+                <div class="content3_receipt9">
+                    <!-- 검색 결과 9번째 영수증이 존재할 때 -->
+                    {% if post.8 != None %}
+                    <a class="a_title" href="{% url 'board_detail' post.8.board_no%}"><div class="content3_receipt1_text1">{{post.8.title}}</div></a>
+                    <div class="content3_receipt1_text2">
+                        {% for t in post.8.tags.all %}
+                        #{{t.tagname}}
+                        {% endfor %}
+                    </div>
+                    <div class="content3_receipt1_text3">{{post.8.date|date:'Y.m.d'}}</div>
+                    <hr class="content3_receipt1_line">
+                    <div class="content3_receipt1_profile">
+                        <img src="{{ post.8.user_no.my_image }}" width="30px" height="30px">
+                        <p class="content3_receipt1_profile_name">{{post.8.user_no.nickname}}</p>
+                    </div>
+                    {% else%}
+                    <div class="content3_receipt1_text1"></div>
+                    <div class="content3_receipt1_text2"></div>
+                    <div class="content3_receipt1_text3"></div>
+                    <hr class="content3_receipt1_line">
+                    <div class="content3_receipt1_profile"></div>
+                    {%endif%}
+                </div>
+
+            <!-- content3_hide div를 닫는 태그 -->
+            </div>
 
             <input type="button" class="content3_receipt_btn" value="더보기">
-        </div>
-    </div>
 
-    {% elif keyword is not None%}
-
-    <div class="content3_receipt">
-        <div class="content3_receipt1">
-        <div class="content3_receipt1_text1">{{post.0.title}}</div>
-        <div class="content3_receipt1_text2">
-            {% for t in post.0.tags.all %}
-            #{{t.tagname}}
-            {% endfor %}
+        <!-- 영수증 모아놓은 div 닫는 태그 -->
         </div>
-        <div class="content3_receipt1_text3">{{post.0.date|date:'Y.m.d'}}</div>
-        <hr class="content3_receipt1_line">
-        <div class="content3_receipt1_profile">
-            {% if post.0 == None %}
-            %nbsp;
-            {% else %}
-            <img src="{{ post.0.user_no.my_image }}" width="30px" height="30px">
-            {% endif %}
-            <p class="content3_receipt1_profile_name">{{post.0.user_no.nickname}}</p>
-        </div>
-        </div>
-        <div class="content3_receipt2">
-        <div class="content3_receipt1_text1">{{post.1.title}}</div>
-        <div class="content3_receipt1_text2">
-            {% for t in post.1.tags.all %}
-            #{{t.tagname}}
-            {% endfor %}
-        </div>
-        <div class="content3_receipt1_text3">{{post.1.date|date:'Y.m.d'}}</div>
-        <hr class="content3_receipt1_line">
-        <div class="content3_receipt1_profile">
-            {% if post.1 == None %}
-            &nbsp
-            {% else %}
-            <img src="{{ post.1.user_no.my_image }}" width="30px" height="30px">
-            {%endif%}
-            <p class="content3_receipt1_profile_name">{{post.1.user_no.nickname}}</p>
-        </div>
-        </div>
-        <div class="content3_receipt3">
-        <div class="content3_receipt1_text1">{{post.2.title}}</div>
-        <div class="content3_receipt1_text2">
-            {% for t in post.2.tags.all %}
-            #{{t.tagname}}
-            {% endfor %}
-        </div>
-        <div class="content3_receipt1_text3">{{post.2.date|date:'Y.m.d'}}</div>
-        <hr class="content3_receipt1_line">
-        <div class="content3_receipt1_profile">
-            {% if post.2 == None %}
-            &nbsp
-            {% else %}
-            <img src="{{ post.2.user_no.my_image }}" width="30px" height="30px">
-            {%endif%}
-            <p class="content3_receipt1_profile_name">{{post.2.user_no.nickname}}</p>
-        </div>
-        </div>
-
-        <!-- 영수증 2줄 -->
-        <div class="content3_receipt4">
-            <div class="content3_receipt1_text1">{{post.3.title}}</div>
-        <div class="content3_receipt1_text2">
-            {% for t in post.3.tags.all %}
-            #{{t.tagname}}
-            {% endfor %}
-        </div>
-        <div class="content3_receipt1_text3">{{post.3.date|date:'Y.m.d'}}</div>
-        <hr class="content3_receipt1_line">
-        <div class="content3_receipt1_profile">
-            {% if post.3 == None %}
-            &nbsp
-            {% else %}
-            <img src="{{ post.3.user_no.my_image }}" width="30px" height="30px">
-            {%endif%}
-            <p class="content3_receipt1_profile_name">{{post.3.user_no.nickname}}</p>
-        </div>
-        </div>
-
-        
-        <div class="content3_receipt5">
-            <div class="content3_receipt1_text1">{{post.4.title}}</div>
-        <div class="content3_receipt1_text2">
-            {% for t in post.4.tags.all %}
-            #{{t.tagname}}
-            {% endfor %}
-        </div>
-        <div class="content3_receipt1_text3">{{post.4.date|date:'Y.m.d'}}</div>
-        <hr class="content3_receipt1_line">
-        <div class="content3_receipt1_profile">
-            {% if post.4 == None %}
-            &nbsp
-            {% else %}
-            <img src="{{ post.4.user_no.my_image }}" width="30px" height="30px">
-            {%endif%}
-            <p class="content3_receipt1_profile_name">{{post.4.user_no.nickname}}</p>
-        </div>
-        </div>
-
-        <div class="content3_receipt6">
-            <div class="content3_receipt1_text1">{{post.5.title}}</div>
-        <div class="content3_receipt1_text2">
-            {% for t in post.5.tags.all %}
-            #{{t.tagname}}
-            {% endfor %}
-        </div>
-        <div class="content3_receipt1_text3">{{post.5.date|date:'Y.m.d'}}</div>
-        <hr class="content3_receipt1_line">
-        <div class="content3_receipt1_profile">
-            {% if post.5 == None %}
-            &nbsp
-            {% else %}
-            <img src="{{ post.5.user_no.my_image }}" width="30px" height="30px">
-            {%endif%}
-        <p class="content3_receipt1_profile_name">{{post.5.user_no.nickname}}</p>
-        </div>
-        </div>
-
-        <!-- 인기 영수증 3줄 -->
-        <div class="content3_hide">
-        <div class="content3_receipt7">
-        <div class="content3_receipt1_text1">{{post.6.title}}</div>
-        <div class="content3_receipt1_text2">
-            {% for t in post.6.tags.all %}
-            #{{t.tagname}}
-            {% endfor %}
-        </div>
-        <div class="content3_receipt1_text3">{{post.6.date|date:'Y.m.d'}}</div>
-        <hr class="content3_receipt1_line">
-        <div class="content3_receipt1_profile">
-            {% if post.6 == None %}
-            &nbsp
-            {% else %}
-            <img src="{{ post.6.user_no.my_image }}" width="30px" height="30px">
-            {%endif%}
-        <p class="content3_receipt1_profile_name">{{post.6.user_no.nickname}}</p>
-        </div>
-        </div>
-
-        <div class="content3_receipt8">
-            <div class="content3_receipt1_text1">{{post.7.title}}</div>
-        <div class="content3_receipt1_text2">
-            {% for t in post.7.tags.all %}
-            #{{t.tagname}}
-            {% endfor %}
-        </div>
-        <div class="content3_receipt1_text3">{{post.7.date|date:'Y.m.d'}}</div>
-        <hr class="content3_receipt1_line">
-        <div class="content3_receipt1_profile">
-            {% if post.7 == None %}
-            &nbsp
-            {% else %}
-            <img src="{{ post.7.user_no.my_image }}" width="30px" height="30px">
-            {%endif%}
-        <p class="content3_receipt1_profile_name">{{post.7.user_no.nickname}}</p>
-        </div>
-        </div>
-
-        
-        <div class="content3_receipt9">
-        <div class="content3_receipt1_text1">{{post.8.title}}</div>
-        <div class="content3_receipt1_text2">
-            {% for t in post.8.tags.all %}
-            #{{t.tagname}}
-            {% endfor %}
-        </div>
-        <div class="content3_receipt1_text3">{{post.8.date|date:'Y.m.d'}}</div>
-        <hr class="content3_receipt1_line">
-        <div class="content3_receipt1_profile">
-            {% if post.8 == None %}
-            &nbsp
-            {% else %}
-            <img src="{{ post.8.user_no.my_image }}" width="30px" height="30px">
-            {%endif%}
-        <p class="content3_receipt1_profile_name">{{post.8.user_no.nickname}}</p>
-        </div>
-        </div>
-    </div>
-
-        <input type="button" class="content3_receipt_btn" value="더보기">
-    </div>
-</div>
-
         {% endif %}
 
+    <!-- content3 닫는 태그-->
+    </div>
+
+    </body>
+    </html>
         
 
         
