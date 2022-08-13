@@ -22,6 +22,8 @@ urlpatterns = [
     path('signup', account_views.signup, name='signup'),
     #파티
     path('party/', party_views.party_main, name='party_main'),
+    path('party/frugality', party_views.party_main_fru, name='party_main_fru'), #절약 카테고리
+    path('party/saving', party_views.party_main_saving, name='party_main_saving'), #저축 카테고리
 ]
 
 if settings.DEBUG:

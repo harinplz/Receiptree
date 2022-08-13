@@ -1,5 +1,7 @@
 {% load static %}
 
+<!-- 저축 카테고리 -->
+
 <html>
 <head>
     <meta charset="UTF-8">
@@ -33,9 +35,9 @@
      <hr class="content2_line">
 
      <div class="content3">
-        <a href="{% url 'party_main' %}"><input type="button" value="전체" class="content3_btn" autofocus></a>
-        <a href="{% url 'party_main_fru' %}"><input type="button" value="절약" class="content3_btn"></a>
-        <a href="{% url 'party_main_saving' %}"><input type="button" value="저축" class="content3_btn"></a>
+        <a href="{% url 'party_main' %}"><input type="button" value="전체" class="content3_btn"></a>
+        <a href="{% url 'party_main_fru' %}"><input type="button" value="절약" class="content3_btn" ></a>
+        <a href="{% url 'party_main_saving' %}"><input type="button" value="저축" class="content3_btn" autofocus></a>
      </div>
 
      <div class="content4">
