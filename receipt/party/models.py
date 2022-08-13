@@ -63,14 +63,14 @@ class Team_Board(models.Model):
     # Team_good_cnt = models.IntegerField(default=0)
     # Team_bad_cnt = models.IntegerField(default=0)
     team_no = models.ForeignKey('Team', on_delete=models.CASCADE, db_column='team_no')
-    team_user_no = models.ForeignKey('account.User', on_delete=models.CASCADE, db_column='team_user_no', null=True)
+    team_writer_no = models.ForeignKey('account.User', on_delete=models.CASCADE, db_column='team_user_no', null=True)
 
     # 글 올린 최신순으로 정렬
     class Meta:
         ordering=['-team_date']
 
     def __str__(self):
-        return self.team_board_no.team_name
+        return f"{self.team_no.team_name} - {self.team_writer_no.nickname} : {self.team_body}"
 
     # 좋아요 누른 유저 수 카운트
     def count_team_good_users(self):
