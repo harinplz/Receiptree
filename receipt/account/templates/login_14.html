@@ -27,8 +27,8 @@
             <div class="content1_logo">LOGO</div>
             <form  method="POST">
                 {% csrf_token %}
-            <input type="text" value="아이디를 입력하세요" class="content1_text1" name="email">
-            <input type="text" value="비밀번호를 입력하세요" class="content1_text2" name="password">
+            <input type="text" placeholder="아이디를 입력하세요" class="content1_text1" name="email">
+            <input type="password" placeholder="비밀번호를 입력하세요" class="content1_text2" name="password">
             <input type="submit" value="로그인" class="content1_btn">
             </form>
             <div class="content1_detail">회원가입 | 아이디/비밀번호 찾기</div>

@@ -8,11 +8,19 @@ from .models import User
 from .models import User_info
 
 def mypage(request):
-    if request.method == 'POST':
-        return redirect('mypage_change')
     return render(request, 'mypage_05.html')
 
 def mypage_change(request):
+    user = request.user
+    if request.method == 'POST':
+        # 수정하면 바뀌도록 (수정을 안 하면...?)
+        user.phone_number = request.POST['phone']
+        user.age = request.POST['age']
+        user.job = request.POST['job']
+        user.income = request.POST['income']
+        user.expense = request.POST['expense']
+        user.save()
+        return redirect('mypage')
     return render(request, 'mypage_03.html')
 
 def signup_done(request):
@@ -32,17 +40,18 @@ def signup(request):
             user.phone_number = request.POST['phone']
             user.notify_cnt = 0
             user.grade = "BLUE"
-            user.save()
-            user_info = User_info()
+            # user.save()
+            # user_info = User_info()
+            # user_info.user_no = user.user_no
             # user_info.user_no = user.user_no
                 # image = request.FILES.get['image'],
-            if request.POST['age']!="나이 입력(숫자만)":
-                user_info.age = request.POST['age']
-                user_info.job = request.POST['job']
-                user_info.income = request.POST['income']
-                user_info.expense = request.POST['expense']
-                user_info.expense_body = request.POST['expense_body']
-                user_info.save()
+            if request.POST['age']!="":
+                user.age = request.POST['age']
+                user.job = request.POST['job']
+                user.income = request.POST['income']
+                user.expense = request.POST['expense']
+                user.expense_body = request.POST['expense_body']
+            user.save()
             # auth.login(request, user)
             # render(request, 'signup_11.html')
             # if request.method == 'POST':

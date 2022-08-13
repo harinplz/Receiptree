@@ -30,42 +30,43 @@
         <div class="content2">
             <div class="main_title">필수정보 입력</div>
             <div class="email_title">이메일</div>
-            <input type="text" class="email_box" value="이메일" name="email">
+            <input type="text" class="email_box" placeholder="이메일" name="email">
             <div class="password_title">비밀번호</div>
-            <input type="text" class="password_box" value="영문, 숫자 포함 8자리 이상" name="password1">
+            <input type="password" class="password_box" placeholder="영문, 숫자 포함 8자리 이상" name="password1">
             <div class="password_title2">비밀번호</div>
-            <input type="text" class="password_box2" value="비밀번호 확인" name="password2">
+            <input type="password" class="password_box2" placeholder="비밀번호 확인" name="password2">
             <div class="name_title">이름</div>
-            <input type="text" class="name_box" value="이름" name="nickname">
+            <input type="text" class="name_box" placeholder="이름" name="nickname">
             <div class="phonenumber_title">전화번호</div>
-            <input type="text" class="phonenumber_box" value="전화번호를 입력해주세요(‘-’ 제외)" name="phone">
+            <input type="text" class="phonenumber_box" placeholder="전화번호를 입력해주세요(‘-’ 제외)" name="phone">
         </div>
 
         <div class="content3">
             <div class="main_title">선택정보 입력</div>
             <div class="sub_title">더 객관적인 소비 판단을 위해 세부 정보를 입력해주세요.</div>
+            <div class="sub_title">선택 정보 입력시, 모든 칸을 채워주시기 바랍니다.</div>
 
             <div class="age">
                 <div class="age_title">나이</div>
-                <input type="text" class="age_box" value="나이 입력(숫자만)" name="age">
+                <input type="text" class="age_box" placeholder="나이 입력(숫자만)" name="age">
                 <div class="age_detail">세</div>
             </div>
 
             <div class="income">
                 <div class="income_title">수입</div>
-                <input type="text" class="income_box" value="월 수입 입력(만원 단위)" name="income">
+                <input type="text" class="income_box" placeholder="월 수입 입력(만원 단위)" name="income">
                 <div class="income_detail">만원</div> 
             </div>
 
             <div class="job_title">직업</div>
-            <input type="text" class="job_box" value="직업을 입력해주세요." name="job">
+            <input type="text" class="job_box" placeholder="직업을 입력해주세요." name="job">
 
             <div class="expenditure_title">고정지출</div>
-            <input type="text" class="expenditure_box1" value="지출 내용" name="expense_body">
-            <input type="text" class="expenditure_box2" value="지출 금액" name="expense">
+            <input type="text" class="expenditure_box1" placeholder="지출 내용" name="expense_body">
+            <input type="text" class="expenditure_box2" placeholder="지출 금액" name="expense">
             <div class="expenditure_detail">원</div>
 
-            <input type="button" class="expenditure_btn" value="+ 지출추가">
+            {% comment %} <input type="button" class="expenditure_btn" value="+ 지출추가"> {% endcomment %}
         </div>
 
         <input type="submit" value="가입완료" class="submit_btn">

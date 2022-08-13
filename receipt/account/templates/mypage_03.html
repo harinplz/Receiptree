@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <link href="{% static 'css/mypage_03.css' %}" rel="stylesheet"></a>
+    <link href="{% static 'css/mypage_change.css' %}" rel="stylesheet"></a>
     <title></title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -32,37 +32,38 @@
         <div class="mypage_content">
             <img src="{% static 'img/img1-mypage_03.jpg' %}">
         </div>
-        <div class="mypage_name">김슈니</div>
-        <a href="{% url 'login' %}"><input type="button" value="수정하기" class="mypage_icon">
-        <div class="mypage_email">dudtnwmd123@reciept.com</div>
+        <div class="mypage_name">{{user.nickname}}</div>
+        <input type="button" value="수정하기" class="mypage_icon">
+        <div class="mypage_email">{{user.email}}</div>
         <div class="mypage_text1">글내역 ></div>
         <div class="mypage_text1-2">7개</div>
         <div class="mypage_text2">가입파티 ></div>
         <div class="mypage_text2-2">2 team</div>
         <div class="mypage_text3">등급</div>
-        <div class="mypage_text3-2">새싹</div>
+        <div class="mypage_text3-2">{{user.grade}}</div>
     </div>
 
     <div class="content2">
         <div class="info_logo">회원정보</div>
-
+        <form  method="POST">
+            {% csrf_token %}
         <div class="content2_name">
         <div class="info_name">이름</div>
-        <type="text" class="detail_age_text">{{user_info.age}}</div>
+        <input type="text" class="info_name_text" value="{{user.nickname}}" readonly/></div>
         <hr class="name_line">
         <div class="content2_email">
         <div class="info_email">이메일 주소</div>
-        <input type="text" class="info_email_text"></div>
+        <input type="text" class="info_email_text" value="{{user.email}}" readonly/></div>
         <hr class="email_line">
 
         <div class="content2_number">
         <div class="info_number">전화번호</div>
-        <input type="text" class="info_number_text"></div>
+        <input type="text" class="info_number_text" value="{{user.phone_number}}" name="phone"></div>
         <hr class="number_line">
 
         <div class="content2_password">
         <div class="info_password">비밀번호</div>
-        <input type="text" class="info_password_text"></div>
+        <input type="password" class="info_password_text" value="abcefghi" readonly/></div>
         <hr class="password_line">
     </div>
 
@@ -71,22 +72,22 @@
 
         <div class="content3_age">
             <div class="detail_age">나이</div>
-            <input type="text" class="detail_age_text"></div>
+            <input type="text" class="detail_age_text" value="{{user.age}}" name="age" ></div>
             <hr class="age_line">
     
             <div class="content3_job">
             <div class="detail_job">직업</div>
-            <input type="text" class="detail_job_text"></div>
+            <input type="text" class="detail_job_text" value="{{user.job}}" name="job"></div>
             <hr class="job_line">
     
             <div class="content3_expense">
             <div class="detail_expense">고정지출</div>
-            <input type="text" class="detail_expense_text"></div>
+            <input type="text" class="detail_expense_text" value="{{user.expense}}" name="expense"></div>
             <hr class="expense_line">
     
             <div class="content3_salary">
             <div class="detail_salary">월급</div>
-            <input type="text" class="detail_salary_text"></div>
+            <input type="text" class="detail_salary_text" value="{{user.income}}" name="income"></div>
             <hr class="salary_line">
     </div>
 
@@ -100,9 +101,10 @@
     </div>
 
     <div class="content5">
-        <input type="button" value="취소" class="content5_btn1">
-        <input type="button" value="수정완료" class="content5_btn2">
+        <a href="{% url 'mypage' %}"><input type="button" value="취소" class="content5_btn1"></a>
+        <input type="submit" value="수정완료" class="content5_btn2">
     </div>
+</form>
 </div>
 
 

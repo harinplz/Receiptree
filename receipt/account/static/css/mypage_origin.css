@@ -211,7 +211,8 @@
     height:35px;
     margin-left:170px;
     margin-top:-33px;
-    border:none;
+    outline: none;
+    border: 0px;
 }
 
 .name_line{
@@ -234,7 +235,8 @@
     height:35px;
     margin-left:170px;
     margin-top:-25px;
-    border:none;
+    outline: none;
+    border: 0px;
 }
 
 .email_line{
@@ -256,6 +258,8 @@
     height:35px;
     margin-left:170px;
     margin-top:-25px;
+    outline: none;
+    border: 0px;
 }
 
 .number_line{
@@ -277,7 +281,8 @@
     height:35px;
     margin-left:170px;
     margin-top:-25px;
-    border:none;
+    outline: none;
+    border: 0px;
 }
 
 .password_line{
@@ -342,6 +347,8 @@
     height:35px;
     margin-left:170px;
     margin-top:-25px;
+    outline: none;
+    border: 0px;
 }
 
 .detail_job{
@@ -356,6 +363,8 @@
     height:35px;
     margin-left:170px;
     margin-top:-25px;
+    outline: none;
+    border: 0px;
 }
 
 
@@ -371,6 +380,8 @@
     height:35px;
     margin-left:170px;
     margin-top:-25px;
+    outline: none;
+    border: 0px;
 }
 
 
@@ -386,6 +397,8 @@
     height:35px;
     margin-left:170px;
     margin-top:-25px;
+    outline: none;
+    border: 0px;
 }
 
 .content4{
@@ -464,38 +477,4 @@
     width:1005px;
     margin-top:-40px;
 }
-
-.content5{
-    width:1116px;
-    height:80px;
-    margin:auto;
-    margin-top:50px;
-}
-
-.content5_btn1{
-    width:250px;
-    height:70px;
-    background-color: C4C4C4;
-    color:white;
-    font-family: 'Noto Sans KR', sans-serif;
-    font-size:20px;
-    border-radius:7px;
-    border:none;
-    margin-left:300px;
-}
-
-.content5_btn2{
-    width:250px;
-    height:70px;
-    background-color: 1824BF;
-    color:white;
-    font-family: 'Noto Sans KR', sans-serif;
-    font-size:20px;
-    border-radius:7px;
-    border:none;
-    margin-left:30px;
-}
-
-
-
 
