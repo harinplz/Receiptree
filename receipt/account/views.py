@@ -3,6 +3,7 @@ from django.contrib import auth
 from django.contrib.auth import authenticate
 from django.contrib.auth.models import User
 from django.contrib.auth.hashers import check_password
+from django.http import JsonResponse
 from .models import User
 from .models import User_info
 
@@ -51,14 +52,15 @@ def signup(request):
     if request.method == 'POST':
         # 이름, 비밀번호, 이메일
         if request.POST['password1'] == request.POST['password2']:
-            user = User()
-            user.username = request.POST['email']
-            user.email = request.POST['email']
-            user.password = request.POST['password1']
-            user.nickname = request.POST['nickname']
-            user.phone_number = request.POST['phone']
-            user.notify_cnt = 0
-            user.grade = "BLUE"
+            user = User.objects.create_user(
+                username = request.POST['email'],
+                email = request.POST['email'],
+                password = request.POST['password1'],
+                nickname = request.POST['nickname'],
+                phone_number = request.POST['phone'],
+                notify_cnt = 0,
+                grade = "BLUE",
+            )
             # user.save()
             # user_info = User_info()
             # user_info.user_no = user.user_no
