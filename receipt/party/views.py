@@ -1,5 +1,5 @@
 from unicodedata import category
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 
 from .models import *
 # Create your views here.
@@ -29,5 +29,8 @@ def party_main_saving(request):
 
 
 # 파티 상세화면
-def party_detail(request):
-    return render(request, 'partyDetail_10.html')
+def party_detail(request, team_board_id):
+    party_detail = get_object_or_404(Team_Board, pk=team_board_id)
+
+    return render(request, 'partyDetail_10.html',
+    {'party_detail':party_detail})

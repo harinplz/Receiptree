@@ -96,3 +96,6 @@ class Team_Receipt(models.Model):
     team_cost = models.IntegerField()
     team_place = models.CharField(max_length=100)
     team_body = models.TextField()
+
+    def __str__(self):
+        return f"{self.team_board_no.team_no.team_name} - {self.team_board_no.team_writer_no.nickname}"

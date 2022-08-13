@@ -31,24 +31,27 @@
             <div class="content_text">영수증 파티</div>
 
             <div class="title_name">
-                <span class="party_category">절약</span>
-                일주일치 장본 거 평가해주세요!</div>
+                <span class="party_category">{{party_detail.team_no.category}}</span>
+                {{party_detail.team_no.team_name}}</div>
             
             
             <div class="party_info">
             <span id="party_info_text">파티원</span>
-            <span id="party_count">4</span>
+            <span id="party_count">{{party_detail.team_no.count_team_users}}</span>
             <span id="party_count_text">명</span>
 
             <span id="party_num_text">파티번호</span>
-            <span id="party_num">028492892389</span>  
+            <span id="party_num">{{party_detail.team_no.team_no}}</span>  
 
             
         </div>
-        <div class="editAnddelete">
+
+        <!-- 수정/ 삭제 버튼 -->
+        <!-- <div class="editAnddelete">
             <button id = "edit_btn">수정</button>
             <button id = "delete_btn">삭제</button>               
-        </div>
+        </div> -->
+
         </div>
 
 
@@ -58,26 +61,41 @@
                 <li> 
                     <button id="defaultOpen"class="user_photo" onclick="openMenu('Party1', this,'thick solid purple')"></button>
                     <div class="user_name" >파티장</div>
-                    <div class="user_name">USER1 NAME</div>
+                    <div class="user_name">{{party_detail.team_no.leader_no.nickname}}</div>
 
                  </li>
                  <li> 
+                    {% if party_detail.team_no.team_users.all.0 != None %}
                     <button id="click"class="user_photo" onclick="openMenu('Party2', this, 'thick solid blue')"></button>
                     <div class="user_name">파티원</div>
-                    <div class="user_name">USER2 NAME</div>
-
+                    <div class="user_name">{{party_detail.team_no.team_users.all.0.nickname}}</div>
+                    {% else %}
+                    <button id="click"class="user_photo" onclick="openMenu('Party2', this, 'thick solid blue')"></button>
+                    <div class="user_name">파티원</div>
+                    <div class="user_name">모집중</div>
+                    {% endif %}
                  </li>
                  <li> 
+                    {% if party_detail.team_no.team_users.all.1 != None %}
                     <button id="click" class="user_photo" onclick="openMenu('Party3', this, 'thick solid pink' )"></button>
                     <div class="user_name">파티원</div>
-                    <div class="user_name">USER3 NAME</div>
-
+                    <div class="user_name">{{party_detail.team_no.team_users.all.1.nickname}}</div>
+                    {% else %}
+                    <button id="click" class="user_photo" onclick="openMenu('Party3', this, 'thick solid pink' )"></button>
+                    <div class="user_name">파티원</div>
+                    <div class="user_name">모집중</div>
+                    {% endif %}
                  </li>
                  <li id="user4"> 
+                    {% if party_detail.team_no.team_users.all.2 != None %}
                     <button id = "click"class="user_photo" onclick="openMenu('Party4', this, 'thick solid orange' )"></button>
                     <div class="user_name">파티원</div>
-                    <div class="user_name">USER4 NAME</div>
-
+                    <div class="user_name">{{party_detail.team_no.team_users.all.2.nickname}}</div>
+                    {% else %}
+                    <button id = "click"class="user_photo" onclick="openMenu('Party4', this, 'thick solid orange' )"></button>
+                    <div class="user_name">파티원</div>
+                    <div class="user_name">모집중</div>
+                    {% endif %}
                  </li>
     
                  
