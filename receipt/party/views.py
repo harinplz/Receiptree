@@ -26,3 +26,8 @@ def party_main_saving(request):
     # GET으로 카테고리가 '저축'인 클래스만 받아오기
     team_saving_list = Team.objects.filter(category = '저축')
     return render(request, 'party_06_saving.html', {'team':team_saving_list, })
+
+
+# 파티 상세화면
+def party_detail(request):
+    return render(request, 'partyDetail_10.html')

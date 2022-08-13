@@ -1,7 +1,10 @@
+<!-- 파티 상세화면 -->
+
+{% load static %}
 <html>
 <head>
     <meta charset="UTF-8">
-    <link href="partyDetail_10.css" rel="stylesheet"></a>
+    <link href="{% static 'css/partyDetail_10.css' %}" rel="stylesheet"></a>
     <title>파티 글 상세</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -160,8 +163,8 @@
        
         
         <div class="good_bad">
-            <button id="good"><img src="./party_img/good.png">좋은 소비예요 <span id="good_num">14</span></button>
-            <button id="bad"><img src="./party_img/bad.png">나쁜 소비예요 <span id="bad_num">13</span></button>
+            <button id="good"><img src="{% static 'img/good.png' %}">좋은 소비예요 <span id="good_num">14</span></button>
+            <button id="bad"><img src="{% static 'img/bad.png' %}">나쁜 소비예요 <span id="bad_num">13</span></button>
 
         </div>
 
@@ -236,8 +239,8 @@
        
         
         <div class="good_bad">
-            <button id="good"><img src="./party_img/good.png">좋은 소비예요 <span id="good_num">12</span></button>
-            <button id="bad"><img src="./party_img/bad.png">나쁜 소비예요 <span id="bad_num">15</span></button>
+            <button id="good"><img src="{% static 'img/good.png' %}">좋은 소비예요 <span id="good_num">12</span></button>
+            <button id="bad"><img src="{% static 'img/bad.png' %}">나쁜 소비예요 <span id="bad_num">13</span></button>
 
         </div>
 
@@ -322,8 +325,8 @@
        
         
         <div class="good_bad">
-            <button id="good"><img src="./party_img/good.png">좋은 소비예요 <span id="good_num">14</span></button>
-            <button id="bad"><img src="./party_img/bad.png">나쁜 소비예요 <span id="bad_num">2</span></button>
+            <button id="good"><img src="{% static 'img/good.png' %}">좋은 소비예요 <span id="good_num">12</span></button>
+            <button id="bad"><img src="{% static 'img/bad.png' %}">나쁜 소비예요 <span id="bad_num">13</span></button>
 
         </div>
 
@@ -409,8 +412,8 @@
        
         
         <div class="good_bad">
-            <button id="good"><img src="./party_img/good.png">좋은 소비예요 <span id="good_num">3</span></button>
-            <button id="bad"><img src="./party_img/bad.png">나쁜 소비예요 <span id="bad_num">1</span></button>
+            <button id="good"><img src="{% static 'img/good.png' %}">좋은 소비예요 <span id="good_num">12</span></button>
+            <button id="bad"><img src="{% static 'img/bad.png' %}">나쁜 소비예요 <span id="bad_num">13</span></button>
         </div>
 
 
@@ -484,7 +487,7 @@
 <footer>푸터</footer>
     
 
-<script src="partyDetail_10.js"> </script>
+<script src="{% static 'js/partyDetail_10.js' %}"> </script>
 
 <script type="text/javascript">
     
