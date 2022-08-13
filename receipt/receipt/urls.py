@@ -16,6 +16,7 @@ urlpatterns = [
     path('good/', board_views.board_good, name='board_good'),
     path('bad/', board_views.board_bad, name='board_bad'),
     path('mypage', account_views.mypage, name='mypage'),
+    path('mypage_change', account_views.mypage_change, name='mypage_change'),
     path('signup', account_views.signup, name='signup'),
     path('login', account_views.login, name='login'),
     path('logout', account_views.logout, name='logout'),

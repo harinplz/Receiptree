@@ -8,9 +8,12 @@ from .models import User
 from .models import User_info
 
 def mypage(request):
-
+    if request.method == 'POST':
+        return redirect('mypage_change')
     return render(request, 'mypage_05.html')
 
+def mypage_change(request):
+    return render(request, 'mypage_03.html')
 
 def signup_done(request):
     return render(request, 'signup_11.html')
