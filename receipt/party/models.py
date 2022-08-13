@@ -91,7 +91,8 @@ class Team_Comment(models.Model):
 
 class Team_Receipt(models.Model):
     team_board_no = models.ForeignKey('Team_Board', on_delete=models.CASCADE, db_column='team_board_no', null=True)
-    #user_no는 마이페이지 기능과 연관
+    team_no = models.ForeignKey('Team', on_delete=models.CASCADE, db_column='team_no', null=True)
+    team_user_no = models.ForeignKey('account.User', on_delete=models.CASCADE, db_column='team_user_no', null=True)
     team_use_date = models.CharField(max_length=40)
     team_cost = models.IntegerField()
     team_place = models.CharField(max_length=100)
