@@ -83,7 +83,7 @@ class Team_Board(models.Model):
 
 # 팀 댓글 클래스
 class Team_Comment(models.Model):
-    team_board_no = models.ForeignKey('Team_Board', on_delete=models.CASCADE, db_column='team_board_no', null=True)
+    team_no = models.ForeignKey('Team', on_delete=models.CASCADE, db_column='team_no', null=True)
     team_user_no = models.ForeignKey('account.User', on_delete=models.CASCADE, db_column='team_user_no', null=True)
     team_body = models.TextField()
     team_date = models.DateTimeField(default=timezone.now)

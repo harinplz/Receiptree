@@ -1,8 +1,10 @@
-from types import NoneType
-from unicodedata import category
-from django.shortcuts import render, get_object_or_404
+
+from time import time
+from django.shortcuts import render, get_object_or_404, redirect
 
 from .models import *
+
+from django.contrib.auth.decorators import login_required
 # Create your views here.
 
 # 파티 메인화면
@@ -88,7 +90,10 @@ def party_detail(request, team_id):
     
     #print(party_detail.count_team_users()-1)
 
-    context = {'party_detail':party_detail,'party_receipt':party_receipt, 'party_board':party_board, 
+    #댓글
+    party_comment = Team_Comment.objects.filter(team_no = team_id)
+
+    context = {'party_detail':party_detail,'party_receipt':party_receipt, 'party_board':party_board, 'party_comment':party_comment,
     'party_receipt1' : party_receipt1, 'party_board1' : party_board1, 'sum1':sum1,
     'party_board2':party_board2, 'party_receipt2':party_receipt2, 'sum2':sum2,
     'party_board3':party_board3, 'party_receipt3':party_receipt3, 'sum3':sum3,
@@ -99,3 +104,23 @@ def party_detail(request, team_id):
 
 
     return render(request, 'partyDetail_10.html', context)
+
+
+# 파티 댓글
+@login_required
+def newcomment_party(request, team_id):
+    newcomment_party = Team_Comment()
+
+    newcomment_party.team_no = get_object_or_404(Team, pk=team_id)
+    newcomment_party.team_user_no = request.user
+    newcomment_party.team_body = request.POST['newcomment_team_body']
+    newcomment_party.team_date = timezone.datetime.now()
+    
+
+    newcomment_party.save()
+
+    if newcomment_party.team_body != "":
+        newcomment_party.save() #댓글 저장 
+        print("실행??")
+
+    return redirect('party_detail', team_id)

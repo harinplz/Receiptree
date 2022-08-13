@@ -25,6 +25,7 @@ urlpatterns = [
     path('party/frugality', party_views.party_main_fru, name='party_main_fru'), #절약 카테고리
     path('party/saving', party_views.party_main_saving, name='party_main_saving'), #저축 카테고리
     path('party/detail/<int:team_id>', party_views.party_detail, name='party_detail'), # 파티 상세화면
+    path('newcomment_party/<int:team_id>', party_views.newcomment_party, name='newcomment_party'), #파티댓글
 ]
 
 if settings.DEBUG:

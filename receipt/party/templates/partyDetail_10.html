@@ -319,37 +319,42 @@
     </div>
 
 
-<div class="comment_title_text">댓글 <span id="commnets_num">9</span></div>
+<div class="comment_title_text">댓글 <span id="commnets_num">{{party_comment.all.count}}</span></div>
     <section class="comment_section">
         
             <div class="card-body">
                 <!-- Comment form-->
                 <section class="textarea_and_btn">
-                    
-                    <textarea id="comment_textarea" type="text" placeholder="영수증에 대한 의견을 자유롭게 댓글로 남겨주세요."></textarea>
-                    <button class="comment_btn">입력</button>
+                    <form method ="post" action="{% url 'newcomment_party' party_detail.team_no %}">
+                        {% csrf_token %}
+                        <table>
+                            <tr>
+                                <td>
+                                    <textarea id="comment_textarea" name="newcomment_team_body" type="text" placeholder="영수증에 대한 의견을 자유롭게 댓글로 남겨주세요."></textarea>
+                                </td>
+                                <td>
+                                    <input class="comment_btn" value="입력" type="submit">
+                                </td>
+                            </tr>
+                        </table>
+                    </form>
                 </section>
                 <ul class="comment_list">
+                    {% for comment in party_comment %}
                     <li>
                         <div class="d-flex">
-                            <div class="comment_profile"><img class="rounded-circle" src="https://dummyimage.com/50x50/ced4da/6c757d.jpg" alt="..." /></div>
+                            <div class="comment_profile">
+                                <img class="rounded-circle" src="{{comment.team_user_no.my_image}}" alt="..." width="50px" height="50px"/>
+                            </div>
                             <div class="comment_area">
-                                <div class="commentsName">USER NAME <span>2022.08.02</span></div>
-                                <div class="commentsContent">배달 시켜먹지 말고 최대한 집에서 해드세요 </div>                      
+                                <div class="commentsName">{{comment.team_user_no.nickname}}&nbsp;
+                                    <span style="font-size:smaller; font-weight: 300 !important;">{{comment.team_date|date:'Y.m.d H:i:s'}}</span></div>
+                                <div class="commentsContent">{{comment.team_body}}</div>                      
                             </div>
                         </div>
                         
                     </li>
-
-                    <li>
-                        <div class="d-flex">
-                            <div class="comment_profile"><img class="rounded-circle" src="https://dummyimage.com/50x50/ced4da/6c757d.jpg" alt="..." /></div>
-                            <div class="comment_area">
-                                <div class="commentsName">USER NAME</div>
-                                <div class="commentsContent">배달 시켜먹지 말고 최대한 집에서 해드세요 </div>                      
-                            </div>
-                        </div>
-                    </li>
+                    {% endfor %}
                 
                 </ul>
                 
