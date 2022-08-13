@@ -11,13 +11,31 @@ function openMenu(pageName, elmnt) {
         content[i].style.display = "none";
     }
   
-    // Remove the background color of all tablinks/buttons
-    tab = document.getElementsByClassName("user_photo");
+    tab = document.getElementsByClassName("user_photo1");
     for (i = 0; i < tab.length; i++) {  
-        tab[i].style.border = "";
+        tab[i].style.outline = "";
         
 
     }
+    tab = document.getElementsByClassName("user_photo2");
+    for (i = 0; i < tab.length; i++) {  
+        tab[i].style.outline = "";
+        
+
+    }
+    tab = document.getElementsByClassName("user_photo3");
+    for (i = 0; i < tab.length; i++) {  
+        tab[i].style.outline = "";
+        
+
+    }
+    tab = document.getElementsByClassName("user_photo4");
+    for (i = 0; i < tab.length; i++) {  
+        tab[i].style.outline = "";
+        
+
+    }
+
 
     
 
@@ -26,7 +44,7 @@ function openMenu(pageName, elmnt) {
     
   
     // Add the specific color to the button used to open the tab content
-    elmnt.style.border="10px solid #1824BF"
+    elmnt.style.outline="10px solid #1824BF"
     
   }
   

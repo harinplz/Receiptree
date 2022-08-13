@@ -218,19 +218,6 @@ ul,li{
     margin: auto;
 }
 
-
-.user_photo{
-    width: 160px;
-    height: 160px;
-    border-radius: 50%;
-    background-image: url(./party_img/party_memeber2.png);
-    border: 0px;
-    
-}
-
-
-
-
 .user_name{
     
    margin-top: 30px;

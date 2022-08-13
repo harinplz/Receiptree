@@ -61,40 +61,40 @@
         <div class="party_mem">
             <ul class="party_mem_group">
                 <li> 
-                    <button id="defaultOpen"class="user_photo" onclick="openMenu('Party1', this,'thick solid purple')"></button>
+                    <button id="defaultOpen"class="user_photo1" onclick="openMenu('Party1', this,'thick solid purple')"></button>
                     <div class="user_name" >파티장</div>
                     <div class="user_name">{{party_detail.leader_no.nickname}}</div>
 
                  </li>
                  <li> 
                     {% if party_detail.team_users.all.0 != None %}
-                    <button id="click"class="user_photo" onclick="openMenu('Party2', this, 'thick solid blue')"></button>
+                    <button id="click"class="user_photo2" onclick="openMenu('Party2', this, 'thick solid blue')"></button>
                     <div class="user_name">파티원</div>
                     <div class="user_name">{{party_detail.team_users.all.0.nickname}}</div>
                     {% else %}
-                    <button id="click"class="user_photo" onclick="openMenu('Party2', this, 'thick solid blue')"></button>
+                    <button id="click"class="user_photo2" onclick="openMenu('Party2', this, 'thick solid blue')"></button>
                     <div class="user_name">파티원</div>
                     <div class="user_name">모집중</div>
                     {% endif %}
                  </li>
                  <li> 
                     {% if party_detail.team_users.all.1 != None %}
-                    <button id="click" class="user_photo" onclick="openMenu('Party3', this, 'thick solid pink' )"></button>
+                    <button id="click" class="user_photo3" onclick="openMenu('Party3', this, 'thick solid pink' )"></button>
                     <div class="user_name">파티원</div>
                     <div class="user_name">{{party_detail.team_users.all.1.nickname}}</div>
                     {% else %}
-                    <button id="click" class="user_photo" onclick="openMenu('Party3', this, 'thick solid pink' )"></button>
+                    <button id="click" class="user_photo3" onclick="openMenu('Party3', this, 'thick solid pink' )"></button>
                     <div class="user_name">파티원</div>
                     <div class="user_name">모집중</div>
                     {% endif %}
                  </li>
                  <li id="user4"> 
                     {% if party_detail.team_users.all.2 != None %}
-                    <button id = "click"class="user_photo" onclick="openMenu('Party4', this, 'thick solid orange' )"></button>
+                    <button id = "click"class="user_photo4" onclick="openMenu('Party4', this, 'thick solid orange' )"></button>
                     <div class="user_name">파티원</div>
                     <div class="user_name">{{party_detail.team_users.all.2.nickname}}</div>
                     {% else %}
-                    <button id = "click"class="user_photo" onclick="openMenu('Party4', this, 'thick solid orange' )"></button>
+                    <button id = "click"class="user_photo4" onclick="openMenu('Party4', this, 'thick solid orange' )"></button>
                     <div class="user_name">파티원</div>
                     <div class="user_name">모집중</div>
                     {% endif %}
@@ -384,8 +384,38 @@
 
 <footer>푸터</footer>
     
+<style>
+    .user_photo1,.user_photo2,.user_photo3,.user_photo4{
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    background-color: none;
+    border: 0px;
+    
+}
+/* 파티원 프로필 사진 */
+.user_photo1{
+    background-image: url({{party_detail.leader_no.my_image}});
+    background-size: cover;
+}
 
-<script src="{% static 'js/partyDetail_10.js' %}"> </script>
+.user_photo2{
+    background-image: url({{party_detail.team_users.all.0.my_image}});
+    background-size: cover;
+}
+
+.user_photo3{
+    background-image: url({{party_detail.team_users.all.1.my_image}});
+    background-size: cover;
+}
+
+.user_photo4{
+    background-image: url({{party_detail.team_users.all.2.my_image}});
+    background-size: cover;
+}
+
+</style>
+<script src="{% static 'js/partyDetail_10_01.js' %}"> </script>
 
 <script type="text/javascript">
     
