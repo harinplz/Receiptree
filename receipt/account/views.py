@@ -3,11 +3,30 @@ from django.contrib import auth
 from django.contrib.auth import authenticate
 from django.contrib.auth.models import User
 from django.contrib.auth.hashers import check_password
-from django.contrib.auth.decorators import login_required
 from .models import User
 from .models import User_info
 
 def mypage(request):
+    user = request.user
+    if user.is_authenticated:
+        if user.notify_cnt <= 10:
+            user.grade = "BLUE"
+            user.save()
+        elif user.notify_cnt <= 20:
+            user.grade = "GREEN"
+            user.save()
+        elif user.notify_cnt <= 30:
+            user.grade = "YELLOW"
+            user.save()
+        elif user.notify_cnt <= 40:
+            user.grade = "ORANGE"
+            user.save()
+        elif user.notify_cnt <= 50:
+            user.grade = "RED"
+            user.save()
+        else:
+            user.grade = "BLACK"
+            user.save()
     return render(request, 'mypage_05.html')
 
 def mypage_change(request):
@@ -77,7 +96,6 @@ def login(request):
         
 
 # 로그아웃
-@login_required
 def logout(request):
     auth.logout(request)
     return redirect('home')
@@ -85,13 +103,16 @@ def logout(request):
 
 # 회원탈퇴
 def signout(request):
-    if request.method == 'POST':
-        pwd = request.POST['password']
-        user = request.user
-        if check_password(pwd, user.password):
-            user.delete()
-            return redirect('home')
-    return render(request, 'signout.html')
+    user = request.user
+    user.delete()
+    return redirect('mypage')
+    # if request.method == 'POST':
+    #     pwd = request.POST['password']
+    #     user = request.user
+    #     if check_password(pwd, user.password):
+            # user.delete()
+            # return redirect('home')
+    # return render(request, 'signout.html')
 
 
 

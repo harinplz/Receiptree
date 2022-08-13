@@ -21,7 +21,11 @@
             <li><a class="menuLink" href="#">영수증글</a></li>
             <li><a class="menuLink" href="#">영수증파티</a></li>
             <li><a class="menuLink" href="#">MY영수증</a></li>
+            {% if user.is_authenticated %}
+            <li><a href="{% url 'logout' %}"><input type="button" value="로그아웃" class="menuButton"></a>
+            {% else %}
             <li><a href="{% url 'login' %}"> <input type="button" value="로그인" class="menuButton"></a>
+            {% endif %}
         </ul>
     </nav>
     <hr style="background-color:F2F2F2; height:3px;border:none;">
@@ -90,7 +94,7 @@
             <input type="text" class="detail_salary_text" value="{{user.income}}" name="income"></div>
             <hr class="salary_line">
     </div>
-
+{% comment %} 
     <div class="content4">
         <div class="content4_text1">문의</div>
         <hr class="text1_line">
@@ -98,7 +102,8 @@
         <hr class="text2_line">
         <div class="content4_text3">탈퇴</div>
         <hr class="text3_line">
-    </div>
+    </div> 
+{% endcomment %}
 
     <div class="content5">
         <a href="{% url 'mypage' %}"><input type="button" value="취소" class="content5_btn1"></a>

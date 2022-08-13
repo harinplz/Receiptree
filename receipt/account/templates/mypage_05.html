@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <link href="{% static 'css/mypage_origin.css' %}" rel="stylesheet"></a>
+    <link href="{% static 'css/mypage.css' %}" rel="stylesheet"></a>
     <title></title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,7 +21,11 @@
             <li><a class="menuLink" href="#">영수증글</a></li>
             <li><a class="menuLink" href="#">영수증파티</a></li>
             <li><a class="menuLink" href="#">MY영수증</a></li>
+            {% if user.is_authenticated %}
+            <li><a href="{% url 'logout' %}"><input type="button" value="로그아웃" class="menuButton"></a>
+            {% else %}
             <li><a href="{% url 'login' %}"> <input type="button" value="로그인" class="menuButton"></a>
+            {% endif %}
         </ul>
     </nav>
     <hr style="background-color:F2F2F2; height:3px;border:none;">
@@ -97,7 +101,7 @@
         <hr class="text1_line">
         <div class="content4_text2">공지사항</div>
         <hr class="text2_line">
-        <div class="content4_text3">탈퇴</div>
+        <a href="{% url 'signout' %}"><div class="content4_text3">탈퇴</div></a>
         <hr class="text3_line">
     </div>
 </div>
