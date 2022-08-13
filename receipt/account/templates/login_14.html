@@ -1,0 +1,44 @@
+{% load static %}
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link href="{% static 'css/login.css' %}" rel="stylesheet"></a>
+    <title></title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <nav id="topMenu">
+        <ul>
+            <li><a class="menuLink" href="#">LOGO</a></li>
+            <li><a class="menuLink" href="#">홈</a></li>
+            <li><a class="menuLink" href="#">영수증글</a></li>
+            <li><a class="menuLink" href="#">영수증파티</a></li>
+            <li><a class="menuLink" href="#">MY영수증</a></li>
+            {% if user.is_authenticated %}
+            <li><a href="{% url 'logout' %}"><input type="button" value="로그아웃" class="menuButton"></a>
+            {% else %}
+            <li><a href="{% url 'login' %}"> <input type="button" value="로그인" class="menuButton"></a>
+            {% endif %}
+        </ul>
+    </nav>
+    <hr style="background-color:F2F2F2; height:3px;border:none;">
+
+    <div class="full">
+        <div class="content1">
+            <div class="content1_logo">LOGO</div>
+            <form  method="POST">
+                {% csrf_token %}
+            <input type="text" placeholder="아이디를 입력하세요" class="content1_text1" name="email">
+            <input type="password" placeholder="비밀번호를 입력하세요" class="content1_text2" name="password">
+            <input type="submit" value="로그인" class="content1_btn">
+            </form>
+            <div class="content1_detail"><a href="{% url 'signup' %}">회원가입</a> | 아이디/비밀번호 찾기</div>
+
+        </div>
+
+    </div>
+</body>
+</html>

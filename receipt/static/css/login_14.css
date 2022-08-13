@@ -1,0 +1,99 @@
+#topMenu{
+    width:1120px;
+    height:95px;
+    margin:auto;
+}
+
+#topMenu ul li {                     
+    list-style: none;                  
+    float: left;               
+    line-height: 89px;          
+    vertical-align: middle;     
+}
+
+#topMenu .menuLink {                          
+    text-decoration:none;     
+    color:black;
+    display: block;                            
+    font-size: 20px; 
+    width: 170px;
+    text-align: center;   
+    font-family: 'Noto Sans KR', sans-serif;                     
+}
+
+.menuButton{
+    width:105px;
+    height:28px;
+    background-color: 1824BF;
+    color:white;
+    border: none;
+    border-radius: 27px;
+    margin-left:20px;
+}
+
+.full{
+    height:1000px;
+}
+
+.content1{
+    width:550px;
+    height:508px;
+    margin:auto;
+}
+
+.content1_logo{
+    width:200px;
+    height:36px;
+    font-size: 25px; 
+    padding-top:100px;
+    margin-left:230px;
+    font-family: 'Noto Sans KR', sans-serif;  
+}
+
+.content1_text1{
+    width:500px;
+    height:55px;
+    border-radius: 16px;
+    font-size:16px;
+    border-color:ECECEC;
+    color:ECECEC;
+    margin:auto;
+    margin-top:40px;
+    margin-left:30px;
+}
+
+.content1_text2{
+    width:500px;
+    height:55px;
+    border-radius: 16px;
+    font-size:16px;
+    border-color:ECECEC;
+    color:ECECEC;
+    margin:auto;
+    margin-left:30px;
+    margin-top:40px;
+}
+
+.content1_btn{
+    width:300px;
+    height:67px;
+    border-radius: 16px;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size:16px;
+    background-color: 1824BF;  
+    color:white;
+    border:none;
+    margin-top:40px;
+    margin-left:130px;
+}
+
+.content1_detail{
+    width:263px;
+    height:26px;
+    color:C4C4C4;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size:16px;
+    margin-top:40px;
+    margin-left:175px;
+}
+

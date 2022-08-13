@@ -1,0 +1,41 @@
+{% load static %}
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link href="{% static 'css/signup_11.css' %}" rel="stylesheet"></a>
+    <title></title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <nav id="topMenu">
+        <ul>
+            <li><a class="menuLink" href="#">LOGO</a></li>
+            <li><a class="menuLink" href="#">홈</a></li>
+            <li><a class="menuLink" href="#">영수증글</a></li>
+            <li><a class="menuLink" href="#">영수증파티</a></li>
+            <li><a class="menuLink" href="#">MY영수증</a></li>
+            <li><input type="button" value="로그인" class="menuButton">
+                {% if user.is_authenticated %}
+                <a href="{% url 'logout' %}">LOGOUT<a>
+        </ul>
+    </nav>
+    <hr style="background-color:F2F2F2; height:3px;border:none;">
+
+    <div class="full">
+    <div class="content1">
+        <div class="content1_title">회원가입 완료</div>
+        <div class="content1_img"><img src=""></div>
+        <div class="content1_detail">회원가입이 완료되었습니다!</div>
+        <form  method="GET">
+        <input type="submit" value="로그인하러 가기" class="content1_btn">
+        </form>
+    </div>
+</div>
+
+
+
+</body>
+</html>

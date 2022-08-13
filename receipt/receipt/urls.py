@@ -19,7 +19,11 @@ urlpatterns = [
     path('bad/', board_views.board_bad, name='board_bad'),
     #마이페이지
     path('mypage', account_views.mypage, name='mypage'),
+    path('mypage_change', account_views.mypage_change, name='mypage_change'),
     path('signup', account_views.signup, name='signup'),
+    path('login', account_views.login, name='login'),
+    path('logout', account_views.logout, name='logout'),
+    path('signout', account_views.signout, name='signout'),
     #파티
     path('party/', party_views.party_main, name='party_main'),
     path('party/frugality', party_views.party_main_fru, name='party_main_fru'), #절약 카테고리
