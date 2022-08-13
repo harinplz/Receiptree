@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <link href="{% static 'css/login_14.css' %}" rel="stylesheet"></a>
+    <link href="{% static 'css/login.css' %}" rel="stylesheet"></a>
     <title></title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,7 +17,11 @@
             <li><a class="menuLink" href="#">영수증글</a></li>
             <li><a class="menuLink" href="#">영수증파티</a></li>
             <li><a class="menuLink" href="#">MY영수증</a></li>
-            <li><input type="button" value="로그인" class="menuButton">
+            {% if user.is_authenticated %}
+            <li><a href="{% url 'logout' %}"><input type="button" value="로그아웃" class="menuButton"></a>
+            {% else %}
+            <li><a href="{% url 'login' %}"> <input type="button" value="로그인" class="menuButton"></a>
+            {% endif %}
         </ul>
     </nav>
     <hr style="background-color:F2F2F2; height:3px;border:none;">
@@ -31,7 +35,7 @@
             <input type="password" placeholder="비밀번호를 입력하세요" class="content1_text2" name="password">
             <input type="submit" value="로그인" class="content1_btn">
             </form>
-            <div class="content1_detail">회원가입 | 아이디/비밀번호 찾기</div>
+            <div class="content1_detail"><a href="{% url 'signup' %}">회원가입</a> | 아이디/비밀번호 찾기</div>
 
         </div>
 

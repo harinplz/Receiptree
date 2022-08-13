@@ -97,3 +97,13 @@
     margin-left:175px;
 }
 
+a {
+    text-decoration-line: none;
+    text-decoration : none;
+    color:C4C4C4;
+    width:263px;
+    height:26px;
+    font-size:16px;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
