@@ -16,7 +16,7 @@
             <li><a class="menuLink" href="#">LOGO</a></li>
             <li><a class="menuLink" href="#">홈</a></li>
             <li><a class="menuLink" href="{% url 'board_main' %}">영수증글</a></li>
-            <li><a class="menuLink" href="#">영수증파티</a></li>
+            <li><a class="menuLink" href="{% url 'party_main' %}">영수증파티</a></li>
             <li><a class="menuLink" href="#">MY영수증</a></li>
             <li><input type="button" value="로그인" class="menuButton">
         </ul>
@@ -30,7 +30,9 @@
     <div class="content2">
         <div class="content2_text">인기영수증</div>
 
+        <!-- 1위 영수증 -->
         <div class="content2_receipt1">
+            {% if hot.0 != None%}
             <a class="a_title" href="{% url 'board_detail' hot.0.board_no %}"><div class="content2_receipt1_text1">{{hot.0.title}}</div></a>
             <div class="content2_receipt1_text2">
                 {% for t in hot.0.tags.all %}
@@ -43,8 +45,19 @@
                 <img class="rounded-circle" src="{{ hot.0.user_no.my_image }}" width="30px" height="30px">
                 <p class="content2_receipt1_profile_name">{{hot.0.user_no.nickname}}</p>
             </div>
+            {% else %}
+            <div class="content2_receipt1_text1"></div>
+            <div class="content2_receipt1_text2"></div>
+            <div class="content2_receipt1_text3"></div>
+            <hr class="content2_receipt1_line">
+            <div class="content2_receipt1_profile"></div>
+            {% endif %}
         </div>
+
+    
+        <!-- 2위 영수증 -->
         <div class="content2_receipt2">
+            {% if hot.1 != None %}
             <a class="a_title" href="{% url 'board_detail' hot.1.board_no %}">
                 <div class="content2_receipt1_text1">{{hot.1.title}}</div></a>
             <div class="content2_receipt1_text2">
@@ -58,8 +71,18 @@
                 <img class="rounded-circle" src="{{ hot.1.user_no.my_image }}" width="30px" height="30px">
                 <p class="content2_receipt1_profile_name">{{hot.1.user_no.nickname}}</p>
             </div>
+            {% else %}
+            <div class="content2_receipt1_text1"></div>
+            <div class="content2_receipt1_text2"></div>
+            <div class="content2_receipt1_text3"></div>
+            <hr class="content2_receipt1_line">
+            <div class="content2_receipt1_profile"></div>
+            {% endif %}
         </div>
+
+        <!-- 3위 영수증 -->
         <div class="content2_receipt3">
+            {% if hot.2 != None %}
             <a class="a_title" href="{% url 'board_detail' hot.2.board_no %}">
                 <div class="content2_receipt1_text1">{{hot.2.title}}</div></a>
             <div class="content2_receipt1_text2">
@@ -73,8 +96,19 @@
                 <img class="rounded-circle" src="{{ hot.2.user_no.my_image }}" width="30px" height="30px">
                 <p class="content2_receipt1_profile_name">{{hot.2.user_no.nickname}}</p>
             </div>
+            {% else %}
+            <div class="content2_receipt1_text1"></div>
+            <div class="content2_receipt1_text2"></div>
+            <div class="content2_receipt1_text3"></div>
+            <hr class="content2_receipt1_line">
+            <div class="content2_receipt1_profile"></div>
+            {% endif %}
         </div>
+
+
+        <!-- 4위 영수증 -->
         <div class="content2_receipt4">
+            {% if hot.3 != None %}
             <a class="a_title" href="{% url 'board_detail' hot.3.board_no %}">
                 <div class="content2_receipt1_text1">{{hot.3.title}}</div></a>
             <div class="content2_receipt1_text2">
@@ -88,6 +122,13 @@
                 <img class="rounded-circle" src="{{ hot.3.user_no.my_image }}" width="30px" height="30px">
                 <p class="content2_receipt1_profile_name">{{hot.3.user_no.nickname}}</p>
             </div>
+            {% else %}
+            <div class="content2_receipt1_text1"></div>
+            <div class="content2_receipt1_text2"></div>
+            <div class="content2_receipt1_text3"></div>
+            <hr class="content2_receipt1_line">
+            <div class="content2_receipt1_profile"></div>
+            {% endif %}
         </div>
     </div>
 
@@ -130,6 +171,7 @@
 
             <!-- 1번째 영수증 -->
             <div class="content3_receipt1">
+                {% if board.0 != None%}
             <a class="a_title" href="{% url 'board_detail' board.0.board_no%}"><div class="content3_receipt1_text1">{{board.0.title}}</div></a>
             <div class="content3_receipt1_text2">
                 {% for t in board.0.tags.all %}
@@ -142,10 +184,21 @@
                 <img class="rounded-circle" src="{{ board.0.user_no.my_image }}" width="30px" height="30px">
                 <p class="content3_receipt1_profile_name">{{board.0.user_no.nickname}}</p>
             </div>
+            
+                <!-- 존재하지 않을 때 -->
+                {%else%}
+                <div class="content3_receipt1_text1"></div>
+                <div class="content3_receipt1_text2"></div>
+                <div class="content3_receipt1_text3"></div>
+                <hr class="content3_receipt1_line">
+                <div class="content3_receipt1_profile"></div>
+                <!-- if문 종료-->
+                {%endif%}
             </div>
 
             <!-- 2번째 영수증 -->
             <div class="content3_receipt2">
+                {% if board.1 != None%}
             <a class="a_title" href="{% url 'board_detail' board.1.board_no %}"><div class="content3_receipt1_text1">{{board.1.title}}</div></a>
             <div class="content3_receipt1_text2">
                 {% for t in board.1.tags.all %}
@@ -158,10 +211,21 @@
                 <img class="rounded-circle" src="{{ board.1.user_no.my_image }}" width="30px" height="30px">
                 <p class="content3_receipt1_profile_name">{{board.1.user_no.nickname}}</p>
             </div>
+            
+                <!-- 존재하지 않을 때 -->
+                {%else%}
+                <div class="content3_receipt1_text1"></div>
+                <div class="content3_receipt1_text2"></div>
+                <div class="content3_receipt1_text3"></div>
+                <hr class="content3_receipt1_line">
+                <div class="content3_receipt1_profile"></div>
+                <!-- if문 종료-->
+                {%endif%}
             </div>
 
             <!-- 3번째 영수증 -->
             <div class="content3_receipt3">
+                {% if board.2 != None%}
             <a class="a_title" href="{% url 'board_detail' board.2.board_no%}"><div class="content3_receipt1_text1">{{board.2.title}}</div></a>
             <div class="content3_receipt1_text2">
                 {% for t in board.2.tags.all %}
@@ -174,12 +238,23 @@
                 <img class="rounded-circle" src="{{ board.2.user_no.my_image }}" width="30px" height="30px">
                 <p class="content3_receipt1_profile_name">{{board.2.user_no.nickname}}</p>
             </div>
+            
+                <!-- 존재하지 않을 때 -->
+                {%else%}
+                <div class="content3_receipt1_text1"></div>
+                <div class="content3_receipt1_text2"></div>
+                <div class="content3_receipt1_text3"></div>
+                <hr class="content3_receipt1_line">
+                <div class="content3_receipt1_profile"></div>
+                <!-- if문 종료-->
+                {%endif%}
             </div>
 
             <!-- 영수증 2줄 -->
 
             <!-- 4번째 영수증 -->
             <div class="content3_receipt4">
+                {% if board.3 != None %}
                 <a class="a_title" href="{% url 'board_detail' board.3.board_no%}"><div class="content3_receipt1_text1">{{board.3.title}}</div></a>
             <div class="content3_receipt1_text2">
                 {% for t in board.3.tags.all %}
@@ -192,10 +267,21 @@
                 <img class="rounded-circle" src="{{ board.3.user_no.my_image }}" width="30px" height="30px">
                 <p class="content3_receipt1_profile_name">{{board.3.user_no.nickname}}</p>
             </div>
+            
+                <!-- 존재하지 않을 때 -->
+                {%else%}
+                <div class="content3_receipt1_text1"></div>
+                <div class="content3_receipt1_text2"></div>
+                <div class="content3_receipt1_text3"></div>
+                <hr class="content3_receipt1_line">
+                <div class="content3_receipt1_profile"></div>
+                <!-- if문 종료-->
+                {%endif%}
             </div>
 
             <!-- 5번째 영수증 -->
             <div class="content3_receipt5">
+                {% if board.4 != None %}
                 <a class="a_title" href="{% url 'board_detail' board.4.board_no%}"><div class="content3_receipt1_text1">{{board.4.title}}</div></a>
             <div class="content3_receipt1_text2">
                 {% for t in board.4.tags.all %}
@@ -208,10 +294,21 @@
                 <img class="rounded-circle" src="{{ board.4.user_no.my_image }}" width="30px" height="30px">
                 <p class="content3_receipt1_profile_name">{{board.4.user_no.nickname}}</p>
             </div>
+            
+                <!-- 존재하지 않을 때 -->
+                {%else%}
+                <div class="content3_receipt1_text1"></div>
+                <div class="content3_receipt1_text2"></div>
+                <div class="content3_receipt1_text3"></div>
+                <hr class="content3_receipt1_line">
+                <div class="content3_receipt1_profile"></div>
+                <!-- if문 종료-->
+                {%endif%}
             </div>
 
             <!-- 6번째 영수증 -->
             <div class="content3_receipt6">
+                {% if board.5 != None %}
                 <a class="a_title" href="{% url 'board_detail' board.5.board_no%}"><div class="content3_receipt1_text1">{{board.5.title}}</div></a>
             <div class="content3_receipt1_text2">
                 {% for t in board.5.tags.all %}
@@ -224,6 +321,16 @@
             <img class="rounded-circle" src="{{ board.5.user_no.my_image }}" width="30px" height="30px">
             <p class="content3_receipt1_profile_name">{{board.5.user_no.nickname}}</p>
             </div>
+            
+                <!-- 존재하지 않을 때 -->
+                {%else%}
+                <div class="content3_receipt1_text1"></div>
+                <div class="content3_receipt1_text2"></div>
+                <div class="content3_receipt1_text3"></div>
+                <hr class="content3_receipt1_line">
+                <div class="content3_receipt1_profile"></div>
+                <!-- if문 종료-->
+                {%endif%}
             </div>
 
             <!--  영수증 3줄 -->
@@ -232,6 +339,7 @@
 
                 <!-- 7번째 영수증-->
                 <div class="content3_receipt7">
+                    {% if board.6 != None %}
                     <a class="a_title" href="{% url 'board_detail' board.6.board_no%}"><div class="content3_receipt1_text1">{{board.6.title}}</div></a>
                     <div class="content3_receipt1_text2">
                     {% for t in board.6.tags.all %}
@@ -244,10 +352,21 @@
                         <img class="rounded-circle" src="{{ board.6.user_no.my_image }}" width="30px" height="30px">
                         <p class="content3_receipt1_profile_name">{{board.6.user_no.nickname}}</p>
                     </div>
+                    
+                <!-- 존재하지 않을 때 -->
+                {%else%}
+                <div class="content3_receipt1_text1"></div>
+                <div class="content3_receipt1_text2"></div>
+                <div class="content3_receipt1_text3"></div>
+                <hr class="content3_receipt1_line">
+                <div class="content3_receipt1_profile"></div>
+                <!-- if문 종료-->
+                {%endif%}
                 </div>
 
                 <!-- 8번째 영수증 -->
                 <div class="content3_receipt8">
+                    {% if board.7 != None %}
                     <a class="a_title" href="{% url 'board_detail' board.7.board_no%}"><div class="content3_receipt1_text1">{{board.7.title}}</div></a>
                     <div class="content3_receipt1_text2">
                         {% for t in board.7.tags.all %}
@@ -260,10 +379,21 @@
                         <img class="rounded-circle" src="{{ board.7.user_no.my_image }}" width="30px" height="30px">
                         <p class="content3_receipt1_profile_name">{{board.7.user_no.nickname}}</p>
                     </div>
+                    
+                <!-- 존재하지 않을 때 -->
+                {%else%}
+                <div class="content3_receipt1_text1"></div>
+                <div class="content3_receipt1_text2"></div>
+                <div class="content3_receipt1_text3"></div>
+                <hr class="content3_receipt1_line">
+                <div class="content3_receipt1_profile"></div>
+                <!-- if문 종료-->
+                {%endif%}
                 </div>
 
                 <!--9번째 영수증-->
                 <div class="content3_receipt9">
+                    {% if board.8 != None %}
                     <a class="a_title" href="{% url 'board_detail' board.8.board_no%}"><div class="content3_receipt1_text1">{{board.8.title}}</div></a>
                     <div class="content3_receipt1_text2">
                         {% for t in board.8.tags.all %}
@@ -276,6 +406,16 @@
                         <img class="rounded-circle" src="{{ board.8.user_no.my_image }}" width="30px" height="30px">
                         <p class="content3_receipt1_profile_name">{{board.8.user_no.nickname}}</p>
                     </div>
+                    
+                <!-- 존재하지 않을 때 -->
+                {%else%}
+                <div class="content3_receipt1_text1"></div>
+                <div class="content3_receipt1_text2"></div>
+                <div class="content3_receipt1_text3"></div>
+                <hr class="content3_receipt1_line">
+                <div class="content3_receipt1_profile"></div>
+                <!-- if문 종료-->
+                {%endif%}
                 </div>
             </div>
 
