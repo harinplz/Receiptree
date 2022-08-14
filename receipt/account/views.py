@@ -88,7 +88,7 @@ def signup(request):
             # render(request, 'signup_11.html')
             # if request.method == 'POST':
             #     return render(request, 'login_14.html')
-            return redirect('login') #회원가입, 로그인 후 이동할 곳
+            return render(request, 'signup_11.html') #회원가입, 로그인 후 이동할 곳
         return render(request, 'signup_09.html')
     return render(request, 'signup_09.html')
 
