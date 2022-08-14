@@ -1,0 +1,84 @@
+{% load static %}
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link href="{% static 'css/party_12.css' %}" rel="stylesheet"></a>
+    <title></title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <nav id="topMenu">
+        <ul>
+            <li><a class="menuLink" href="{% url 'home' %}">LOGO</a></li>
+            <li><a class="menuLink" href="{% url 'home' %}">홈</a></li>
+            <li><a class="menuLink" href="{% url 'board_main' %}">영수증글</a></li>
+            <li><a class="menuLink" href="{% url 'party_main' %}">영수증파티</a></li>
+            <li><a class="menuLink" href="{% url 'mypage' %}">MY영수증</a></li>
+            {% if user.is_authenticated %}
+            <li><a href="{% url 'logout' %}"><input type="button" value="로그아웃" class="menuButton"></a>
+            {% else %}
+            <li><a href="{% url 'login' %}"><input type="button" value="로그인" class="menuButton"></a>
+            {% endif %}
+        </ul>
+    </nav>
+    <hr style="background-color:F2F2F2; height:3px;border:none;">
+
+    <div class="content1"></div>
+
+    <div class="content2">
+        <div class="main_text">절약</div>
+        <input type="button" value="파티 만들기+" class="content2_btn">
+        <hr class="content2_line">
+        <div class="sub_text">영수증 파티</div>
+        <div class="text1">절약</div>
+        <div class="text2">일주일 식비 3만원으로 해결하기</div>
+        <div class="content2_img"><img src="{% static 'img/img1-party_12.jpg' %}"></div>
+        <div class="text3">김멋사</div>
+        <hr class="content2_line">
+        <div class="text4">파티원</div>
+        <div class="text5">4</div>
+        <div class="text6">명</div>
+        <div class="text7">현재 참여 인원</div>
+        <div class="text8">3</div>
+        <div class="text9">명</div>
+         <hr class="content2_line">
+    </div>
+
+    <div class="content3">
+        <img src="{% static 'img/img2-party_12.jpg' %}" class="content3_img1">
+        <img src="{% static 'img/img3-party_12.jpg' %}" class="content3_img2">
+        <img src="{% static 'img/img4-party_12.jpg' %}" class="content3_img3">
+        <img src="{% static 'img/img5-party_12.jpg' %}" class="content3_img4">
+        <p class="member1">👑파티장</p>
+        <p class="member2">파티원</p>
+        <p class="member3">파티원</p>
+        <p class="member4">파티원</p>
+        <p class="member1_detail">김멋사</p>
+        <p class="member2_detail">부자지망생</p>
+        <p class="member3_detail">yomijjang</p>
+        <p class="member4_detail">모집중</p>
+    </div>
+    <hr class="content2_line">
+    
+    <div class="content4">
+        <pre>
+            일주일 식비 3만원으로 해결하기 챌린지 할 파티원 구해요~!
+            매일 식비 내용 영수증 찍어서 올리시면 됩니다. 영수증이 없으면 카드 결제 내역 캡처하셔도 괜찮아요.
+            
+            같이 일주일 동안 열심히 해봐요!
+        </pre>
+    </div>
+    <hr class="content2_line">
+
+    <div class="content5">
+        <div class="content5_text">댓글</div>
+        <input type="text" value="파티장에게 궁금한 점이 있다면 댓글로 문의를 남겨주세요.  (댓글은 파티장만 확인할 수 있습니다)" class="content5_box">
+    </div>
+
+    <div class="content6">
+    <input type="button" value="목록" class="content5_btn1">
+    <input type="button" value="가입하기" class="content5_btn2">
+</div>

@@ -31,3 +31,7 @@ def party_main_saving(request):
 # 파티 만들기 화면
 def party_make(request):
     return render(request, 'party_08.html')
+
+# 파티 가입 화면
+def party_getin(request):
+    return render(request, 'party_12.html')
