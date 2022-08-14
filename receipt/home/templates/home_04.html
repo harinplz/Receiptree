@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <link href="{% static 'css/home_04.css' %}" rel="stylesheet"></a>
+    <link href="{% static 'css/home_04_01.css' %}" rel="stylesheet"></a>
     <title>홈화면</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -40,46 +40,89 @@
 <!-- 인기영수증         -->
          <div class="content1">
         <div class="content1_text">인기영수증</div>
+
+        <!-- 1위 영수증 -->
         <div class="content1_receipt1">
-            <div class="content1_text1">오늘 장 봤는데 영수증 평가해주세요!</div>
-            <div class="content1_text2">#하루영수증 #장보기</div>
-            <div class="content1_text3">2022.08.02</div>
+            {% if hot.0 != None %}
+            <a class="a_title" href="{% url 'board_detail' hot.0.board_no %}">
+            <div class="content1_text1">{{hot.0.title}}</div></a>
+            <div class="content1_text2">
+                {% for t in hot.0.tags.all %}
+                #{{t.tagname}}
+                {% endfor %}
+            </div>
+            <div class="content1_text3">{{hot.0.date|date:'Y.m.d'}}</div>
             <hr class="content1_line">
             <div class="content1_profile">
-                <div class="content1_profile_img"></div>
-                <p class="content1_profile_name">김멋사</p>
+                <div class="content1_profile_img">
+                    <img class="rounded-circle" src="{{ hot.0.user_no.my_image }}" width="30px" height="30px">
+                </div>
+                <p class="content1_profile_name">{{hot.0.user_no.nickname}}</p>
             </div>
+            {% endif %}
         </div>
 
+        <!-- 2위 영수증 -->
         <div class="content1_receipt2">
-            <div class="content1_text1">오늘 장 봤는데 영수증 평가해주세요!</div>
-            <div class="content1_text2">#하루영수증 #장보기</div>
-            <div class="content1_text3">2022.08.02</div>
+            {% if hot.1 != None %}
+            <a class="a_title" href="{% url 'board_detail' hot.1.board_no%}">
+                <div class="content1_text1">{{hot.1.title}}</div></a>
+            <div class="content1_text2">
+                {% for t in hot.1.tags.all %}
+                #{{t.tagname}}
+                {% endfor %}
+            </div>
+            <div class="content1_text3">{{hot.1.date|date:'Y.m.d'}}</div>
             <hr class="content1_line">
             <div class="content1_profile">
-                <div class="content1_profile_img"></div>
-                <p class="content1_profile_name">김멋사</p>
+                <div class="content1_profile_img">
+                    <img class="rounded-circle" src="{{ hot.1.user_no.my_image }}" width="30px" height="30px">
+                </div>
+                <p class="content1_profile_name">{{hot.1.user_no.nickname}}</p>
             </div>
+            {% endif %}
         </div>
+
+        <!-- 3위 영수증 -->
         <div class="content1_receipt3">
-            <div class="content1_text1">오늘 장 봤는데 영수증 평가해주세요!</div>
-            <div class="content1_text2">#하루영수증 #장보기</div>
-            <div class="content1_text3">2022.08.02</div>
+            {% if hot.2 != None %}
+            <a class="a_title" href="{% url 'board_detail' hot.2.board_no %}">
+                <div class="content1_text1">{{hot.2.title}}</div></a>
+            <div class="content1_text2">
+                {% for t in hot.0.tags.all %}
+                #{{t.tagname}}
+                {% endfor %}
+            </div>
+            <div class="content1_text3">{{hot.2.date|date:'Y.m.d'}}</div>
             <hr class="content1_line">
             <div class="content1_profile">
-                <div class="content1_profile_img"></div>
-                <p class="content1_profile_name">김멋사</p>
+                <div class="content1_profile_img">
+                    <img class="rounded-circle" src="{{ hot.2.user_no.my_image }}" width="30px" height="30px">
+                </div>
+                <p class="content1_profile_name">{{hot.2.user_no.nickname}}</p>
             </div>
+            {% endif %}
         </div>
+
+        <!-- 4위 영수증 -->
         <div class="content1_receipt4">
-            <div class="content1_text1">오늘 장 봤는데 영수증 평가해주세요!</div>
-            <div class="content1_text2">#하루영수증 #장보기</div>
-            <div class="content1_text3">2022.08.02</div>
+            {% if hot.3 != None %}
+            <a class="a_title" href="{% url 'board_detail' hot.3.board_no%}">
+                <div class="content1_text1">{{hot.3.title}}</div></a>
+            <div class="content1_text2">
+                {% for t in hot.3.tags.all %}
+                #{{t.tagname}}
+                {% endfor %}
+            </div>
+            <div class="content1_text3">{{hot.3.date|date:'Y.m.d'}}</div>
             <hr class="content1_line">
             <div class="content1_profile">
-                <div class="content1_profile_img"></div>
-                <p class="content1_profile_name">김멋사</p>
+                <div class="content1_profile_img">
+                    <img class="rounded-circle" src="{{ hot.3.user_no.my_image }}" width="30px" height="30px">
+                </div>
+                <p class="content1_profile_name">{{hot.3.user_no.nickname}}</p>
             </div>
+            {% endif %}
         </div>
     </div>
 
