@@ -27,7 +27,7 @@
     <hr style="background-color:F2F2F2; height:3px;border:none;">
 
     <div class="full">
-    <form action="POST">
+    <form method="POST">
         {% csrf_token %}
     <div class="content">
         <div class="main_title">파티 만들기</div>
@@ -41,8 +41,9 @@
         </div> {% endcomment %}
 
         <div class="sub_title3">카테고리</div>
-        <input type="button" value="절약" class="category_btn1" name="category">
-        <input type="button" value="저축" class="category_btn2" name="category">
+        <input type="text" placeholder="'절약' 혹은 '저축'을 띄어쓰기 없이 입력해주세요." class="text_box" name="category">
+        {% comment %} <input type="button" value="절약" class="category_btn1" name="category"> {% endcomment %}
+        {% comment %} <input type="button" value="저축" class="category_btn2" name="category"> {% endcomment %}
         <div class="sub_title4">전달사항</div>
         <input type="text" placeholder="전달사항을 입력해주세요(예 : 규칙, 공지사항, 하고싶은 말 등)" class="text_box2" name="content">
     </div>

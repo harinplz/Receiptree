@@ -154,7 +154,7 @@ def party_make(request):
             team.team_date = timezone.datetime.now()
             team.content = request.POST['content']
             user = request.user
-            team.leader_no = user.user_no
+            team.leader_no = user
             team.category = request.POST['category']
             team.save()
             return redirect('party_main')

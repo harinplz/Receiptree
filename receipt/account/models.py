@@ -23,8 +23,8 @@ class User(AbstractUser):
     expense = models.IntegerField(null=True) #지출 비용
     expense_body = models.TextField(null=True)
 
-    written = models.IntegerField(null=True) #작성한 글 개수
-    party_num = models.IntegerField(null=True)
+    written = models.IntegerField(null=True,default=0) #작성한 글 개수
+    party_num = models.IntegerField(null=True, default=0)
     
     def __str__(self):
         return f"{self.username} - {self.nickname}"
