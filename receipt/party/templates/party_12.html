@@ -1,8 +1,9 @@
 {% load static %}
+{% load humanize %}
 <html>
 <head>
     <meta charset="UTF-8">
-    <link href="{% static 'css/party_12.css' %}" rel="stylesheet"></a>
+    <link href="{% static 'css/party_getin.css' %}" rel="stylesheet"></a>
     <title></title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -29,56 +30,80 @@
     <div class="content1"></div>
 
     <div class="content2">
-        <div class="main_text">절약</div>
-        <input type="button" value="파티 만들기+" class="content2_btn">
+        <div class="main_text">{{party_detail.category}}</div>
+        {% comment %} <input type="button" value="파티 만들기+" class="content2_btn"> {% endcomment %}
         <hr class="content2_line">
         <div class="sub_text">영수증 파티</div>
         <div class="text1">절약</div>
-        <div class="text2">일주일 식비 3만원으로 해결하기</div>
-        <div class="content2_img"><img src="{% static 'img/img1-party_12.jpg' %}"></div>
-        <div class="text3">김멋사</div>
+        <div class="text2">{{party_detail.team_name}}</div>
+        <div class="content2_img"><img class="profile-img" src="{{party_detail.leader_no.my_image}}"></div>
+        <div class="text3">{{party_detail.leader_no.nickname}}</div>
         <hr class="content2_line">
         <div class="text4">파티원</div>
         <div class="text5">4</div>
         <div class="text6">명</div>
         <div class="text7">현재 참여 인원</div>
-        <div class="text8">3</div>
+        <div class="text8">{{party_detail.count_team_users}}</div>
         <div class="text9">명</div>
          <hr class="content2_line">
     </div>
 
     <div class="content3">
-        <img src="{% static 'img/img2-party_12.jpg' %}" class="content3_img1">
-        <img src="{% static 'img/img3-party_12.jpg' %}" class="content3_img2">
-        <img src="{% static 'img/img4-party_12.jpg' %}" class="content3_img3">
+        <img src="{{party_detail.leader_no.my_image}}" class="content3_img1">
+        {% if party_detail.team_users.all.0 != None %}
+        <img src="{{party_detail.team_users.all.0.my_image}}" class="content3_img2">
+        {% else %}
+        <img src="{% static 'img/img5-party_12.jpg' %}" class="content3_img2">
+        {% endif %}
+        {% if party_detail.team_users.all.1 != None %}
+        <img src="{{party_detail.team_users.all.1.my_image}}" class="content3_img3">
+        {% else %}
+        <img src="{% static 'img/img5-party_12.jpg' %}" class="content3_img3">
+        {% endif %}
+        {% if party_detail.team_users.all.2 != None %}
+        <img src="{{party_detail.team_users.all.2.my_image}}" class="content3_img4">
+        {% else %}
         <img src="{% static 'img/img5-party_12.jpg' %}" class="content3_img4">
+        {% endif %}
+        
         <p class="member1">👑파티장</p>
         <p class="member2">파티원</p>
         <p class="member3">파티원</p>
         <p class="member4">파티원</p>
-        <p class="member1_detail">김멋사</p>
-        <p class="member2_detail">부자지망생</p>
-        <p class="member3_detail">yomijjang</p>
+        <p class="member1_detail">{{party_detail.leader_no.nickname}}</p>
+        {% if party_detail.team_users.all.0 != None %}
+        <p class="member2_detail">{{party_detail.team_users.all.0.nickname}}</p>
+        {% else %}
+        <p class="member2_detail">모집중</p>
+        {% endif %}
+        {% if party_detail.team_users.all.1 != None %}
+        <p class="member3_detail">{{party_detail.team_users.all.1.nickname}}</p>
+        {% else %}
+        <p class="member3_detail">모집중</p>
+        {% endif %}
+        {% if party_detail.team_users.all.2 != None %}
+        <p class="member4_detail">{{party_detail.team_users.all.2.nickname}}</p>
+        {% else %}
         <p class="member4_detail">모집중</p>
+        {% endif %}
     </div>
     <hr class="content2_line">
     
     <div class="content4">
         <pre>
-            일주일 식비 3만원으로 해결하기 챌린지 할 파티원 구해요~!
-            매일 식비 내용 영수증 찍어서 올리시면 됩니다. 영수증이 없으면 카드 결제 내역 캡처하셔도 괜찮아요.
-            
-            같이 일주일 동안 열심히 해봐요!
+            {{party.content}}
         </pre>
     </div>
     <hr class="content2_line">
 
-    <div class="content5">
+    {% comment %} <div class="content5">
         <div class="content5_text">댓글</div>
         <input type="text" value="파티장에게 궁금한 점이 있다면 댓글로 문의를 남겨주세요.  (댓글은 파티장만 확인할 수 있습니다)" class="content5_box">
-    </div>
-
+    </div> {% endcomment %}
+    <form method="POST">
+        {% csrf_token %}
     <div class="content6">
-    <input type="button" value="목록" class="content5_btn1">
-    <input type="button" value="가입하기" class="content5_btn2">
+    <a href="{% url 'party_main' %}"><input type="button" value="목록" class="content5_btn1"></a>
+    <input type="submit" value="가입하기" class="content5_btn2">
+    </form>
 </div>

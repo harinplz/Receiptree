@@ -162,6 +162,17 @@ def party_make(request):
     return render(request, 'party_08.html')
 
 # 파티 가입 화면
-def party_getin(request):
-    return render(request, 'party_12.html')
+def party_getin(request, team_id):
+    party_detail = get_object_or_404(Team, pk=team_id)
+    # party_users = [0 for i in range(3)]
+
+    # for i, users in enumerate(party_detail.team_users.all()):
+    #     party_users[i] = users 
+    
+    if request.method == "POST":
+        user = request.user
+        party_detail.team_users.add(user)
+        return redirect('party_main')
+    
+    return render(request, 'party_12.html', {'party_detail':party_detail})
 

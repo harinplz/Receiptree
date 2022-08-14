@@ -350,3 +350,10 @@ pre{
     font-family: 'Noto Sans KR', sans-serif;
     margin-left:20px;
 }
+
+.profile-img {
+    width: 44px;
+    height: 44px;
+    object-fit: contain;
+    border-radius: 50%;
+}
