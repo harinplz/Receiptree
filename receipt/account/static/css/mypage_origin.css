@@ -487,3 +487,10 @@ a {
     font-size:18px;
     font-family: 'Noto Sans KR', sans-serif;
   }
+
+.profile-img {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+    border-radius: 50%;
+}
