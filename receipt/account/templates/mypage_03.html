@@ -34,15 +34,15 @@
     <div class="content1">
         <div class="mypage_logo">My Page</div>
         <div class="mypage_content">
-            <img src="{% static 'img/img1-mypage_03.jpg' %}">
+            <img class="profile-img" src="{{user.my_image}}">
         </div>
         <div class="mypage_name">{{user.nickname}}</div>
         <input type="button" value="수정하기" class="mypage_icon">
         <div class="mypage_email">{{user.email}}</div>
         <div class="mypage_text1">글내역 ></div>
-        <div class="mypage_text1-2">7개</div>
+        <div class="mypage_text1-2">{{user.written}}개</div>
         <div class="mypage_text2">가입파티 ></div>
-        <div class="mypage_text2-2">2 team</div>
+        <div class="mypage_text2-2">{{user.party_num}}team</div>
         <div class="mypage_text3">등급</div>
         <div class="mypage_text3-2">{{user.grade}}</div>
     </div>
