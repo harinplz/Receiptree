@@ -1,0 +1,119 @@
+{% load static %}
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link href="{% static 'css/mypage_07.css' %}" rel="stylesheet"></a>
+    <title></title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;500&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Noto+Sans+KR:wght@300;500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <nav id="topMenu">
+        <ul>
+            <li><a class="menuLink" href="{% url 'home' %}">LOGO</a></li>
+            <li><a class="menuLink" href="{% url 'home' %}">홈</a></li>
+            <li><a class="menuLink" href="{% url 'board_main' %}">영수증글</a></li>
+            <li><a class="menuLink" href="{% url 'party_main' %}">영수증파티</a></li>
+            <li><a class="menuLink" href="{% url 'mypage' %}">MY영수증</a></li>
+            {% if user.is_authenticated %}
+            <li><a href="{% url 'logout' %}"><input type="button" value="로그아웃" class="menuButton"></a>
+            {% else %}
+            <li><a href="{% url 'login' %}"><input type="button" value="로그인" class="menuButton"></a>
+            {% endif %}
+        </ul>
+    </nav>
+    <hr style="background-color:F2F2F2; height:3px;border:none;">
+
+    <div class="full">
+        
+    <div class="content1">
+        <div class="mypage_logo">My Page</div>
+        <div class="mypage_content">
+            <img src="{% static 'img/img1-mypage_03.jpg' %}">
+        </div>
+        <div class="mypage_name">김슈니</div>
+        <input type="button" value="수정하기" class="mypage_icon">
+        <div class="mypage_email">dudtnwmd123@reciept.com</div>
+        <div class="mypage_text1">글내역 ></div>
+        <div class="mypage_text1-2">7개</div>
+        <div class="mypage_text2">가입파티 ></div>
+        <div class="mypage_text2-2">2 team</div>
+        <div class="mypage_text3">등급</div>
+        <div class="mypage_text3-2">새싹</div>
+    </div>
+
+    <div class="content2">
+        <div class="content2_logo">영수증글 내역</div>
+        <div class="content2_table">
+
+            <table border="1">
+
+
+
+                <th width="400px" height="50px">글 제목</th>
+                <th width="200px">태그</th>
+                <th width="200px">날짜</th>
+                <th width="200px">사진</th>
+
+
+            <tr>
+                <td width="400px" height="150px" class="table_title">오늘 장 봤는데 영수증 평가해주세요!</td>
+                <td class="table_tag">#하루영수증 #장보기</td>
+                <td class="table_date">2022.08.02</td>
+                <td class="table_img"><img src="{% static 'img/img1-mypage_07.jpg' %}"></td>
+            </tr>
+
+            <tr>
+                <td width="400px" height="150px" class="table_title">오늘 장 봤는데 영수증 평가해주세요!</td>
+                <td class="table_tag">#하루영수증 #장보기</td>
+                <td class="table_date">2022.08.02</td>
+                <td class="table_img"><img src="{% static 'img/img1-mypage_07.jpg' %}"></td>
+            </tr>
+
+            <tr>
+                <td width="400px" height="150px" class="table_title">오늘 장 봤는데 영수증 평가해주세요!</td>
+                <td class="table_tag">#하루영수증 #장보기</td>
+                <td class="table_date">2022.08.02</td>
+                <td class="table_img"><img src="{% static 'img/img1-mypage_07.jpg' %}"></td>
+            </tr>
+
+            <tr>
+                <td width="400px" height="150px" class="table_title">오늘 장 봤는데 영수증 평가해주세요!</td>
+                <td class="table_tag">#하루영수증 #장보기</td>
+                <td class="table_date">2022.08.02</td>
+                <td class="table_img"><img src="{% static 'img/img1-mypage_07.jpg' %}"></td>
+            </tr>
+
+            <tr>
+                <td width="400px" height="150px" class="table_title">오늘 장 봤는데 영수증 평가해주세요!</td>
+                <td class="table_tag">#하루영수증 #장보기</td>
+                <td class="table_date">2022.08.02</td>
+                <td class="table_img"><img src="{% static 'img/img1-mypage_07.jpg' %}"></td>
+            </tr>
+
+            <tr>
+                <td width="400px" height="150px" class="table_title">오늘 장 봤는데 영수증 평가해주세요!</td>
+                <td class="table_tag">#하루영수증 #장보기</td>
+                <td class="table_date">2022.08.02</td>
+                <td class="table_img"><img src="{% static 'img/img1-mypage_07.jpg' %}"></td>
+            </tr>
+
+            </table>
+        </div>
+
+
+
+    </div>
+
+
+
+
+</div>
+</body>
+</html>
