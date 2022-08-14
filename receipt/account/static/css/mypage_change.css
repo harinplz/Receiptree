@@ -499,6 +499,10 @@
     margin-left:30px;
 }
 
-
-
+.profile-img {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+    border-radius: 50%;
+}
 

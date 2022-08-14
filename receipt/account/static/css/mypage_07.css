@@ -216,3 +216,20 @@ th{
 .table_img{
     padding-left:65px;
 }
+
+a{
+    text-decoration-line: none;
+    text-decoration : none;
+    color: black;
+    /* width:995px;
+    height:107px;
+    font-size:40px; */
+    font-family: 'Noto Sans KR', sans-serif;
+  }
+
+.profile-img {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+    border-radius: 50%;
+}

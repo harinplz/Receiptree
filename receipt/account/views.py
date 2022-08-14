@@ -4,6 +4,12 @@ from django.contrib.auth import authenticate
 from django.contrib.auth.models import User
 from django.contrib.auth.hashers import check_password
 from .models import User
+from board.models import Board
+
+def view_receipt(request):
+    user = request.user
+    posts = Board.objects.filter(user_no=user.user_no)
+    return render(request, 'mypage_07.html', {'posts':posts})
 
 def mypage(request):
     user = request.user
@@ -44,7 +50,9 @@ def mypage_change(request):
 def signup_done(request):
     return render(request, 'signup_11.html')
 
-def view_receipt(request):
+
+
+def view_party(request):
     return render(request, 'mypage_07.html')
 
 
