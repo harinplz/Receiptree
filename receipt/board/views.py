@@ -8,6 +8,7 @@ from django.http import HttpResponse
 from django.http import JsonResponse
 from django.contrib.auth.decorators import login_required
 from django.views.decorators.http import require_POST
+# from account.models import User
 
 from django.db.models import Count
 
@@ -74,6 +75,9 @@ def board_write(request):
                 receipt.body = contents[i]
 
                 receipt.save()
+                user = request.user
+                user.written += 1
+                user.save()
 
         return redirect('board_main')
     return redirect('board_main')

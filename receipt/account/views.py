@@ -3,9 +3,7 @@ from django.contrib import auth
 from django.contrib.auth import authenticate
 from django.contrib.auth.models import User
 from django.contrib.auth.hashers import check_password
-from django.http import JsonResponse
 from .models import User
-from .models import User_info
 
 def mypage(request):
     user = request.user
@@ -60,6 +58,8 @@ def signup(request):
                 phone_number = request.POST['phone'],
                 notify_cnt = 0,
                 grade = "BLUE",
+                written = 0,
+                party_num = 0,
             )
             # user.save()
             # user_info = User_info()

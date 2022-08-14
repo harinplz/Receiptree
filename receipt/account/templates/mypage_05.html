@@ -16,15 +16,15 @@
 <body>
     <nav id="topMenu">
         <ul>
-            <li><a class="menuLink" href="#">LOGO</a></li>
-            <li><a class="menuLink" href="#">홈</a></li>
-            <li><a class="menuLink" href="#">영수증글</a></li>
-            <li><a class="menuLink" href="#">영수증파티</a></li>
-            <li><a class="menuLink" href="#">MY영수증</a></li>
+            <li><a class="menuLink" href="{% url 'home' %}">LOGO</a></li>
+            <li><a class="menuLink" href="{% url 'home' %}">홈</a></li>
+            <li><a class="menuLink" href="{% url 'board_main' %}">영수증글</a></li>
+            <li><a class="menuLink" href="{% url 'party_main' %}">영수증파티</a></li>
+            <li><a class="menuLink" href="{% url 'mypage' %}">MY영수증</a></li>
             {% if user.is_authenticated %}
             <li><a href="{% url 'logout' %}"><input type="button" value="로그아웃" class="menuButton"></a>
             {% else %}
-            <li><a href="{% url 'login' %}"> <input type="button" value="로그인" class="menuButton"></a>
+            <li><a href="{% url 'login' %}"><input type="button" value="로그인" class="menuButton"></a>
             {% endif %}
         </ul>
     </nav>
@@ -35,15 +35,15 @@
         <div class="mypage_logo">My Page</div>
         {% if user.is_authenticated %}
         <div class="mypage_content">
-            <img src="{% static 'img/img1-mypage_03.jpg' %}">
+            <img src="{{user.my_image}}" width="120px" height="150px" border-radius="70%">
         </div>
         <div class="mypage_name">{{user.nickname}}</div>
         <a href="{% url 'mypage_change' %}"> <input type="button" value="수정하기" class="mypage_icon"></a>
         <div class="mypage_email">{{user.email}}</div>
         <div class="mypage_text1">글내역 ></div>
-        <div class="mypage_text1-2">7개</div>
+        <div class="mypage_text1-2">{{user.written}}개</div>
         <div class="mypage_text2">가입파티 ></div>
-        <div class="mypage_text2-2">2 team</div>
+        <div class="mypage_text2-2">{{user.party_num}}team</div>
         <div class="mypage_text3">등급</div>
         <div class="mypage_text3-2">{{user.grade}}</div>
     </div>
@@ -86,7 +86,7 @@
     
             <div class="content3_expense">
             <div class="detail_expense">고정지출</div>
-            <input type="text" class="detail_expense_text" value="{{user.expense}}" readonly/></div>
+            <input type="text" class="detail_expense_text" value="{{user.expense}}{{user.expense_body}}" readonly/></div>
             <hr class="expense_line">
     
             <div class="content3_salary">

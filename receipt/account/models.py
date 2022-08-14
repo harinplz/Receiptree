@@ -22,6 +22,9 @@ class User(AbstractUser):
     income = models.IntegerField(null=True)
     expense = models.IntegerField(null=True) #지출 비용
     expense_body = models.TextField(null=True)
+
+    written = models.IntegerField(null=True) #작성한 글 개수
+    party_num = models.IntegerField(null=True)
     
     def __str__(self):
         return f"{self.username} - {self.nickname}"
@@ -33,14 +36,5 @@ class User(AbstractUser):
         return ''
 
 
-
-# User_info class 
-class User_info(models.Model):
-    user_no = models.OneToOneField(User, on_delete=models.CASCADE, db_column='user_no')
-    job = models.CharField(max_length=40)
-    age = models.IntegerField()
-    income = models.IntegerField()
-    expense = models.IntegerField() #지출 비용
-    expense_body = models.TextField()
     
     
