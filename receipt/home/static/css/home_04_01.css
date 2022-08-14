@@ -446,18 +446,28 @@ ul,li{
     width:67px;
     height:67px;
     margin-left:20px;
+    border-radius: 50% !important;
 }
 
 .party1_img2{
     width:67px;
     height:67px;
     margin-left:-10px;
+    border-radius: 50% !important;
 }
 
 .party1_img3{
     width:67px;
     height:67px;
     margin-left:-10px;
+    border-radius: 50% !important;
+}
+
+.party1_img4{
+    width: 67px;
+    height: 67px;
+    margin-left: -10px;
+    border-radius: 50% !important;
 }
 
 .party1_text3{

@@ -179,67 +179,222 @@
         </div>
 
 
+        <!-- 영수증 파티 나열  -->
         <div class="content3">
             <div class="content3_text">영수증 파티</div>
         <div class="content3_explain">같이 영수증 공유할 사람 구할 땐, 리십트리 영수증 파티</div>
-            <div class="content3_party1">
-                <p class="party1_text1">절약</p>
-                <p class="party1_text2">일주일 식비 3만원으로 해결하기</p>
-                <img src="{% static 'img/party1_img1.png' %}" class="party1_img1">
-                <img src="{% static 'img/party1_img2.png' %}" class="party1_img2">
-                <img src="{% static 'img/party1_img3.png' %}" class="party1_img3">
-                <p class="party1_text3">파티원</p>
-                <p class="party1_text4">3/4명</p>
-            </div>
+            
+        <!-- 1번째 팀 -->
+        <div class="content3_party1">
+            {% if team.0 != None %}
+                <p class="party1_text1">{{team.0.category}}</p>
+                <a class="a_title" href="{% url 'party_detail' team.0.team_no %}">
+                    <p class="party1_text2">{{team.0.team_name}}</p></a>
+                    {% if team.0.leader_no != None%}
+                    <img src="{{ team.0.leader_no.my_image}}" class="party1_img1">
+                    {% else%}
+                    <img src="{% static 'img/blank.jpg' %}" class="party1_img1">
+                    {%endif%}
+                    <!-- 2번째 멤버 -->
+                    {% if team.0.team_users.all.0 != None%}
+                    <img src="{{ team.0.team_users.all.0.my_image}}" class="party1_img2">
+                    {% else%}
+                    <img src="{% static 'img/blank.jpg' %}" class="party1_img2">
+                    {%endif%}
+                    <!-- 3번째 멤버 -->
+                    {% if team.0.team_users.all.1 != None%}
+                    <img src="{{ team.0.team_users.all.1.my_image}}" class="party1_img3">
+                    {% else%}
+                    <img src="{% static 'img/blank.jpg' %}" class="party1_img3">
+                    {%endif%}
+                    <!--4번째 멤버-->
+                    {% if team.0.team_users.all.2 != None%}
+                    <img src="{{ team.0.team_users.all.2.my_image}}" class="party1_img4">
+                    {% else%}
+                    <img src="{% static 'img/blank.jpg' %}" class="party1_img4">
+                    {%endif%}
+                    <p class="party1_text3">파티원</p>
+                    <p class="party1_text4">{{team.0.count_team_users}}/4명</p>
+            {% endif %}
+        </div>
     
+        <!-- 2번째 팀 -->
             <div class="content3_party2">
-                <p class="party1_text1">절약</p>
-                <p class="party1_text2">일주일 식비 3만원으로 해결하기</p>
-                <img src="{% static 'img/party1_img1.png' %}" class="party1_img1">
-                <img src="{% static 'img/party1_img2.png' %}" class="party1_img2">
-                <img src="{% static 'img/party1_img3.png' %}" class="party1_img3">
-                <p class="party1_text3">파티원</p>
-                <p class="party1_text4">3/4명</p>
+                {% if team.1 != None %}
+                <p class="party1_text1">{{team.1.category}}</p>
+                <a class="a_title" href="{% url 'party_detail' team.1.team_no %}">
+                    <p class="party1_text2">{{team.1.team_name}}</p></a>
+            <!-- 1번째 멤버 -->
+            {% if team.1.leader_no != None%}
+                <img src="{{ team.1.leader_no.my_image}}" class="party1_img1">
+            {% else%}
+            <img src="{% static 'img/blank.jpg' %}" class="party1_img1">
+            {%endif%}
+            <!-- 2번째 멤버 -->
+            {% if team.1.team_users.all.0 != None%}
+            <img src="{{ team.1.team_users.all.0.my_image}}" class="party1_img2">
+            {% else%}
+            <img src="{% static 'img/blank.jpg' %}" class="party1_img2">
+            {%endif%}
+            <!-- 3번째 멤버 -->
+            {% if team.1.team_users.all.1 != None%}
+            <img src="{{ team.1.team_users.all.1.my_image}}" class="party1_img3">
+            {% else%}
+            <img src="{% static 'img/blank.jpg' %}" class="party1_img3">
+            {%endif%}
+            <!--4번째 멤버-->
+            {% if team.1.team_users.all.2 != None%}
+            <img src="{{ team.1.team_users.all.2.my_image}}" class="party1_img4">
+            {% else%}
+            <img src="{% static 'img/blank.jpg' %}" class="party1_img4">
+            {%endif%}
+            <p class="party1_text3">파티원</p>
+            <p class="party1_text4">{{team.1.count_team_users}}/4명</p>
+                {% endif %}
             </div>
     
+            <!-- 3번째 팀 -->
             <div class="content3_party3">
-                <p class="party1_text1">절약</p>
-                <p class="party1_text2">일주일 식비 3만원으로 해결하기</p>
-                <img src="{% static 'img/party1_img1.png' %}" class="party1_img1">
-                <img src="{% static 'img/party1_img2.png' %}" class="party1_img2">
-                <img src="{% static 'img/party1_img3.png' %}" class="party1_img3">
-                <p class="party1_text3">파티원</p>
-                <p class="party1_text4">3/4명</p>
+                {% if team.2 != None %}
+                <p class="party1_text1">{{team.2.category}}</p>
+                <a class="a_title" href="{% url 'party_detail' team.2.team_no %}">
+                    <p class="party1_text2">{{team.2.team_name}}</p></a>
+            <!-- 1번째 멤버 -->
+            {% if team.2.leader_no != None%}
+                <img src="{{ team.2.leader_no.my_image}}" class="party1_img1">
+            {% else%}
+            <img src="{% static 'img/blank.jpg' %}" class="party1_img1">
+            {%endif%}
+            <!-- 2번째 멤버 -->
+            {% if team.2.team_users.all.0 != None%}
+            <img src="{{ team.2.team_users.all.0.my_image}}" class="party1_img2">
+            {% else%}
+            <img src="{% static 'img/blank.jpg' %}" class="party1_img2">
+            {%endif%}
+            <!-- 3번째 멤버 -->
+            {% if team.2.team_users.all.1 != None%}
+            <img src="{{ team.2.team_users.all.1.my_image}}" class="party1_img3">
+            {% else%}
+            <img src="{% static 'img/blank.jpg' %}" class="party1_img3">
+            {%endif%}
+            <!--4번째 멤버-->
+            {% if team.2.team_users.all.2 != None%}
+            <img src="{{ team.2.team_users.all.2.my_image}}" class="party1_img4">
+            {% else%}
+            <img src="{% static 'img/blank.jpg' %}" class="party1_img4">
+            {%endif%}
+            <p class="party1_text3">파티원</p>
+            <p class="party1_text4">{{team.2.count_team_users}}/4명</p>
+                {%endif%}
             </div>
+
+            <!-- 4번째 팀 -->
     
             <div class="content3_party4">
-                <p class="party1_text1">절약</p>
-                <p class="party1_text2">일주일 식비 3만원으로 해결하기</p>
-                <img src="{% static 'img/party1_img1.png' %}" class="party1_img1">
-                <img src="{% static 'img/party1_img2.png' %}" class="party1_img2">
-                <img src="{% static 'img/party1_img3.png' %}" class="party1_img3">
-                <p class="party1_text3">파티원</p>
-                <p class="party1_text4">3/4명</p>
+                {% if team.3 != None %}
+                <p class="party1_text1">{{team.3.category}}</p>
+                <a class="a_title" href="{% url 'party_detail' team.3.team_no %}">
+                    <p class="party1_text2">{{team.3.team_name}}</p></a>
+                
+                    <!-- 1번째 멤버 -->
+                    {% if team.3.leader_no != None%}
+                    <img src="{{ team.3.leader_no.my_image}}" class="party1_img1">
+                    {% else%}
+                    <img src="{% static 'img/blank.jpg' %}" class="party1_img1">
+                    {%endif%}
+                    <!-- 2번째 멤버 -->
+                    {% if team.3.team_users.all.0 != None%}
+                    <img src="{{ team.3.team_users.all.0.my_image}}" class="party1_img2">
+                    {% else%}
+                    <img src="{% static 'img/blank.jpg' %}" class="party1_img2">
+                    {%endif%}
+                    <!-- 3번째 멤버 -->
+                    {% if team.3.team_users.all.1 != None%}
+                    <img src="{{ team.3.team_users.all.1.my_image}}" class="party1_img3">
+                    {% else%}
+                    <img src="{% static 'img/blank.jpg' %}" class="party1_img3">
+                    {%endif%}
+                    <!-- 4번째 멤버 -->
+                    {% if team.3.team_users.all.2 != None%}
+                    <img src="{{ team.3.team_users.all.2.my_image}}" class="party1_img4">
+                    {% else%}
+                    <img src="{% static 'img/blank.jpg' %}" class="party1_img4">
+                    {%endif%}
+                    <p class="party1_text3">파티원</p>
+                    <p class="party1_text4">{{team.3.count_team_users}}/4명</p>
+                    {%endif%}
             </div>
     
+            <!-- 5번째 팀 -->
             <div class="content3_party5">
-                <p class="party1_text1">절약</p>
-                <p class="party1_text2">일주일 식비 3만원으로 해결하기</p>
-                <img src="{% static 'img/party1_img1.png' %}" class="party1_img1">
-                <img src="{% static 'img/party1_img2.png' %}" class="party1_img2">
-                <img src="{% static 'img/party1_img3.png' %}" class="party1_img3">
-                <p class="party1_text3">파티원</p>
-                <p class="party1_text4">3/4명</p>
+                {% if team.4 != None %}
+                <p class="party1_text1">{{team.4.category}}</p>
+                <a class="a_title" href="{% url 'party_detail' team.4.team_no %}">
+                    <p class="party1_text2">{{team.4.team_name}}</p></a>
+                
+                    <!-- 1번째 멤버 -->
+                    {% if team.4.leader_no != None%}
+                    <img src="{{ team.4.leader_no.my_image}}" class="party1_img1">
+                    {% else%}
+                    <img src="{% static 'img/blank.jpg' %}" class="party1_img1">
+                    {%endif%}
+                    <!-- 2번째 멤버 -->
+                    {% if team.4.team_users.all.0 != None%}
+                    <img src="{{ team.4.team_users.all.0.my_image}}" class="party1_img2">
+                    {% else%}
+                    <img src="{% static 'img/blank.jpg' %}" class="party1_img2">
+                    {%endif%}
+                    <!-- 3번째 멤버 -->
+                    {% if team.4.team_users.all.1 != None%}
+                    <img src="{{ team.4.team_users.all.1.my_image}}" class="party1_img3">
+                    {% else%}
+                    <img src="{% static 'img/blank.jpg' %}" class="party1_img3">
+                    {%endif%}
+                    <!-- 4번째 멤버 -->
+                    {% if team.4.team_users.all.2 != None%}
+                    <img src="{{ team.4.team_users.all.2.my_image}}" class="party1_img4">
+                    {% else%}
+                    <img src="{% static 'img/blank.jpg' %}" class="party1_img4">
+                    {%endif%}
+                    <p class="party1_text3">파티원</p>
+                    <p class="party1_text4">{{team.4.count_team_users}}/4명</p>
+                {% endif %}
             </div>
     
+            <!-- 6번째 팀 -->
             <div class="content3_party6">
-                <p class="party1_text1">절약</p>
-                <p class="party1_text2">일주일 식비 3만원으로 해결하기</p>
-                <img src="{% static 'img/party1_img1.png' %}" class="party1_img1">
-                <img src="{% static 'img/party1_img2.png' %}" class="party1_img2">
-                <img src="{% static 'img/party1_img3.png' %}" class="party1_img3">
-                <p class="party1_text3">파티원</p>
-                <p class="party1_text4">3/4명</p>
+                {% if team.5 != None %}
+                <p class="party1_text1">{{team.5.category}}</p>
+                <a class="a_title" href="{% url 'party_detail' team.5.team_no %}">
+                    <p class="party1_text2">{{team.5.team_name}}</p></a>
+                
+                    <!-- 1번째 멤버 -->
+                    {% if team.5.leader_no != None%}
+                    <img src="{{ team.5.leader_no.my_image}}" class="party1_img1">
+                    {% else%}
+                    <img src="{% static 'img/blank.jpg' %}" class="party1_img1">
+                    {%endif%}
+                    <!-- 2번째 멤버 -->
+                    {% if team.5.team_users.all.0 != None%}
+                    <img src="{{ team.5.team_users.all.0.my_image}}" class="party1_img2">
+                    {% else%}
+                    <img src="{% static 'img/blank.jpg' %}" class="party1_img2">
+                    {%endif%}
+                    <!-- 3번째 멤버 -->
+                    {% if team.5.team_users.all.1 != None%}
+                    <img src="{{ team.5.team_users.all.1.my_image}}" class="party1_img3">
+                    {% else%}
+                    <img src="{% static 'img/blank.jpg' %}" class="party1_img3">
+                    {%endif%}
+                    <!-- 4번째 멤버 -->
+                    {% if team.5.team_users.all.2 != None%}
+                    <img src="{{ team.5.team_users.all.2.my_image}}" class="party1_img4">
+                    {% else%}
+                    <img src="{% static 'img/blank.jpg' %}" class="party1_img4">
+                    {%endif%}
+                    <p class="party1_text3">파티원</p>
+                    <p class="party1_text4">{{team.5.count_team_users}}/4명</p>
+                {% endif %}
             </div>
     
             
