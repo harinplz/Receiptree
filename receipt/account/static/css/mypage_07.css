@@ -1,0 +1,218 @@
+#topMenu{
+    width:1120px;
+    height:95px;
+    margin:auto;
+}
+
+#topMenu ul li {                     
+    list-style: none;                  
+    float: left;               
+    line-height: 89px;          
+    vertical-align: middle;     
+}
+
+#topMenu .menuLink {                          
+    text-decoration:none;     
+    color:black;
+    display: block;                            
+    font-size: 20px; 
+    width: 170px;
+    text-align: center;   
+    font-family: 'Noto Sans KR', sans-serif;                     
+}
+
+.menuButton{
+    width:105px;
+    height:28px;
+    background-color: 1824BF;
+    color:white;
+    border: none;
+    border-radius: 27px;
+    margin-left:20px;
+}
+
+.full{
+    background-color: #F8F9FD;
+}
+
+.content1{
+    width:1440px;
+    height:321px;
+    margin:auto;
+    background-color: white;
+}
+
+.mypage_logo{
+    width:200px;
+    height:49px;
+    font-size:35px;
+    font-weight:bold;
+    font-family: 'Montserrat', sans-serif;
+    margin-left: 200px;
+    padding-top:30px;
+}
+
+.mypage_content{
+    width:120px;
+    height:120px;
+    margin-left: 200px;
+    margin-top:30px;
+}
+
+.mypage_name{
+    width:105px;
+    height:55px;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size:30px;
+    font-weight:bold;
+    margin-left: 390px;
+    margin-top:-100px;
+}
+
+.mypage_email{
+    width:317px;
+    height:35px;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size:20px;
+    margin-left:390px;
+    margin-top:10px;
+}
+
+.mypage_icon{
+    width:103px;
+    height:41px;
+    border-radius: 27px;
+    text-align: center;   
+    font-family: 'Noto Sans KR', sans-serif;     
+    color:white;
+    border-color:1824BF;
+    background-color: 1824BF;
+    font-size:15px;
+    margin-left:510px;
+    margin-top:-50px;
+}
+
+.mypage_text1{
+    width:100px;
+    height:35px;
+    text-align: center;   
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size:20px;
+    margin-left:780px;
+    margin-top:-90px;
+}
+
+.mypage_text2{
+    width:110px;
+    height:35px;
+    text-align: center;   
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size:20px;
+    margin-left:930px;
+    margin-top:-95px;
+}
+
+.mypage_text3{
+    width:110px;
+    height:35px;
+    text-align: center;   
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size:20px;
+    margin-left:1060px;
+    margin-top:-101px;
+}
+
+.mypage_text1-2{
+    width:100px;
+    height:49px;
+    margin-left:795px;
+    margin-top:10px;
+    font-family: 'Montserrat', sans-serif;
+    font-size:40px;
+    font-weight: bold;
+}
+
+.mypage_text2-2{
+    width:140px;
+    height:49px;
+    margin-left:910px;
+    margin-top:13px;
+    font-family: 'Montserrat', sans-serif;
+    font-size:40px;
+    font-weight: bold;
+}
+
+.mypage_text3-2{
+    width:100px;
+    height:49px;
+    margin-left:1080px;
+    margin-top:15px;
+    font-family: 'Montserrat', sans-serif;
+    font-size:40px;
+    font-weight: bold;
+}
+
+.content2{
+    width:1116px;
+    height:1198px;
+    margin:auto;
+    margin-top:20px;
+    background-color: white;
+}
+
+.content2_logo{
+    width:164px;
+    height:42px;
+    font-size:22px;
+    font-weight:bold;
+    font-family: 'Noto Sans KR', sans-serif;
+    margin-left: 50px;
+    padding-top:30px;
+}
+
+.content2_table{
+    width:995px;
+    height:1062px;
+    margin:auto;
+    margin-top:20px;
+}
+
+table{
+    border-collapse: collapse;
+    border-left:1px solid white;   
+
+    border-right:1px solid white; 
+    
+    border-top:2px solid black;
+    
+    border-bottom:2px solid E9E9E9;
+}
+
+
+th{
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size:18px;
+}
+
+.table_title{
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size:20px;
+    text-align:center;
+}
+
+.table_tag{
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size:20px;
+    text-align:center;
+    color:B5B5B5;
+}
+
+.table_date{
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size:22px;
+    text-align:center;
+}
+
+.table_img{
+    padding-left:65px;
+}

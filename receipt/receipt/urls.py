@@ -24,6 +24,7 @@ urlpatterns = [
     path('login', account_views.login, name='login'),
     path('logout', account_views.logout, name='logout'),
     path('signout', account_views.signout, name='signout'),
+    path('view_receipt', account_views.view_receipt, name='view_receipt'),
     #파티
     path('party/', party_views.party_main, name='party_main'),
     path('party/frugality', party_views.party_main_fru, name='party_main_fru'), #절약 카테고리

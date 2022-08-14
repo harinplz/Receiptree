@@ -1,0 +1,240 @@
+{% load static %}
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link href="{% static 'css/home_04.css' %}" rel="stylesheet"></a>
+    <title>홈화면</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;500&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="wrap">
+    <nav id="topMenu">
+        <ul>
+            <li><a class="menuLink" href="{% url 'home' %}">LOGO</a></li>
+            <li><a class="menuLink" href="{% url 'home' %}">홈</a></li>
+            <li><a class="menuLink" href="{% url 'board_main' %}">영수증글</a></li>
+            <li><a class="menuLink" href="{% url 'party_main' %}">영수증파티</a></li>
+            <li><a class="menuLink" href="{% url 'mypage' %}">MY영수증</a></li>
+            {% if user.is_authenticated %}
+            <li><a href="{% url 'logout' %}"><input type="button" value="로그아웃" class="menuButton"></a>
+            {% else %}
+            <li><a href="{% url 'login' %}"><input type="button" value="로그인" class="menuButton"></a>
+            {% endif %}
+        </ul>
+    </nav>
+
+    <div class="mainBanner">
+        <p class="banner_text1">올바른 소비습관을 위한 <br>
+            똑똑한 참견</p>
+        <h1 class="banner_text2"> RECIEPTREE 영수증 평가</h1>
+        <button id="goto_receipt">영수증 글 보러가기</button>
+
+    </div>
+
+    <div class="content">
+
+<!-- 인기영수증         -->
+         <div class="content1">
+        <div class="content1_text">인기영수증</div>
+        <div class="content1_receipt1">
+            <div class="content1_text1">오늘 장 봤는데 영수증 평가해주세요!</div>
+            <div class="content1_text2">#하루영수증 #장보기</div>
+            <div class="content1_text3">2022.08.02</div>
+            <hr class="content1_line">
+            <div class="content1_profile">
+                <div class="content1_profile_img"></div>
+                <p class="content1_profile_name">김멋사</p>
+            </div>
+        </div>
+
+        <div class="content1_receipt2">
+            <div class="content1_text1">오늘 장 봤는데 영수증 평가해주세요!</div>
+            <div class="content1_text2">#하루영수증 #장보기</div>
+            <div class="content1_text3">2022.08.02</div>
+            <hr class="content1_line">
+            <div class="content1_profile">
+                <div class="content1_profile_img"></div>
+                <p class="content1_profile_name">김멋사</p>
+            </div>
+        </div>
+        <div class="content1_receipt3">
+            <div class="content1_text1">오늘 장 봤는데 영수증 평가해주세요!</div>
+            <div class="content1_text2">#하루영수증 #장보기</div>
+            <div class="content1_text3">2022.08.02</div>
+            <hr class="content1_line">
+            <div class="content1_profile">
+                <div class="content1_profile_img"></div>
+                <p class="content1_profile_name">김멋사</p>
+            </div>
+        </div>
+        <div class="content1_receipt4">
+            <div class="content1_text1">오늘 장 봤는데 영수증 평가해주세요!</div>
+            <div class="content1_text2">#하루영수증 #장보기</div>
+            <div class="content1_text3">2022.08.02</div>
+            <hr class="content1_line">
+            <div class="content1_profile">
+                <div class="content1_profile_img"></div>
+                <p class="content1_profile_name">김멋사</p>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <div class="content2">
+        <div class="content2_text">명예의 영수증 전당</div>
+        <div class="content2_explain">이번 주 가장 스마트한 소비를 한 영수증러는?</div>
+        <ul class="content2_userGroup">
+            <li> 
+                <div class="user_photo"></div>
+                <div class="user_name">USER NAME</div>
+                <div class="user_receipt">
+                <a class="user_receipt_text">영수증</a>
+                <a class="user_receipt_num">12</a>
+                <a class="user_receipt_count">개</a>
+                </div>
+             </li>
+             <li> 
+                <div class="user_photo"></div>
+                <div class="user_name">USER NAME</div>
+                <div class="user_receipt">
+                <a class="user_receipt_text">영수증</a>
+                <a class="user_receipt_num">12</a>
+                <a class="user_receipt_count">개</a>
+                </div>
+             </li>
+             <li> 
+                <div class="user_photo"></div>
+                <div class="user_name">USER NAME</div>
+                <div class="user_receipt">
+                <a class="user_receipt_text">영수증</a>
+                <a class="user_receipt_num">12</a>
+                <a class="user_receipt_count">개</a>
+                </div>
+             </li>
+             <li id="user4"> 
+                <div class="user_photo"></div>
+                <div class="user_name">USER NAME</div>
+                <div class="user_receipt">
+                <a class="user_receipt_text">영수증</a>
+                <a class="user_receipt_num">12</a>
+                <a class="user_receipt_count">개</a>
+                </div>
+             </li>
+
+             
+             
+        </ul>
+            
+            
+        </div>
+
+
+        <div class="content3">
+            <div class="content3_text">영수증 파티</div>
+        <div class="content3_explain">같이 영수증 공유할 사람 구할 땐, 리십트리 영수증 파티</div>
+            <div class="content3_party1">
+                <p class="party1_text1">절약</p>
+                <p class="party1_text2">일주일 식비 3만원으로 해결하기</p>
+                <img src="{% static 'img/party1_img1.png' %}" class="party1_img1">
+                <img src="{% static 'img/party1_img2.png' %}" class="party1_img2">
+                <img src="{% static 'img/party1_img3.png' %}" class="party1_img3">
+                <p class="party1_text3">파티원</p>
+                <p class="party1_text4">3/4명</p>
+            </div>
+    
+            <div class="content3_party2">
+                <p class="party1_text1">절약</p>
+                <p class="party1_text2">일주일 식비 3만원으로 해결하기</p>
+                <img src="{% static 'img/party1_img1.png' %}" class="party1_img1">
+                <img src="{% static 'img/party1_img2.png' %}" class="party1_img2">
+                <img src="{% static 'img/party1_img3.png' %}" class="party1_img3">
+                <p class="party1_text3">파티원</p>
+                <p class="party1_text4">3/4명</p>
+            </div>
+    
+            <div class="content3_party3">
+                <p class="party1_text1">절약</p>
+                <p class="party1_text2">일주일 식비 3만원으로 해결하기</p>
+                <img src="{% static 'img/party1_img1.png' %}" class="party1_img1">
+                <img src="{% static 'img/party1_img2.png' %}" class="party1_img2">
+                <img src="{% static 'img/party1_img3.png' %}" class="party1_img3">
+                <p class="party1_text3">파티원</p>
+                <p class="party1_text4">3/4명</p>
+            </div>
+    
+            <div class="content3_party4">
+                <p class="party1_text1">절약</p>
+                <p class="party1_text2">일주일 식비 3만원으로 해결하기</p>
+                <img src="{% static 'img/party1_img1.png' %}" class="party1_img1">
+                <img src="{% static 'img/party1_img2.png' %}" class="party1_img2">
+                <img src="{% static 'img/party1_img3.png' %}" class="party1_img3">
+                <p class="party1_text3">파티원</p>
+                <p class="party1_text4">3/4명</p>
+            </div>
+    
+            <div class="content3_party5">
+                <p class="party1_text1">절약</p>
+                <p class="party1_text2">일주일 식비 3만원으로 해결하기</p>
+                <img src="{% static 'img/party1_img1.png' %}" class="party1_img1">
+                <img src="{% static 'img/party1_img2.png' %}" class="party1_img2">
+                <img src="{% static 'img/party1_img3.png' %}" class="party1_img3">
+                <p class="party1_text3">파티원</p>
+                <p class="party1_text4">3/4명</p>
+            </div>
+    
+            <div class="content3_party6">
+                <p class="party1_text1">절약</p>
+                <p class="party1_text2">일주일 식비 3만원으로 해결하기</p>
+                <img src="{% static 'img/party1_img1.png' %}" class="party1_img1">
+                <img src="{% static 'img/party1_img2.png' %}" class="party1_img2">
+                <img src="{% static 'img/party1_img3.png' %}" class="party1_img3">
+                <p class="party1_text3">파티원</p>
+                <p class="party1_text4">3/4명</p>
+            </div>
+    
+            
+    
+        
+    </div>
+     
+    </div>
+
+
+    <footer>푸터</footer>
+
+
+    </div>
+    
+
+    
+
+
+
+    
+
+<script src="write_02.js"> </script>
+
+<script type="text/javascript">
+    
+
+   
+
+
+    
+
+</script>
+
+
+
+
+
+
+</body>
+</html>

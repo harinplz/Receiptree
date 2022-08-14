@@ -44,6 +44,9 @@ def mypage_change(request):
 def signup_done(request):
     return render(request, 'signup_11.html')
 
+def view_receipt(request):
+    return render(request, 'mypage_07.html')
+
 
 # 회원가입 (유효성 검사x)
 def signup(request):

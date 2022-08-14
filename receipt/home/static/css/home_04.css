@@ -1,0 +1,492 @@
+body{
+    background-color: white;
+}
+.wrap{
+    width: 1440px;
+    margin :auto;
+    
+}
+#topMenu{
+    width:1120px;
+    height:95px;
+    margin:auto;
+    background-color: white;
+}
+
+#topMenu ul li {                     
+    list-style: none;                  
+    float: left;               
+    line-height: 89px;          
+    vertical-align: middle;     
+}
+
+#topMenu .menuLink {                          
+    text-decoration:none;     
+    color:black;
+    display: block;                            
+    font-size: 20px; 
+    width: 170px;
+    text-align: center;   
+    font-family: 'Noto Sans KR', sans-serif;                     
+}
+
+.menuButton{
+    width:105px;
+    height:28px;
+    background-color: 1824BF;
+    color:white;
+    border: none;
+    border-radius: 27px;
+    margin-left:20px;
+}
+
+
+.mainBanner{
+    width:1440px;
+    height: 439px;
+    background-image: url(./img/Home_banner.png);
+   
+}
+
+
+.banner_text1{
+    
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 43px;
+    padding: 80px  0px 0px 230px;
+    margin: 0px ;
+
+}
+
+.banner_text2{
+    
+    font-weight: 700;
+    font-size: 35px;
+    line-height: 51px;
+    padding: 35px  0px 0px 230px;
+    margin: 0px ;
+
+}
+
+ #goto_receipt{
+    width: 250px;
+    height: 61px;
+    background-color: #1824BF;
+    color: white;
+    font-size: 22px;
+    border: 0px;
+    border-radius: 30.5px;
+    margin: 35px  0px 0px 230px;
+}
+
+.content_text{
+    
+    height:43px;
+    font-size:26px;
+    font-weight: bold;
+    font-family: 'Noto Sans KR', sans-serif;
+    
+}
+.content-title{
+    width: 754px;
+    font-size: 18px;
+    padding: 15px 27px;
+    margin-top:38px;
+    border: 1px solid #ECECEC;
+    border-radius: 16px;
+
+}
+
+
+
+
+
+
+.content{
+    width:1120px;
+    
+    
+    margin:auto;
+    
+}
+.content2{
+    margin-top: 105px;
+    margin-bottom: 126px;
+    height: 468px;
+    
+}
+
+.content1_text{
+    
+    height:38px;
+    font-size:26px;
+    font-weight: bold;
+    font-family: 'Noto Sans KR', sans-serif;
+    padding-top:50px;
+}
+
+.content1_receipt1{
+    width:262px;
+    height:296px;
+    margin-top:50px;
+    border-radius:27px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    background-color: white;
+}
+
+
+
+
+.content1_text1{
+    width:210px;
+    height:64px;
+    font-size:22px;
+    margin-left:20px;
+    padding-top:40px;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+.content1_text2{
+    width:197px;
+    height:26px;
+    color:#B5B5B5;
+    margin-left:20px;
+    margin-top:10px;
+}
+
+.content1_text3{
+    width:203px;
+    height:32px;
+    margin-top:40px;
+    margin-left:20px;
+    font-size:22px;
+
+}
+
+.content1_line{
+    width:230px;
+    color:#EBEBEB;
+}
+
+.content1_profile{
+    width: 199px;
+    height: 30px;
+    margin-left:20px;
+    margin-top:12px;
+}
+
+.content1_profile_img{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    
+    float: left;
+     background-image: url(./img/best_user.png);
+
+}
+.content1_profile_name{
+    margin-left: 10px;
+    line-height: 8px;
+    font-size:16px;
+    float: left;
+}
+
+
+
+
+
+.content1_receipt2{
+    width:262px;
+    height:296px;
+    margin-top:-296px;
+    margin-left:286px;
+    border-radius:27px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    background-color: white;
+}
+
+.content1_receipt3{
+    width:262px;
+    height:296px;
+    margin-left:572px;
+    margin-top:-296px;
+    border-radius:27px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    background-color: white;
+}
+
+.content1_receipt4{
+    width:262px;
+    height:296px;
+    margin-left:858px;
+    margin-top:-296px;
+    border-radius:27px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    background-color: white;
+}
+
+
+.content2_text,.content3_text{
+    
+    height:38px;
+    font-size:26px;
+    font-weight: bold;
+    font-family: 'Noto Sans KR', sans-serif;
+    
+}
+
+
+
+
+.content2_explain, .content2_explain{
+    font-size:26px;
+    margin-top: 22px;
+    font-weight: light;
+    color: #878787;
+}
+
+ul,li{
+    list-style: none;
+    padding: 0px;
+}
+
+.content2 li{
+   float: left;
+   margin: 62px 120px 0px 0px;
+   
+}
+
+.content2_userGroup{
+   
+    float: left;
+    height: 308px;
+    
+}
+
+
+.user_receipt{
+    margin: auto;
+}
+
+
+.user_photo{
+    width: 190px;
+    height: 190px;
+    border-radius: 50%;
+    background-image: url(./img/profile1.png);
+}
+
+.user_name{
+    width: 190px;
+    height: 64px;
+   margin-top: 30px;
+    font-size: 25px;
+    text-align: center;
+}
+
+.user_receipt{
+    width: 100px;
+}
+.user_receipt_text{
+    font-size: 20px;
+}
+
+
+.user_receipt_num{
+    font-size: 20px;
+}
+
+.user_receipt_count{
+    font-size: 20px;
+
+}
+
+
+
+#user4{
+    margin-right: 0px;
+}
+
+
+
+
+.content3{
+    width:1120.66px;
+    height:644.75px;
+    margin:auto;
+    margin-top:60px;
+}
+
+.content3_party1{
+    width:351.55px;
+    height:271.37px;
+    background-color: white;
+    border-radius: 27px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); 
+}
+
+.content3_party2{
+    width:351.55px;
+    height:271.37px;
+    background-color: white;
+    margin-left:384px;
+    margin-top:-291px;
+    border-radius: 27px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); 
+}
+
+.content3_party3{
+    width:351.55px;
+    height:271.37px;
+    background-color: white;
+    margin-left:769px;
+    margin-top:-291px;
+    border-radius: 27px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); 
+}
+
+.content3_party4{
+    width:351.55px;
+    height:271.37px;
+    background-color: white;
+    margin-top:40px;
+    border-radius: 27px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); 
+}
+
+.content3_party5{
+    width:351.55px;
+    height:271.37px;
+    background-color: white;
+    margin-left:384px;
+    margin-top:-291px;
+    border-radius: 27px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); 
+}
+
+.content3_party6{
+    width:351.55px;
+    height:271.37px;
+    background-color: white;
+    margin-left:769px;
+    margin-top:-291px;
+    border-radius: 27px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); 
+}
+
+.content3_party7{
+    width:351.55px;
+    height:271.37px;
+    background-color: white;
+    margin-top:40px;
+    border-radius: 27px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); 
+}
+
+.content3_party8{
+    width:351.55px;
+    height:271.37px;
+    background-color: white;
+    margin-left:384px;
+    margin-top:-291px;
+    border-radius: 27px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); 
+}
+
+.content3_party9{
+    width:351.55px;
+    height:271.37px;
+    background-color: white;
+    margin-left:769px;
+    margin-top:-291px;
+    border-radius: 27px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); 
+}
+
+.content5{
+    padding-top:80px;
+    width:180px;
+    height:55px;
+    margin:auto;
+}
+
+.content5_btn{
+    width:173px;
+    height:55px;
+    border-radius: 27px;
+    color:1824BF;
+    border-color: 1824BF;
+    background-color: white;
+    font-size:24px;
+    font-family: 'Noto Sans KR', sans-serif;
+    text-align: center;
+}
+
+.party1_text1{
+    width:37px;
+    height:29px;
+    font-size:20px;
+    font-weight:lighter;
+    margin-left:20px;
+    padding-top:40px;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+.party1_text2{
+    width:300px;
+    height:32px;
+    font-size:22px;
+    margin-left:20px;
+    font-family: 'Noto Sans KR', sans-serif;
+
+}
+
+.party1_img1{
+    width:67px;
+    height:67px;
+    margin-left:20px;
+}
+
+.party1_img2{
+    width:67px;
+    height:67px;
+    margin-left:-10px;
+}
+
+.party1_img3{
+    width:67px;
+    height:67px;
+    margin-left:-10px;
+}
+
+.party1_text3{
+    width:61px;
+    height:32px;
+    font-size:20px;
+    font-weight:lighter;
+    margin-left:20px;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+.party1_text4{
+    width:61px;
+    height:32px;
+    font-size:20px;
+    margin-left:260px;
+    margin-top:-55px;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+
+footer{
+    
+    height: 230px;
+    bottom:0%;
+    margin-top: 343px;
+    background-color: #D9D9D9;
+    
+
+}
+
+
