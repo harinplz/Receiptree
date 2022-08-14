@@ -1,10 +1,11 @@
 
-from time import time
 from django.shortcuts import render, get_object_or_404, redirect
 
 from .models import *
 
+import json
 from django.contrib.auth.decorators import login_required
+from django.views.decorators.http import require_POST
 # Create your views here.
 
 # 파티 메인화면
@@ -124,3 +125,21 @@ def newcomment_party(request, team_id):
         print("실행??")
 
     return redirect('party_detail', team_id)
+
+
+# # '좋은 소비예요' 버튼 기능 구현
+# @login_required
+# @require_POST
+# def party_good(request):
+#     pk = request.POST.get('pk', None)
+#     party_board = get_object_or_404(Team_Board, pk=pk)
+#     print(party_board)
+#     user = request.user
+
+#     if party_board.team_good_users.filter(user_no = user.user_no):
+#         party_board.team_good_users.remove(user)
+#     else:
+#         party_board.team_good_users.add(user)
+
+#     context = {'party_good_count': party_board.count_team_good_users()}
+#     return HTTPResponse(json.dumps(context), content_type="application/json")

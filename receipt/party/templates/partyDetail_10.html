@@ -12,6 +12,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;500&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $.ajaxSetup({
+          headers: { "X-CSRFToken": '{{csrf_token}}' }
+        });
+      </script>
 </head>
 
 <body>
@@ -156,11 +161,13 @@
         </div>
        
         
-        <div class="good_bad">
-            <button id="good"><img src="{% static 'img/good.png' %}">좋은 소비예요 <span id="good_num">14</span></button>
+        <!-- <div class="good_bad">
+            <button id="good" class="party_good" name="{{party_board.team_board_no}}">
+                <img src="{% static 'img/good.png' %}">좋은 소비예요
+                <span id="party-good-count-{{party_board.team_board_no}}">14</span></button>
             <button id="bad"><img src="{% static 'img/bad.png' %}">나쁜 소비예요 <span id="bad_num">13</span></button>
 
-        </div>
+        </div> -->
 
         {% endif %}
    
@@ -208,11 +215,11 @@
         </div>
        
         
-        <div class="good_bad">
+        <!-- <div class="good_bad">
             <button id="good"><img src="{% static 'img/good.png' %}">좋은 소비예요 <span id="good_num">12</span></button>
             <button id="bad"><img src="{% static 'img/bad.png' %}">나쁜 소비예요 <span id="bad_num">13</span></button>
 
-        </div>
+        </div> -->
 
     {% endif %}
    
@@ -259,11 +266,11 @@
         </div>
        
         
-        <div class="good_bad">
+        <!-- <div class="good_bad">
             <button id="good"><img src="{% static 'img/good.png' %}">좋은 소비예요 <span id="good_num">12</span></button>
             <button id="bad"><img src="{% static 'img/bad.png' %}">나쁜 소비예요 <span id="bad_num">13</span></button>
 
-        </div>
+        </div> -->
 
 
         {%endif%}
@@ -309,10 +316,10 @@
         </div>
        
         
-        <div class="good_bad">
+        <!-- <div class="good_bad">
             <button id="good"><img src="{% static 'img/good.png' %}">좋은 소비예요 <span id="good_num">12</span></button>
             <button id="bad"><img src="{% static 'img/bad.png' %}">나쁜 소비예요 <span id="bad_num">13</span></button>
-        </div>
+        </div> -->
 
 
         {%endif%}
@@ -424,7 +431,24 @@
 <script src="{% static 'js/partyDetail_10_01.js' %}"> </script>
 
 <script type="text/javascript">
-    
+//좋은 소비예요 버튼 구현
+// $(".party_good").click(function() {
+//   var pk = $(this).attr('name')
+//   $.ajax(
+//     {
+//       type:"POST",
+//       url: "{% url 'party_good' %}",
+//       data: {'pk':pk},
+//       dataType: "json",
+//       success: function(response){
+//         $('#party-good-count-'+pk).html(response.party_good_count);
+//       },
+//       error: function(request, status, error){
+//         alert("좋은 소비예요 버튼 오류")
+//       }
+//     }
+//   );
+// })
 
     
 
