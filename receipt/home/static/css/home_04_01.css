@@ -515,6 +515,16 @@ ul,li{
     height: 190px;
     background-size: cover;
 }
+
+
+/*더보기 css*/
+.more_btn1,.more_btn2{
+    color: #848484;
+    text-decoration: none;
+    float: right;
+    font-weight: 350;
+}
+
   
 footer{
     
