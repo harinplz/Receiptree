@@ -1,12 +1,22 @@
+<!-- 파티 상세화면 -->
+
+{% load static %}
+{% load humanize %}
+
 <html>
 <head>
     <meta charset="UTF-8">
-    <link href="partyDetail_10.css" rel="stylesheet"></a>
+    <link href="{% static 'css/partyDetail_10.css' %}" rel="stylesheet"></a>
     <title>파티 글 상세</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;500&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $.ajaxSetup({
+          headers: { "X-CSRFToken": '{{csrf_token}}' }
+        });
+      </script>
 </head>
 
 <body>
@@ -15,8 +25,8 @@
         <ul>
             <li><a class="menuLink" href="#">LOGO</a></li>
             <li><a class="menuLink" href="#">홈</a></li>
-            <li><a class="menuLink" href="#">영수증글</a></li>
-            <li><a class="menuLink" href="#">영수증파티</a></li>
+            <li><a class="menuLink" href="{% url 'board_main' %}">영수증글</a></li>
+            <li><a class="menuLink" href="{% url 'party_main' %}">영수증파티</a></li>
             <li><a class="menuLink" href="#">MY영수증</a></li>
             <li><input type="button" value="로그인" class="menuButton">
         </ul>
@@ -28,24 +38,27 @@
             <div class="content_text">영수증 파티</div>
 
             <div class="title_name">
-                <span class="party_category">절약</span>
-                일주일치 장본 거 평가해주세요!</div>
+                <span class="party_category">{{party_detail.category}}</span>
+                {{party_detail.team_name}}</div>
             
             
             <div class="party_info">
             <span id="party_info_text">파티원</span>
-            <span id="party_count">4</span>
+            <span id="party_count">{{party_detail.count_team_users}}</span>
             <span id="party_count_text">명</span>
 
             <span id="party_num_text">파티번호</span>
-            <span id="party_num">028492892389</span>  
+            <span id="party_num">{{party_detail.team_no}}</span>  
 
             
         </div>
+
+        <!-- 수정/ 삭제 버튼 -->
         <div class="editAnddelete">
-            <button id = "edit_btn">수정</button>
-            <button id = "delete_btn">삭제</button>               
+            <button id = "edit_btn">작성</button>
+            <!-- <button id = "delete_btn">삭제</button>                -->
         </div>
+
         </div>
 
 
@@ -53,28 +66,43 @@
         <div class="party_mem">
             <ul class="party_mem_group">
                 <li> 
-                    <button id="defaultOpen"class="user_photo" onclick="openMenu('Party1', this,'thick solid purple')"></button>
+                    <button id="defaultOpen"class="user_photo1" onclick="openMenu('Party1', this,'thick solid purple')"></button>
                     <div class="user_name" >파티장</div>
-                    <div class="user_name">USER1 NAME</div>
+                    <div class="user_name">{{party_detail.leader_no.nickname}}</div>
 
                  </li>
                  <li> 
-                    <button id="click"class="user_photo" onclick="openMenu('Party2', this, 'thick solid blue')"></button>
+                    {% if party_detail.team_users.all.0 != None %}
+                    <button id="click"class="user_photo2" onclick="openMenu('Party2', this, 'thick solid blue')"></button>
                     <div class="user_name">파티원</div>
-                    <div class="user_name">USER2 NAME</div>
-
+                    <div class="user_name">{{party_detail.team_users.all.0.nickname}}</div>
+                    {% else %}
+                    <button id="click"class="user_photo2" onclick="openMenu('Party2', this, 'thick solid blue')"></button>
+                    <div class="user_name">파티원</div>
+                    <div class="user_name">모집중</div>
+                    {% endif %}
                  </li>
                  <li> 
-                    <button id="click" class="user_photo" onclick="openMenu('Party3', this, 'thick solid pink' )"></button>
+                    {% if party_detail.team_users.all.1 != None %}
+                    <button id="click" class="user_photo3" onclick="openMenu('Party3', this, 'thick solid pink' )"></button>
                     <div class="user_name">파티원</div>
-                    <div class="user_name">USER3 NAME</div>
-
+                    <div class="user_name">{{party_detail.team_users.all.1.nickname}}</div>
+                    {% else %}
+                    <button id="click" class="user_photo3" onclick="openMenu('Party3', this, 'thick solid pink' )"></button>
+                    <div class="user_name">파티원</div>
+                    <div class="user_name">모집중</div>
+                    {% endif %}
                  </li>
                  <li id="user4"> 
-                    <button id = "click"class="user_photo" onclick="openMenu('Party4', this, 'thick solid orange' )"></button>
+                    {% if party_detail.team_users.all.2 != None %}
+                    <button id = "click"class="user_photo4" onclick="openMenu('Party4', this, 'thick solid orange' )"></button>
                     <div class="user_name">파티원</div>
-                    <div class="user_name">USER4 NAME</div>
-
+                    <div class="user_name">{{party_detail.team_users.all.2.nickname}}</div>
+                    {% else %}
+                    <button id = "click"class="user_photo4" onclick="openMenu('Party4', this, 'thick solid orange' )"></button>
+                    <div class="user_name">파티원</div>
+                    <div class="user_name">모집중</div>
+                    {% endif %}
                  </li>
     
                  
@@ -84,11 +112,11 @@
         <!-- 영수증1 -->
         <div id="Party1"class="receipt">
         
-        
+        {% if party_board1 != None %}
         <table id='receipt-table'>
             <tr>
                 <th colspan="4" height="100px"> 
-                    <span class="receipt_user_name">User1</span>님의 지출영수증</th>
+                    <span class="receipt_user_name">{{party_detail.leader_no.nickname}}</span>님의 지출영수증</th>
             </tr>
             <tr>
                 <th>일시</th>
@@ -97,87 +125,64 @@
                 <th>내용</th>
             </tr>
             <tbody>
+                {% if party_receipt1 != None %}
+                {% for receipt in party_receipt1.all%}
                 <tr id="no">
-                <td width="135px">6/6(금)<br>12:23 </td>
-                <td width="134px">13,500원</td>
-                <td width="134px">돈까스집</td>
-                <td width="348px" class="buy_reason">회사 근처에서 <br>점심으로 돈까스 정식 </td>
-                </td>
-            </tr>
-            <tr id="no">
-                <td width="135px">6/6(금)<br>12:23 </td>
-                <td width="134px">13,500원</td>
-                <td width="134px">돈까스집</td>
-                <td width="348px" class="buy_reason">회사 근처에서 <br>점심으로 돈까스 정식 </td>
-                </td>
-            </tr>
-            <tr id="no">
-                <td width="135px">6/6(금)<br>12:23 </td>
-                <td width="134px">13,500원</td>
-                <td width="134px">돈까스집</td>
-                <td width="348px" class="buy_reason">회사 근처에서 <br>점심으로 돈까스 정식 </td>
-                </td>
-            </tr>
-            <tr id="no">
-                <td width="135px">6/6(금)<br>12:23 </td>
-                <td width="134px">13,500원</td>
-                <td width="134px">돈까스집</td>
-                <td width="348px" class="buy_reason">회사 근처에서 <br>점심으로 돈까스 정식 </td>
-                </td>
-            </tr>
-            <tr id="no">
-                <td width="135px">6/6(금)<br>12:23 </td>
-                <td width="134px">13,500원</td>
-                <td width="134px">돈까스집</td>
-                <td width="348px" class="buy_reason">회사 근처에서 <br>점심으로 돈까스 정식 </td>
-                </td>
-            </tr>
-            <tr id="no">
-                <td width="135px">6/6(금)<br>12:23 </td>
-                <td width="134px">13,500원</td>
-                <td width="134px">돈까스집</td>
-                <td width="348px" class="buy_reason">회사 근처에서 <br>점심으로 돈까스 정식 </td>
-                </td>
-            </tr>
+                    <td width="135px"> {{receipt.team_use_date}}</td>
+                    <td width="134px"> {{receipt.team_cost|intcomma}}원</td>
+                    <td width="134px">{{receipt.team_place}}</td>
+                    <td width="348px" class="buy_reason">{{receipt.team_body}}</td>
+                </tr>
+                {% endfor %}
+                {% endif %}
                 </tbody>
             
           </table>
           
-          <div class="use_period">
+          <!-- <div class="use_period">
             <div id="use_period_title">사용기간</div>
             <div id="use_date_text">7일</div>
             <input type="text" id="use_date">
-          </div>
+          </div> -->
           <div class="use_price">
             <div id="use_price_title">총 금액</div>
-            <div id="use_price_text">3,000,000원</div>
+            {% if sum1 != None %}
+            <div id="use_price_text">{{sum1|intcomma}}원</div>
+            {% endif %}
             
           </div>
         <div class="textfield">
-            안녕하세요, 웹디자이너로 일하고 있는 27살 여자입니다. 최근 일주일 동안 쓴 내역인데 어떤가요? 
-            올해 안에 2000만원까지 모으는게 목표입니다. 여기서 좀 더 줄일 만한 부분 있나요?
+            {{party_board1.0.team_body}}
+            <!-- {% for board in party_board.all %}
+            {% if board.team_writer_no == party_detail.leader_no %}
+            {{ board.team_body}}
+            {% endif %}
+            {% endfor %} -->
         </div>
        
         
-        <div class="good_bad">
-            <button id="good"><img src="./party_img/good.png">좋은 소비예요 <span id="good_num">14</span></button>
-            <button id="bad"><img src="./party_img/bad.png">나쁜 소비예요 <span id="bad_num">13</span></button>
+        <!-- <div class="good_bad">
+            <button id="good" class="party_good" name="{{party_board.team_board_no}}">
+                <img src="{% static 'img/good.png' %}">좋은 소비예요
+                <span id="party-good-count-{{party_board.team_board_no}}">14</span></button>
+            <button id="bad"><img src="{% static 'img/bad.png' %}">나쁜 소비예요 <span id="bad_num">13</span></button>
 
-        </div>
+        </div> -->
 
-
+        {% endif %}
    
     </div>
+    
 
 
 <!-- 영수증2 -->
     <div id="Party2"class="receipt">
-        
-        
+
+        {% if party_board2 != None %}
         <table id='receipt-table'>
             <tr>
                 <th colspan="4" height="100px">
-                    <span class="receipt_user_name">User2</span>님의 지출영수증</th>
+                    <span class="receipt_user_name">{{party_detail.team_users.all.0.nickname}}</span>님의 지출영수증</th>
             </tr>
             <tr>
                 <th>일시</th>
@@ -186,72 +191,49 @@
                 <th>내용</th>
             </tr>
             <tbody>
+                {% if party_receipt2 != None%}
+                {% for receipt in party_receipt2.all%}
                 <tr id="no">
-                <td width="135px">6/6(금)<br>12:23 </td>
-                <td width="134px">13,500원</td>
-                <td width="134px">고양이 사료</td>
-                <td width="348px" class="buy_reason">반려동물 <br>사료 구입</td>
-                </td>
-            </tr>
-            <tr id="no">
-                <td width="135px">6/6(금)<br>12:23 </td>
-                <td width="134px">13,500원</td>
-                <td width="134px">고양이 사료</td>
-                <td width="348px" class="buy_reason">반려동물 <br>사료 구입</td>
-                </td>
-            </tr>
-            <tr id="no">
-                <td width="135px">6/6(금)<br>12:23 </td>
-                <td width="134px">13,500원</td>
-                <td width="134px">고양이 사료</td>
-                <td width="348px" class="buy_reason">반려동물 <br>사료 구입</td>
-                </td>
-            </tr>
-            <tr id="no">
-                <td width="135px">6/6(금)<br>12:23 </td>
-                <td width="134px">13,500원</td>
-                <td width="134px">고양이 사료</td>
-                <td width="348px" class="buy_reason">반려동물 <br>사료 구입</td>
-                </td>
-            </tr>
-            
-            
-                </tbody>
-            
+                    <td width="135px">{{receipt.team_use_date}} </td>
+                    <td width="134px">{{receipt.team_cost|intcomma}}원</td>
+                    <td width="134px">{{receipt.team_place}}</td>
+                    <td width="348px" class="buy_reason">{{receipt.team_body}}</td>
+                    </td>
+                </tr>
+                {% endfor %}
+                {% endif %}
+            </tbody>
           </table>
-          
-          <div class="use_period">
-            <div id="use_period_title">사용기간</div>
-            <div id="use_date_text">7일</div>
-            <input type="text" id="use_date">
-          </div>
+    
           <div class="use_price">
             <div id="use_price_title">총 금액</div>
-            <div id="use_price_text">3,000,000원</div>
+            <div id="use_price_text">{{sum2|intcomma}}원</div>
             
           </div>
         <div class="textfield">
-            3일차 영수증!
+            {{party_board2.0.team_body}}
         </div>
        
         
-        <div class="good_bad">
-            <button id="good"><img src="./party_img/good.png">좋은 소비예요 <span id="good_num">12</span></button>
-            <button id="bad"><img src="./party_img/bad.png">나쁜 소비예요 <span id="bad_num">15</span></button>
+        <!-- <div class="good_bad">
+            <button id="good"><img src="{% static 'img/good.png' %}">좋은 소비예요 <span id="good_num">12</span></button>
+            <button id="bad"><img src="{% static 'img/bad.png' %}">나쁜 소비예요 <span id="bad_num">13</span></button>
 
-        </div>
+        </div> -->
 
-
+    {% endif %}
    
     </div>
+
+
 <!-- 영수증3 -->
     <div id="Party3"class="receipt">
         
-        
+        {% if party_board3 != None %}
         <table id='receipt-table'>
             <tr>
                 <th colspan="4" height="100px"> 
-                    <span class="receipt_user_name">User3</span>님의 지출영수증</th>
+                    <span class="receipt_user_name">{{party_detail.team_users.all.1.nickname}}</span>님의 지출영수증</th>
             </tr>
             <tr>
                 <th>일시</th>
@@ -260,85 +242,48 @@
                 <th>내용</th>
             </tr>
             <tbody>
+                {% if party_receipt3 != None%}
+                {% for receipt in party_receipt3.all%}
                 <tr id="no">
-                <td width="135px">6/6(금)<br>12:23 </td>
-                <td width="134px">13,500원</td>
-                <td width="134px">3분카레 10개 묶음</td>
-                <td width="348px" class="buy_reason">1년치 카레 <br>묶음으로 구입 </td>
-                </td>
-            </tr>
-            <tr id="no">
-                <td width="135px">6/6(금)<br>12:23 </td>
-                <td width="134px">13,500원</td>
-                <td width="134px">3분카레 10개 묶음</td>
-                <td width="348px" class="buy_reason">1년치 카레 <br>묶음으로 구입 </td>
-                </td>
-            </tr>
-            <tr id="no">
-                <td width="135px">6/6(금)<br>12:23 </td>
-                <td width="134px">13,500원</td>
-                <td width="134px">3분카레 10개 묶음</td>
-                <td width="348px" class="buy_reason">1년치 카레 <br>묶음으로 구입 </td>
-                </td>
-            </tr>
-            <tr id="no">
-                <td width="135px">6/6(금)<br>12:23 </td>
-                <td width="134px">13,500원</td>
-                <td width="134px">3분카레 10개 묶음</td>
-                <td width="348px" class="buy_reason">1년치 카레 <br>묶음으로 구입 </td>
-                </td>
-            </tr>
-            <tr id="no">
-                <td width="135px">6/6(금)<br>12:23 </td>
-                <td width="134px">13,500원</td>
-                <td width="134px">3분카레 10개 묶음</td>
-                <td width="348px" class="buy_reason">1년치 카레 <br>묶음으로 구입 </td>
-                </td>
-            </tr>
-            <tr id="no">
-                <td width="135px">6/6(금)<br>12:23 </td>
-                <td width="134px">13,500원</td>
-                <td width="134px">3분카레 10개 묶음</td>
-                <td width="348px" class="buy_reason">1년치 카레 <br>묶음으로 구입 </td>
-                </td>
-            </tr>
-                </tbody>
-            
+                    <td width="135px">{{receipt.team_use_date}} </td>
+                    <td width="134px">{{receipt.team_cost|intcomma}}원</td>
+                    <td width="134px">{{receipt.team_place}}</td>
+                    <td width="348px" class="buy_reason">{{receipt.team_body}}</td>
+                    </td>
+                </tr>
+                {% endfor%}
+                {% endif %}
+            </tbody>
           </table>
           
-          <div class="use_period">
-            <div id="use_period_title">사용기간</div>
-            <div id="use_date_text">7일</div>
-            <input type="text" id="use_date">
-          </div>
           <div class="use_price">
             <div id="use_price_title">총 금액</div>
-            <div id="use_price_text">3,000,000원</div>
+            <div id="use_price_text">{{sum3|intcomma}}원</div>
             
           </div>
         <div class="textfield">
-            저 장본 거 솔직하게 평가해주세요!!
+            {{party_board3.0.team_body}}
         </div>
        
         
-        <div class="good_bad">
-            <button id="good"><img src="./party_img/good.png">좋은 소비예요 <span id="good_num">14</span></button>
-            <button id="bad"><img src="./party_img/bad.png">나쁜 소비예요 <span id="bad_num">2</span></button>
+        <!-- <div class="good_bad">
+            <button id="good"><img src="{% static 'img/good.png' %}">좋은 소비예요 <span id="good_num">12</span></button>
+            <button id="bad"><img src="{% static 'img/bad.png' %}">나쁜 소비예요 <span id="bad_num">13</span></button>
 
-        </div>
+        </div> -->
 
 
-   
+        {%endif%}
     </div>
 
     <!-- 영수증4 -->
     <div id="Party4"class="receipt">
         
-        
+        {% if party_board4 != None %}
         <table id='receipt-table'>
             <tr>
                 <th colspan="4" height="100px"> 
-                    <span class="receipt_user_name">User4</span>님의 지출영수증</th>
+                    <span class="receipt_user_name">{{party_detail.team_users.all.2.nickname}}</span>님의 지출영수증</th>
             </tr>
             <tr>
                 <th>일시</th>
@@ -347,108 +292,76 @@
                 <th>내용</th>
             </tr>
             <tbody>
+                {% if party_receipt4 != None%}
+                {% for receipt in party_receipt4.all %}
                 <tr id="no">
-                <td width="135px">6/6(금)<br>12:23 </td>
-                <td width="134px">5,500원</td>
-                <td width="134px">라면 5봉지</td>
-                <td width="348px" class="buy_reason">신라면 5봉지 <br> 묶음으로 삼 </td>
-                </td>
-            </tr>
-            <tr id="no">
-                <td width="135px">6/6(금)<br>12:23 </td>
-                <td width="134px">13,500원</td>
-                <td width="134px">라면 5봉지</td>
-                <td width="348px" class="buy_reason">신라면 5봉지 <br> 묶음으로 삼 </td>
-                </td>
-            </tr>
-            <tr id="no">
-                <td width="135px">6/6(금)<br>12:23 </td>
-                <td width="134px">13,500원</td>
-                <td width="134px">라면 5봉지</td>
-                <td width="348px" class="buy_reason">신라면 5봉지 <br> 묶음으로 삼 </td>
-                </td>
-            </tr>
-            <tr id="no">
-                <td width="135px">6/6(금)<br>12:23 </td>
-                <td width="134px">13,500원</td>
-                <td width="134px">라면 5봉지</td>
-                <td width="348px" class="buy_reason">신라면 5봉지 <br> 묶음으로 삼 </td>
-                </td>
-            </tr>
-            <tr id="no">
-                <td width="135px">6/6(금)<br>12:23 </td>
-                <td width="134px">13,500원</td>
-                <td width="134px">라면 5봉지</td>
-                <td width="348px" class="buy_reason">신라면 5봉지 <br> 묶음으로 삼 </td>
-                </td>
-            </tr>
-            <tr id="no">
-                <td width="135px">6/6(금)<br>12:23 </td>
-                <td width="134px">13,500원</td>
-                <td width="134px">라면 5봉지</td>
-                <td width="348px" class="buy_reason">신라면 5봉지 <br> 묶음으로 삼 </td>
-                </td>
-            </tr>
+                    <td width="135px">{{receipt.team_use_date}} </td>
+                    <td width="134px">{{receipt.team_cost|intcomma}}원</td>
+                    <td width="134px">{{receipt.team_place}}</td>
+                    <td width="348px" class="buy_reason">{{receipt.team_body}}</td>
+                    </td>
+                </tr>
+                {% endfor %}
+                {% endif %}
                 </tbody>
-            
           </table>
           
-          <div class="use_period">
-            <div id="use_period_title">사용기간</div>
-            <div id="use_date_text">7일</div>
-            <input type="text" id="use_date">
-          </div>
           <div class="use_price">
             <div id="use_price_title">총 금액</div>
-            <div id="use_price_text">3,000,000원</div>
+            <div id="use_price_text">{{sum4|intcomma}}원</div>
             
           </div>
         <div class="textfield">
-            라면 끊어야 되는데 참을 수가 없네요😅 쓴 소리 환영합니다
+           {{party_board4.0.team_body}}
         </div>
        
         
-        <div class="good_bad">
-            <button id="good"><img src="./party_img/good.png">좋은 소비예요 <span id="good_num">3</span></button>
-            <button id="bad"><img src="./party_img/bad.png">나쁜 소비예요 <span id="bad_num">1</span></button>
-        </div>
+        <!-- <div class="good_bad">
+            <button id="good"><img src="{% static 'img/good.png' %}">좋은 소비예요 <span id="good_num">12</span></button>
+            <button id="bad"><img src="{% static 'img/bad.png' %}">나쁜 소비예요 <span id="bad_num">13</span></button>
+        </div> -->
 
 
-   
+        {%endif%}
     </div>
 
 
-<div class="comment_title_text">댓글 <span id="commnets_num">9</span></div>
+<div class="comment_title_text">댓글 <span id="commnets_num">{{party_comment.all.count}}</span></div>
     <section class="comment_section">
         
             <div class="card-body">
                 <!-- Comment form-->
                 <section class="textarea_and_btn">
-                    
-                    <textarea id="comment_textarea" type="text" placeholder="영수증에 대한 의견을 자유롭게 댓글로 남겨주세요."></textarea>
-                    <button class="comment_btn">입력</button>
+                    <form method ="post" action="{% url 'newcomment_party' party_detail.team_no %}">
+                        {% csrf_token %}
+                        <table>
+                            <tr>
+                                <td>
+                                    <textarea id="comment_textarea" name="newcomment_team_body" type="text" placeholder="영수증에 대한 의견을 자유롭게 댓글로 남겨주세요."></textarea>
+                                </td>
+                                <td>
+                                    <input class="comment_btn" value="입력" type="submit">
+                                </td>
+                            </tr>
+                        </table>
+                    </form>
                 </section>
                 <ul class="comment_list">
+                    {% for comment in party_comment %}
                     <li>
                         <div class="d-flex">
-                            <div class="comment_profile"><img class="rounded-circle" src="https://dummyimage.com/50x50/ced4da/6c757d.jpg" alt="..." /></div>
+                            <div class="comment_profile">
+                                <img class="rounded-circle" src="{{comment.team_user_no.my_image}}" alt="..." width="50px" height="50px"/>
+                            </div>
                             <div class="comment_area">
-                                <div class="commentsName">USER NAME <span>2022.08.02</span></div>
-                                <div class="commentsContent">배달 시켜먹지 말고 최대한 집에서 해드세요 </div>                      
+                                <div class="commentsName">{{comment.team_user_no.nickname}}&nbsp;
+                                    <span style="font-size:smaller; font-weight: 300 !important;">{{comment.team_date|date:'Y.m.d H:i:s'}}</span></div>
+                                <div class="commentsContent">{{comment.team_body}}</div>                      
                             </div>
                         </div>
                         
                     </li>
-
-                    <li>
-                        <div class="d-flex">
-                            <div class="comment_profile"><img class="rounded-circle" src="https://dummyimage.com/50x50/ced4da/6c757d.jpg" alt="..." /></div>
-                            <div class="comment_area">
-                                <div class="commentsName">USER NAME</div>
-                                <div class="commentsContent">배달 시켜먹지 말고 최대한 집에서 해드세요 </div>                      
-                            </div>
-                        </div>
-                    </li>
+                    {% endfor %}
                 
                 </ul>
                 
@@ -474,7 +387,8 @@
     </div> -->
 
     <div class="final_btn">
-        <button id="goList_btn" onclick="location.href='receipt_01.html' ">목록</button>
+        <a href="{% url 'party_main' %}">
+        <button id="goList_btn">목록</button></a>
        
         </div>
 </div>
@@ -483,11 +397,41 @@
 
 <footer>푸터</footer>
     
+<style>
+    .user_photo1,.user_photo2,.user_photo3,.user_photo4{
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    background-color: none;
+    border: 0px;
+    
+}
+/* 파티원 프로필 사진 */
+.user_photo1{
+    background-image: url({{party_detail.leader_no.my_image}});
+    background-size: cover;
+}
 
-<script src="partyDetail_10.js"> </script>
+.user_photo2{
+    background-image: url({{party_detail.team_users.all.0.my_image}});
+    background-size: cover;
+}
+
+.user_photo3{
+    background-image: url({{party_detail.team_users.all.1.my_image}});
+    background-size: cover;
+}
+
+.user_photo4{
+    background-image: url({{party_detail.team_users.all.2.my_image}});
+    background-size: cover;
+}
+
+</style>
+<script src="{% static 'js/partyDetail_10_01.js' %}"> </script>
 
 <script type="text/javascript">
-    
+
 
     
 

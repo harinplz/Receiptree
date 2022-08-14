@@ -63,14 +63,14 @@ class Team_Board(models.Model):
     # Team_good_cnt = models.IntegerField(default=0)
     # Team_bad_cnt = models.IntegerField(default=0)
     team_no = models.ForeignKey('Team', on_delete=models.CASCADE, db_column='team_no')
-    team_user_no = models.ForeignKey('account.User', on_delete=models.CASCADE, db_column='team_user_no', null=True)
+    team_writer_no = models.ForeignKey('account.User', on_delete=models.CASCADE, db_column='team_user_no', null=True)
 
     # 글 올린 최신순으로 정렬
     class Meta:
         ordering=['-team_date']
 
     def __str__(self):
-        return self.team_board_no.team_name
+        return f"{self.team_no.team_name} - {self.team_writer_no.nickname} : {self.team_body}"
 
     # 좋아요 누른 유저 수 카운트
     def count_team_good_users(self):
@@ -83,7 +83,7 @@ class Team_Board(models.Model):
 
 # 팀 댓글 클래스
 class Team_Comment(models.Model):
-    team_board_no = models.ForeignKey('Team_Board', on_delete=models.CASCADE, db_column='team_board_no', null=True)
+    team_no = models.ForeignKey('Team', on_delete=models.CASCADE, db_column='team_no', null=True)
     team_user_no = models.ForeignKey('account.User', on_delete=models.CASCADE, db_column='team_user_no', null=True)
     team_body = models.TextField()
     team_date = models.DateTimeField(default=timezone.now)
@@ -91,8 +91,12 @@ class Team_Comment(models.Model):
 
 class Team_Receipt(models.Model):
     team_board_no = models.ForeignKey('Team_Board', on_delete=models.CASCADE, db_column='team_board_no', null=True)
-    #user_no는 마이페이지 기능과 연관
-    team_use_date = models.DateTimeField()
+    team_no = models.ForeignKey('Team', on_delete=models.CASCADE, db_column='team_no', null=True)
+    team_user_no = models.ForeignKey('account.User', on_delete=models.CASCADE, db_column='team_user_no', null=True)
+    team_use_date = models.CharField(max_length=40)
     team_cost = models.IntegerField()
     team_place = models.CharField(max_length=100)
     team_body = models.TextField()
+
+    def __str__(self):
+        return f"{self.team_board_no.team_no.team_name} - {self.team_board_no.team_writer_no.nickname}"
