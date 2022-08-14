@@ -143,3 +143,8 @@ def newcomment_party(request, team_id):
 
 #     context = {'party_good_count': party_board.count_team_good_users()}
 #     return HTTPResponse(json.dumps(context), content_type="application/json")
+
+# 파티 만들기 화면
+def party_make(request):
+    return render(request, 'party_08.html')
+
