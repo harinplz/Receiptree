@@ -36,6 +36,7 @@ urlpatterns = [
     # path('party_bad/', party_views.party_bad, name="party_bad"),
     path('party/make', party_views.party_make, name='party_make'), #파티 만들기 화면
     path('party_getin/<int:team_id>', party_views.party_getin, name='party_getin'), #파티 만들기 화면
+    path('party/write', party_views.party_write, name='party_write') #파티 영수증 작성 화면
 ]
 
 if settings.DEBUG:

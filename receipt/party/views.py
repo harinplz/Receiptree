@@ -176,3 +176,8 @@ def party_getin(request, team_id):
     
     return render(request, 'party_12.html', {'party_detail':party_detail})
 
+
+# 파티 영수증 작성화면
+def party_write(request):
+    return render(request, 'party_write.html')
+
