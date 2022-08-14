@@ -1,4 +1,5 @@
 
+from unicodedata import category
 from django.shortcuts import render, get_object_or_404, redirect
 
 from .models import *
@@ -146,6 +147,18 @@ def newcomment_party(request, team_id):
 
 # 파티 만들기 화면
 def party_make(request):
+    if request.method == 'POST':
+        if request.POST['team_name']!="":
+            team = Team()
+            team.team_name = request.POST['team_name']
+            team.team_date = timezone.datetime.now()
+            team.content = request.POST['content']
+            user = request.user
+            team.leader_no = user.user_no
+            team.category = request.POST['category']
+            team.save()
+            return redirect('party_main')
+        return redirect(request, 'party_08.html')
     return render(request, 'party_08.html')
 
 # 파티 가입 화면

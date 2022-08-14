@@ -27,28 +27,30 @@
     <hr style="background-color:F2F2F2; height:3px;border:none;">
 
     <div class="full">
-
+    <form action="POST">
+        {% csrf_token %}
     <div class="content">
         <div class="main_title">파티 만들기</div>
         <div class="sub_title">파티 이름</div>
-        <input type="text" value="글 제목을 입력하세요." class="text_box">
-        <div class="sub_title2">파티 인원</div>
-        <div class="number_box">
+        <input type="text" placeholder="파티명을 입력하세요." class="text_box" name="team_name">
+        <div class="sub_title2">파티 인원은 총 4명까지 가능합니다.</div>
+        {% comment %} <div class="number_box">
             <input type="button" value="ㅡ" class="circle1" onclick='count("minus")'>
             <div id="result">0</div>
             <input type="button" value="+" class="circle2" onclick='count("plus")'>
-        </div>
+        </div> {% endcomment %}
 
         <div class="sub_title3">카테고리</div>
-        <input type="button" value="절약" class="category_btn1">
-        <input type="button" value="저축" class="category_btn2">
+        <input type="button" value="절약" class="category_btn1" name="category">
+        <input type="button" value="저축" class="category_btn2" name="category">
         <div class="sub_title4">전달사항</div>
-        <input type="text" value="전달사항을 입력해주세요(예 : 규칙, 공지사항, 하고싶은 말 등)" class="text_box2">
+        <input type="text" placeholder="전달사항을 입력해주세요(예 : 규칙, 공지사항, 하고싶은 말 등)" class="text_box2" name="content">
     </div>
 
-    <input type="button" value="취소" class="cancel_btn">
-    <input type="button" value="작성 완료" class="submit_btn">
+    <a href="{% url 'party_main' %}"><input type="button" value="취소" class="cancel_btn"></a>
+    <input type="submit" value="작성 완료" class="submit_btn">
 </div>
+</form>
 
 <script>
     function count(type)  {
