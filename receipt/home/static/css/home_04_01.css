@@ -239,11 +239,12 @@ body{
 
 
 
-.content2_explain, .content2_explain{
+.content2_explain, .content3_explain{
     font-size:26px;
     margin-top: 22px;
-    font-weight: light;
+    font-weight: lighter;
     color: #878787;
+    font-family: 'Noto Sans KR', sans-serif;
 }
 
 ul,li{
@@ -253,7 +254,8 @@ ul,li{
 
 .content2 li{
    float: left;
-   margin: 62px 120px 0px 0px;
+   margin: 62px 80px 0px 0px;
+   font-family: 'Noto Sans KR', sans-serif;
    
 }
 
@@ -265,9 +267,6 @@ ul,li{
 }
 
 
-.user_receipt{
-    margin: auto;
-}
 
 
 .user_photo{
@@ -275,6 +274,7 @@ ul,li{
     height: 190px;
     border-radius: 50%;
     background-image: url(./img/profile1.png);
+    text-align: center;
 }
 
 .user_name{
@@ -286,6 +286,7 @@ ul,li{
 }
 
 .user_receipt{
+    margin: auto;
     width: 100px;
 }
 .user_receipt_text{
@@ -508,6 +509,12 @@ ul,li{
     border-radius: 50% !important;
   }
 
+.weekly_img {
+    border-radius: 50% !important;
+    width: 190px;
+    height: 190px;
+    background-size: cover;
+}
   
 footer{
     

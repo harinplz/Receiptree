@@ -133,43 +133,58 @@
     <!-- 명예의 전당 -->
     <div class="content2">
         <div class="content2_text">명예의 영수증 전당</div>
-        <div class="content2_explain">가장 스마트한 소비를 한 영수증러는?</div>
+        <div class="content2_explain">이번주 가장 스마트한 소비를 한 영수증러는?</div>
         <ul class="content2_userGroup">
+
+            <!-- 1위 -->
             <li> 
-                <div class="user_photo"></div>
-                <div class="user_name">USER NAME</div>
-                <div class="user_receipt">
-                <a class="user_receipt_text">영수증</a>
-                <a class="user_receipt_num">12</a>
-                <a class="user_receipt_count">개</a>
+                {% if weekly.0 != None %}
+                <div class="user_photo">
+                    <img class="weekly_img" src="{{ weekly.0.user_no.my_image}}">
                 </div>
-             </li>
+                <div class="user_name">{{weekly.0.user_no.nickname}}</div>
+                {% else %}
+                <div class="user_photo"></div>
+                <div class="user_name"></div>
+                {% endif%}
+            </li>
+
+             <!-- 2위-->
+            <li> 
+                {% if weekly.1 != None %}
+                <div class="user_photo">
+                    <img class="weekly_img" src="{{weekly.1.user_no.my_image}}">
+                </div>
+                <div class="user_name">{{weekly.1.user_no.nickname}}</div>
+                {% else %}
+                <div class="user_photo"></div>
+                <div class="user_name"></div>
+                {% endif%}
+            </li>
+
+            <!-- 3위 -->
              <li> 
-                <div class="user_photo"></div>
-                <div class="user_name">USER NAME</div>
-                <div class="user_receipt">
-                <a class="user_receipt_text">영수증</a>
-                <a class="user_receipt_num">12</a>
-                <a class="user_receipt_count">개</a>
+                {% if weekly.2 != None %}
+                <div class="user_photo">
+                    <img class="weekly_img" src="{{weekly.2.user_no.my_image}}">
                 </div>
-             </li>
-             <li> 
+                <div class="user_name">{{weekly.2.user_no.nickname}}</div>
+                {% else %}
                 <div class="user_photo"></div>
-                <div class="user_name">USER NAME</div>
-                <div class="user_receipt">
-                <a class="user_receipt_text">영수증</a>
-                <a class="user_receipt_num">12</a>
-                <a class="user_receipt_count">개</a>
-                </div>
+                <div class="user_name"></div>
+                {% endif%}
              </li>
+             <!-- 4위 -->
              <li id="user4"> 
-                <div class="user_photo"></div>
-                <div class="user_name">USER NAME</div>
-                <div class="user_receipt">
-                <a class="user_receipt_text">영수증</a>
-                <a class="user_receipt_num">12</a>
-                <a class="user_receipt_count">개</a>
+                {% if weekly.3 != None %}
+                <div class="user_photo">
+                    <img class="weekly_img" src="{{weekly.3.user_no.my_image}}">
                 </div>
+                <div class="user_name">{{weekly.3.user_no.nickname}}</div>
+                {% else %}
+                <div class="user_photo"></div>
+                <div class="user_name"></div>
+                {% endif%}
              </li>
 
              
