@@ -32,8 +32,8 @@
            
 
             <div class="title_name">
-                <span class="party_category">절약</span>
-                일주일치 장본 거 평가해주세요!</div>
+                <span class="party_category">{{party.category}}</span>
+                {{party.team_name}}</div>
                         
         </div>
         <div class="receipt_name">지출영수증</div>
@@ -57,11 +57,11 @@
             
           </table>
           <input type='button' id="addSpend_btn"value='지출추가'  onclick='addRow()' />
-          <div class="use_period">
+          <!-- <div class="use_period">
             <div id="use_period_title">사용기간</div>
             <div id="use_date_text">일</div>
             <input type="text" id="use_date">
-          </div>
+          </div> -->
           <div class="use_price">
             <div id="use_price_title">총 금액</div>
             <div id="use_price_text">원</div>

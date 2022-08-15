@@ -178,6 +178,12 @@ def party_getin(request, team_id):
 
 
 # 파티 영수증 작성화면
-def party_write(request):
+def party_write(request, team_id):
+    if request.method == 'GET':
+        party = get_object_or_404(Team, pk=team_id)
+        # print(party)
+
+        return render(request, 'party_write.html', {'party':party} )
+
     return render(request, 'party_write.html')
 
