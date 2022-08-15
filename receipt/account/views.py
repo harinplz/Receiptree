@@ -37,12 +37,12 @@ def mypage(request):
 def mypage_change(request):
     user = request.user
     if request.method == 'POST':
-        # 수정하면 바뀌도록 (수정을 안 하면...?)
         user.phone_number = request.POST['phone']
         user.age = request.POST['age']
         user.job = request.POST['job']
         user.income = request.POST['income']
         user.expense = request.POST['expense']
+        user.expense_body = request.POST['expense_body']
         user.save()
         return redirect('mypage')
     return render(request, 'mypage_03.html')

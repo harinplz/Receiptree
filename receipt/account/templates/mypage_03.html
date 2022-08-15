@@ -85,15 +85,17 @@
             <hr class="job_line">
     
             <div class="content3_expense">
-            <div class="detail_expense">고정지출</div>
-            <input type="text" class="detail_expense_text" value="{{user.expense}}" name="expense"></div>
-            <hr class="expense_line">
+                <div class="detail_expense">고정지출</div>
+                <input type="text" class="detail_expense_text1" value="{{user.expense}}" name="expense">
+                <input type="text" class="detail_expense_text2" value="{{user.expense_body}}" name="expense_body"></div>
+                <hr class="expense_line">
     
             <div class="content3_salary">
             <div class="detail_salary">월급</div>
             <input type="text" class="detail_salary_text" value="{{user.income}}" name="income"></div>
             <hr class="salary_line">
     </div>
+
 {% comment %} 
     <div class="content4">
         <div class="content4_text1">문의</div>

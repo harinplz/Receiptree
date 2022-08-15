@@ -291,7 +291,7 @@
 
 .content3{
     width:1116px;
-    height:550px;
+    height:700px;
     margin:auto;
     margin-top:40px;
     background-color: white;
@@ -306,31 +306,33 @@
     padding-top:20px;
     margin-left:55px;
 }
+
 .content3_age{
     width:900px;
     height:107px;
     margin-left:55px;  
-    margin-top:40px;
+    margin-top:10px;
 }
 
 .content3_job{
     width:900px;
     height:107px;
     margin-left:55px;  
-    margin-top:40px;
+    margin-top:10px;
 }
+
 .content3_expense{
     width:900px;
-    height:107px;
+    height:214px;
     margin-left:55px;  
-    margin-top:40px;
+    margin-top:10px;
 }
 
 .content3_salary{
     width:900px;
     height:107px;
-    margin-left:55px; 
-    margin-top:40px;
+    margin-left:55px;  
+    margin-top:10px;
 }
 
 .detail_age{
@@ -338,13 +340,22 @@
     height:32px;
     font-size:18px;
     font-family: 'Noto Sans KR', sans-serif;
+    margin-top:40px;
 }
 
 .detail_age_text{
     width:311px;
     height:35px;
     margin-left:170px;
-    margin-top:-25px;
+    margin-top:-33px;
+    outline: none;
+    border: 0px;
+}
+
+.age_line{
+    border: solid 1px gainsboro;
+    width:1005px;
+    margin-top:-40px;
 }
 
 .detail_job{
@@ -352,6 +363,7 @@
     height:32px;
     font-size:18px;
     font-family: 'Noto Sans KR', sans-serif;
+    margin-top:40px;
 }
 
 .detail_job_text{
@@ -359,29 +371,54 @@
     height:35px;
     margin-left:170px;
     margin-top:-25px;
+    outline: none;
+    border: 0px;
 }
 
+.job_line{
+    border: solid 1px gainsboro;
+    width:1005px;
+    margin-top:-40px;
+}
 
 .detail_expense{
     width:120px;
     height:32px;
     font-size:18px;
     font-family: 'Noto Sans KR', sans-serif;
+    margin-top:40px;
 }
 
-.detail_expense_text{
+.detail_expense_text1{
     width:311px;
     height:35px;
     margin-left:170px;
     margin-top:-25px;
+    outline: none;
+    border: 0px;
 }
 
+.detail_expense_text2{
+    width:311px;
+    height:35px;
+    margin-left:170px;
+    margin-top:50px;
+    outline: none;
+    border: 0px;
+}
+
+.expense_line{
+    border: solid 1px gainsboro;
+    width:1005px;
+    margin-top:-40px;
+}
 
 .detail_salary{
     width:120px;
     height:32px;
     font-size:18px;
     font-family: 'Noto Sans KR', sans-serif;
+    margin-top:40px;
 }
 
 .detail_salary_text{
@@ -389,6 +426,14 @@
     height:35px;
     margin-left:170px;
     margin-top:-25px;
+    outline: none;
+    border: 0px;
+}
+
+.salary_line{
+    border: solid 1px gainsboro;
+    width:1005px;
+    margin-top:-40px;
 }
 
 .content4{
