@@ -79,7 +79,7 @@ def board_write(request):
 
                 receipt.save()
 
-        return redirect('board_main')
+        return redirect('board_detail', board.board_no)
     return redirect('board_main')
 
 
