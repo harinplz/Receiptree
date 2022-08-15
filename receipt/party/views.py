@@ -172,7 +172,7 @@ def party_getin(request, team_id):
     if request.method == "POST":
         user = request.user
         party_detail.team_users.add(user)
-        return redirect('party_main')
+        return redirect('party_getin', team_id)
     
     return render(request, 'party_12.html', {'party_detail':party_detail})
 

@@ -44,6 +44,9 @@ def board_write(request):
 
         if board.title and board.date and board.body is not None:
             board.save()
+            user = request.user
+            user.written += 1
+            user.save()
 
             for tag in tags:
                 tag = tag.strip()
@@ -75,11 +78,8 @@ def board_write(request):
                 receipt.body = contents[i]
 
                 receipt.save()
-                user = request.user
-                user.written += 1
-                user.save()
 
-        return redirect('board_main')
+        return redirect('board_detail', board.board_no)
     return redirect('board_main')
 
 

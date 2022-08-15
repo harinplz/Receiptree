@@ -1,9 +1,11 @@
+<!-- 파티 가입화면 -->
+
 {% load static %}
 {% load humanize %}
 <html>
 <head>
     <meta charset="UTF-8">
-    <link href="{% static 'css/party_getin.css' %}" rel="stylesheet"></a>
+    <link href="{% static 'css/party_getin_01.css' %}" rel="stylesheet"></a>
     <title></title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -30,7 +32,11 @@
     <div class="content1"></div>
 
     <div class="content2">
+        {% if party_detail.category != None %}
         <div class="main_text">{{party_detail.category}}</div>
+        {% else %}
+        <div class="main_text"></div>
+        {% endif %}
         {% comment %} <input type="button" value="파티 만들기+" class="content2_btn"> {% endcomment %}
         <hr class="content2_line">
         <div class="sub_text">영수증 파티</div>
@@ -49,43 +55,76 @@
     </div>
 
     <div class="content3">
-        <img src="{{party_detail.leader_no.my_image}}" class="content3_img1">
-        {% if party_detail.team_users.all.0 != None %}
-        <img src="{{party_detail.team_users.all.0.my_image}}" class="content3_img2">
-        {% else %}
-        <img src="{% static 'img/img5-party_12.jpg' %}" class="content3_img2">
-        {% endif %}
-        {% if party_detail.team_users.all.1 != None %}
-        <img src="{{party_detail.team_users.all.1.my_image}}" class="content3_img3">
-        {% else %}
-        <img src="{% static 'img/img5-party_12.jpg' %}" class="content3_img3">
-        {% endif %}
-        {% if party_detail.team_users.all.2 != None %}
-        <img src="{{party_detail.team_users.all.2.my_image}}" class="content3_img4">
-        {% else %}
-        <img src="{% static 'img/img5-party_12.jpg' %}" class="content3_img4">
-        {% endif %}
-        
-        <p class="member1">👑파티장</p>
-        <p class="member2">파티원</p>
-        <p class="member3">파티원</p>
-        <p class="member4">파티원</p>
-        <p class="member1_detail">{{party_detail.leader_no.nickname}}</p>
-        {% if party_detail.team_users.all.0 != None %}
-        <p class="member2_detail">{{party_detail.team_users.all.0.nickname}}</p>
-        {% else %}
-        <p class="member2_detail">모집중</p>
-        {% endif %}
-        {% if party_detail.team_users.all.1 != None %}
-        <p class="member3_detail">{{party_detail.team_users.all.1.nickname}}</p>
-        {% else %}
-        <p class="member3_detail">모집중</p>
-        {% endif %}
-        {% if party_detail.team_users.all.2 != None %}
-        <p class="member4_detail">{{party_detail.team_users.all.2.nickname}}</p>
-        {% else %}
-        <p class="member4_detail">모집중</p>
-        {% endif %}
+        <table>
+            <tbody>
+                <tr>
+                    <td>
+                        <img src="{{party_detail.leader_no.my_image}}" class="content3_img1">
+                    </td>
+                    <td>
+                        {% if party_detail.team_users.all.0 != None %}
+                        <img src="{{party_detail.team_users.all.0.my_image}}" class="content3_img2">
+                        {% else %}
+                        <img src="{% static 'img/img5-party_12.jpg' %}" class="content3_img2">
+                        {% endif %}
+                    </td>
+                    <td>
+                        {% if party_detail.team_users.all.1 != None %}
+                        <img src="{{party_detail.team_users.all.1.my_image}}" class="content3_img3">
+                        {% else %}
+                        <img src="{% static 'img/img5-party_12.jpg' %}" class="content3_img3">
+                        {% endif %}
+                    </td>
+                    <td>
+                        {% if party_detail.team_users.all.2 != None %}
+                        <img src="{{party_detail.team_users.all.2.my_image}}" class="content3_img4">
+                        {% else %}
+                        <img src="{% static 'img/img5-party_12.jpg' %}" class="content3_img4">
+                        {% endif %}
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p class="member1">👑파티장</p>
+                    </td>
+                    <td>
+                        <p class="member2">파티원</p>
+                    </td>
+                    <td>
+                        <p class="member3">파티원</p>
+                    </td>
+                    <td>
+                        <p class="member4">파티원</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p class="member1_detail">{{party_detail.leader_no.nickname}}</p>
+                    </td>
+                    <td>
+                        {% if party_detail.team_users.all.0 != None %}
+                        <p class="member2_detail">{{party_detail.team_users.all.0.nickname}}</p>
+                        {% else %}
+                        <p class="member2_detail">모집중</p>
+                        {% endif %}
+                    </td>
+                    <td>
+                        {% if party_detail.team_users.all.1 != None %}
+                        <p class="member3_detail">{{party_detail.team_users.all.1.nickname}}</p>
+                        {% else %}
+                        <p class="member3_detail">모집중</p>
+                        {% endif %}
+                    </td>
+                    <td>
+                        {% if party_detail.team_users.all.2 != None %}
+                        <p class="member4_detail">{{party_detail.team_users.all.2.nickname}}</p>
+                        {% else %}
+                        <p class="member4_detail">모집중</p>
+                        {% endif %}
+                    </td>
+                </tr>
+            </tbody>
+        </table>
     </div>
     <hr class="content2_line">
     
