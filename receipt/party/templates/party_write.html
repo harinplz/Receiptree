@@ -70,7 +70,7 @@
         <textarea class="textfield" cols="6" placeholder="글 상세 내용을 입력하세요."></textarea>
         
         <div class="final_btn">
-        <button id="cancel">취소</button>
+        <a href="{% url 'party_write' party.team_no %}"><button id="cancel">취소</button></a>
        <input type="submit" id="submit" value="작성 완료" onclick="location.href='writeDetail.html'">
         </div>
 
