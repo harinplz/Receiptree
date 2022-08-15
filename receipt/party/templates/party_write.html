@@ -1,0 +1,119 @@
+{% load static %}
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link href="{% static 'css/party_write_01.css'%}" rel="stylesheet"></a>
+    <title>영수증 파티 글 작성</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;500&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="wrap">
+    <nav id="topMenu">
+        <ul>
+            <li><a class="menuLink" href="{% url 'home' %}">LOGO</a></li>
+            <li><a class="menuLink" href="{% url 'home' %}">홈</a></li>
+            <li><a class="menuLink" href="{% url 'board_main' %}">영수증글</a></li>
+            <li><a class="menuLink" href="{% url 'party_main' %}">영수증파티</a></li>
+            <li><a class="menuLink" href="{% url 'mypage' %}">MY영수증</a></li>
+            {% if user.is_authenticated %}
+            <li><a href="{% url 'logout' %}"><input type="button" value="로그아웃" class="menuButton"></a>
+            {% else %}
+            <li><a href="{% url 'login' %}"><input type="button" value="로그인" class="menuButton"></a>
+            {% endif %}
+        </ul>
+    </nav>
+
+    
+
+    <div class="content">
+        <div class="content_text">영수증파티 글 작성</div>
+
+        <div class="title_area">
+           
+
+            <div class="title_name">
+                <span class="party_category">{{party.category}}</span>
+                {{party.team_name}}</div>
+                        
+        </div>
+
+        <form action="" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+        <div class="receipt_name">지출영수증</div>
+        <table id='receipt-table'>
+            <tr>
+                <th>일시</th>
+                <th>지출</th>
+                <th>사용처</th>
+                <th>내용</th>
+            </tr>
+            <tbody>
+                <tr id="no">
+                <td><input type="text" name='date' class="input-receipt1"placeholder="지출일시 입력"></td>
+                <td><input type="text" name='cost' class="input-receipt2"placeholder="금액 입력" onkeyup='addPrice()'></td>
+                <td><textarea name="place" class="input-receipt3" placeholder="사용처 입력"></textarea></td>
+                <td><textarea name="content" class="input-receipt4" placeholder="내용입력"></textarea>
+                    <button class="delete" onclick='javascript:deleteRow()'><img src="{% static 'img/delete.png' %}"></button>
+                </td>
+            </tr>
+                </tbody>
+            
+          </table>
+          <input type='button' id="addSpend_btn"value='지출추가'  onclick='addRow()' />
+          <!-- <div class="use_period">
+            <div id="use_period_title">사용기간</div>
+            <div id="use_date_text">일</div>
+            <input type="text" id="use_date">
+          </div> -->
+          <div class="use_price">
+            <div id="use_price_title">총 금액</div>
+            <div id="use_price_text">원</div>
+            <input type="text" id="use_sum" readonly>
+          </div>
+        <textarea class="textfield" name="body" cols="6" placeholder="글 상세 내용을 입력하세요."></textarea>
+        
+        <div class="final_btn">
+            <!-- <a href="{% url 'party_main' %}"><button id="cancel">취소</button></a> -->
+            <!-- party_write 로 하면 오류남. 확인필요!-->
+            <input type="hidden" name="date[]" id="date_list" value="">
+            <input type="hidden" name="cost[]" id="cost_list" value="">
+            <input type="hidden" name="place[]" id="place_list" value="">
+            <input type="hidden" name="content[]" id="content_list" value="">
+            <input type="submit" id="submit" onclick="getlist()" value="작성 완료">
+        </div>
+
+        </form>
+
+
+   
+    </div>
+
+    
+</div>
+
+<footer>푸터</footer>
+    
+
+<script src="{% static 'js/party_write_01.js' %}"> </script>
+
+<script type="text/javascript">
+    
+
+   
+
+
+    
+
+</script>
+
+
+
+
+
+
+</body>
+</html>
