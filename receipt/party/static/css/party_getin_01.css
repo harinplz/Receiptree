@@ -187,24 +187,28 @@
     height:160.45px;
     padding-top:70px;
     margin-left:90px;
+    border-radius: 50% !important;
 }
 
 .content3_img2{
     width:160.45px;
     height:160.45px;
     margin-left:90px;
+    border-radius: 50% !important;
 }
 
 .content3_img3{
     width:160.45px;
     height:160.45px;
     margin-left:90px;
+    border-radius: 50% !important;
 }
 
 .content3_img4{
     width:160.45px;
     height:160.45px;
     margin-left:90px;
+    border-radius: 50% !important;
 }
 
 .member1{
@@ -355,5 +359,11 @@ pre{
     width: 44px;
     height: 44px;
     object-fit: contain;
-    border-radius: 50%;
+    border-radius: 50% !important;
+}
+
+.rounded-circle{
+    border-radius: 50% !important;
+    width: 160px;
+    height: 160px;
 }

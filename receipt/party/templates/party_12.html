@@ -1,9 +1,11 @@
+<!-- 파티 가입화면 -->
+
 {% load static %}
 {% load humanize %}
 <html>
 <head>
     <meta charset="UTF-8">
-    <link href="{% static 'css/party_getin.css' %}" rel="stylesheet"></a>
+    <link href="{% static 'css/party_getin_01.css' %}" rel="stylesheet"></a>
     <title></title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -30,7 +32,11 @@
     <div class="content1"></div>
 
     <div class="content2">
+        {% if party_detail.category != None %}
         <div class="main_text">{{party_detail.category}}</div>
+        {% else %}
+        <div class="main_text"></div>
+        {% endif %}
         {% comment %} <input type="button" value="파티 만들기+" class="content2_btn"> {% endcomment %}
         <hr class="content2_line">
         <div class="sub_text">영수증 파티</div>
