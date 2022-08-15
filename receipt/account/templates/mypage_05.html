@@ -86,7 +86,8 @@
     
             <div class="content3_expense">
             <div class="detail_expense">고정지출</div>
-            <input type="text" class="detail_expense_text" value="{{user.expense}}{{user.expense_body}}" readonly/></div>
+            <input type="text" class="detail_expense_text1" value="{{user.expense}}" readonly/>
+            <input type="text" class="detail_expense_text2" value="{{user.expense_body}}" readonly/></div>
             <hr class="expense_line">
     
             <div class="content3_salary">
@@ -94,6 +95,7 @@
             <input type="text" class="detail_salary_text" value="{{user.income}}" readonly/></div>
             <hr class="salary_line">
     </div>
+    
     {% endif %}
 
     <div class="content4">
