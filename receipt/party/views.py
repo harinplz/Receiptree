@@ -194,6 +194,37 @@ def party_write(request, team_id):
 
         if party_board.team_date and party_board.team_body and party_board.team_no and party_board.team_writer_no is not None:
             party_board.save()
+        
+        
+        # 영수증 작성
+        dates = request.POST['date[]'].split(',')
+        dates = list(dates)
+        print(dates)
+        costs = request.POST['cost[]'].split(',')
+        costs = list(costs)
+        print(costs)
+        places = request.POST['place[]'].split(',')
+        places = list(places)
+        print(places)
+        contents = request.POST['content[]'].split(',')
+        contents = list(contents)
+        print(contents)
 
-    return render(request, 'party_write.html')
+        if dates and costs and places and contents is not None:
+            for i in range(0, len(dates)):
+                print("실행"+str(i))
+                receipt = Team_Receipt()
+                receipt.team_no = get_object_or_404(Team, pk=team_id)
+                receipt.team_board_no = party_board
+                receipt.team_user_no = request.user
+
+                receipt.team_use_date = dates[i]
+                receipt.team_cost = costs[i]
+                receipt.team_place = places[i]
+                receipt.team_body = contents[i]
+
+                receipt.save()
+        
+        return redirect('party_detail', team_id)
+    return redirect('party_detail', team_id)
 

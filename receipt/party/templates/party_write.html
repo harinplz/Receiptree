@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <link href="{% static 'css/party_write.css'%}" rel="stylesheet"></a>
+    <link href="{% static 'css/party_write_01.css'%}" rel="stylesheet"></a>
     <title>영수증 파티 글 작성</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -53,11 +53,11 @@
             </tr>
             <tbody>
                 <tr id="no">
-                <td><input type="text" class="input-receipt1"placeholder="지출일시 입력"></td>
-                <td><input type="text"  class="input-receipt2"placeholder="금액 입력" onkeyup='addPrice()'></td>
-                <td><textarea  class="input-receipt3" placeholder="사용처 입력"></textarea></td>
-                <td><textarea  class="input-receipt4" placeholder="내용입력"></textarea>
-                    <button class="delete" onclick='javascript:deleteRow()'><img src="{% static 'img/delete.png'%}"></button>
+                <td><input type="text" name='date' class="input-receipt1"placeholder="지출일시 입력"></td>
+                <td><input type="text" name='cost' class="input-receipt2"placeholder="금액 입력" onkeyup='addPrice()'></td>
+                <td><textarea name="place" class="input-receipt3" placeholder="사용처 입력"></textarea></td>
+                <td><textarea name="content" class="input-receipt4" placeholder="내용입력"></textarea>
+                    <button class="delete" onclick='javascript:deleteRow()'><img src="{% static 'img/delete.png' %}"></button>
                 </td>
             </tr>
                 </tbody>
@@ -77,10 +77,15 @@
         <textarea class="textfield" name="body" cols="6" placeholder="글 상세 내용을 입력하세요."></textarea>
         
         <div class="final_btn">
-        <a href="{% url 'party_main' %}"><button id="cancel">취소</button></a>
-        <!-- party_write 로 하면 오류남. 확인필요!-->
-       <a href="{% url 'party_main' %}"><input type="submit" id="submit" value="작성 완료" onclick=""></a>
+            <!-- <a href="{% url 'party_main' %}"><button id="cancel">취소</button></a> -->
+            <!-- party_write 로 하면 오류남. 확인필요!-->
+            <input type="hidden" name="date[]" id="date_list" value="">
+            <input type="hidden" name="cost[]" id="cost_list" value="">
+            <input type="hidden" name="place[]" id="place_list" value="">
+            <input type="hidden" name="content[]" id="content_list" value="">
+            <input type="submit" id="submit" onclick="getlist()" value="작성 완료">
         </div>
+
         </form>
 
 

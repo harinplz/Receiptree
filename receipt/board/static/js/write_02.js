@@ -14,7 +14,7 @@ function addRow() {
     const newCell4 = newRow.insertCell(3);
     
     // Cell에 텍스트 추가
-    newCell1.innerHTML = "<input type='text' name='date' class='input-receipt1' placeholder='지출일시 입력'>";
+    newCell1.innerHTML = "<input type='text' name='date' class='input-receipt1' placeholder='메롱일시 입력'>";
     newCell2.innerHTML = "<input type='text' name='cost' class='input-receipt2' placeholder='금액 입력'>";
     newCell3.innerHTML = "<textarea name='place' class='input-receipt3' placeholder='사용처 입력'></textarea>";
     newCell4.innerHTML = "<textarea name='content' class='input-receipt4' placeholder='내용 입력'></textarea><button class='delete'><img src='/static/img/delete.png'></button>";
