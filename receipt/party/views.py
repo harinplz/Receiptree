@@ -184,6 +184,16 @@ def party_write(request, team_id):
         # print(party)
 
         return render(request, 'party_write.html', {'party':party} )
+    elif request.method == 'POST':
+        party_board = Team_Board()
+
+        party_board.team_date = timezone.datetime.now()
+        party_board.team_body = request.POST['body']
+        party_board.team_no = get_object_or_404(Team, pk=team_id)
+        party_board.team_writer_no = request.user
+
+        if party_board.team_date and party_board.team_body and party_board.team_no and party_board.team_writer_no is not None:
+            party_board.save()
 
     return render(request, 'party_write.html')
 

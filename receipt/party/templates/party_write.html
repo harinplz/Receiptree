@@ -14,12 +14,16 @@
     <div class="wrap">
     <nav id="topMenu">
         <ul>
-            <li><a class="menuLink" href="#">LOGO</a></li>
-            <li><a class="menuLink" href="#">홈</a></li>
-            <li><a class="menuLink" href="#">영수증글</a></li>
-            <li><a class="menuLink" href="#">영수증파티</a></li>
-            <li><a class="menuLink" href="#">MY영수증</a></li>
-            <li><input type="button" value="로그인" class="menuButton">
+            <li><a class="menuLink" href="{% url 'home' %}">LOGO</a></li>
+            <li><a class="menuLink" href="{% url 'home' %}">홈</a></li>
+            <li><a class="menuLink" href="{% url 'board_main' %}">영수증글</a></li>
+            <li><a class="menuLink" href="{% url 'party_main' %}">영수증파티</a></li>
+            <li><a class="menuLink" href="{% url 'mypage' %}">MY영수증</a></li>
+            {% if user.is_authenticated %}
+            <li><a href="{% url 'logout' %}"><input type="button" value="로그아웃" class="menuButton"></a>
+            {% else %}
+            <li><a href="{% url 'login' %}"><input type="button" value="로그인" class="menuButton"></a>
+            {% endif %}
         </ul>
     </nav>
 
@@ -36,6 +40,9 @@
                 {{party.team_name}}</div>
                         
         </div>
+
+        <form action="" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
         <div class="receipt_name">지출영수증</div>
         <table id='receipt-table'>
             <tr>
@@ -67,12 +74,14 @@
             <div id="use_price_text">원</div>
             <input type="text" id="use_sum" readonly>
           </div>
-        <textarea class="textfield" cols="6" placeholder="글 상세 내용을 입력하세요."></textarea>
+        <textarea class="textfield" name="body" cols="6" placeholder="글 상세 내용을 입력하세요."></textarea>
         
         <div class="final_btn">
-        <a href="{% url 'party_write' party.team_no %}"><button id="cancel">취소</button></a>
-       <input type="submit" id="submit" value="작성 완료" onclick="location.href='writeDetail.html'">
+        <a href="{% url 'party_main' %}"><button id="cancel">취소</button></a>
+        <!-- party_write 로 하면 오류남. 확인필요!-->
+       <a href="{% url 'party_main' %}"><input type="submit" id="submit" value="작성 완료" onclick=""></a>
         </div>
+        </form>
 
 
    
