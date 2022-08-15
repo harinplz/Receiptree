@@ -173,8 +173,7 @@ def party_getin(request, team_id):
         user = request.user
         party_detail.team_users.add(user)
         user.party_num += 1
-        return redirect('party_getin', team_id)
-        # return redirect('party_detail', team_id)
+        return redirect('party_detail', team_id)
     return render(request, 'party_12.html', {'party_detail':party_detail})
 
 
