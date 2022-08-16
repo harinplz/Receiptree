@@ -188,11 +188,20 @@ table{
     border-bottom:2px solid E9E9E9;
 }
 
+td{
+    border-bottom:2px solid E9E9E9;
+ }
+
 
 th{
     font-family: 'Noto Sans KR', sans-serif;
     font-size:18px;
 }
+
+tr{
+    border-bottom:2px solid E9E9E9;
+}
+
 
 .table_title{
     font-family: 'Noto Sans KR', sans-serif;
@@ -204,7 +213,7 @@ th{
     font-family: 'Noto Sans KR', sans-serif;
     font-size:20px;
     text-align:center;
-    color:B5B5B5;
+    
 }
 
 .table_date{
@@ -213,8 +222,20 @@ th{
     text-align:center;
 }
 
-.table_img{
-    padding-left:65px;
+.th_title{
+    border-bottom: 2px solid black;
+}
+
+.th_date{
+    border-bottom: 2px solid black;
+}
+
+.th_tag{
+    border-bottom: 2px solid black;
+}
+
+.tr_01{
+    border-bottom:2px solid E9E9E9;
 }
 
 a{

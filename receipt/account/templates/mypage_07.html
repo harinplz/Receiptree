@@ -54,20 +54,16 @@
 
             <table border="1">
 
-
-
-                <th width="500px" height="50px">글 제목</th>
-                <th width="250px">태그</th>
-                <th width="250px">날짜</th>
-                {% comment %} <th width="200px"></th> {% endcomment %}
-
+                <th width="600px" height="50px" class="th_title">글 제목</th>
+                <th width="300px" class="th_tag">태그</th>
+                <th width="200px" class="th_date">날짜</th>
 
             
             {% for post in posts %}
-            <tr>
-            <td width="500px" height="150px" class="table_title"><a href="{% url 'board_detail' post.board_no %}">{{post.title}}</a></td>
+            <tr class="tr_01">
+                <td width="400px" height="150px" class="table_title"><a href="{% url 'board_detail' post.board_no %}">{{post.title}}</a></td>
                 {% for t in post.tags.all %}
-                <td class="table_tag">#{{t.tagname}}</td>
+                <td class="table_tag" style="color:B5B5B5; font-weight: lighter;">#{{t.tagname}}</td>
                 {% endfor %}
             <td class="table_date">{{post.date|date:'Y.m.d'}}</td>
             <td class="table_img"></td>
