@@ -35,10 +35,10 @@ def view_receipt(request):
     posts = Board.objects.filter(user_no=user.user_no)
     return render(request, 'mypage_07.html', {'posts':posts})
 
-def veiw_party(request):
-    # user = request.user
-    # partys = Team.objects.filter(Team.team_users)
-    return render(request, 'mypage_party.html')
+def view_party(request):
+    user = request.user
+    teams = Team.objects.filter(team_users=user)
+    return render(request, 'mypage_party.html', {'teams':teams})
 
 def mypage_change(request):
     user = request.user
@@ -55,9 +55,6 @@ def mypage_change(request):
 
 def signup_done(request):
     return render(request, 'signup_11.html')
-
-def view_party(request):
-    return render(request, 'mypage_07.html')
 
 
 # 회원가입 (유효성 검사x)

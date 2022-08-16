@@ -32,21 +32,21 @@
 
     <div class="full">
         
-    <div class="content1">
-        <div class="mypage_logo">My Page</div>
-        <div class="mypage_content">
-            <img class="profile-img" src="{{user.my_image}}">
+        <div class="content1">
+            <div class="mypage_logo">My Page</div>
+            <div class="mypage_content">
+                <img class="profile-img" src="{{user.my_image}}">
+            </div>
+            <div class="mypage_name">{{user.nickname}}</div>
+            <input type="button" value="수정하기" class="mypage_icon">
+            <div class="mypage_email">{{user.email}}</div>
+            <div class="mypage_text1">글내역 ></div>
+            <div class="mypage_text1-2">{{user.written}}개</div>
+            <div class="mypage_text2">가입파티 ></div>
+            <div class="mypage_text2-2">{{user.party_num}} team</div>
+            <div class="mypage_text3">등급</div>
+            <div class="mypage_text3-2">{{user.grade}}</div>
         </div>
-        <div class="mypage_name">김슈니</div>
-        <input type="button" value="수정하기" class="mypage_icon">
-        <div class="mypage_email">dudtnwmd123@reciept.com</div>
-        <div class="mypage_text1">글내역 ></div>
-        <div class="mypage_text1-2">7개</div>
-        <div class="mypage_text2">가입파티 ></div>
-        <div class="mypage_text2-2">2 team</div>
-        <div class="mypage_text3">등급</div>
-        <div class="mypage_text3-2">새싹</div>
-    </div>
 
     <div class="content2">
         <div class="content2_logo">가입한 파티</div>
@@ -56,53 +56,21 @@
 
 
 
-                <th width="400px" height="50px" class="th_title">글 제목</th>
-                <th width="200px" class="th_tag">태그</th>
+                <th width="400px" height="50px" class="th_title">파티명</th>
+                <th width="200px" class="th_tag">카테고리</th>
                 <th width="200px" class="th_member">파티원</th>
                 <th width="200px" class="th_number">파티번호</th>
 
-
+            
+            {% for team in teams %}
             <tr class="tr_01">
-                <td width="400px" height="150px" class="table_title">오늘 장 봤는데 영수증 평가해주세요!</td>
-                <td class="table_tag">절약</td>
-                <td class="table_date">4명</td>
-                <td class="table_img">173174798</td>
+            <td width="400px" height="150px" class="table_title"><a href="{% url 'party_detail' team.team_no %}">{{team.team_name}}</a></td>
+            <td class="table_tag">{{team.category}}</td>
+            <td class="table_date">{{team.count_team_users}}</td>
+            <td class="table_img">{{team.team_no}}</td>
             </tr>
+            {% endfor %}
 
-            <tr>
-                <td width="400px" height="150px" class="table_title">오늘 장 봤는데 영수증 평가해주세요!</td>
-                <td class="table_tag">절약</td>
-                <td class="table_date">4명</td>
-                <td class="table_img">173174798</td>
-            </tr>
-
-            <tr>
-                <td width="400px" height="150px" class="table_title">오늘 장 봤는데 영수증 평가해주세요!</td>
-                <td class="table_tag">절약</td>
-                <td class="table_date">4명</td>
-                <td class="table_img">173174798</td>
-            </tr>
-
-            <tr>
-                <td width="400px" height="150px" class="table_title">오늘 장 봤는데 영수증 평가해주세요!</td>
-                <td class="table_tag">절약</td>
-                <td class="table_date">4명</td>
-                <td class="table_img">173174798</td>
-            </tr>
-
-            <tr>
-                <td width="400px" height="150px" class="table_title">오늘 장 봤는데 영수증 평가해주세요!</td>
-                <td class="table_tag">절약</td>
-                <td class="table_date">4명</td>
-                <td class="table_img">173174798</td>
-            </tr>
-
-            <tr>
-                <td width="400px" height="150px" class="table_title">오늘 장 봤는데 영수증 평가해주세요!</td>
-                <td class="table_tag">절약</td>
-                <td class="table_date">4명</td>
-                <td class="table_img">173174798</td>
-            </tr>
 
             </table>
         </div>
