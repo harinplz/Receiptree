@@ -5,11 +5,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth.hashers import check_password
 from .models import User
 from board.models import Board
-
-def view_receipt(request):
-    user = request.user
-    posts = Board.objects.filter(user_no=user.user_no)
-    return render(request, 'mypage_07.html', {'posts':posts})
+from party.models import Team
 
 def mypage(request):
     user = request.user
@@ -33,6 +29,16 @@ def mypage(request):
             user.grade = "BLACK"
             user.save()
     return render(request, 'mypage_05.html')
+
+def view_receipt(request):
+    user = request.user
+    posts = Board.objects.filter(user_no=user.user_no)
+    return render(request, 'mypage_07.html', {'posts':posts})
+
+def veiw_party(request):
+    # user = request.user
+    # partys = Team.objects.filter(Team.team_users)
+    return render(request, 'mypage_party.html')
 
 def mypage_change(request):
     user = request.user
