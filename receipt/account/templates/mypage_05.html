@@ -95,8 +95,6 @@
             <input type="text" class="detail_salary_text" value="{{user.income}}" readonly/></div>
             <hr class="salary_line">
     </div>
-    
-    {% endif %}
 
     <div class="content4">
         <div class="content4_text1">문의</div>
@@ -106,12 +104,34 @@
         <a href="{% url 'signout' %}"><div class="content4_text3">탈퇴</div></a>
         <hr class="text3_line">
     </div>
-
-    <footer>
-        <div class="page_footer">
-            <img src="{% static 'img/footer_logo.png' %}" class="footer_img">
-            <p class="footer_text">이용약관 | 개인정보처리방침 | 고객센터 | 문의하기</p>
-            <p class="footer_email">이메일: receiptree@gmail.com 연락처: 02-970-1234</p>
-        </div>
-    </footer>
 </div>
+<footer>
+    <div class="page_footer1">
+        <img src="{% static 'img/footer_logo.png' %}" class="footer_img">
+        <p class="footer_text">이용약관 | 개인정보처리방침 | 고객센터 | 문의하기</p>
+        <p class="footer_email">이메일: receiptree@gmail.com 연락처: 02-970-1234</p>
+    </div>
+</footer>
+
+    {% else %}
+
+    <div class="content4">
+        <div class="content4_text1">문의</div>
+        <hr class="text1_line">
+        <div class="content4_text2">공지사항</div>
+        <hr class="text2_line">
+        <a href="{% url 'signout' %}"><div class="content4_text3">탈퇴</div></a>
+        <hr class="text3_line">
+    </div>
+</div>
+<footer>
+    <div class="page_footer2">
+        <img src="{% static 'img/footer_logo.png' %}" class="footer_img">
+        <p class="footer_text">이용약관 | 개인정보처리방침 | 고객센터 | 문의하기</p>
+        <p class="footer_email">이메일: receiptree@gmail.com 연락처: 02-970-1234</p>
+    </div>
+</footer>
+    
+    {% endif %}
+
+    

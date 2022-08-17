@@ -155,7 +155,7 @@
 
 .content2{
     width:1116px;
-    height:550px;
+    height:650px;
     margin:auto;
     margin-top:30px;
     background-color: white;
@@ -193,6 +193,13 @@
 }
 
 .content2_password{
+    width:900px;
+    height:107px;
+    margin-left:55px;  
+    margin-top:10px;
+}
+
+.content2_profile{
     width:900px;
     height:107px;
     margin-left:55px;  
@@ -289,6 +296,25 @@
     width:1005px;
     margin-top:-40px;
 }
+
+.info_profile{
+    width:200px;
+    height:32px;
+    font-size:18px;
+    font-family: 'Noto Sans KR', sans-serif;
+    margin-top:-80px;
+    margin-left:50PX;
+}
+
+.info_profile_file{
+    width:311px;
+    height:35px;
+    margin-left:260px;
+    margin-top:-25px;
+    outline: none;
+}
+
+
 
 .content3{
     width:1116px;
