@@ -43,6 +43,7 @@ def view_party(request):
 def mypage_change(request):
     user = request.user
     if request.method == 'POST':
+        user.image = request.FILES['images']
         user.phone_number = request.POST['phone']
         user.age = request.POST['age']
         user.job = request.POST['job']

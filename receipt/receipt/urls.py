@@ -37,7 +37,4 @@ urlpatterns = [
     path('party/make', party_views.party_make, name='party_make'), #파티 만들기 화면
     path('party_getin/<int:team_id>', party_views.party_getin, name='party_getin'), #파티 만들기 화면
     path('party/write/<int:team_id>', party_views.party_write, name='party_write') #파티 영수증 작성 화면
-]
-
-if settings.DEBUG:
-    urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
+] + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
