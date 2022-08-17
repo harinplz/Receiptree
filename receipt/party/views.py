@@ -155,6 +155,8 @@ def party_make(request):
             team.content = request.POST['content']
             user = request.user
             team.leader_no = user
+            user.party_num += 1
+            user.save()
             team.category = request.POST['category']
             team.save()
             return redirect('party_main')

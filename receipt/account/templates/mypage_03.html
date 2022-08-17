@@ -75,6 +75,7 @@
         <div class="detail_logo">상세정보</div>
 
         <div class="content3_age">
+            {% if user.age != None %}
             <div class="detail_age">나이</div>
             <input type="text" class="detail_age_text" value="{{user.age}}" name="age" ></div>
             <hr class="age_line">
@@ -94,6 +95,27 @@
             <div class="detail_salary">월급</div>
             <input type="text" class="detail_salary_text" value="{{user.income}}" name="income"></div>
             <hr class="salary_line">
+            {% else %}
+            <div class="detail_age">나이</div>
+            <input type="text" class="detail_age_text" placeholder="나이는 숫자만 입력해주세요." name="age" ></div>
+            <hr class="age_line">
+    
+            <div class="content3_job">
+            <div class="detail_job">직업</div>
+            <input type="text" class="detail_job_text" placeholder="직업을 입력해주세요." name="job"></div>
+            <hr class="job_line">
+    
+            <div class="content3_expense">
+                <div class="detail_expense">고정지출</div>
+                <input type="text" class="detail_expense_text1" placeholder="고정지출 비용을 숫자만 입력해주세요." name="expense">
+                <input type="text" class="detail_expense_text2" placeholder="고정지출 설명을 입력해주세요." name="expense_body"></div>
+                <hr class="expense_line">
+    
+            <div class="content3_salary">
+            <div class="detail_salary">월급</div>
+            <input type="text" class="detail_salary_text" placeholder="월 수입을 숫자만 입력해주세요." name="income"></div>
+            <hr class="salary_line">
+            {% endif %}
     </div>
 
 {% comment %} 

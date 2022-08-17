@@ -62,9 +62,11 @@
             {% for post in posts %}
             <tr class="tr_01">
                 <td width="400px" height="150px" class="table_title"><a href="{% url 'board_detail' post.board_no %}">{{post.title}}</a></td>
-                {% for t in post.tags.all %}
-                <td class="table_tag" style="color:B5B5B5; font-weight: lighter;">#{{t.tagname}}</td>
-                {% endfor %}
+                <td class="table_tag" style="color:B5B5B5; font-weight: lighter;">
+                    {% for t in post.tags.all %}
+                    #{{t.tagname}}
+                    {% endfor %}
+                </td>
             <td class="table_date">{{post.date|date:'Y.m.d'}}</td>
             <td class="table_img"></td>
             </tr>
