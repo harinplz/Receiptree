@@ -12,8 +12,8 @@ body{
 #topMenu{
     width:1120px;
     height:95px;
-    /* margin:auto; */
-    margin-left: 600px;
+    margin:auto;
+    /* margin-left: 600px; */
     background-color: white;
 }
 
