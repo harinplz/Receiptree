@@ -186,7 +186,6 @@ table{
     border-top:2px solid black;
     
     border-bottom:2px solid E9E9E9;
-    
 }
 
 td{
@@ -214,6 +213,7 @@ tr{
     font-family: 'Noto Sans KR', sans-serif;
     font-size:20px;
     text-align:center;
+    
 }
 
 .table_date{
@@ -222,23 +222,15 @@ tr{
     text-align:center;
 }
 
-.table_img{
-    padding-left:65px;
-}
-
 .th_title{
     border-bottom: 2px solid black;
 }
 
+.th_date{
+    border-bottom: 2px solid black;
+}
+
 .th_tag{
-    border-bottom: 2px solid black;
-}
-
-.th_member{
-    border-bottom: 2px solid black;
-}
-
-.th_number{
     border-bottom: 2px solid black;
 }
 
@@ -261,4 +253,33 @@ a{
     height: 150px;
     object-fit: contain;
     border-radius: 50%;
+}
+
+.page_footer{
+    width:1440px;
+    height:230px;
+    margin:auto;
+    background-color: D9D9D9;
+    margin-top: 40px;
+}
+
+.footer_img{
+    margin-left: 630px;
+    padding-top:40px;
+}
+
+.footer_text{
+    margin-left: 500px;
+    margin-top:40px;
+    font-family: 'Montserrat', sans-serif;
+    font-size:20px;
+    font-weight:lighter;
+}
+
+.footer_email{
+    margin-left: 510px;
+    margin-top:20px;
+    font-family: 'Montserrat', sans-serif;
+    font-size:18px;
+    font-weight:lighter;
 }
