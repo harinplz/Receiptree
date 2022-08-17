@@ -11,10 +11,9 @@
 </head>
 
 <body>
-    <div class="wrap">
     <nav id="topMenu">
         <ul>
-            <li><a class="menuLink" href="{% url 'home' %}">LOGO</a></li>
+            <li><a class="menuLink" href="{% url 'home' %}"><img src="{% static 'img/logo.png' %}"></a></li>
             <li><a class="menuLink" href="{% url 'home' %}">홈</a></li>
             <li><a class="menuLink" href="{% url 'board_main' %}">영수증글</a></li>
             <li><a class="menuLink" href="{% url 'party_main' %}">영수증파티</a></li>
@@ -26,6 +25,7 @@
             {% endif %}
         </ul>
     </nav>
+    <div class="wrap">
 
     <div class="mainBanner">
         <p class="banner_text1">올바른 소비습관을 위한 <br>
