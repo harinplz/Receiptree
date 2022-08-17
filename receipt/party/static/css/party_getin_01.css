@@ -345,6 +345,19 @@ pre{
     margin:auto;
 }
 
+.content5_btn0{
+    width:273.7px;
+    height:80.03px;
+    margin: auto;
+    background-color: C4C4C4;
+    color:white;
+    border-radius:7px;
+    border:none;
+    font-size:24px;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+
 .content5_btn1{
     width:273.7px;
     height:80.03px;
