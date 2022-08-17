@@ -54,10 +54,6 @@ def mypage_change(request):
         return redirect('mypage')
     return render(request, 'mypage_03.html')
 
-def signup_done(request):
-    return render(request, 'signup_11.html')
-
-
 # 회원가입 (유효성 검사x)
 def signup(request):
     if request.method == 'POST':

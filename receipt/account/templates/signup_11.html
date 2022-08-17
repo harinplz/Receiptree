@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <link href="{% static 'css/signup_done.css' %}" rel="stylesheet"></a>
+    <link href="{% static 'css/signup_finish.css' %}" rel="stylesheet"></a>
     <title></title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -29,7 +29,7 @@
     <div class="full">
     <div class="content1">
         <div class="content1_title">회원가입 완료</div>
-        <div class="content1_img"><img src=""></div>
+        <div class="content1_img"><img src="{% static 'img/signup.png' %}"></div>
         <div class="content1_detail">회원가입이 완료되었습니다!</div>
         <a href="{% url 'login' %}"><input type="button" value="로그인하러 가기" class="content1_btn"></a>
     </div>
