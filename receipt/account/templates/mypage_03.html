@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <link href="{% static 'css/mypage_03.css' %}" rel="stylesheet"></a>
+    <link href="{% static 'css/mypage_03_01.css' %}" rel="stylesheet"></a>
     <title></title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -47,34 +47,43 @@
         <div class="mypage_text3-2">{{user.grade}}</div>
     </div>
 
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
     <div class="content2">
         <div class="info_logo">회원정보</div>
-        <form  method="POST">
-            {% csrf_token %}
-        <div class="content2_name">
-        <div class="info_name">이름</div>
-        <input type="text" class="info_name_text" value="{{user.nickname}}" readonly/></div>
-        <hr class="name_line">
-        <div class="content2_email">
-        <div class="info_email">이메일 주소</div>
-        <input type="text" class="info_email_text" value="{{user.email}}" readonly/></div>
-        <hr class="email_line">
+        
+            <div class="content2_name">
+                <div class="info_name">이름</div>
+                <input type="text" class="info_name_text" value="{{user.nickname}}" readonly/>
+            </div>
+            <hr class="name_line">
+            <div class="content2_email">
+            <div class="info_email">이메일 주소</div>
+            <input type="text" class="info_email_text" value="{{user.email}}" readonly/>
+            </div>
+            <hr class="email_line">
 
-        <div class="content2_number">
-        <div class="info_number">전화번호</div>
-        <input type="text" class="info_number_text" value="{{user.phone_number}}" name="phone"></div>
-        <hr class="number_line">
+            <div class="content2_number">
+            <div class="info_number">전화번호</div>
+            <input type="text" class="info_number_text" value="{{user.phone_number}}" name="phone">
+            </div>
+            <hr class="number_line">
 
-        <div class="content2_password">
-        <div class="info_password">비밀번호</div>
-        <input type="password" class="info_password_text" value="abcefghi" readonly/></div>
-        <hr class="password_line">
+            <div class="content2_password">
+            <div class="info_password">비밀번호</div>
+            <input type="password" class="info_password_text" value="abcefghi" readonly/>
+            </div>
+            <hr class="password_line">
+
+            <div class="content2_profile"></div>
+            <div class="info_profile">프로필 이미지 등록</div>
+            <input type="file" name="images" class="info_profile_file">
     </div>
 
     <div class="content3">
-        <div class="detail_logo">상세정보</div>
+            <div class="detail_logo">상세정보</div>
 
-        <div class="content3_age">
+            <div class="content3_age">
             {% if user.age != None %}
             <div class="detail_age">나이</div>
             <input type="text" class="detail_age_text" value="{{user.age}}" name="age" ></div>
@@ -86,16 +95,17 @@
             <hr class="job_line">
     
             <div class="content3_expense">
-                <div class="detail_expense">고정지출</div>
-                <input type="text" class="detail_expense_text1" value="{{user.expense}}" name="expense">
-                <input type="text" class="detail_expense_text2" value="{{user.expense_body}}" name="expense_body"></div>
-                <hr class="expense_line">
+            <div class="detail_expense">고정지출</div>
+            <input type="text" class="detail_expense_text1" value="{{user.expense}}" name="expense">
+            <input type="text" class="detail_expense_text2" value="{{user.expense_body}}" name="expense_body"></div>
+            <hr class="expense_line">
     
             <div class="content3_salary">
             <div class="detail_salary">월급</div>
             <input type="text" class="detail_salary_text" value="{{user.income}}" name="income"></div>
             <hr class="salary_line">
             {% else %}
+            <div class="content3_age">
             <div class="detail_age">나이</div>
             <input type="text" class="detail_age_text" placeholder="나이는 숫자만 입력해주세요." name="age" ></div>
             <hr class="age_line">
