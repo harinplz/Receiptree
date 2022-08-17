@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <link href="{% static 'css/signup_11.css' %}" rel="stylesheet"></a>
+    <link href="{% static 'css/signup_done.css' %}" rel="stylesheet"></a>
     <title></title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,7 +12,7 @@
 <body>
     <nav id="topMenu">
         <ul>
-            <li><a class="menuLink" href="{% url 'home' %}">LOGO</a></li>
+            <li><a class="menuLink" href="{% url 'home' %}"><img src="{% static 'img/logo.png' %}"></a></li>
             <li><a class="menuLink" href="{% url 'home' %}">홈</a></li>
             <li><a class="menuLink" href="{% url 'board_main' %}">영수증글</a></li>
             <li><a class="menuLink" href="{% url 'party_main' %}">영수증파티</a></li>
@@ -33,6 +33,14 @@
         <div class="content1_detail">회원가입이 완료되었습니다!</div>
         <a href="{% url 'login' %}"><input type="button" value="로그인하러 가기" class="content1_btn"></a>
     </div>
+
+    <footer>
+        <div class="page_footer">
+            <img src="img3-mypage_07.png" class="footer_img">
+            <p class="footer_text">이용약관 | 개인정보처리방침 | 고객센터 | 문의하기</p>
+            <p class="footer_email">이메일: receiptree@gmail.com 연락처: 02-970-1234</p>
+        </div>
+    </footer>
 </div>
 
 
