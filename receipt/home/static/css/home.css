@@ -1,15 +1,8 @@
-body{
-    background-color: white;
-}
-.wrap{
-    width: 1440px;
-    margin :auto;
-}
+
 #topMenu{
     width:1120px;
     height:95px;
-    margin:auto;
-    background-color: white;
+    margin-left:600px;
 }
 
 #topMenu ul li {                     
@@ -40,13 +33,33 @@ body{
 }
 
 
+.wrap{
+    width: 1440px;
+    margin :auto;
+}
+
+
 .mainBanner{
-    width:1440px;
+    width:700px;
     height: 439px;
-    background-image: url(./img/Home_banner.png);
+    background-color: DEE0FB;
    
 }
 
+.mainBanner2{
+    width:740px;
+    height:439px;
+    margin-top:-439px;
+    margin-left:700px;
+    background-color: DEE0FB;
+}
+
+.Banner_img{
+    width:400px;
+    height:400px;
+    margin-left:150px;
+    margin-top:40px;
+}
 
 .banner_text1{
     
@@ -533,9 +546,12 @@ ul,li{
 }
 
 .footer_img{
-    margin-left: 630px;
+    width:150px;
+    height:40px;
+    margin-left: 645px;
     padding-top:40px;
 }
+
 
 .footer_text{
     margin-left: 500px;

@@ -109,7 +109,7 @@
     font-family: 'Noto Sans KR', sans-serif;
     font-size:20px;
     margin-left:780px;
-    margin-top:-95px;
+    margin-top:-96px;
 }
 
 .mypage_text3{
@@ -118,38 +118,35 @@
     text-align: center;   
     font-family: 'Noto Sans KR', sans-serif;
     font-size:20px;
-    margin-left:910px;
-    margin-top:-101px;
+    margin-left:930px;
+    margin-top:-95px;
 }
 
 .mypage_text1-2{
-    width:100px;
+    width:80px;
     height:49px;
     margin-left:645px;
-    margin-top:10px;
+    margin-top:11px;
     font-family: 'Montserrat', sans-serif;
     font-size:40px;
-    font-weight: bold;
 }
 
 .mypage_text2-2{
-    width:140px;
+    width:160px;
     height:49px;
-    margin-left:760px;
-    margin-top:13px;
+    margin-left:752px;
+    margin-top:10px;
     font-family: 'Montserrat', sans-serif;
     font-size:40px;
-    font-weight: bold;
 }
 
 .mypage_text3-2{
     width:100px;
     height:49px;
-    margin-left:930px;
-    margin-top:15px;
+    margin-left:950px;
+    margin-top:13px;
     font-family: 'Montserrat', sans-serif;
     font-size:40px;
-    font-weight: bold;
 }
 
 .content2{
@@ -186,6 +183,7 @@ table{
     border-top:2px solid black;
     
     border-bottom:2px solid E9E9E9;
+    
 }
 
 td{
@@ -213,7 +211,6 @@ tr{
     font-family: 'Noto Sans KR', sans-serif;
     font-size:20px;
     text-align:center;
-    
 }
 
 .table_date{
@@ -222,15 +219,23 @@ tr{
     text-align:center;
 }
 
+.table_img{
+    padding-left:65px;
+}
+
 .th_title{
     border-bottom: 2px solid black;
 }
 
-.th_date{
+.th_tag{
     border-bottom: 2px solid black;
 }
 
-.th_tag{
+.th_member{
+    border-bottom: 2px solid black;
+}
+
+.th_number{
     border-bottom: 2px solid black;
 }
 
@@ -264,7 +269,9 @@ a{
 }
 
 .footer_img{
-    margin-left: 630px;
+    width:150px;
+    height:40px;
+    margin-left: 645px;
     padding-top:40px;
 }
 

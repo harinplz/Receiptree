@@ -2,6 +2,7 @@
     width:1120px;
     height:95px;
     margin:auto;
+    font-weight: bold;
 }
 
 #topMenu ul li {                     
@@ -109,7 +110,7 @@
     font-family: 'Noto Sans KR', sans-serif;
     font-size:20px;
     margin-left:780px;
-    margin-top:-95px;
+    margin-top:-96px;
 }
 
 .mypage_text3{
@@ -118,25 +119,25 @@
     text-align: center;   
     font-family: 'Noto Sans KR', sans-serif;
     font-size:20px;
-    margin-left:910px;
-    margin-top:-101px;
+    margin-left:930px;
+    margin-top:-95px;
 }
 
 .mypage_text1-2{
-    width:100px;
+    width:80px;
     height:49px;
     margin-left:645px;
-    margin-top:10px;
+    margin-top:11px;
     font-family: 'Montserrat', sans-serif;
     font-size:40px;
     font-weight: bold;
 }
 
 .mypage_text2-2{
-    width:140px;
+    width:160px;
     height:49px;
-    margin-left:760px;
-    margin-top:13px;
+    margin-left:752px;
+    margin-top:10px;
     font-family: 'Montserrat', sans-serif;
     font-size:40px;
     font-weight: bold;
@@ -145,8 +146,8 @@
 .mypage_text3-2{
     width:100px;
     height:49px;
-    margin-left:930px;
-    margin-top:15px;
+    margin-left:950px;
+    margin-top:13px;
     font-family: 'Montserrat', sans-serif;
     font-size:40px;
     font-weight: bold;
@@ -534,6 +535,17 @@
     margin-left:30px;
 }
 
+a{
+    text-decoration-line: none;
+    text-decoration : none;
+    color: black;
+    /* width:995px;
+    height:107px;
+    font-size:40px; */
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight:lighter;
+  }
+
 .profile-img {
     width: 150px;
     height: 150px;
@@ -550,7 +562,9 @@
 }
 
 .footer_img{
-    margin-left: 630px;
+    width:150px;
+    height:40px;
+    margin-left: 645px;
     padding-top:40px;
 }
 

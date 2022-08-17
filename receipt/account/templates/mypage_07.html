@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <link href="{% static 'css/mypage_receipt.css' %}" rel="stylesheet"></a>
+    <link href="{% static 'css/mypage_07.css' %}" rel="stylesheet"></a>
     <title></title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -38,14 +38,14 @@
                 <img class="profile-img" src="{{user.my_image}}">
             </div>
             <div class="mypage_name">{{user.nickname}}</div>
-            <input type="button" value="수정하기" class="mypage_icon">
+            <a href="{% url 'mypage_change' %}"> <input type="button" value="수정하기" class="mypage_icon"></a>
             <div class="mypage_email">{{user.email}}</div>
             <div class="mypage_text1">글내역 ></div>
-            <div class="mypage_text1-2">{{user.written}}개</div>
+            <div class="mypage_text1-2"><a href="{% url 'view_receipt' %}">{{user.written}}개</a></div>
             <div class="mypage_text2">가입파티 ></div>
-            <div class="mypage_text2-2">{{user.party_num}} team</div>
+            <div class="mypage_text2-2"><a href="{% url 'view_party' %}">{{user.party_num}} team</a></div>
             <div class="mypage_text3">등급</div>
-            <div class="mypage_text3-2">{{user.grade}}</div>
+            <div class="mypage_text3-2"><a href="{% url 'view_receipt' %}">{{user.grade}}</a></div>
         </div>
 
     <div class="content2">
@@ -90,7 +90,7 @@
 
     <footer>
         <div class="page_footer">
-            <img src="img3-mypage_07.png" class="footer_img">
+            <img src="{% static 'img/footer_logo.png' %}" class="footer_img">
             <p class="footer_text">이용약관 | 개인정보처리방침 | 고객센터 | 문의하기</p>
             <p class="footer_email">이메일: receiptree@gmail.com 연락처: 02-970-1234</p>
         </div>

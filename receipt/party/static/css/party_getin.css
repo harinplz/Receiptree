@@ -403,7 +403,9 @@ pre{
 }
 
 .footer_img{
-    margin-left: 630px;
+    width:150px;
+    height:40px;
+    margin-left: 645px;
     padding-top:40px;
 }
 

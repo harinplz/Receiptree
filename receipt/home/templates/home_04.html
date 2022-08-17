@@ -25,6 +25,7 @@
             {% endif %}
         </ul>
     </nav>
+    
     <div class="wrap">
 
     <div class="mainBanner">
@@ -32,7 +33,10 @@
             똑똑한 참견</p>
         <h1 class="banner_text2"> RECIEPTREE 영수증 평가</h1>
         <button id="goto_receipt">영수증 글 보러가기</button>
+    </div>
 
+    <div class="mainBanner2">
+        <img src="{% static 'img/Banner.png' %}" class="Banner_img">
     </div>
 
     <div class="content">
@@ -452,7 +456,7 @@
 
     <footer>
         <div class="page_footer">
-            <img src="img3-mypage_07.png" class="footer_img">
+            <img src="{% static 'img/footer_logo.png' %}" class="footer_img">
             <p class="footer_text">이용약관 | 개인정보처리방침 | 고객센터 | 문의하기</p>
             <p class="footer_email">이메일: receiptree@gmail.com 연락처: 02-970-1234</p>
         </div>

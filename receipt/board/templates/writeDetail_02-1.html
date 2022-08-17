@@ -3,7 +3,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <link href="{% static 'css/writeDetail.css'%}" rel="stylesheet"></a>
+    <link href="{% static 'css/writeDetail_01.css' %}" rel="stylesheet"></a>
     <title>영수증 글 상세</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,7 +17,6 @@
 </head>
 
 <body>
-    <div class="wrap">
     <nav id="topMenu">
         <ul>
             <li><a class="menuLink" href="{% url 'home' %}"><img src="{% static 'img/logo.png' %}"></a></li>
@@ -32,6 +31,8 @@
             {% endif %}
         </ul>
     </nav>
+    <div class="wrap">
+    
 
     <div class="content">
         
@@ -181,7 +182,7 @@
 
 <footer>
     <div class="page_footer">
-        <img src="img3-mypage_07.png" class="footer_img">
+        <img src="{% static 'img/footer_logo.png' %}" class="footer_img">
         <p class="footer_text">이용약관 | 개인정보처리방침 | 고객센터 | 문의하기</p>
         <p class="footer_email">이메일: receiptree@gmail.com 연락처: 02-970-1234</p>
     </div>
