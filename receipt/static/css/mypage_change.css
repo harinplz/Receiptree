@@ -2,6 +2,7 @@
     width:1120px;
     height:95px;
     margin:auto;
+    font-weight: bold;
 }
 
 #topMenu ul li {                     
@@ -36,7 +37,7 @@
 }
 
 .content1{
-    width:1440px;
+    width:1116px;
     height:321px;
     margin:auto;
     background-color: white;
@@ -48,24 +49,24 @@
     font-size:35px;
     font-weight:bold;
     font-family: 'Montserrat', sans-serif;
-    margin-left: 200px;
+    margin-left: 50px;
     padding-top:30px;
 }
 
 .mypage_content{
     width:120px;
     height:120px;
-    margin-left: 200px;
+    margin-left: 50px;
     margin-top:30px;
 }
 
 .mypage_name{
-    width:105px;
+    width:400px;
     height:55px;
     font-family: 'Noto Sans KR', sans-serif;
     font-size:30px;
     font-weight:bold;
-    margin-left: 390px;
+    margin-left: 240px;
     margin-top:-100px;
 }
 
@@ -74,7 +75,7 @@
     height:35px;
     font-family: 'Noto Sans KR', sans-serif;
     font-size:20px;
-    margin-left:390px;
+    margin-left:240px;
     margin-top:10px;
 }
 
@@ -88,7 +89,7 @@
     border-color:1824BF;
     background-color: 1824BF;
     font-size:15px;
-    margin-left:510px;
+    margin-left:360px;
     margin-top:-50px;
 }
 
@@ -98,7 +99,7 @@
     text-align: center;   
     font-family: 'Noto Sans KR', sans-serif;
     font-size:20px;
-    margin-left:780px;
+    margin-left:630px;
     margin-top:-90px;
 }
 
@@ -108,8 +109,8 @@
     text-align: center;   
     font-family: 'Noto Sans KR', sans-serif;
     font-size:20px;
-    margin-left:930px;
-    margin-top:-95px;
+    margin-left:780px;
+    margin-top:-96px;
 }
 
 .mypage_text3{
@@ -118,25 +119,25 @@
     text-align: center;   
     font-family: 'Noto Sans KR', sans-serif;
     font-size:20px;
-    margin-left:1060px;
-    margin-top:-101px;
+    margin-left:930px;
+    margin-top:-95px;
 }
 
 .mypage_text1-2{
-    width:100px;
+    width:80px;
     height:49px;
-    margin-left:795px;
-    margin-top:10px;
+    margin-left:645px;
+    margin-top:11px;
     font-family: 'Montserrat', sans-serif;
     font-size:40px;
     font-weight: bold;
 }
 
 .mypage_text2-2{
-    width:140px;
+    width:160px;
     height:49px;
-    margin-left:910px;
-    margin-top:13px;
+    margin-left:752px;
+    margin-top:10px;
     font-family: 'Montserrat', sans-serif;
     font-size:40px;
     font-weight: bold;
@@ -145,8 +146,8 @@
 .mypage_text3-2{
     width:100px;
     height:49px;
-    margin-left:1080px;
-    margin-top:15px;
+    margin-left:950px;
+    margin-top:13px;
     font-family: 'Montserrat', sans-serif;
     font-size:40px;
     font-weight: bold;
@@ -154,7 +155,7 @@
 
 .content2{
     width:1116px;
-    height:550px;
+    height:650px;
     margin:auto;
     margin-top:30px;
     background-color: white;
@@ -192,6 +193,13 @@
 }
 
 .content2_password{
+    width:900px;
+    height:107px;
+    margin-left:55px;  
+    margin-top:10px;
+}
+
+.content2_profile{
     width:900px;
     height:107px;
     margin-left:55px;  
@@ -289,9 +297,28 @@
     margin-top:-40px;
 }
 
+.info_profile{
+    width:200px;
+    height:32px;
+    font-size:18px;
+    font-family: 'Noto Sans KR', sans-serif;
+    margin-top:-80px;
+    margin-left:50PX;
+}
+
+.info_profile_file{
+    width:311px;
+    height:35px;
+    margin-left:260px;
+    margin-top:-25px;
+    outline: none;
+}
+
+
+
 .content3{
     width:1116px;
-    height:550px;
+    height:700px;
     margin:auto;
     margin-top:40px;
     background-color: white;
@@ -306,31 +333,33 @@
     padding-top:20px;
     margin-left:55px;
 }
+
 .content3_age{
     width:900px;
     height:107px;
     margin-left:55px;  
-    margin-top:40px;
+    margin-top:10px;
 }
 
 .content3_job{
     width:900px;
     height:107px;
     margin-left:55px;  
-    margin-top:40px;
+    margin-top:10px;
 }
+
 .content3_expense{
     width:900px;
-    height:107px;
+    height:214px;
     margin-left:55px;  
-    margin-top:40px;
+    margin-top:10px;
 }
 
 .content3_salary{
     width:900px;
     height:107px;
-    margin-left:55px; 
-    margin-top:40px;
+    margin-left:55px;  
+    margin-top:10px;
 }
 
 .detail_age{
@@ -338,13 +367,20 @@
     height:32px;
     font-size:18px;
     font-family: 'Noto Sans KR', sans-serif;
+    margin-top:40px;
 }
 
 .detail_age_text{
     width:311px;
     height:35px;
     margin-left:170px;
-    margin-top:-25px;
+    margin-top:-33px;
+}
+
+.age_line{
+    border: solid 1px gainsboro;
+    width:1005px;
+    margin-top:-40px;
 }
 
 .detail_job{
@@ -352,6 +388,7 @@
     height:32px;
     font-size:18px;
     font-family: 'Noto Sans KR', sans-serif;
+    margin-top:40px;
 }
 
 .detail_job_text{
@@ -361,27 +398,46 @@
     margin-top:-25px;
 }
 
+.job_line{
+    border: solid 1px gainsboro;
+    width:1005px;
+    margin-top:-40px;
+}
 
 .detail_expense{
     width:120px;
     height:32px;
     font-size:18px;
     font-family: 'Noto Sans KR', sans-serif;
+    margin-top:40px;
 }
 
-.detail_expense_text{
+.detail_expense_text1{
     width:311px;
     height:35px;
     margin-left:170px;
     margin-top:-25px;
 }
 
+.detail_expense_text2{
+    width:311px;
+    height:35px;
+    margin-left:170px;
+    margin-top:50px;
+}
+
+.expense_line{
+    border: solid 1px gainsboro;
+    width:1005px;
+    margin-top:-40px;
+}
 
 .detail_salary{
     width:120px;
     height:32px;
     font-size:18px;
     font-family: 'Noto Sans KR', sans-serif;
+    margin-top:40px;
 }
 
 .detail_salary_text{
@@ -389,6 +445,12 @@
     height:35px;
     margin-left:170px;
     margin-top:-25px;
+}
+
+.salary_line{
+    border: solid 1px gainsboro;
+    width:1005px;
+    margin-top:-40px;
 }
 
 .content4{
@@ -499,6 +561,17 @@
     margin-left:30px;
 }
 
+a{
+    text-decoration-line: none;
+    text-decoration : none;
+    color: black;
+    /* width:995px;
+    height:107px;
+    font-size:40px; */
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight:lighter;
+  }
+
 .profile-img {
     width: 150px;
     height: 150px;
@@ -506,3 +579,35 @@
     border-radius: 50%;
 }
 
+.page_footer{
+    width:1440px;
+    height:230px;
+    margin:auto;
+    /* background-color: #FFFFFF; */
+    /* position:fixed; */
+    background-color: #D9D9D9;
+    margin-top: 40px;
+}
+
+.footer_img{
+    width:150px;
+    height:40px;
+    margin-left: 645px;
+    padding-top:40px;
+}
+
+.footer_text{
+    margin-left: 500px;
+    margin-top:40px;
+    font-family: 'Montserrat', sans-serif;
+    font-size:20px;
+    font-weight:lighter;
+}
+
+.footer_email{
+    margin-left: 510px;
+    margin-top:20px;
+    font-family: 'Montserrat', sans-serif;
+    font-size:18px;
+    font-weight:lighter;
+}
