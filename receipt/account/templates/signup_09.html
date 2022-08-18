@@ -10,6 +10,7 @@
 </head>
 
 <body>
+    <div class="wrap">
     <nav id="topMenu">
         <ul>
             <li><a class="menuLink" href="{% url 'home' %}"><img src="{% static 'img/logo.png' %}"></a></li>
@@ -28,7 +29,7 @@
 
     <div class="full">
     <div class="content1"></div>
-    <form  method="POST">
+    <form  method="POST" enctype="multipart/form-data">
         {% csrf_token %}
         
         <div class="content2">
@@ -37,7 +38,7 @@
             <input type="text" class="email_box" placeholder="이메일" name="email">
             <div class="password_title">비밀번호</div>
             <input type="password" class="password_box" placeholder="영문, 숫자 포함 8자리 이상" name="password1">
-            <div class="password_title2">비밀번호</div>
+            <div class="password_title2">비밀번호 확인</div>
             <input type="password" class="password_box2" placeholder="비밀번호 확인" name="password2">
             <div class="name_title">이름</div>
             <input type="text" class="name_box" placeholder="이름" name="nickname">
@@ -49,6 +50,11 @@
             <div class="main_title">선택정보 입력</div>
             <div class="sub_title">더 객관적인 소비 판단을 위해 세부 정보를 입력해주세요.</div>
             <div class="sub_title">선택 정보 입력시, 모든 칸을 채워주시기 바랍니다.</div>
+
+            <div class="image">
+                <div class="image_title">프로필 이미지 등록</div>
+                <input type="file" name="images" class="upload_box">
+            </div>
 
             <div class="age">
                 <div class="age_title">나이</div>
@@ -73,7 +79,9 @@
             {% comment %} <input type="button" class="expenditure_btn" value="+ 지출추가"> {% endcomment %}
         </div>
 
-        <input type="submit" value="가입완료" class="submit_btn">
+        <div class="content4">
+        <input type="submit" value="가입완료" class="content4_btn">
+        </div>
     </form>
 
     <footer>
@@ -83,4 +91,5 @@
             <p class="footer_email">이메일: receiptree@gmail.com 연락처: 02-970-1234</p>
         </div>
     </footer>
+</div>
 </div>

@@ -1,5 +1,3 @@
-
-from unicodedata import category
 from django.shortcuts import render, get_object_or_404, redirect
 
 from .models import *
@@ -7,6 +5,9 @@ from .models import *
 import json
 from django.contrib.auth.decorators import login_required
 from django.views.decorators.http import require_POST
+
+from django.http import HttpResponse
+
 # Create your views here.
 
 # 파티 메인화면
@@ -128,22 +129,38 @@ def newcomment_party(request, team_id):
     return redirect('party_detail', team_id)
 
 
-# # '좋은 소비예요' 버튼 기능 구현
-# @login_required
-# @require_POST
-# def party_good(request):
-#     pk = request.POST.get('pk', None)
-#     party_board = get_object_or_404(Team_Board, pk=pk)
-#     print(party_board)
-#     user = request.user
+# '좋은 소비예요' 버튼 기능 구현
+@login_required
+@require_POST
+def party_good(request):
+    pk = request.POST.get('pk', None)
+    party = get_object_or_404(Team, pk=pk)
+    user = request.user
 
-#     if party_board.team_good_users.filter(user_no = user.user_no):
-#         party_board.team_good_users.remove(user)
-#     else:
-#         party_board.team_good_users.add(user)
+    if party.team_good_users.filter(user_no = user.user_no):
+        party.team_good_users.remove(user)
+    else:
+        party.team_good_users.add(user)
 
-#     context = {'party_good_count': party_board.count_team_good_users()}
-#     return HTTPResponse(json.dumps(context), content_type="application/json")
+    context = {'party_good_count': party.count_team_good_users()}
+    return HttpResponse(json.dumps(context), content_type="application/json")
+
+
+# '나쁜 소비예요' 버튼 기능 구현
+@login_required
+@require_POST
+def party_bad(request):
+    pk = request.POST.get('pk', None)
+    party = get_object_or_404(Team, pk=pk)
+    user = request.user
+
+    if party.team_bad_users.filter(user_no=user.user_no):
+        party.team_bad_users.remove(user)
+    else:
+        party.team_bad_users.add(user)
+    
+    context={'party_bad_count': party.count_team_bad_users()}
+    return HttpResponse(json.dumps(context), content_type="application/json")
 
 # 파티 만들기 화면
 def party_make(request):

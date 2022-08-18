@@ -319,14 +319,19 @@
            {{party_board4.0.team_body}}
         </div>
        
-        
-        <!-- <div class="good_bad">
-            <button id="good"><img src="{% static 'img/good.png' %}">좋은 소비예요 <span id="good_num">12</span></button>
-            <button id="bad"><img src="{% static 'img/bad.png' %}">나쁜 소비예요 <span id="bad_num">13</span></button>
-        </div> -->
+    
 
 
         {%endif%}
+    </div>
+
+    <div class="good_bad">
+        <button id="good" class="good" name="{{party_detail.team_no}}">
+            <img src="{% static 'img/good.png' %}">좋은 소비예요 
+            <span id="party-good-count-{{party_detail.team_no}}">{{party_detail.team_good_users.all.count}}</span></button>
+        <button id="bad" class="bad" name="{{party_detail.team_no}}">
+            <img src="{% static 'img/bad.png' %}">나쁜 소비예요 
+            <span id="party-bad-count-{{party_detail.team_no}}">{{party_detail.team_bad_users.all.count}}</span></button>
     </div>
 
 
@@ -441,7 +446,43 @@
 
 <script type="text/javascript">
 
+//좋은 소비예요 버튼 구현
+$(".good").click(function() {
+  var pk = $(this).attr('name')
+  $.ajax(
+    {
+      type:"POST",
+      url: "{% url 'party_good' %}",
+      data: {'pk':pk},
+      dataType: "json",
+      success: function(response){
+        $('#party-good-count-'+pk).html(response.party_good_count);
+      },
+      error: function(request, status, error){
+        alert("좋은 소비예요 버튼 오류")
+      }
+    }
+  );
+})
 
+//나쁜 소비예요 버튼 구현
+$(".bad").click(function() {
+  var pk = $(this).attr('name')
+  $.ajax(
+    {
+      type:"POST",
+      url: "{% url 'party_bad' %}",
+      data: {'pk':pk},
+      dataType: "json",
+      success: function(response){
+        $('#party-bad-count-'+pk).html(response.party_bad_count);
+      },
+      error: function(request, status, error){
+        alert("나쁜 소비예요 버튼 오류")
+      }
+    }
+  );
+})
     
 
 </script>

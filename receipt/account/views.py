@@ -43,7 +43,7 @@ def view_party(request):
 def mypage_change(request):
     user = request.user
     if request.method == 'POST':
-        user.image = request.FILES['images']
+        user.image = request.FILES.get('images')
         user.phone_number = request.POST['phone']
         user.age = request.POST['age']
         user.job = request.POST['job']
@@ -75,12 +75,16 @@ def signup(request):
             # user_info.user_no = user.user_no
             # user_info.user_no = user.user_no
                 # image = request.FILES.get['image'],
+
+            
+                
             if request.POST['age']!="":
                 user.age = request.POST['age']
                 user.job = request.POST['job']
                 user.income = request.POST['income']
                 user.expense = request.POST['expense']
                 user.expense_body = request.POST['expense_body']
+            user.image = request.FILES.get('images')
             user.save()
             # auth.login(request, user)
             # render(request, 'signup_11.html')

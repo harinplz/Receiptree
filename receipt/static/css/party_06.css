@@ -32,9 +32,9 @@
 }
 
 .content1{
-    width:1440px;
-    height:177px;
-    background-color: DDE0FB;
+    width:1118px;
+    height:175px;
+    background-image: url('../img/banner_party.png');
     margin:auto;
 }
 
@@ -299,4 +299,35 @@
 .a_title:hover{
     text-decoration: none;
     color: #1824BF;
+}
+
+.page_footer{
+    width:1440px;
+    height:230px;
+    margin:auto;
+    background-color: D9D9D9;
+    margin-top: 400px;
+}
+
+.footer_img{
+    width:150px;
+    height:40px;
+    margin-left: 645px;
+    padding-top:40px;
+}
+
+.footer_text{
+    margin-left: 500px;
+    margin-top:40px;
+    font-family: 'Montserrat', sans-serif;
+    font-size:20px;
+    font-weight:lighter;
+}
+
+.footer_email{
+    margin-left: 510px;
+    margin-top:20px;
+    font-family: 'Montserrat', sans-serif;
+    font-size:18px;
+    font-weight:lighter;
 }

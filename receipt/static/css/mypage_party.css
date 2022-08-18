@@ -183,6 +183,7 @@ table{
     border-top:2px solid black;
     
     border-bottom:2px solid E9E9E9;
+    
 }
 
 td{
@@ -210,7 +211,6 @@ tr{
     font-family: 'Noto Sans KR', sans-serif;
     font-size:20px;
     text-align:center;
-    
 }
 
 .table_date{
@@ -219,15 +219,23 @@ tr{
     text-align:center;
 }
 
+.table_img{
+    padding-left:65px;
+}
+
 .th_title{
     border-bottom: 2px solid black;
 }
 
-.th_date{
+.th_tag{
     border-bottom: 2px solid black;
 }
 
-.th_tag{
+.th_member{
+    border-bottom: 2px solid black;
+}
+
+.th_number{
     border-bottom: 2px solid black;
 }
 
@@ -266,6 +274,7 @@ a{
     margin-left: 645px;
     padding-top:40px;
 }
+
 .footer_text{
     margin-left: 500px;
     margin-top:40px;

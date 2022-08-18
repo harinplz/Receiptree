@@ -61,7 +61,7 @@
 }
 
 .mypage_name{
-    width:105px;
+    width:400px;
     height:55px;
     font-family: 'Noto Sans KR', sans-serif;
     font-size:30px;
@@ -583,7 +583,9 @@ a{
     width:1440px;
     height:230px;
     margin:auto;
-    background-color: D9D9D9;
+    /* background-color: #FFFFFF; */
+    /* position:fixed; */
+    background-color: #D9D9D9;
     margin-top: 40px;
 }
 
