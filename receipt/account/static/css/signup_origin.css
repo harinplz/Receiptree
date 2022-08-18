@@ -38,8 +38,8 @@
 
 .content1{
     width:1120px;
-    height:177px;
-    background-color: DDE0FB;
+    height:80px;
+    background-color: #F8F9FD;
     margin:auto;
 }
 
@@ -106,7 +106,7 @@
 }
 
 .password_title2{
-    width:100px;
+    width:200px;
     height:32px;
     font-family: 'Noto Sans KR', sans-serif; 
     font-size:20px;
@@ -174,10 +174,10 @@
 
 .content3{
     width:1120px;
-    height:1050px;
-    background-color: white;
+    height:1200px;
     margin:auto;
     margin-top:60px;
+    background-color: white;
 
 }
 
@@ -387,17 +387,22 @@
     margin-top:150px;
 }
 
-.submit_btn{
+.content4{
     width:198px;
     height:59px;
-    border-radius: 7px;
+    margin:auto;
+    margin-top:50px;
+}
+
+.content4_btn{
+    width:198px;
+    height:59px;
+    background-color:1824BF;
+    border-radius:7px;
+    color:white;
     font-size:20px;
     font-family: 'Noto Sans KR', sans-serif;
-    color:white;
     border:none;
-    background-color: 1824BF;
-    margin-left:1008px;
-    margin-top:40px;
 }
 
 a{

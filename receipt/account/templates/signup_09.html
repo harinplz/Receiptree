@@ -10,6 +10,7 @@
 </head>
 
 <body>
+    <div class="wrap">
     <nav id="topMenu">
         <ul>
             <li><a class="menuLink" href="{% url 'home' %}"><img src="{% static 'img/logo.png' %}"></a></li>
@@ -37,7 +38,7 @@
             <input type="text" class="email_box" placeholder="이메일" name="email">
             <div class="password_title">비밀번호</div>
             <input type="password" class="password_box" placeholder="영문, 숫자 포함 8자리 이상" name="password1">
-            <div class="password_title2">비밀번호</div>
+            <div class="password_title2">비밀번호 확인</div>
             <input type="password" class="password_box2" placeholder="비밀번호 확인" name="password2">
             <div class="name_title">이름</div>
             <input type="text" class="name_box" placeholder="이름" name="nickname">
@@ -78,7 +79,9 @@
             {% comment %} <input type="button" class="expenditure_btn" value="+ 지출추가"> {% endcomment %}
         </div>
 
-        <input type="submit" value="가입완료" class="submit_btn">
+        <div class="content4">
+        <input type="submit" value="가입완료" class="content4_btn">
+        </div>
     </form>
 
     <footer>
@@ -88,4 +91,5 @@
             <p class="footer_email">이메일: receiptree@gmail.com 연락처: 02-970-1234</p>
         </div>
     </footer>
+</div>
 </div>
