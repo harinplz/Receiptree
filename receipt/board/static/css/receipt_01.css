@@ -32,9 +32,9 @@
 }
 
 .content1{
-    width:1440px;
-    height:177px;
-    background-color: DDE0FB;
+    width:1118px;
+    height:175px;
+    background-image: url('../img/banner_board.png');
     margin:auto;
 }
 
