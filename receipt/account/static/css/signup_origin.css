@@ -171,9 +171,10 @@
     margin-top:20px;
 }
 
+
 .content3{
     width:1120px;
-    height:972px;
+    height:1050px;
     background-color: white;
     margin:auto;
     margin-top:60px;
@@ -190,6 +191,16 @@
 
 }
 
+.image{
+    width:400px;
+    height:121px;
+    margin-top:40px;
+    margin-left:200px;
+}
+
+
+
+
 .age{
     width:400px;
     height:121px;
@@ -203,6 +214,23 @@
     margin-top:-120px;
     margin-left:650px;
 }
+
+.image_title{
+    width:300px;
+    height:32px;
+    margin-top:40px;
+    font-family: 'Noto Sans KR', sans-serif; 
+    font-size:20px;
+}
+
+.upload_box{
+    width:311px;
+    height:35px;
+    margin-top:20px;
+    font-size:16px;
+    outline: none;
+}
+
 
 .age_title{
     width:41px;
