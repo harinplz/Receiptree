@@ -37,7 +37,7 @@ def view_receipt(request):
 
 def view_party(request):
     user = request.user
-    teams = Team.objects.filter(team_users=user)
+    teams = Team.objects.filter(team_users=user) | Team.objects.filter(leader_no=user)
     return render(request, 'mypage_party.html', {'teams':teams})
 
 def mypage_change(request):

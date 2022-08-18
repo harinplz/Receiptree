@@ -184,6 +184,8 @@
     font-family: 'Noto Sans KR', sans-serif; 
     font-size:24px;
     border-radius: 7px;
+    /* margin-left:620px;
+    margin-top:70px; */
 }
 
  .submit_btn{
@@ -194,6 +196,7 @@
     border:none;
     font-family: 'Noto Sans KR', sans-serif; 
     font-size:24px;
+    /* margin: auto; */
     border-radius: 7px;
 } 
 

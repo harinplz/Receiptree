@@ -18,11 +18,11 @@ class User(AbstractUser):
     team_no = models.ForeignKey('party.Team', on_delete=models.CASCADE, db_column='team_no', null=True, blank=True)
     phone_number = models.CharField(max_length=15, null=True)
 
-    job = models.CharField(max_length=40, null=True)
-    age = models.IntegerField(null=True)
-    income = models.IntegerField(null=True)
-    expense = models.IntegerField(null=True) #지출 비용
-    expense_body = models.TextField(null=True)
+    job = models.CharField(max_length=40, null=True, default="")
+    age = models.IntegerField(null=True, default=0)
+    income = models.IntegerField(null=True, default=0)
+    expense = models.IntegerField(null=True, default=0) #지출 비용
+    expense_body = models.TextField(null=True, default="")
 
     written = models.IntegerField(null=True,default=0) #작성한 글 개수
     party_num = models.IntegerField(null=True, default=0)
