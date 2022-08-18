@@ -20,15 +20,22 @@ class Team(models.Model):
         related_name='team_users',
         blank=True,
     )
-    # teammate_cnt = models.IntegerField(default=1) #팀원 수
-    # team1_no = models.IntegerField(null=True, blank=True)
-    # team2_no = models.IntegerField(null=True, blank=True)
-    # team3_no = models.IntegerField(null=True, blank=True)
-    # team4_no = models.IntegerField(null=True, blank=True)
+
+     # 팀 글 좋아요/나빠요 구현 수정 -> 다대다 관계로
+    team_good_users = models.ManyToManyField(
+        settings.AUTH_USER_MODEL,
+        blank=True,
+        related_name='team_good_user'
+    )
+    team_bad_users = models.ManyToManyField(
+        settings.AUTH_USER_MODEL,
+        blank=True,
+        related_name = 'team_bad_user'
+    )
+
 
     # 리더 멤버 지정 수정 -> 외래키로 가져오기
     leader_no = models.ForeignKey('account.User', on_delete=models.CASCADE, db_column='leader_no', null=True)
-    #leader_no = models.IntegerField(null=True, blank=True)
 
     # 팀 생성된 최신 순으로 정렬
     class Meta:
@@ -40,6 +47,14 @@ class Team(models.Model):
     # 팀원 수 세는 함수
     def count_team_users(self):
         return self.team_users.count() + 1
+    
+    # 좋아요 누른 유저 수 카운트
+    def count_team_good_users(self):
+        return self.team_good_users.count()
+
+    # 나빠요 누른 유저 수 카운트
+    def count_team_bad_users(self):
+        return self.team_bad_users.count()
 
 
 # 팀 게시판 클래스
@@ -48,18 +63,6 @@ class Team_Board(models.Model):
 
     team_date = models.DateTimeField(default=timezone.now)
     team_body = models.TextField()
-
-    # 팀 글 좋아요/나빠요 구현 수정 -> 다대다 관계로
-    team_good_users = models.ManyToManyField(
-        settings.AUTH_USER_MODEL,
-        blank=True,
-        related_name='team_good_user'
-    )
-    team_bad_users = models.ManyToManyField(
-        settings.AUTH_USER_MODEL,
-        blank=True,
-        related_name = 'team_bad_user'
-    )
     # Team_good_cnt = models.IntegerField(default=0)
     # Team_bad_cnt = models.IntegerField(default=0)
     team_no = models.ForeignKey('Team', on_delete=models.CASCADE, db_column='team_no')
@@ -72,13 +75,7 @@ class Team_Board(models.Model):
     def __str__(self):
         return f"{self.team_no.team_name} - {self.team_writer_no.nickname} : {self.team_body}"
 
-    # 좋아요 누른 유저 수 카운트
-    def count_team_good_users(self):
-        return self.team_good_users.count()
-
-    # 나빠요 누른 유저 수 카운트
-    def count_team_bad_users(self):
-        return self.team_bad_users.count()
+    
 
 
 # 팀 댓글 클래스
