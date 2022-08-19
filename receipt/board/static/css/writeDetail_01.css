@@ -100,7 +100,7 @@ body{
     width: 64px;
     height: 64px;
     border-radius: 50%;
-    background-image: url(./images/writer_profile.png);
+    /* background-image: url(./images/writer_profile.png); */
     float:right ;
 }
 

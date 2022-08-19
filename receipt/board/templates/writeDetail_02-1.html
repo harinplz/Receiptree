@@ -40,7 +40,11 @@
         <div class="title_area">
             <div class="title_name">{{board_detail.title}}</div>
             <div class="writer">
-                <div id = "writer_profile"><img class="rounded-circle" src="{{board_detail.user_no.my_image}}" width="55px" height="55px"></div> <!-- 이미지 자리인가..? -->
+                {% if board_detail.user_no.my_image != '../static/img/default.png' %}
+                <div id = "writer_profile"><img class="rounded-circle" src="{{ board_detail.user_no.my_image }}" width="55px" height="55px"></div> 
+                {% else %}
+                <div id = "writer_profile"><img class="rounded-circle" src="{% static 'img/default.png' %}" width="55px" height="55px"></div>
+                {% endif %}
                 <div id="writer_name">{{board_detail.user_no.nickname}}</div>
                 <div id="grade">{{board_detail.user_no.grade}}
                     <!-- <img src="{% static 'img/grade.png'%}"> -->
@@ -139,8 +143,12 @@
                     {% for comment in comment_list%}
                     <li>
                         <div class="d-flex">
-                            <div class="comment_profile"><img class="rounded-circle" src="{{comment.user_no.my_image}}" alt="..."
-                                width="50px" height="50px" /></div>
+                            {% if comment.user_no.my_image != '../static/img/default.png' %}
+                            <div class="comment_profile"><img class="rounded-circle" src="{{comment.user_no.my_image}}" alt="..." width="50px" height="50px" /></div>
+                            {% else %}
+                            <div class="comment_profile"><img class="rounded-circle" src="{% static 'img/default.png' %}" alt="..." width="50px" height="50px" /></div>
+                            {% endif %}
+                            
                             <div class="comment_area">
                                 <span class="commentsName">{{comment.user_no.nickname}} &nbsp;</span>
                                 <span style="font-size:smaller; font-weight: 300 !important;">

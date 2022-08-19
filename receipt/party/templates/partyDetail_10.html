@@ -360,7 +360,11 @@
                     <li>
                         <div class="d-flex">
                             <div class="comment_profile">
+                                {% if comment.user_no.my_image != '../static/img/default.png' %}
                                 <img class="rounded-circle" src="{{comment.team_user_no.my_image}}" alt="..." width="50px" height="50px"/>
+                                {% else %}
+                                <img class="rounded-circle" src="{% static 'img/default.png' %}" alt="..." width="50px" height="50px"/>
+                                {% endif %}
                             </div>
                             <div class="comment_area">
                                 <div class="commentsName">{{comment.team_user_no.nickname}}&nbsp;
