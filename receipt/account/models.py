@@ -35,7 +35,7 @@ class User(AbstractUser):
         if self.image:
             return self.image.url
         if not self.image:
-            return f'../static/img/default.png'
+            return f'../../static/img/default.png'
         return ''
 
 

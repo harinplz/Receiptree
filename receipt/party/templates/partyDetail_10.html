@@ -70,7 +70,11 @@
         <div class="party_mem">
             <ul class="party_mem_group">
                 <li> 
+                    {% if party_detail.leader_no.my_image != '../static/img/default.png' %}
                     <button id="defaultOpen"class="user_photo1" onclick="openMenu('Party1', this,'thick solid purple')"></button>
+                    {% else %}
+                    <button id="defaultOpen" class="user_photo10" style="background-image: url('/receipt/static/img/default.png'); background-size: cover;"onclick="openMenu('Party1', this,'thick solid purple')" ></button>
+                    {% endif %}
                     <div class="user_name" >파티장</div>
                     <div class="user_name">{{party_detail.leader_no.nickname}}</div>
 
@@ -443,6 +447,14 @@
 .user_photo4{
     background-image: url({{party_detail.team_users.all.2.my_image}});
     background-size: cover;
+}
+
+.user_photo10,.user_photo20,.user_photo30,.user_photo40{
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    background-color: none;
+    border: 0px;
 }
 
 </style>
