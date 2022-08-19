@@ -7,7 +7,7 @@ import django.utils.timezone
 
 
 class Migration(migrations.Migration):
-
+    atomic = False
     initial = True
 
     dependencies = [
