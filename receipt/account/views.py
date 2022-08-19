@@ -43,13 +43,20 @@ def view_party(request):
 def mypage_change(request):
     user = request.user
     if request.method == 'POST':
-        user.image = request.FILES.get('images')
-        user.phone_number = request.POST['phone']
-        user.age = request.POST['age']
-        user.job = request.POST['job']
-        user.income = request.POST['income']
-        user.expense = request.POST['expense']
-        user.expense_body = request.POST['expense_body']
+        if request.FILES.get('images') != None:
+            user.image = request.FILES.get('images')
+        if request.POST['phone'] != None:
+            user.phone_number = request.POST['phone']
+        if request.POST['age'] != "":
+            user.age = request.POST['age']
+        if request.POST['job'] != "":
+            user.job = request.POST['job']
+        if request.POST['income'] != "":
+            user.income = request.POST['income']
+        if request.POST['expense'] != "":
+            user.expense = request.POST['expense']
+        if request.POST['expense_body'] != "":
+            user.expense_body = request.POST['expense_body']
         user.save()
         return redirect('mypage')
     return render(request, 'mypage_03.html')
