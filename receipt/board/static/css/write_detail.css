@@ -63,7 +63,6 @@ body{
 .title_area{
     width: auto;
     height: 192px;
-    
     border-top: 1px solid #C4C4C4;
     border-bottom: 1px solid #C4C4C4;
 }
@@ -133,6 +132,118 @@ body{
     
 }
 
+.info_box{
+    width:1118px;
+    height:191px;
+    border-radius:13px;
+    margin:auto;
+    margin-top: 40px;
+    border : 3px solid silver;
+
+}
+
+.info_age{
+    width:100px;
+    height:29px;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size:20px;
+    padding-top:30px;
+    margin-left:60px;
+    font-weight: bold;
+}
+
+.info_age_box{
+    width:200px;
+    height:29px;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size:20px;
+    margin-left:200px;
+    margin-top:-30px;
+    border:none;
+}
+
+.info_job{
+    width:100px;
+    height:29px;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size:20px;
+    margin-top:20px;
+    margin-left:59px;
+    font-weight: bold;
+}
+
+.info_job_box{
+    width:300px;
+    height:29px;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size:20px;
+    margin-left:198px;
+    margin-top:-30px;
+    border:none;
+}
+
+
+.info_salary{
+    width:100px;
+    height:29px;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size:20px;
+    margin-top:20px;
+    margin-left:59px;
+    font-weight: bold;
+}
+
+.info_salary_box{
+    width:100px;
+    height:29px;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size:20px;
+    margin-left:198px;
+    margin-top:-30px;
+    border:none;
+}
+
+.info_expense{
+    width:100px;
+    height:29px;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size:20px;
+    margin-top:-125px;
+    margin-left:600px;
+    font-weight: bold;
+}
+
+.info_expense_cost{
+    width:200px;
+    height:29px;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size:20px;
+    margin-top:-26px;
+    margin-left:750px;
+    border:none;
+
+}
+
+.info_expense_cost2{
+    width:50px;
+    height:29px;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size:17px;
+    margin-top:-29px;
+    margin-left:960px;
+}
+
+.info_expense_content{
+    width:250px;
+    height:29px;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size:20px;
+    margin-top:30px;
+    margin-left:750px;
+    border-radius:5px;
+    border:none;
+
+}
 
 .receipt_name{
     margin-top: 48px;

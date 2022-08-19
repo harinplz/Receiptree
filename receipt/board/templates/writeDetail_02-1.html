@@ -3,7 +3,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <link href="{% static 'css/writeDetail_01.css' %}" rel="stylesheet"></a>
+    <link href="{% static 'css/write_detail.css' %}" rel="stylesheet"></a>
     <title>영수증 글 상세</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -46,6 +46,7 @@
                     <!-- <img src="{% static 'img/grade.png'%}"> -->
                 </div>
                 
+                
             </div>
             <div class="hashtag_area">
                 {% for t in board_detail.tags.all %}
@@ -58,6 +59,23 @@
             <span id="title_comments_num">{{comment_list.all.count}}</span>
         </div>
         </div>
+
+        <div class="info_box">
+            <div class="info_age">나이</div>
+            <input type="text" class="info_age_box" value="27세">
+
+            <div class="info_job">직업</div>
+            <input type="text" class="info_job_box" value="웹디자이너">
+
+            <div class="info_salary">월급</div>
+            <input type="text" class="info_salary_box" value="250만원">
+
+            <div class="info_expense">고정지출</div>
+            <input type="text" class="info_expense_cost" value="200,000">
+            <div class="info_expense_cost2">(원)</div>
+            <input type="text" class="info_expense_content" value="식비">
+        </div>
+
 
     <div class="receipt">
         
