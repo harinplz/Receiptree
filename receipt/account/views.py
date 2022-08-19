@@ -83,13 +83,15 @@ def signup(request):
             # user_info.user_no = user.user_no
                 # image = request.FILES.get['image'],
 
-            
-                
-            if request.POST['age']!="":
+            if request.POST['age'] != "":
                 user.age = request.POST['age']
+            if request.POST['job'] != "":
                 user.job = request.POST['job']
+            if request.POST['income'] != "":
                 user.income = request.POST['income']
+            if request.POST['expense'] != "":
                 user.expense = request.POST['expense']
+            if request.POST['expense_body'] != "":
                 user.expense_body = request.POST['expense_body']
             user.image = request.FILES.get('images')
             user.save()
