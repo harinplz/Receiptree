@@ -143,7 +143,7 @@
         {% csrf_token %}
     <div class="content6">
     
-    {% if party_detail.leader_no.nickname != user.nickname and party_detail.team_users.all.0.nickname != user.nickname and party_detail.team_users.all.1.nickname != user.nickname and party_detail.team_users.all.2.nickname != user.nickname %}
+    {% if party_detail.leader_no.user_no != user.user_no and party_detail.team_users.all.0.user_no != user.user_no and party_detail.team_users.all.1.user_no != user.user_no and party_detail.team_users.all.2.user_no != user.user_no %}
     <a href="{% url 'party_main' %}"><input type="button" value="목록" class="content5_btn1"></a>
     <input type="submit" value="가입하기" class="content5_btn2">
     {% else %}
