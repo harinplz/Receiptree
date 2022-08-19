@@ -318,7 +318,7 @@
 
 .content3{
     width:1116px;
-    height:700px;
+    height:650px;
     margin:auto;
     margin-top:40px;
     background-color: white;
@@ -419,6 +419,15 @@
     margin-top:-25px;
 }
 
+.detail_expense_text1-2{
+    width:50px;
+    height:32px;
+    font-size:18px;
+    margin-left:500px;
+    margin-top:-30px;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
 .detail_expense_text2{
     width:311px;
     height:35px;
@@ -447,11 +456,15 @@
     margin-top:-25px;
 }
 
-.salary_line{
-    border: solid 1px gainsboro;
-    width:1005px;
-    margin-top:-40px;
+.detail_salary_text2{
+    width:50px;
+    height:32px;
+    font-size:18px;
+    margin-left:550px;
+    margin-top:-93px;
+    font-family: 'Noto Sans KR', sans-serif;
 }
+
 
 .content4{
     width:1116px;
