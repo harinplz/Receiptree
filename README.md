@@ -9,3 +9,6 @@
 <!-- 웹 구현 언어/프레임워크 설명 -->
 <!-- 기능 간단 소개 -->
 <!-- 깃 컨벤션 -->
+
+✅ 배포 주소
+https://port-0-likelion10-summerhackathon-152f4b25l7097sez.gksl1.cloudtype.app/
