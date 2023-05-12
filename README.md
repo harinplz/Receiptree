@@ -73,7 +73,8 @@ https://port-0-likelion10-summerhackathon-152f4b25l7097sez.gksl1.cloudtype.app/
 <img src="https://user-images.githubusercontent.com/62701446/215119867-c4ac0a84-b963-4968-af30-f707237aa3c5.png" width ="800"></br>
 
 `회원가입`</br>
-<img src="https://user-images.githubusercontent.com/62701446/215120206-02e46130-8581-4cab-9958-99d263abe539.png" width ="800"></br>
+
+![signup](https://github.com/Harinee68/algorithm_study/assets/62701446/bea9242d-bf66-4e17-bc3c-ba3172161174)
 
 `로그인`</br>
 <img src="https://user-images.githubusercontent.com/62701446/215120380-2eb28ec0-f2a5-4570-af49-5e36d998d064.png" width ="800"></br>
