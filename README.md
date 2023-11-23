@@ -1,25 +1,45 @@
-# LIKELION_SUMMERHACKATHON
-멋쟁이 사자처럼 10기 중앙 해커톤 SWU 3조
+# Receiptree
 
-<div align="center">
-  <h2>🧾RECEIPTREE🌳</h2>
-</div>
-<div align="center">
-<img src="https://user-images.githubusercontent.com/62701446/215115049-5f745e4e-bab3-490e-b7b5-ca3515455145.png" width="800">
-</div>
+  <img src="https://user-images.githubusercontent.com/62701446/215117088-4f492946-ccd7-4cf8-a318-7d44499bda7f.png" width="800">
+  
+  [🔗Link](https://port-0-likelion10-summerhackathon-152f4b25l7097sez.gksl1.cloudtype.app/)
+
+<br/>
+
+## 팀원 소개 
+
+|   **Name**   |               문서현👑                 |                김지수                |                  이하린                   |               홍정민                | 
+| :----------: | :-----------------------------------: | :----------------------------------: | :---------------------------------------: | :---------------------------------: | 
+| **Profile**  |  <img src="https://avatars.githubusercontent.com/u/68221122?v=4" width="100" height="100"/>   |  <img src="https://avatars.githubusercontent.com/u/101002867?v=4" width="100" height="100"/>  |    <img src="https://avatars.githubusercontent.com/u/62701446?v=4" width="100" height="100"/>     | <img src="https://avatars.githubusercontent.com/u/66771189?v=4" width="100" height="100"/>  |
+| **Position** |          FrontEnd          |          FrontEnd           |           BackEnd        |        BackEnd         |
+|   **Git**    | [GitHub](https://github.com/dreamlab10) | [GitHub](https://github.com/J2soo8) | [GitHub](https://github.com/harinplz) | [GitHub](https://github.com/Jungmin-Hong) |
+
+<br/>
+
+## 기술 스택 
+
+### FrontEnd
+
+- HTML
+- CSS
+- Javascript
+- Ajax
+
+### BackEnd
+
+- Django
+- Python
+- SQLite
+
+### Colaboration
+
+- Figma
+- Github
+- Notion
+
 </br>
 
-<!-- 팀원 이름 및 역할 -->
-<!-- 웹 간단 소개 -->
-<!-- 웹 구현 언어/프레임워크 설명 -->
-<!-- 기능 간단 소개 -->
-<!-- 깃 컨벤션 -->
-<div align="center">
-✅ 배포 주소<br/>
-https://port-0-likelion10-summerhackathon-152f4b25l7097sez.gksl1.cloudtype.app/
-</div></br>
-
-<h2> 프로젝트 소개 </h2>
+## 프로젝트 소개 
 
 > 멋쟁이 사자처럼 대학 10주년 해커톤에서 약 한 달동안 진행한 프로젝트입니다. </br>
 > Receiptree란 여러 개의 영수증이 모여 하나의 트리, 커뮤니티를 이룬다는 의미입니다. </br>
@@ -27,7 +47,7 @@ https://port-0-likelion10-summerhackathon-152f4b25l7097sez.gksl1.cloudtype.app/
 </br>
 
 <p float="left">
-  <img src="https://user-images.githubusercontent.com/62701446/215117088-4f492946-ccd7-4cf8-a318-7d44499bda7f.png" width="800">
+
   <img src="https://user-images.githubusercontent.com/62701446/215117084-60537a5e-8c09-4550-b9fd-84d0b4bd0dcf.png" width="800">
 </p>
 
@@ -59,13 +79,10 @@ https://port-0-likelion10-summerhackathon-152f4b25l7097sez.gksl1.cloudtype.app/
 <img src="https://user-images.githubusercontent.com/62701446/215117036-ebf33f29-8670-4118-b77a-dea2338eed20.png" width="800">
 </br>
 
-<h2> 사용 기술 </h2>
 
-`개발 언어` : `HTML`, `CSS`, `Javascript`, `python`</br>
-`개발 환경` : `Django`, `vscode`</br>
-`DB` : `SQLite` </br>
-`협업툴` : `Figma`, `Github`, `Notion` </br>
-</br>
+
+
+<!--
 
 <h2> 구현 화면 </h2>
 
@@ -114,3 +131,5 @@ https://port-0-likelion10-summerhackathon-152f4b25l7097sez.gksl1.cloudtype.app/
 
 `파티 내역`</br>
 <img src="https://user-images.githubusercontent.com/62701446/215122492-52635a8f-bc22-438a-8e81-5938b937fbc7.png" width ="800"></br>
+
+-->
